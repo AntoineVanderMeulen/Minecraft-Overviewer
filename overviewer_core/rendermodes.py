@@ -165,6 +165,10 @@ class Lighting(RenderPrimitive):
 class SmoothLighting(Lighting):
     name = "smooth-lighting"
 
+#TODO TEST AVM HideUnderground #
+class SmoothLightingHideUnderground(Lighting):
+    name = "smooth-lighting-hide-underground"
+
 class ClearBase(RenderPrimitive):
     name = "clear-base"
 
@@ -249,4 +253,6 @@ netherold_smooth_lighting = [Base(), EdgeLines(), NetherOld(), SmoothLighting()]
 nether = [Base(), EdgeLines(), Nether()]
 nether_lighting = [Base(), EdgeLines(), Nether(), Lighting()]
 nether_smooth_lighting = [Base(), EdgeLines(), Nether(), SmoothLighting()]
+#TODO TEST AVM HideUnderground #
+smooth_lighting_hide_underground = [Base(), EdgeLines(), SmoothLightingHideUnderground()]
 cave = [Base(), EdgeLines(), Cave(), DepthTinting()]
