@@ -987,6 +987,9 @@ block(blockid=ids.minecraft__birch_planks, top_image="assets/minecraft/textures/
 block(blockid=ids.minecraft__jungle_planks, top_image="assets/minecraft/textures/block/jungle_planks.png")
 block(blockid=ids.minecraft__acacia_planks, top_image="assets/minecraft/textures/block/acacia_planks.png")
 block(blockid=ids.minecraft__dark_oak_planks, top_image="assets/minecraft/textures/block/dark_oak_planks.png")
+block(blockid=ids.minecraft__crimson_planks, top_image="assets/minecraft/textures/block/crimson_planks.png")
+block(blockid=ids.minecraft__warped_planks, top_image="assets/minecraft/textures/block/warped_planks.png")
+
 
 # @material(blockid=5, data=list(range(6)), solid=True)
 # def wooden_planks(self, blockid, data):
@@ -1863,10 +1866,34 @@ block(blockid=ids.minecraft__iron_block, top_image="assets/minecraft/textures/bl
 # wooden double and normal slabs
 # these are the new wooden slabs, blockids 43 44 still have wooden
 # slabs, but those are unobtainable without cheating
-@material(blockid=[ids.minecraft__oak_slab, ids.minecraft__spruce_slab, ids.minecraft__birch_slab, ids.minecraft__jungle_slab, ids.minecraft__acacia_slab, ids.minecraft__dark_oak_slab], data=list(range(16)), transparent=(ids.minecraft__oak_slab, ids.minecraft__spruce_slab, ids.minecraft__birch_slab, ids.minecraft__jungle_slab, ids.minecraft__acacia_slab, ids.minecraft__dark_oak_slab, ids.minecraft__petrified_oak_slab, ids.minecraft__petrified_oak_slab), solid=True)
-def wooden_slabs(self, blockid, data):
-    texture = data & 7
+# @material(blockid=[], data=list(range(16)), transparent=(), solid=True)
+# def wooden_slabs(self, blockid, data):
+#     texture = data & 7
 
+#     if blockid == ids.minecraft__oak_slab or blockid == ids.minecraft__petrified_oak_slab:  # oak
+#         top = side = self.load_image_texture("assets/minecraft/textures/block/oak_planks.png")
+#     elif blockid == ids.minecraft__spruce_slab:  # spruce
+#         top = side = self.load_image_texture("assets/minecraft/textures/block/spruce_planks.png")
+#     elif blockid == ids.minecraft__birch_slab:  # birch
+#         top = side = self.load_image_texture("assets/minecraft/textures/block/birch_planks.png")
+#     elif blockid == ids.minecraft__jungle_slab:  # jungle
+#         top = side = self.load_image_texture("assets/minecraft/textures/block/jungle_planks.png")
+#     elif blockid == ids.minecraft__acacia_slab:  # acacia
+#         top = side = self.load_image_texture("assets/minecraft/textures/block/acacia_planks.png")
+#     elif blockid == ids.minecraft__dark_oak_slab:  # dark wood
+#         top = side = self.load_image_texture("assets/minecraft/textures/block/dark_oak_planks.png")
+
+#     return self.build_slab_block(top, side, data & 8 == 8)
+
+# double slabs and slabs
+# these wooden slabs are unobtainable without cheating, they are still
+# here because lots of pre-1.3 worlds use this blocks, add prismarine slabs
+@material(blockid=[ids.minecraft__oak_slab, ids.minecraft__petrified_oak_slab, ids.minecraft__spruce_slab, ids.minecraft__birch_slab, ids.minecraft__jungle_slab, ids.minecraft__acacia_slab, ids.minecraft__dark_oak_slab, ids.minecraft__stone_slab, ids.minecraft__sandstone_slab, ids.minecraft__cobblestone_slab, ids.minecraft__brick_slab, ids.minecraft__stone_brick_slab, ids.minecraft__nether_brick_slab, ids.minecraft__quartz_slab, ids.minecraft__red_sandstone_slab, ids.minecraft__purpur_slab, ids.minecraft__prismarine_slab, ids.minecraft__dark_prismarine_slab, ids.minecraft__prismarine_brick_slab, ids.minecraft__andesite_slab, ids.minecraft__diorite_slab, ids.minecraft__granite_slab, ids.minecraft__polished_andesite_slab, ids.minecraft__polished_diorite_slab, ids.minecraft__polished_granite_slab, ids.minecraft__red_nether_brick_slab, ids.minecraft__smooth_sandstone_slab, ids.minecraft__cut_sandstone_slab, ids.minecraft__smooth_red_sandstone_slab, ids.minecraft__cut_red_sandstone_slab, ids.minecraft__end_stone_brick_slab, ids.minecraft__mossy_cobblestone_slab, ids.minecraft__mossy_stone_brick_slab, ids.minecraft__smooth_quartz_slab, ids.minecraft__smooth_stone_slab, ids.minecraft__crimson_slab, ids.minecraft__warped_slab], data=[0, 1], transparent=[ids.minecraft__oak_slab, ids.minecraft__spruce_slab, ids.minecraft__birch_slab, ids.minecraft__jungle_slab, ids.minecraft__acacia_slab, ids.minecraft__dark_oak_slab, ids.minecraft__petrified_oak_slab, ids.minecraft__stone_slab, ids.minecraft__sandstone_slab, ids.minecraft__cobblestone_slab, ids.minecraft__brick_slab, ids.minecraft__stone_brick_slab, ids.minecraft__nether_brick_slab, ids.minecraft__quartz_slab, ids.minecraft__red_sandstone_slab, ids.minecraft__purpur_slab, ids.minecraft__prismarine_slab, ids.minecraft__dark_prismarine_slab, ids.minecraft__prismarine_brick_slab, ids.minecraft__andesite_slab, ids.minecraft__diorite_slab, ids.minecraft__granite_slab, ids.minecraft__polished_andesite_slab, ids.minecraft__polished_diorite_slab, ids.minecraft__polished_granite_slab, ids.minecraft__red_nether_brick_slab, ids.minecraft__smooth_sandstone_slab, ids.minecraft__cut_sandstone_slab, ids.minecraft__smooth_red_sandstone_slab, ids.minecraft__cut_red_sandstone_slab, ids.minecraft__end_stone_brick_slab, ids.minecraft__mossy_cobblestone_slab, ids.minecraft__mossy_stone_brick_slab, ids.minecraft__smooth_quartz_slab, ids.minecraft__smooth_stone_slab, ids.minecraft__crimson_slab, ids.minecraft__warped_slab], solid=True)
+def slabs(self, blockid, data):
+    # if blockid == 44 or blockid == 182: 
+    #     texture = data & 7
+    # else: # data > 8 are special double slabs
+    #     texture = data
     if blockid == ids.minecraft__oak_slab or blockid == ids.minecraft__petrified_oak_slab:  # oak
         top = side = self.load_image_texture("assets/minecraft/textures/block/oak_planks.png")
     elif blockid == ids.minecraft__spruce_slab:  # spruce
@@ -1879,20 +1906,11 @@ def wooden_slabs(self, blockid, data):
         top = side = self.load_image_texture("assets/minecraft/textures/block/acacia_planks.png")
     elif blockid == ids.minecraft__dark_oak_slab:  # dark wood
         top = side = self.load_image_texture("assets/minecraft/textures/block/dark_oak_planks.png")
-
-    return self.build_slab_block(top, side, data & 8 == 8)
-
-# double slabs and slabs
-# these wooden slabs are unobtainable without cheating, they are still
-# here because lots of pre-1.3 worlds use this blocks, add prismarine slabs
-@material(blockid=[ids.minecraft__stone_slab, ids.minecraft__sandstone_slab, ids.minecraft__cobblestone_slab, ids.minecraft__brick_slab, ids.minecraft__stone_brick_slab, ids.minecraft__nether_brick_slab, ids.minecraft__quartz_slab, ids.minecraft__red_sandstone_slab, ids.minecraft__purpur_slab, ids.minecraft__prismarine_slab, ids.minecraft__dark_prismarine_slab, ids.minecraft__prismarine_brick_slab, ids.minecraft__andesite_slab, ids.minecraft__diorite_slab, ids.minecraft__granite_slab, ids.minecraft__polished_andesite_slab, ids.minecraft__polished_diorite_slab, ids.minecraft__polished_granite_slab, ids.minecraft__red_nether_brick_slab, ids.minecraft__smooth_sandstone_slab, ids.minecraft__cut_sandstone_slab, ids.minecraft__smooth_red_sandstone_slab, ids.minecraft__cut_red_sandstone_slab, ids.minecraft__end_stone_brick_slab, ids.minecraft__mossy_cobblestone_slab, ids.minecraft__mossy_stone_brick_slab, ids.minecraft__smooth_quartz_slab, ids.minecraft__smooth_stone_slab], data=list(range(16)), transparent=[ids.minecraft__stone_slab, ids.minecraft__sandstone_slab, ids.minecraft__cobblestone_slab, ids.minecraft__brick_slab, ids.minecraft__stone_brick_slab, ids.minecraft__nether_brick_slab, ids.minecraft__quartz_slab, ids.minecraft__red_sandstone_slab, ids.minecraft__purpur_slab, ids.minecraft__prismarine_slab, ids.minecraft__dark_prismarine_slab, ids.minecraft__prismarine_brick_slab, ids.minecraft__andesite_slab, ids.minecraft__diorite_slab, ids.minecraft__granite_slab, ids.minecraft__polished_andesite_slab, ids.minecraft__polished_diorite_slab, ids.minecraft__polished_granite_slab, ids.minecraft__red_nether_brick_slab, ids.minecraft__smooth_sandstone_slab, ids.minecraft__cut_sandstone_slab, ids.minecraft__smooth_red_sandstone_slab, ids.minecraft__cut_red_sandstone_slab, ids.minecraft__end_stone_brick_slab, ids.minecraft__mossy_cobblestone_slab, ids.minecraft__mossy_stone_brick_slab, ids.minecraft__smooth_quartz_slab, ids.minecraft__smooth_stone_slab], solid=True)
-def slabs(self, blockid, data):
-    # if blockid == 44 or blockid == 182: 
-    #     texture = data & 7
-    # else: # data > 8 are special double slabs
-    #     texture = data
-
-    if blockid == ids.minecraft__stone_slab:
+    elif blockid == ids.minecraft__crimson_slab:
+        top = side = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png")
+    elif blockid == ids.minecraft__warped_slab:
+        top = side = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png")
+    elif blockid == ids.minecraft__stone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/stone.png")
     elif blockid == ids.minecraft__sandstone_slab:
         top = self.load_image_texture("assets/minecraft/textures/block/sandstone_top.png")
@@ -1955,7 +1973,7 @@ def slabs(self, blockid, data):
     # if blockid == 43 or blockid == 181 or blockid == 204: # double slab
     #     return self.build_block(top, side)
 
-    return self.build_slab_block(top, side, data & 8 == 8)
+    return self.build_slab_block(top, side, data == 1)
 
 # brick block
 block(blockid=ids.minecraft__bricks, top_image="assets/minecraft/textures/block/bricks.png")
@@ -5149,7 +5167,7 @@ block(blockid=[ids.minecraft__quartz_block, ids.minecraft__smooth_quartz], top_i
 block(blockid=ids.minecraft__chiseled_quartz_block, top_image="assets/minecraft/textures/block/chiseled_quartz_block_top.png", side_image="assets/minecraft/textures/block/chiseled_quartz_block.png")
 
 # block of quartz
-@material(blockid=[ids.minecraft__smooth_quartz, ids.minecraft__quartz_pillar], data=list(range(5)), solid=True)
+@material(blockid=[ids.minecraft__quartz_pillar], data=list(range(5)), solid=True)
 def quartz_block(self, blockid, data):
     # pillar quartz block with orientation
     top = self.load_image_texture("assets/minecraft/textures/block/quartz_pillar_top.png")

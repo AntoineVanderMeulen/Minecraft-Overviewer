@@ -253,6 +253,8 @@ enum mc_block_id {
     block_mossy_stone_brick_slab = 643,
     block_smooth_quartz_slab = 648,
     block_smooth_stone_slab = 459,
+    block_crimson_slab = 706,
+    block_warped_slab = 707,
 
     block_brick = 136,
     block_tnt = 137,

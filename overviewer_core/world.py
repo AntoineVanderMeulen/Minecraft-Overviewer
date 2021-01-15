@@ -321,6 +321,9 @@ class RegionSet(object):
             'minecraft:jungle_planks': (ids.minecraft__jungle_planks, 0),
             'minecraft:acacia_planks': (ids.minecraft__acacia_planks, 0),
             'minecraft:dark_oak_planks': (ids.minecraft__dark_oak_planks, 0),
+            'minecraft:crimson_planks': (ids.minecraft__crimson_planks, 0),
+            'minecraft:warped_planks': (ids.minecraft__warped_planks, 0),
+
             'minecraft:oak_sapling': (ids.minecraft__oak_sapling, 0),
             'minecraft:spruce_sapling': (ids.minecraft__spruce_sapling, 0),
             'minecraft:birch_sapling': (ids.minecraft__birch_sapling, 0),
@@ -531,6 +534,8 @@ class RegionSet(object):
             "minecraft:mossy_stone_brick_slab": (ids.minecraft__mossy_stone_brick_slab, 0),  # 11356-0
             "minecraft:smooth_quartz_slab": (ids.minecraft__smooth_quartz_slab, 0),  # 11357-0
             "minecraft:smooth_stone_slab": (ids.minecraft__smooth_stone_slab, 0),  # 11358-0
+            "minecraft:crimson_slab": (ids.minecraft__crimson_slab, 0),
+            "minecraft:warped_slab": (ids.minecraft__warped_slab, 0),
 
             'minecraft:bricks': (ids.minecraft__bricks, 0),
             'minecraft:tnt': (ids.minecraft__tnt, 0),
@@ -1111,21 +1116,61 @@ class RegionSet(object):
         return "<RegionSet regiondir=%r>" % self.regiondir
 
     def _get_block(self, palette_entry):
-        wood_slabs = ('minecraft:oak_slab','minecraft:spruce_slab','minecraft:birch_slab','minecraft:jungle_slab',
-                        'minecraft:acacia_slab','minecraft:dark_oak_slab','minecraft:petrified_oak_slab')
-        stone_slabs = ('minecraft:stone_slab', 'minecraft:sandstone_slab','minecraft:red_sandstone_slab',
-                        'minecraft:cobblestone_slab', 'minecraft:brick_slab','minecraft:purpur_slab',
-                        'minecraft:stone_brick_slab', 'minecraft:nether_brick_slab',
-                        'minecraft:quartz_slab', "minecraft:andesite_slab", 'minecraft:diorite_slab',
-                        'minecraft:granite_slab', 'minecraft:polished_andesite_slab',
-                        'minecraft:polished_diorite_slab','minecraft:polished_granite_slab',
-                        'minecraft:red_nether_brick_slab','minecraft:smooth_sandstone_slab',
-                        'minecraft:cut_sandstone_slab','minecraft:smooth_red_sandstone_slab',
-                        'minecraft:cut_red_sandstone_slab','minecraft:end_stone_brick_slab',
-                        'minecraft:mossy_cobblestone_slab','minecraft:mossy_stone_brick_slab',
-                        'minecraft:smooth_quartz_slab','minecraft:smooth_stone_slab'
-                         )
-        prismarine_slabs = ('minecraft:prismarine_slab','minecraft:dark_prismarine_slab','minecraft:prismarine_brick_slab')
+        slabs = ['minecraft:stone_slab', 'minecraft:sandstone_slab', 'minecraft:oak_slab', 'minecraft:cobblestone_slab', 'minecraft:brick_slab', 'minecraft:stone_brick_slab', 'minecraft:nether_brick_slab', 'minecraft:quartz_slab', 'minecraft:spruce_slab', 'minecraft:birch_slab', 'minecraft:jungle_slab', 'minecraft:acacia_slab', 'minecraft:dark_oak_slab', 'minecraft:red_sandstone_slab', 'minecraft:purpur_slab', 'minecraft:petrified_oak_slab', 'minecraft:prismarine_slab', 'minecraft:dark_prismarine_slab', 'minecraft:prismarine_brick_slab', "minecraft:andesite_slab", "minecraft:diorite_slab", "minecraft:granite_slab", "minecraft:polished_andesite_slab", "minecraft:polished_diorite_slab", "minecraft:polished_granite_slab", "minecraft:red_nether_brick_slab", "minecraft:smooth_sandstone_slab", "minecraft:cut_sandstone_slab", "minecraft:smooth_red_sandstone_slab", "minecraft:cut_red_sandstone_slab", "minecraft:end_stone_brick_slab", "minecraft:mossy_cobblestone_slab", "minecraft:mossy_stone_brick_slab", "minecraft:smooth_quartz_slab", "minecraft:smooth_stone_slab", "minecraft:crimson_slab", "minecraft:warped_slab"]
+        double_slabs = {
+            'minecraft:stone_slab': ids.minecraft__stone,
+            'minecraft:sandstone_slab': ids.minecraft__sandstone,
+            'minecraft:oak_slab': ids.minecraft__oak_planks,
+            'minecraft:cobblestone_slab': ids.minecraft__cobblestone,
+            'minecraft:brick_slab': ids.minecraft__bricks,
+            'minecraft:stone_brick_slab': ids.minecraft__stone_bricks,
+            'minecraft:nether_brick_slab': ids.minecraft__nether_bricks,
+            'minecraft:quartz_slab': ids.minecraft__quartz_block,
+            'minecraft:spruce_slab': ids.minecraft__spruce_planks,
+            'minecraft:birch_slab': ids.minecraft__birch_planks,
+            'minecraft:jungle_slab': ids.minecraft__jungle_planks,
+            'minecraft:acacia_slab': ids.minecraft__acacia_planks,
+            'minecraft:dark_oak_slab': ids.minecraft__dark_oak_planks,
+            'minecraft:red_sandstone_slab': ids.minecraft__red_sandstone,
+            'minecraft:purpur_slab': ids.minecraft__purpur_block,
+            'minecraft:petrified_oak_slab': ids.minecraft__oak_planks,
+            'minecraft:prismarine_slab': ids.minecraft__prismarine,
+            'minecraft:dark_prismarine_slab': ids.minecraft__dark_prismarine,
+            'minecraft:prismarine_brick_slab': ids.minecraft__prismarine_bricks,
+            "minecraft:andesite_slab": ids.minecraft__andesite,
+            "minecraft:diorite_slab": ids.minecraft__diorite,
+            "minecraft:granite_slab": ids.minecraft__granite,
+            "minecraft:polished_andesite_slab": ids.minecraft__polished_andesite,
+            "minecraft:polished_diorite_slab": ids.minecraft__polished_diorite,
+            "minecraft:polished_granite_slab": ids.minecraft__polished_granite,
+            "minecraft:red_nether_brick_slab": ids.minecraft__red_nether_bricks,
+            "minecraft:smooth_sandstone_slab": ids.minecraft__smooth_sandstone,
+            "minecraft:cut_sandstone_slab": ids.minecraft__cut_sandstone,
+            "minecraft:smooth_red_sandstone_slab": ids.minecraft__smooth_red_sandstone,
+            "minecraft:cut_red_sandstone_slab": ids.minecraft__cut_red_sandstone,
+            "minecraft:end_stone_brick_slab": ids.minecraft__end_stone_bricks,
+            "minecraft:mossy_cobblestone_slab": ids.minecraft__mossy_cobblestone,
+            "minecraft:mossy_stone_brick_slab": ids.minecraft__mossy_stone_bricks,
+            "minecraft:smooth_quartz_slab": ids.minecraft__smooth_quartz,
+            "minecraft:smooth_stone_slab": ids.minecraft__smooth_stone,
+            "minecraft:crimson_slab": ids.minecraft__crimson_planks,
+            "minecraft:warped_slab": ids.minecraft__warped_planks,
+        }
+        # wood_slabs = ('minecraft:oak_slab','minecraft:spruce_slab','minecraft:birch_slab','minecraft:jungle_slab',
+        #                 'minecraft:acacia_slab','minecraft:dark_oak_slab','minecraft:petrified_oak_slab')
+        # stone_slabs = ('minecraft:stone_slab', 'minecraft:sandstone_slab','minecraft:red_sandstone_slab',
+        #                 'minecraft:cobblestone_slab', 'minecraft:brick_slab','minecraft:purpur_slab',
+        #                 'minecraft:stone_brick_slab', 'minecraft:nether_brick_slab',
+        #                 'minecraft:quartz_slab', "minecraft:andesite_slab", 'minecraft:diorite_slab',
+        #                 'minecraft:granite_slab', 'minecraft:polished_andesite_slab',
+        #                 'minecraft:polished_diorite_slab','minecraft:polished_granite_slab',
+        #                 'minecraft:red_nether_brick_slab','minecraft:smooth_sandstone_slab',
+        #                 'minecraft:cut_sandstone_slab','minecraft:smooth_red_sandstone_slab',
+        #                 'minecraft:cut_red_sandstone_slab','minecraft:end_stone_brick_slab',
+        #                 'minecraft:mossy_cobblestone_slab','minecraft:mossy_stone_brick_slab',
+        #                 'minecraft:smooth_quartz_slab','minecraft:smooth_stone_slab'
+        #                  )
+        # prismarine_slabs = ('minecraft:prismarine_slab','minecraft:dark_prismarine_slab','minecraft:prismarine_brick_slab')
 
         key = palette_entry['Name']
         (block, data) = self._blockmap[key]
@@ -1160,89 +1205,11 @@ class RegionSet(object):
         elif key in ['minecraft:sunflower', 'minecraft:lilac', 'minecraft:tall_grass', 'minecraft:large_fern', 'minecraft:rose_bush', 'minecraft:peony']:
             if palette_entry['Properties']['half'] == 'upper':
                 data = 1
-        elif key in wood_slabs + stone_slabs + prismarine_slabs:
-        # handle double slabs 
+        elif key in slabs:
             if palette_entry['Properties']['type'] == 'top':
-                data |= 0x08
+                data = 1
             elif palette_entry['Properties']['type'] == 'double':
-                if key in wood_slabs:
-                    block = 125         # block_double_wooden_slab
-                elif key in stone_slabs:
-                    if key == 'minecraft:stone_brick_slab':
-                        block = 98
-                    elif key == 'minecraft:stone_slab':
-                        block = 1      # stone data 0
-                    elif key == 'minecraft:cobblestone_slab':
-                        block = 4       # cobblestone
-                    elif key == 'minecraft:sandstone_slab':
-                        block = 24      # minecraft:sandstone
-                    elif key == 'minecraft:red_sandstone_slab':
-                        block = 179     # minecraft:red_sandstone
-                    elif key == 'minecraft:nether_brick_slab':
-                        block = 112     # minecraft:nether_bricks
-                    elif key == 'minecraft:quartz_slab':
-                        block = 155     # minecraft:quartz_block
-                    elif key == 'minecraft:brick_slab':
-                        block = 45      # minecraft:bricks
-                    elif key == 'minecraft:purpur_slab':
-                        block = 201     # minecraft:purpur_block
-                    elif key == 'minecraft:andesite_slab':
-                        block = 1   # minecraft:andesite
-                        data  = 5
-                    elif key == 'minecraft:diorite_slab':
-                        block = 1   # minecraft:diorite
-                        data  = 3
-                    elif key == 'minecraft:granite_slab':
-                        block = 1   # minecraft:granite
-                        data  = 1
-                    elif key == 'minecraft:polished_andesite_slab':
-                        block = 1   # minecraft: polished_andesite
-                        data  = 6
-                    elif key == 'minecraft:polished_diorite_slab':
-                        block = 1   # minecraft: polished_diorite
-                        data  = 4
-                    elif key == 'minecraft:polished_granite_slab':
-                        block = 1   # minecraft: polished_granite
-                        data  = 2
-                    elif key == 'minecraft:red_nether_brick_slab':
-                        block = 215   # minecraft: red_nether_brick
-                        data  = 0
-                    elif key == 'minecraft:smooth_sandstone_slab':
-                        block = 11314   # minecraft: smooth_sandstone
-                        data  = 0
-                    elif key == 'minecraft:cut_sandstone_slab':
-                        block = 24   # minecraft: cut_sandstone
-                        data  = 2
-                    elif key == 'minecraft:smooth_red_sandstone_slab':
-                        block = 11315   # minecraft: smooth_red_sandstone
-                        data  = 0
-                    elif key == 'minecraft:cut_red_sandstone_slab':
-                        block = 179   # minecraft: cut_red_sandstone
-                        data  = 2
-                    elif key == 'minecraft:end_stone_brick_slab':
-                        block = 206   # minecraft:end_stone_bricks
-                        data  = 0
-                    elif key == 'minecraft:mossy_cobblestone_slab':
-                        block = 48   # minecraft:mossy_cobblestone
-                        data  = 0
-                    elif key == 'minecraft:mossy_stone_brick_slab':
-                        block = 98   # minecraft:mossy_stone_bricks
-                        data  = 1
-                    elif key == 'minecraft:smooth_quartz_slab':
-                        block = 155   # minecraft:smooth_quartz
-                        data  = 0
-                    elif key == 'minecraft:smooth_stone_slab':
-                        block = 11313   # minecraft:smooth_stone
-                        data  = 0
-
-                elif key in  prismarine_slabs:
-                    block = 168         # minecraft:prismarine variants
-                    if key == 'minecraft:prismarine_slab':
-                        data = 0
-                    elif key == 'minecraft:prismarine_brick_slab':
-                        data = 1
-                    elif key == 'minecraft:dark_prismarine_slab':
-                        data = 2
+                block = double_slabs[key]
 
         elif key in ['minecraft:ladder', 'minecraft:chest', 'minecraft:ender_chest',
                      'minecraft:trapped_chest', 'minecraft:furnace',

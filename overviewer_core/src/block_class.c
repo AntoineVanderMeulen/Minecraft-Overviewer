@@ -300,8 +300,52 @@ const mc_block_t block_class_alt_height[] = {
     block_mossy_cobblestone_slab,
     block_mossy_stone_brick_slab,
     block_smooth_quartz_slab,
-    block_smooth_stone_slab};
+    block_smooth_stone_slab,
+    block_crimson_slab,
+    block_warped_slab
+    };
 const size_t block_class_alt_height_len = COUNT_OF(block_class_alt_height);
+
+const mc_block_t block_class_slab[] = {
+    block_oak_slab,
+    block_spruce_slab,
+    block_birch_slab,
+    block_jungle_slab,
+    block_acacia_slab,
+    block_dark_oak_slab,
+    block_petrified_oak_slab,
+    block_stone_slab,
+    block_sandstone_slab,
+    block_cobblestone_slab,
+    block_brick_slab,
+    block_stone_brick_slab,
+    block_nether_brick_slab,
+    block_quartz_slab,
+    block_red_sandstone_slab,
+    block_purpur_slab,
+    block_prismarine_slab,
+    block_dark_prismarine_slab,
+    block_prismarine_brick_slab,
+    block_andesite_slab,
+    block_diorite_slab,
+    block_granite_slab,
+    block_polished_andesite_slab,
+    block_polished_diorite_slab,
+    block_polished_granite_slab,
+    block_red_nether_brick_slab,
+    block_smooth_sandstone_slab,
+    block_cut_sandstone_slab,
+    block_smooth_red_sandstone_slab,
+    block_cut_red_sandstone_slab,
+    block_end_stone_brick_slab,
+    block_mossy_cobblestone_slab,
+    block_mossy_stone_brick_slab,
+    block_smooth_quartz_slab,
+    block_smooth_stone_slab,
+    block_crimson_slab,
+    block_warped_slab
+    };
+const size_t block_class_slab_len = COUNT_OF(block_class_slab);
 
 const mc_block_t block_class_nether_roof[] = {
     block_bedrock,

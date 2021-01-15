@@ -18,6 +18,8 @@ minecraft__birch_planks = 15
 minecraft__jungle_planks = 16
 minecraft__acacia_planks = 17
 minecraft__dark_oak_planks = 18
+minecraft__crimson_planks = 704
+minecraft__warped_planks = 705
 
 minecraft__oak_sapling = 19
 minecraft__spruce_sapling = 20
@@ -182,6 +184,9 @@ minecraft__jungle_slab = 455
 minecraft__acacia_slab = 456
 minecraft__dark_oak_slab = 457
 minecraft__petrified_oak_slab = 462
+minecraft__crimson_slab = 706
+minecraft__warped_slab = 707
+
 
 minecraft__stone_slab = 458
 minecraft__sandstone_slab = 460
@@ -741,8 +746,7 @@ minecraft__lantern = 678
 
 # TODO
 minecraft__end_gateway = 499
-minecraft__crimson_slab = 706
-minecraft__warped_slab = 707
+
 minecraft__blackstone_slab = 746
 minecraft__polished_blackstone_slab = 756
 minecraft__crimson_stairs = 716
@@ -885,8 +889,7 @@ minecraft__soul_lantern = 679
 
 
 minecraft__nether_sprouts = 691
-minecraft__crimson_planks = 704
-minecraft__warped_planks = 705
+
 
 minecraft__crimson_door = 720
 minecraft__warped_door = 721
