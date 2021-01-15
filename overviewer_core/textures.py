@@ -4734,11 +4734,14 @@ block(blockid=ids.minecraft__end_stone, top_image="assets/minecraft/textures/blo
 # NOTE: this isn't a block, but I think it's better than nothing
 block(blockid=ids.minecraft__dragon_egg, top_image="assets/minecraft/textures/block/dragon_egg.png")
 
-# inactive redstone lamp
-block(blockid=ids.minecraft__redstone_lamp, top_image="assets/minecraft/textures/block/redstone_lamp.png")
-
-# active redstone lamp
-block(blockid=124, top_image="assets/minecraft/textures/block/redstone_lamp_on.png")
+# inactive redstone lamp active redstone lamp
+@material(blockid=ids.minecraft__redstone_lamp, data=[0, 1], solid=True)
+def redstone_lamp(self, blockid, data):
+    if data == 0:
+        tex = self.load_image_texture("assets/minecraft/textures/block/redstone_lamp.png")
+    else:
+        tex = self.load_image_texture("assets/minecraft/textures/block/redstone_lamp_on.png")
+    return self.build_block(tex, tex)
 
 # daylight sensor.  
 @material(blockid=[ids.minecraft__daylight_detector], transparent=True)
