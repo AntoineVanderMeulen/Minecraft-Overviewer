@@ -100,7 +100,7 @@ const mc_block_t block_class_stair[] = {
 const size_t block_class_stair_len = COUNT_OF(block_class_stair);
 
 const mc_block_t block_class_door[] = {
-    block_wooden_door,
+    block_oak_door,
     block_iron_door,
     block_spruce_door,
     block_birch_door,
@@ -110,26 +110,26 @@ const mc_block_t block_class_door[] = {
 const size_t block_class_door_len = COUNT_OF(block_class_door);
 
 const mc_block_t block_class_fence[] = {
-    block_fence,
-    block_nether_brick_fence,
+    block_oak_fence,
     block_spruce_fence,
     block_birch_fence,
     block_jungle_fence,
+    block_acacia_fence,
     block_dark_oak_fence,
-    block_acacia_fence};
+    block_nether_brick_fence};
 const size_t block_class_fence_len = COUNT_OF(block_class_fence);
 
 const mc_block_t block_class_fence_gate[] = {
-    block_fence_gate,
+    block_oak_fence_gate,
     block_spruce_fence_gate,
     block_birch_fence_gate,
     block_jungle_fence_gate,
-    block_dark_oak_fence_gate,
-    block_acacia_fence_gate};
+    block_acacia_fence_gate,
+    block_dark_oak_fence_gate};
 const size_t block_class_fence_gate_len = COUNT_OF(block_class_fence_gate);
 
 const mc_block_t block_class_ancil[] = {
-    block_wooden_door,
+    block_oak_door,
     block_iron_door,
     block_spruce_door,
     block_birch_door,
@@ -167,17 +167,17 @@ const mc_block_t block_class_ancil[] = {
     block_end_stone_brick_stairs,
     block_red_nether_brick_stairs,
     block_smooth_sandstone_stairs,
-    block_grass,
+    block_grass_block,
     block_flowing_water,
     block_water,
     block_glass,
     block_redstone_wire,
     block_ice,
-    block_fence,
-    block_portal,
+    block_oak_fence,
+    block_nether_portal,
     block_iron_bars,
     block_glass_pane,
-    block_waterlily,
+    block_lily_pad,
     block_nether_brick_fence,
     block_andesite_wall,
     block_brick_wall,
@@ -194,8 +194,40 @@ const mc_block_t block_class_ancil[] = {
     block_sandstone_wall,
     block_stone_brick_wall,
     block_double_plant,
-    block_stained_glass_pane,
-    block_stained_glass,
+    block_white_stained_glass_pane,
+    block_orange_stained_glass_pane,
+    block_magenta_stained_glass_pane,
+    block_light_blue_stained_glass_pane,
+    block_yellow_stained_glass_pane,
+    block_lime_stained_glass_pane,
+    block_pink_stained_glass_pane,
+    block_gray_stained_glass_pane,
+    block_light_gray_stained_glass_pane,
+    block_cyan_stained_glass_pane,
+    block_purple_stained_glass_pane,
+    block_blue_stained_glass_pane,
+    block_brown_stained_glass_pane,
+    block_green_stained_glass_pane,
+    block_red_stained_glass_pane,
+    block_black_stained_glass_pane,
+
+    block_white_stained_glass,
+    block_orange_stained_glass,
+    block_magenta_stained_glass,
+    block_light_blue_stained_glass,
+    block_yellow_stained_glass,
+    block_lime_stained_glass,
+    block_pink_stained_glass,
+    block_gray_stained_glass,
+    block_light_gray_stained_glass,
+    block_cyan_stained_glass,
+    block_purple_stained_glass,
+    block_blue_stained_glass,
+    block_brown_stained_glass,
+    block_green_stained_glass,
+    block_red_stained_glass,
+    block_black_stained_glass,
+
     block_spruce_fence,
     block_birch_fence,
     block_jungle_fence,
@@ -204,7 +236,6 @@ const mc_block_t block_class_ancil[] = {
 const size_t block_class_ancil_len = COUNT_OF(block_class_ancil);
 
 const mc_block_t block_class_alt_height[] = {
-    block_stone_slab,
     block_oak_stairs,
     block_brick_stairs,
     block_stone_brick_stairs,
@@ -235,6 +266,22 @@ const mc_block_t block_class_alt_height[] = {
     block_end_stone_brick_stairs,
     block_red_nether_brick_stairs,
     block_smooth_sandstone_stairs,
+    block_oak_slab,
+    block_spruce_slab,
+    block_birch_slab,
+    block_jungle_slab,
+    block_acacia_slab,
+    block_dark_oak_slab,
+    block_petrified_oak_slab,
+    block_stone_slab,
+    block_sandstone_slab,
+    block_cobblestone_slab,
+    block_brick_slab,
+    block_stone_brick_slab,
+    block_nether_brick_slab,
+    block_quartz_slab,
+    block_red_sandstone_slab,
+    block_purpur_slab,
     block_prismarine_slab,
     block_dark_prismarine_slab,
     block_prismarine_brick_slab,
@@ -253,17 +300,13 @@ const mc_block_t block_class_alt_height[] = {
     block_mossy_cobblestone_slab,
     block_mossy_stone_brick_slab,
     block_smooth_quartz_slab,
-    block_smooth_stone_slab,
-    block_stone_slab2,
-    block_purpur_stairs,
-    block_purpur_slab,
-    block_wooden_slab};
+    block_smooth_stone_slab};
 const size_t block_class_alt_height_len = COUNT_OF(block_class_alt_height);
 
 const mc_block_t block_class_nether_roof[] = {
     block_bedrock,
     block_netherrack,
-    block_quartz_ore,
+    block_nether_quartz_ore,
     block_lava,
     block_soul_sand,
     block_basalt,

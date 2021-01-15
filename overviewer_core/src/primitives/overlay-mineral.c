@@ -41,7 +41,7 @@ static struct MineralColor default_minerals[] = {
 
     {block_iron_ore, 204, 204, 204},
     {block_redstone_ore, 186, 0, 0},
-    {block_lit_redstone_ore, 186, 0, 0},
+    // {block_lit_redstone_ore, 186, 0, 0},
     {block_coal_ore, 54, 54, 54},
 
     /* end of list marker */

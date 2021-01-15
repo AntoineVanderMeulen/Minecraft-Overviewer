@@ -94,11 +94,13 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
      * biome-compliant ones! The tinting is now all done here.
      */
     if (/* grass, but not snowgrass */
-        (state->block == block_grass && get_data(state, BLOCKS, state->x, state->y + 1, state->z) != 78) ||
-        block_class_is_subset(state->block, (mc_block_t[]){block_vine, block_waterlily, block_flowing_water, block_water, block_leaves, block_leaves2},
-                              6) ||
+        (state->block == block_grass_block && get_data(state, BLOCKS, state->x, state->y + 1, state->z) != 78) ||
+        block_class_is_subset(state->block, (mc_block_t[]){block_vine, block_lily_pad, block_flowing_water, block_water, block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves},
+                              10) ||
         /* tallgrass, but not dead shrubs */
-        (state->block == block_tallgrass && state->block_data != 0) ||
+        (state->block == block_tall_grass) ||
+        (state->block == block_grass) ||
+        (state->block == block_fern) ||
         /* pumpkin/melon stem, not fully grown. Fully grown stems
          * get constant brown color (see textures.py) */
         (((state->block == block_pumpkin_stem) || (state->block == block_melon_stem)) && (state->block_data != 7)) ||
@@ -112,15 +114,16 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
         PyObject* color_table = NULL;
         bool flip_xy = false;
 
-        if (state->block == block_grass) {
+        if (state->block == block_grass_block) {
             /* grass needs a special facemask */
             facemask = self->grass_texture;
         }
-        if (block_class_is_subset(state->block, (mc_block_t[]){block_grass, block_tallgrass, block_pumpkin_stem, block_melon_stem, block_vine, block_waterlily, block_double_plant}, 7)) {
+
+        if (block_class_is_subset(state->block, (mc_block_t[]){block_grass_block, block_dead_bush, block_grass, block_fern, block_pumpkin_stem, block_melon_stem, block_vine, block_lily_pad, block_double_plant, block_attached_pumpkin_stem, block_attached_melon_stem, block_tall_grass}, 12)) {
             color_table = self->grasscolor;
         } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
             color_table = self->watercolor;
-        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_leaves, block_leaves2}, 2)) {
+        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
             color_table = self->foliagecolor;
             /* birch foliage color is flipped XY-ways */
             flip_xy = state->block_data == 2;

@@ -253,7 +253,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
     int32_t x = state->x, y = state->y, z = state->z;
     uint16_t data = 0;
 
-    if (state->block == block_grass) { /* grass */
+    if (state->block == block_grass_block) { /* grass */
         /* return 0x10 if grass is covered in snow */
         if (get_data(state, BLOCKS, x, y + 1, z) == 78)
             return 0x10;
@@ -264,12 +264,29 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         if (get_data(state, BLOCKS, x, y + 1, z) != state->block)
             data |= 0x10;
         return data;
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_glass, block_ice, block_stained_glass}, 3)) { /* glass and ice and stained glass*/
+    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_glass, block_ice, block_white_stained_glass, block_orange_stained_glass, block_magenta_stained_glass, block_light_blue_stained_glass, block_yellow_stained_glass, block_lime_stained_glass, block_pink_stained_glass, block_gray_stained_glass, block_light_gray_stained_glass, block_cyan_stained_glass, block_purple_stained_glass, block_blue_stained_glass, block_brown_stained_glass, block_green_stained_glass, block_red_stained_glass, block_black_stained_glass}, 18)) { /* glass and ice and stained glass*/
         /* an aditional bit for top is added to the 4 bits of check_adjacent_blocks
          * Note that stained glass encodes 16 colors using 4 bits.  this pushes us over the 8-bits of an uint8_t, 
          * forcing us to use an uint16_t to hold 16 bits of pseudo ancil data
          * */
-        if ((get_data(state, BLOCKS, x, y + 1, z) == 20) || (get_data(state, BLOCKS, x, y + 1, z) == 95)) {
+        if ((get_data(state, BLOCKS, x, y + 1, z) == block_glass) || 
+            (get_data(state, BLOCKS, x, y + 1, z) == block_white_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_orange_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_magenta_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_light_blue_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_yellow_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_lime_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_pink_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_gray_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_light_gray_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_cyan_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_purple_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_blue_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_brown_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_green_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_red_stained_glass) ||
+            (get_data(state, BLOCKS, x, y + 1, z) == block_black_stained_glass)
+            ) {
             data = 0;
         } else {
             data = 16;
@@ -278,8 +295,8 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         return (data << 4) | (ancilData & 0x0f);
     } else if (block_class_is_subset(state->block, block_class_fence, block_class_fence_len)) { /* fences */
         /* check for fences AND fence gates */
-        return check_adjacent_blocks(state, x, y, z, state->block) | check_adjacent_blocks(state, x, y, z, block_fence_gate) |
-               check_adjacent_blocks(state, x, y, z, block_fence_gate) | check_adjacent_blocks(state, x, y, z, block_birch_fence_gate) | check_adjacent_blocks(state, x, y, z, block_jungle_fence_gate) |
+        return check_adjacent_blocks(state, x, y, z, state->block) | check_adjacent_blocks(state, x, y, z, block_oak_fence_gate) |
+               check_adjacent_blocks(state, x, y, z, block_oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_birch_fence_gate) | check_adjacent_blocks(state, x, y, z, block_jungle_fence_gate) |
                check_adjacent_blocks(state, x, y, z, block_dark_oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_acacia_fence_gate);
 
     } else if (state->block == block_redstone_wire) { /* redstone */
@@ -316,7 +333,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         }
         return final_data;
 
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_iron_bars, block_glass_pane, block_stained_glass_pane}, 3)) {
+    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_iron_bars, block_glass_pane, block_white_stained_glass_pane, block_orange_stained_glass_pane, block_magenta_stained_glass_pane, block_light_blue_stained_glass_pane, block_yellow_stained_glass_pane, block_lime_stained_glass_pane, block_pink_stained_glass_pane, block_gray_stained_glass_pane, block_light_gray_stained_glass_pane, block_cyan_stained_glass_pane, block_purple_stained_glass_pane, block_blue_stained_glass_pane, block_brown_stained_glass_pane, block_green_stained_glass_pane, block_red_stained_glass_pane, block_black_stained_glass_pane}, 18)) {
         /* iron bars and glass panes:
          * they seem to stick to almost everything but air,
          * not sure yet! Still a TODO! */
@@ -325,7 +342,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         data = (check_adjacent_blocks(state, x, y, z, 0) ^ 0x0f);
         return (data << 4) | (ancilData & 0xf);
 
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_portal, block_nether_brick_fence}, 2)) {
+    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_nether_portal, block_nether_brick_fence}, 2)) {
         /* portal and nether brick fences */
         return check_adjacent_blocks(state, x, y, z, state->block);
 
@@ -361,7 +378,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         } else {
             return check_adjacent_blocks(state, x, y, z, state->block);
         }
-    } else if (state->block == block_waterlily) {
+    } else if (state->block == block_lily_pad) {
         int32_t wx, wz, wy, rotation;
         int64_t pr;
         /* calculate the global block coordinates of this position */
@@ -651,7 +668,7 @@ chunk_render(PyObject* self, PyObject* args) {
                 /* if we found a proper texture, render it! */
                 if (t != NULL && t != Py_None) {
                     PyObject *src, *mask, *mask_light;
-                    int32_t do_rand = (state.block == block_tallgrass /*|| state.block == block_red_flower || state.block == block_double_plant*/);
+                    int32_t do_rand = (state.block == block_grass || state.block == block_fern /*|| state.block == block_red_flower || state.block == block_double_plant*/);
                     int32_t randx = 0, randy = 0;
                     src = PyTuple_GetItem(t, 0);
                     mask = PyTuple_GetItem(t, 0);
