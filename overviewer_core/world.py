@@ -1156,6 +1156,7 @@ class RegionSet(object):
             "minecraft:crimson_slab": ids.minecraft__crimson_planks,
             "minecraft:warped_slab": ids.minecraft__warped_planks,
         }
+        power_rail = ['minecraft:powered_rail', 'minecraft:detector_rail', 'minecraft:activator_rail']
         # wood_slabs = ('minecraft:oak_slab','minecraft:spruce_slab','minecraft:birch_slab','minecraft:jungle_slab',
         #                 'minecraft:acacia_slab','minecraft:dark_oak_slab','minecraft:petrified_oak_slab')
         # stone_slabs = ('minecraft:stone_slab', 'minecraft:sandstone_slab','minecraft:red_sandstone_slab',
@@ -1185,7 +1186,7 @@ class RegionSet(object):
         elif key.endswith('rail'):
             shape = palette_entry['Properties']['shape']
             data = {'north_south':0, 'east_west': 1, 'ascending_east': 2, 'ascending_west': 3, 'ascending_north': 4, 'ascending_south': 5, 'south_east': 6, 'south_west': 7, 'north_west': 8, 'north_east': 9}[shape]
-            if key == 'minecraft:powered_rail' and palette_entry['Properties']['powered'] == 'true':
+            if key in power_rail and palette_entry['Properties']['powered'] == 'true':
                 data |= 8
         elif key in ['minecraft:comparator', 'minecraft:repeater']:
             # Bits 1-2 indicates facing, bits 3-4 indicates delay

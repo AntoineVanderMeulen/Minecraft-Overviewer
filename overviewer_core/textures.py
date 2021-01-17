@@ -1347,9 +1347,9 @@ def furnaces(self, blockid, data):
         return self.build_full_block(top, None, None, side, side)
 
 # sandstone
-block(blockid=ids.minecraft__sandstone, top_image="assets/minecraft/textures/block/sandstone.png")
-block(blockid=ids.minecraft__chiseled_sandstone, top_image="assets/minecraft/textures/block/chiseled_sandstone.png")
-block(blockid=ids.minecraft__cut_sandstone, top_image="assets/minecraft/textures/block/cut_sandstone.png")
+block(blockid=ids.minecraft__sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png", side_image="assets/minecraft/textures/block/sandstone.png")
+block(blockid=ids.minecraft__chiseled_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png", side_image="assets/minecraft/textures/block/chiseled_sandstone.png")
+block(blockid=ids.minecraft__cut_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png", side_image="assets/minecraft/textures/block/cut_sandstone.png")
 # @material(blockid=24, data=list(range(3)), solid=True)
 # def sandstone(self, blockid, data):
 #     top = self.load_image_texture("assets/minecraft/textures/block/sandstone_top.png")
@@ -1517,23 +1517,23 @@ def rails(self, blockid, data):
         elif (data & 0b0111) == 3: data = data & 0b1000 | 5
         elif (data & 0b0111) == 4: data = data & 0b1000 | 3
         elif (data & 0b0111) == 5: data = data & 0b1000 | 2
-    if blockid == 66: # normal minetrack only
-        #Corners
-        if self.rotation == 1:
-            if data == 6: data = 7
-            elif data == 7: data = 8
-            elif data == 8: data = 6
-            elif data == 9: data = 9
-        elif self.rotation == 2:
-            if data == 6: data = 8
-            elif data == 7: data = 9
-            elif data == 8: data = 6
-            elif data == 9: data = 7
-        elif self.rotation == 3:
-            if data == 6: data = 9
-            elif data == 7: data = 6
-            elif data == 8: data = 8
-            elif data == 9: data = 7
+    # if blockid == 66: # normal minetrack only
+    #     #Corners
+    #     if self.rotation == 1:
+    #         if data == 6: data = 7
+    #         elif data == 7: data = 8
+    #         elif data == 8: data = 6
+    #         elif data == 9: data = 9
+    #     elif self.rotation == 2:
+    #         if data == 6: data = 8
+    #         elif data == 7: data = 9
+    #         elif data == 8: data = 6
+    #         elif data == 9: data = 7
+    #     elif self.rotation == 3:
+    #         if data == 6: data = 9
+    #         elif data == 7: data = 6
+    #         elif data == 8: data = 8
+    #         elif data == 9: data = 7
     img = Image.new("RGBA", (24,24), self.bgcolor)
 
     if blockid == ids.minecraft__powered_rail: # powered rail
@@ -1548,8 +1548,14 @@ def rails(self, blockid, data):
         data = data & 0x7
             
     elif blockid == ids.minecraft__detector_rail: # detector rail
-        raw_straight = self.load_image_texture("assets/minecraft/textures/block/detector_rail.png")
-        raw_corner = self.load_image_texture("assets/minecraft/textures/block/rail_corner.png")    # leave corners for code simplicity
+        if data & 0x8 == 0: # unpowered
+            raw_straight = self.load_image_texture("assets/minecraft/textures/block/detector_rail.png")
+            raw_corner = self.load_image_texture("assets/minecraft/textures/block/rail_corner.png")    # leave corners for code simplicity
+        elif data & 0x8 == 0x8: # powered
+            raw_straight = self.load_image_texture("assets/minecraft/textures/block/detector_rail_on.png")
+            raw_corner = self.load_image_texture("assets/minecraft/textures/block/rail_corner.png")
+        # filter the 'powered' bit
+        data = data & 0x7
         
     elif blockid == ids.minecraft__rail: # normal rail
         raw_straight = self.load_image_texture("assets/minecraft/textures/block/rail.png")
