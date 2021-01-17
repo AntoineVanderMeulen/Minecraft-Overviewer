@@ -302,6 +302,7 @@ class RegionSet(object):
             'minecraft:air': (0, 0),
             'minecraft:cave_air': (0, 0),
             'minecraft:void_air': (0, 0),
+
             'minecraft:stone': (ids.minecraft__stone, 0),
             'minecraft:granite': (ids.minecraft__granite, 0),
             'minecraft:polished_granite': (ids.minecraft__polished_granite, 0),
@@ -457,7 +458,6 @@ class RegionSet(object):
             'minecraft:piston_head': (ids.minecraft__piston_head, 0),
 
             'minecraft:cobweb': (ids.minecraft__cobweb, 0),
-
             'minecraft:dead_bush': (ids.minecraft__dead_bush, 0),
             'minecraft:grass': (ids.minecraft__grass, 0),
             'minecraft:fern': (ids.minecraft__fern, 0),
@@ -539,7 +539,6 @@ class RegionSet(object):
 
             'minecraft:bricks': (ids.minecraft__bricks, 0),
             'minecraft:tnt': (ids.minecraft__tnt, 0),
-
             'minecraft:bookshelf': (ids.minecraft__bookshelf, 0),
             'minecraft:mossy_cobblestone': (ids.minecraft__mossy_cobblestone, 0),
             'minecraft:obsidian': (ids.minecraft__obsidian, 0),
@@ -570,9 +569,9 @@ class RegionSet(object):
             'minecraft:prismarine_stairs': (ids.minecraft__prismarine_stairs, 0),  # 11337
             'minecraft:dark_prismarine_stairs': (ids.minecraft__dark_prismarine_stairs, 0),  # 11338
             'minecraft:prismarine_brick_stairs': (ids.minecraft__prismarine_brick_stairs, 0),  # 11339
-            "minecraft:mossy_stone_brick_stairs": (ids.minecraft__mossy_stone_brick_stairs, 0),  # 11370
-            "minecraft:mossy_cobblestone_stairs": (ids.minecraft__mossy_cobblestone_stairs, 0),  # 11371
-            "minecraft:smooth_sandstone_stairs": (ids.minecraft__smooth_sandstone_stairs, 0),  # 11374
+            'minecraft:mossy_stone_brick_stairs': (ids.minecraft__mossy_stone_brick_stairs, 0),  # 11370
+            'minecraft:mossy_cobblestone_stairs': (ids.minecraft__mossy_cobblestone_stairs, 0),  # 11371
+            'minecraft:smooth_sandstone_stairs': (ids.minecraft__smooth_sandstone_stairs, 0),  # 11374
             'minecraft:smooth_quartz_stairs': (ids.minecraft__smooth_quartz_stairs, 0),  # 11375
             'minecraft:polished_granite_stairs': (ids.minecraft__polished_granite_stairs, 0),  # 11376
             'minecraft:polished_diorite_stairs': (ids.minecraft__polished_diorite_stairs, 0),  # 11377
@@ -583,7 +582,7 @@ class RegionSet(object):
             'minecraft:andesite_stairs': (ids.minecraft__andesite_stairs, 0),  # 11382
             'minecraft:end_stone_brick_stairs': (ids.minecraft__end_stone_brick_stairs, 0),  # 11383
             'minecraft:red_nether_brick_stairs': (ids.minecraft__red_nether_brick_stairs, 0),  # 11384
-            "minecraft:smooth_red_sandstone_stairs": (ids.minecraft__smooth_red_sandstone_stairs, 0),  # 11415
+            'minecraft:smooth_red_sandstone_stairs': (ids.minecraft__smooth_red_sandstone_stairs, 0),  # 11415
 
             'minecraft:chest': (ids.minecraft__chest, 0),
             'minecraft:ender_chest': (ids.minecraft__ender_chest, 0),
@@ -862,8 +861,8 @@ class RegionSet(object):
             'minecraft:slime_block': (ids.minecraft__slime_block, 0),  # 165
 
             'minecraft:anvil': (ids.minecraft__anvil, 0),  # 145
-            'minecraft:chipped_anvil': (ids.minecraft__chipped_anvil, 4),  # 145
-            'minecraft:damaged_anvil': (ids.minecraft__damaged_anvil, 8),  # 145
+            'minecraft:chipped_anvil': (ids.minecraft__chipped_anvil, 0),  # 145
+            'minecraft:damaged_anvil': (ids.minecraft__damaged_anvil, 0),  # 145
 
             'minecraft:chorus_plant': (ids.minecraft__chorus_plant, 0),  # 199
             'minecraft:andesite_wall': (ids.minecraft__andesite_wall, 0),  # 1792
@@ -1090,6 +1089,383 @@ class RegionSet(object):
             # adding a gap in the numbering of walls to keep them all
         }
 
+        self.group_slabs = [ids.minecraft__stone_slab, ids.minecraft__sandstone_slab, ids.minecraft__oak_slab, ids.minecraft__cobblestone_slab, ids.minecraft__brick_slab, ids.minecraft__stone_brick_slab, ids.minecraft__nether_brick_slab, ids.minecraft__quartz_slab, ids.minecraft__spruce_slab, ids.minecraft__birch_slab, ids.minecraft__jungle_slab, ids.minecraft__acacia_slab, ids.minecraft__dark_oak_slab, ids.minecraft__red_sandstone_slab, ids.minecraft__purpur_slab, ids.minecraft__petrified_oak_slab, ids.minecraft__prismarine_slab, ids.minecraft__dark_prismarine_slab, ids.minecraft__prismarine_brick_slab, ids.minecraft__andesite_slab, ids.minecraft__diorite_slab, ids.minecraft__granite_slab, ids.minecraft__polished_andesite_slab, ids.minecraft__polished_diorite_slab, ids.minecraft__polished_granite_slab, ids.minecraft__red_nether_brick_slab, ids.minecraft__smooth_sandstone_slab, ids.minecraft__cut_sandstone_slab, ids.minecraft__smooth_red_sandstone_slab, ids.minecraft__cut_red_sandstone_slab, ids.minecraft__end_stone_brick_slab, ids.minecraft__mossy_cobblestone_slab, ids.minecraft__mossy_stone_brick_slab, ids.minecraft__smooth_quartz_slab, ids.minecraft__smooth_stone_slab, ids.minecraft__crimson_slab, ids.minecraft__warped_slab]
+
+        self.double_slabs = {
+            ids.minecraft__stone_slab: ids.minecraft__stone,
+            ids.minecraft__sandstone_slab: ids.minecraft__sandstone,
+            ids.minecraft__oak_slab: ids.minecraft__oak_planks,
+            ids.minecraft__cobblestone_slab: ids.minecraft__cobblestone,
+            ids.minecraft__brick_slab: ids.minecraft__bricks,
+            ids.minecraft__stone_brick_slab: ids.minecraft__stone_bricks,
+            ids.minecraft__nether_brick_slab: ids.minecraft__nether_bricks,
+            ids.minecraft__quartz_slab: ids.minecraft__quartz_block,
+            ids.minecraft__spruce_slab: ids.minecraft__spruce_planks,
+            ids.minecraft__birch_slab: ids.minecraft__birch_planks,
+            ids.minecraft__jungle_slab: ids.minecraft__jungle_planks,
+            ids.minecraft__acacia_slab: ids.minecraft__acacia_planks,
+            ids.minecraft__dark_oak_slab: ids.minecraft__dark_oak_planks,
+            ids.minecraft__red_sandstone_slab: ids.minecraft__red_sandstone,
+            ids.minecraft__purpur_slab: ids.minecraft__purpur_block,
+            ids.minecraft__petrified_oak_slab: ids.minecraft__oak_planks,
+            ids.minecraft__prismarine_slab: ids.minecraft__prismarine,
+            ids.minecraft__dark_prismarine_slab: ids.minecraft__dark_prismarine,
+            ids.minecraft__prismarine_brick_slab: ids.minecraft__prismarine_bricks,
+            ids.minecraft__andesite_slab: ids.minecraft__andesite,
+            ids.minecraft__diorite_slab: ids.minecraft__diorite,
+            ids.minecraft__granite_slab: ids.minecraft__granite,
+            ids.minecraft__polished_andesite_slab: ids.minecraft__polished_andesite,
+            ids.minecraft__polished_diorite_slab: ids.minecraft__polished_diorite,
+            ids.minecraft__polished_granite_slab: ids.minecraft__polished_granite,
+            ids.minecraft__red_nether_brick_slab: ids.minecraft__red_nether_bricks,
+            ids.minecraft__smooth_sandstone_slab: ids.minecraft__smooth_sandstone,
+            ids.minecraft__cut_sandstone_slab: ids.minecraft__cut_sandstone,
+            ids.minecraft__smooth_red_sandstone_slab: ids.minecraft__smooth_red_sandstone,
+            ids.minecraft__cut_red_sandstone_slab: ids.minecraft__cut_red_sandstone,
+            ids.minecraft__end_stone_brick_slab: ids.minecraft__end_stone_bricks,
+            ids.minecraft__mossy_cobblestone_slab: ids.minecraft__mossy_cobblestone,
+            ids.minecraft__mossy_stone_brick_slab: ids.minecraft__mossy_stone_bricks,
+            ids.minecraft__smooth_quartz_slab: ids.minecraft__smooth_quartz,
+            ids.minecraft__smooth_stone_slab: ids.minecraft__smooth_stone,
+            ids.minecraft__crimson_slab: ids.minecraft__crimson_planks,
+            ids.minecraft__warped_slab: ids.minecraft__warped_planks,
+        }
+
+        self.group_gate = [
+            ids.minecraft__oak_fence_gate,
+            ids.minecraft__spruce_fence_gate,
+            ids.minecraft__birch_fence_gate,
+            ids.minecraft__jungle_fence_gate,
+            ids.minecraft__acacia_fence_gate,
+            ids.minecraft__dark_oak_fence_gate,
+        ]
+
+        self.group_rail = [
+            ids.minecraft__rail,
+            ids.minecraft__powered_rail,
+            ids.minecraft__detector_rail,
+            ids.minecraft__activator_rail,
+        ]
+
+        self.group_power_rail = [
+            ids.minecraft__powered_rail,
+            ids.minecraft__detector_rail,
+            ids.minecraft__activator_rail,
+        ]
+
+        self.group_redstone_device = [
+            ids.minecraft__comparator,
+            ids.minecraft__repeater,
+        ]
+
+        self.group_tall_sprite = [
+            ids.minecraft__sunflower,
+            ids.minecraft__lilac,
+            ids.minecraft__tall_grass,
+            ids.minecraft__large_fern,
+            ids.minecraft__rose_bush,
+            ids.minecraft__peony,
+        ]
+
+        self.group_only_facing = [
+            ids.minecraft__ladder,
+        ]
+
+        self.group_chest = [
+            ids.minecraft__chest,
+            ids.minecraft__ender_chest,
+            ids.minecraft__trapped_chest,
+        ]
+
+        self.group_furnace_smoker = [
+            ids.minecraft__furnace,
+            ids.minecraft__blast_furnace,
+            ids.minecraft__smoker,
+        ]
+
+        self.group_bee = [
+            ids.minecraft__beehive,
+            ids.minecraft__bee_nest,
+        ]
+
+        self.group_button = [
+            ids.minecraft__stone_button,
+            ids.minecraft__oak_button,
+            ids.minecraft__spruce_button,
+            ids.minecraft__birch_button,
+            ids.minecraft__jungle_button,
+            ids.minecraft__acacia_button,
+            ids.minecraft__dark_oak_button,
+        ]
+
+        self.group_age = [
+            ids.minecraft__nether_wart,
+            ids.minecraft__beetroots,
+            ids.minecraft__melon_stem,
+            ids.minecraft__wheat,
+            ids.minecraft__pumpkin_stem,
+            ids.minecraft__potatoes,
+            ids.minecraft__carrots,
+            ids.minecraft__sweet_berry_bus
+        ]
+
+        self.group_shulker = [
+            ids.minecraft__shulker_box,
+            ids.minecraft__white_shulker_box,
+            ids.minecraft__orange_shulker_box,
+            ids.minecraft__magenta_shulker_box,
+            ids.minecraft__light_blue_shulker_box,
+            ids.minecraft__yellow_shulker_box,
+            ids.minecraft__lime_shulker_box,
+            ids.minecraft__pink_shulker_box,
+            ids.minecraft__gray_shulker_box,
+            ids.minecraft__light_gray_shulker_box,
+            ids.minecraft__cyan_shulker_box,
+            ids.minecraft__purple_shulker_box,
+            ids.minecraft__blue_shulker_box,
+            ids.minecraft__brown_shulker_box,
+            ids.minecraft__green_shulker_box,
+            ids.minecraft__red_shulker_box,
+            ids.minecraft__black_shulker_box,
+        ]
+
+        self.group_piston = [
+            ids.minecraft__sticky_piston,
+            ids.minecraft__piston,
+            ids.minecraft__piston_head,
+        ]
+
+        self.group_oddj = [
+            ids.minecraft__observer,
+            ids.minecraft__dropper,
+            ids.minecraft__dispenser,
+            ids.minecraft__jigsaw,
+        ]
+
+        self.group_log_and_wood = [
+            ids.minecraft__oak_log,
+            ids.minecraft__spruce_log,
+            ids.minecraft__birch_log,
+            ids.minecraft__jungle_log,
+            ids.minecraft__acacia_log,
+            ids.minecraft__dark_oak_log,
+            ids.minecraft__stripped_oak_log,
+            ids.minecraft__stripped_spruce_log,
+            ids.minecraft__stripped_birch_log,
+            ids.minecraft__stripped_jungle_log,
+            ids.minecraft__stripped_acacia_log,
+            ids.minecraft__stripped_dark_oak_log,
+            ids.minecraft__oak_wood,
+            ids.minecraft__spruce_wood,
+            ids.minecraft__birch_wood,
+            ids.minecraft__jungle_wood,
+            ids.minecraft__acacia_wood,
+            ids.minecraft__dark_oak_wood,
+            ids.minecraft__stripped_oak_wood,
+            ids.minecraft__stripped_spruce_wood,
+            ids.minecraft__stripped_birch_wood,
+            ids.minecraft__stripped_jungle_wood,
+            ids.minecraft__stripped_acacia_wood,
+            ids.minecraft__stripped_dark_oak_wood,
+        ]
+
+        self.group_bwscs = [
+            ids.minecraft__bone_block,
+            ids.minecraft__warped_stem,
+            ids.minecraft__stripped_warped_stem,
+            ids.minecraft__crimson_stem,
+            ids.minecraft__stripped_crimson_stem,
+        ]
+
+        self.group_basalt = [
+            ids.minecraft__basalt,
+            ids.minecraft__polished_basalt,
+        ]
+
+        self.group_wall_torch = [
+            ids.minecraft__redstone_wall_torch,
+            ids.minecraft__wall_torch,
+        ]
+
+        self.group_lit_torch = [
+            ids.minecraft__redstone_torch,
+            ids.minecraft__redstone_wall_torch,
+        ]
+
+        self.group_torch = [
+            ids.minecraft__torch,
+        ] + self.group_lit_torch + self.group_wall_torch
+
+        self.group_terracotta = [
+            ids.minecraft__terracotta,
+            ids.minecraft__white_terracotta,
+            ids.minecraft__orange_terracotta,
+            ids.minecraft__magenta_terracotta,
+            ids.minecraft__light_blue_terracotta,
+            ids.minecraft__yellow_terracotta,
+            ids.minecraft__lime_terracotta,
+            ids.minecraft__pink_terracotta,
+            ids.minecraft__gray_terracotta,
+            ids.minecraft__light_gray_terracotta,
+            ids.minecraft__cyan_terracotta,
+            ids.minecraft__purple_terracotta,
+            ids.minecraft__blue_terracotta,
+            ids.minecraft__brown_terracotta,
+            ids.minecraft__green_terracotta,
+            ids.minecraft__red_terracotta,
+            ids.minecraft__black_terracotta,
+            ids.minecraft__white_glazed_terracotta,
+            ids.minecraft__orange_glazed_terracotta,
+            ids.minecraft__magenta_glazed_terracotta,
+            ids.minecraft__light_blue_glazed_terracotta,
+            ids.minecraft__yellow_glazed_terracotta,
+            ids.minecraft__lime_glazed_terracotta,
+            ids.minecraft__pink_glazed_terracotta,
+            ids.minecraft__gray_glazed_terracotta,
+            ids.minecraft__light_gray_glazed_terracotta,
+            ids.minecraft__cyan_glazed_terracotta,
+            ids.minecraft__purple_glazed_terracotta,
+            ids.minecraft__blue_glazed_terracotta,
+            ids.minecraft__brown_glazed_terracotta,
+            ids.minecraft__green_glazed_terracotta,
+            ids.minecraft__red_glazed_terracotta,
+            ids.minecraft__black_glazed_terracotta,
+        ]
+
+        self.group_cjsl = [
+            ids.minecraft__carved_pumpkin,
+            ids.minecraft__jack_o_lantern,
+            ids.minecraft__stonecutter,
+            ids.minecraft__loom,
+        ]
+
+        self.group_vbrm = [
+            ids.minecraft__vine,
+            ids.minecraft__brown_mushroom_block,
+            ids.minecraft__red_mushroom_block,
+            ids.minecraft__mushroom_stem,
+        ]
+
+        self.group_anvil = [
+            ids.minecraft__anvil,
+            ids.minecraft__chipped_anvil,
+            ids.minecraft__damaged_anvil,
+        ]
+
+        self.group_sign = [
+            ids.minecraft__oak_sign,
+            ids.minecraft__spruce_sign,
+            ids.minecraft__birch_sign,
+            ids.minecraft__acacia_sign,
+            ids.minecraft__jungle_sign,
+            ids.minecraft__dark_oak_sign,
+        ]
+
+        self.group_wall_sign = [
+            ids.minecraft__oak_wall_sign,
+            ids.minecraft__spruce_wall_sign,
+            ids.minecraft__birch_wall_sign,
+            ids.minecraft__acacia_wall_sign,
+            ids.minecraft__jungle_wall_sign,
+            ids.minecraft__dark_oak_wall_sign,
+        ]
+
+        self.group_all_sign = self.group_sign + self.group_all_sign
+
+        self.group_fence = [
+            ids.minecraft__oak_fence,
+            ids.minecraft__nether_brick_fence,
+            ids.minecraft__spruce_fence,
+            ids.minecraft__birch_fence,
+            ids.minecraft__jungle_fence,
+            ids.minecraft__acacia_fence,
+            ids.minecraft__dark_oak_fence,
+        ]
+
+        self.group_stairs = [
+            ids.minecraft__oak_stairs,
+            ids.minecraft__cobblestone_stairs,
+            ids.minecraft__brick_stairs,
+            ids.minecraft__stone_brick_stairs,
+            ids.minecraft__nether_brick_stairs,
+            ids.minecraft__sandstone_stairs,
+            ids.minecraft__spruce_stairs,
+            ids.minecraft__birch_stairs,
+            ids.minecraft__jungle_stairs,
+            ids.minecraft__quartz_stairs,
+            ids.minecraft__acacia_stairs,
+            ids.minecraft__dark_oak_stairs,
+            ids.minecraft__red_sandstone_stairs,
+            ids.minecraft__purpur_stairs,
+            ids.minecraft__prismarine_stairs,
+            ids.minecraft__dark_prismarine_stairs,
+            ids.minecraft__prismarine_brick_stairs,
+            ids.minecraft__mossy_stone_brick_stairs,
+            ids.minecraft__mossy_cobblestone_stairs,
+            ids.minecraft__smooth_sandstone_stairs,
+            ids.minecraft__smooth_quartz_stairs,
+            ids.minecraft__polished_granite_stairs,
+            ids.minecraft__polished_diorite_stairs,
+            ids.minecraft__polished_andesite_stairs,
+            ids.minecraft__stone_stairs,
+            ids.minecraft__granite_stairs,
+            ids.minecraft__diorite_stairs,
+            ids.minecraft__andesite_stairs,
+            ids.minecraft__end_stone_brick_stairs,
+            ids.minecraft__red_nether_brick_stairs,
+            ids.minecraft__smooth_red_sandstone_stairs,
+        ]
+
+        self.group_door = [
+            ids.minecraft__oak_door,
+            ids.minecraft__iron_door,
+            ids.minecraft__spruce_door,
+            ids.minecraft__birch_door,
+            ids.minecraft__jungle_door,
+            ids.minecraft__acacia_door,
+            ids.minecraft__dark_oak_door,
+        ]
+
+        self.group_trapdoor = [
+            ids.minecraft__oak_trapdoor,
+            ids.minecraft__iron_trapdoor,
+            ids.minecraft__spruce_trapdoor,
+            ids.minecraft__birch_trapdoor,
+            ids.minecraft__jungle_trapdoor,
+            ids.minecraft__acacia_trapdoor,
+            ids.minecraft__dark_oak_trapdoor,
+        ]
+
+        self.group_bed = [
+            ids.minecraft__white_bed,
+            ids.minecraft__orange_bed,
+            ids.minecraft__magenta_bed,
+            ids.minecraft__light_blue_bed,
+            ids.minecraft__yellow_bed,
+            ids.minecraft__lime_bed,
+            ids.minecraft__pink_bed,
+            ids.minecraft__gray_bed,
+            ids.minecraft__light_gray_bed,
+            ids.minecraft__cyan_bed,
+            ids.minecraft__purple_bed,
+            ids.minecraft__blue_bed,
+            ids.minecraft__brown_bed,
+            ids.minecraft__green_bed,
+            ids.minecraft__red_bed,
+            ids.minecraft__black_bed,
+        ]
+
+        self.group_glcbs = [
+            ids.minecraft__grindstone,
+            ids.minecraft__lectern,
+            ids.minecraft__campfire,
+            ids.minecraft__bell,
+            ids.minecraft__soul_campfire,
+        ]
+
+
+
+
         colors = [   'white', 'orange', 'magenta', 'light_blue',
                     'yellow',   'lime',    'pink',       'gray',
                 'light_gray',   'cyan',  'purple',       'blue',
@@ -1109,6 +1485,7 @@ class RegionSet(object):
     # Re-initialize upon unpickling
     def __getstate__(self):
         return (self.regiondir, self.rel)
+
     def __setstate__(self, state):
         return self.__init__(*state)
 
@@ -1116,122 +1493,80 @@ class RegionSet(object):
         return "<RegionSet regiondir=%r>" % self.regiondir
 
     def _get_block(self, palette_entry):
-        slabs = ['minecraft:stone_slab', 'minecraft:sandstone_slab', 'minecraft:oak_slab', 'minecraft:cobblestone_slab', 'minecraft:brick_slab', 'minecraft:stone_brick_slab', 'minecraft:nether_brick_slab', 'minecraft:quartz_slab', 'minecraft:spruce_slab', 'minecraft:birch_slab', 'minecraft:jungle_slab', 'minecraft:acacia_slab', 'minecraft:dark_oak_slab', 'minecraft:red_sandstone_slab', 'minecraft:purpur_slab', 'minecraft:petrified_oak_slab', 'minecraft:prismarine_slab', 'minecraft:dark_prismarine_slab', 'minecraft:prismarine_brick_slab', "minecraft:andesite_slab", "minecraft:diorite_slab", "minecraft:granite_slab", "minecraft:polished_andesite_slab", "minecraft:polished_diorite_slab", "minecraft:polished_granite_slab", "minecraft:red_nether_brick_slab", "minecraft:smooth_sandstone_slab", "minecraft:cut_sandstone_slab", "minecraft:smooth_red_sandstone_slab", "minecraft:cut_red_sandstone_slab", "minecraft:end_stone_brick_slab", "minecraft:mossy_cobblestone_slab", "minecraft:mossy_stone_brick_slab", "minecraft:smooth_quartz_slab", "minecraft:smooth_stone_slab", "minecraft:crimson_slab", "minecraft:warped_slab"]
-        double_slabs = {
-            'minecraft:stone_slab': ids.minecraft__stone,
-            'minecraft:sandstone_slab': ids.minecraft__sandstone,
-            'minecraft:oak_slab': ids.minecraft__oak_planks,
-            'minecraft:cobblestone_slab': ids.minecraft__cobblestone,
-            'minecraft:brick_slab': ids.minecraft__bricks,
-            'minecraft:stone_brick_slab': ids.minecraft__stone_bricks,
-            'minecraft:nether_brick_slab': ids.minecraft__nether_bricks,
-            'minecraft:quartz_slab': ids.minecraft__quartz_block,
-            'minecraft:spruce_slab': ids.minecraft__spruce_planks,
-            'minecraft:birch_slab': ids.minecraft__birch_planks,
-            'minecraft:jungle_slab': ids.minecraft__jungle_planks,
-            'minecraft:acacia_slab': ids.minecraft__acacia_planks,
-            'minecraft:dark_oak_slab': ids.minecraft__dark_oak_planks,
-            'minecraft:red_sandstone_slab': ids.minecraft__red_sandstone,
-            'minecraft:purpur_slab': ids.minecraft__purpur_block,
-            'minecraft:petrified_oak_slab': ids.minecraft__oak_planks,
-            'minecraft:prismarine_slab': ids.minecraft__prismarine,
-            'minecraft:dark_prismarine_slab': ids.minecraft__dark_prismarine,
-            'minecraft:prismarine_brick_slab': ids.minecraft__prismarine_bricks,
-            "minecraft:andesite_slab": ids.minecraft__andesite,
-            "minecraft:diorite_slab": ids.minecraft__diorite,
-            "minecraft:granite_slab": ids.minecraft__granite,
-            "minecraft:polished_andesite_slab": ids.minecraft__polished_andesite,
-            "minecraft:polished_diorite_slab": ids.minecraft__polished_diorite,
-            "minecraft:polished_granite_slab": ids.minecraft__polished_granite,
-            "minecraft:red_nether_brick_slab": ids.minecraft__red_nether_bricks,
-            "minecraft:smooth_sandstone_slab": ids.minecraft__smooth_sandstone,
-            "minecraft:cut_sandstone_slab": ids.minecraft__cut_sandstone,
-            "minecraft:smooth_red_sandstone_slab": ids.minecraft__smooth_red_sandstone,
-            "minecraft:cut_red_sandstone_slab": ids.minecraft__cut_red_sandstone,
-            "minecraft:end_stone_brick_slab": ids.minecraft__end_stone_bricks,
-            "minecraft:mossy_cobblestone_slab": ids.minecraft__mossy_cobblestone,
-            "minecraft:mossy_stone_brick_slab": ids.minecraft__mossy_stone_bricks,
-            "minecraft:smooth_quartz_slab": ids.minecraft__smooth_quartz,
-            "minecraft:smooth_stone_slab": ids.minecraft__smooth_stone,
-            "minecraft:crimson_slab": ids.minecraft__crimson_planks,
-            "minecraft:warped_slab": ids.minecraft__warped_planks,
-        }
-        power_rail = ['minecraft:powered_rail', 'minecraft:detector_rail', 'minecraft:activator_rail']
-        # wood_slabs = ('minecraft:oak_slab','minecraft:spruce_slab','minecraft:birch_slab','minecraft:jungle_slab',
-        #                 'minecraft:acacia_slab','minecraft:dark_oak_slab','minecraft:petrified_oak_slab')
-        # stone_slabs = ('minecraft:stone_slab', 'minecraft:sandstone_slab','minecraft:red_sandstone_slab',
-        #                 'minecraft:cobblestone_slab', 'minecraft:brick_slab','minecraft:purpur_slab',
-        #                 'minecraft:stone_brick_slab', 'minecraft:nether_brick_slab',
-        #                 'minecraft:quartz_slab', "minecraft:andesite_slab", 'minecraft:diorite_slab',
-        #                 'minecraft:granite_slab', 'minecraft:polished_andesite_slab',
-        #                 'minecraft:polished_diorite_slab','minecraft:polished_granite_slab',
-        #                 'minecraft:red_nether_brick_slab','minecraft:smooth_sandstone_slab',
-        #                 'minecraft:cut_sandstone_slab','minecraft:smooth_red_sandstone_slab',
-        #                 'minecraft:cut_red_sandstone_slab','minecraft:end_stone_brick_slab',
-        #                 'minecraft:mossy_cobblestone_slab','minecraft:mossy_stone_brick_slab',
-        #                 'minecraft:smooth_quartz_slab','minecraft:smooth_stone_slab'
-        #                  )
-        # prismarine_slabs = ('minecraft:prismarine_slab','minecraft:dark_prismarine_slab','minecraft:prismarine_brick_slab')
-
         key = palette_entry['Name']
         (block, data) = self._blockmap[key]
-        if key in ['minecraft:redstone_ore', 'minecraft:redstone_lamp']:
+
+        if block in [ids.minecraft__redstone_ore, ids.minecraft__redstone_lamp]:
             if palette_entry['Properties']['lit'] == 'true':
                 data = 1
-        elif key.endswith('gate'):
+
+        elif block in self.group_gate:
             facing = palette_entry['Properties']['facing']
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             if palette_entry['Properties']['open'] == 'true':
                 data += 4
-        elif key.endswith('rail'):
+
+        elif block in self.group_rail:
             shape = palette_entry['Properties']['shape']
-            data = {'north_south':0, 'east_west': 1, 'ascending_east': 2, 'ascending_west': 3, 'ascending_north': 4, 'ascending_south': 5, 'south_east': 6, 'south_west': 7, 'north_west': 8, 'north_east': 9}[shape]
-            if key in power_rail and palette_entry['Properties']['powered'] == 'true':
+            data = {'north_south': 0, 'east_west': 1, 'ascending_east': 2, 'ascending_west': 3, 'ascending_north': 4, 'ascending_south': 5, 'south_east': 6, 'south_west': 7, 'north_west': 8, 'north_east': 9}[shape]
+            if block in self.group_power_rail and palette_entry['Properties']['powered'] == 'true':
                 data |= 8
-        elif key in ['minecraft:comparator', 'minecraft:repeater']:
+
+        elif block in self.group_redstone_device:
             # Bits 1-2 indicates facing, bits 3-4 indicates delay
             if palette_entry['Properties']['powered'] == 'true':
                 block += 1
             facing = palette_entry['Properties']['facing']
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             data |= (int(palette_entry['Properties'].get('delay', '1')) - 1) << 2
-        elif key == 'minecraft:daylight_detector':
+
+        elif block == ids.minecraft__daylight_detector:
             if palette_entry['Properties']['inverted'] == 'true':
                 block = 178
-        elif key == 'minecraft:redstone_wire':
+
+        elif block == ids.minecraft__redstone_wire:
             data = palette_entry['Properties']['power']
-        elif key == 'minecraft:grass_block':
+
+        elif block == ids.minecraft__grass_block:
             if palette_entry['Properties']['snowy'] == 'true':
                 data |= 0x10
-        elif key in ['minecraft:sunflower', 'minecraft:lilac', 'minecraft:tall_grass', 'minecraft:large_fern', 'minecraft:rose_bush', 'minecraft:peony']:
+
+        elif block in self.group_tall_sprite:
             if palette_entry['Properties']['half'] == 'upper':
                 data = 1
-        elif key in slabs:
+
+        elif block in self.group_slabs:
             if palette_entry['Properties']['type'] == 'top':
                 data = 1
             elif palette_entry['Properties']['type'] == 'double':
-                block = double_slabs[key]
+                block = self.double_slabs[key]
 
-        elif key in ['minecraft:ladder', 'minecraft:chest', 'minecraft:ender_chest',
-                     'minecraft:trapped_chest', 'minecraft:furnace',
-                     'minecraft:blast_furnace', 'minecraft:smoker']:
+        elif block in self.group_only_facing:
             facing = palette_entry['Properties']['facing']
             data = {'north': 2, 'south': 3, 'west': 4, 'east': 5}[facing]
-            if key in ['minecraft:chest', 'minecraft:trapped_chest']:
-                # type property should exist, but default to 'single' just in case
-                chest_type = palette_entry['Properties'].get('type', 'single')
-                data |= {'left': 0x8, 'right': 0x10, 'single': 0x0}[chest_type]
-            elif key in ['minecraft:furnace', 'minecraft:blast_furnace', 'minecraft:smoker']:
-                data |= 8 if palette_entry['Properties'].get('lit', 'false') == 'true' else 0
-        elif key in ['minecraft:beehive', 'minecraft:bee_nest']:
+
+        elif block in self.group_chest:
+            facing = palette_entry['Properties']['facing']
+            data = {'north': 2, 'south': 3, 'west': 4, 'east': 5}[facing]
+            # type property should exist, but default to 'single' just in case
+            chest_type = palette_entry['Properties'].get('type', 'single')
+            data |= {'left': 0x8, 'right': 0x10, 'single': 0x0}[chest_type]
+
+        elif block in self.group_furnace_smoker:
+            facing = palette_entry['Properties']['facing']
+            data = {'north': 2, 'south': 3, 'west': 4, 'east': 5}[facing]
+            data |= 8 if palette_entry['Properties'].get('lit', 'false') == 'true' else 0
+
+        elif block in self.group_bee:
             facing = palette_entry['Properties']['facing']
             honey_level = int(palette_entry['Properties']['honey_level'])
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             if honey_level == 5:
                 data = {'south': 4, 'west': 5, 'north': 6, 'east': 7}[facing]
-        elif key.endswith('_button'):
+
+        elif block in self.group_button:
             facing = palette_entry['Properties']['facing']
-            face   = palette_entry['Properties']['face']
+            face = palette_entry['Properties']['face']
             if face == 'ceiling':
                 block = 0
                 data = 0
@@ -1239,162 +1574,182 @@ class RegionSet(object):
                 data = {'east': 1, 'west': 2, 'south': 3, 'north': 4}[facing]
             elif face == 'floor':
                 data = {'east': 6, 'west': 6, 'south': 5, 'north': 5}[facing]
-        elif key == 'minecraft:nether_wart':
-            data = int(palette_entry['Properties']['age'])
-        elif (key.endswith('shulker_box') or key.endswith('piston') or
-              key in ['minecraft:observer', 'minecraft:dropper', 'minecraft:dispenser',
-                      'minecraft:piston_head', 'minecraft:jigsaw']):
+
+        elif block in self.group_age:
+            data = palette_entry['Properties']['age']
+
+        elif block in self.group_shulker or block in self.group_piston or block in self.group_oddj:
             p = palette_entry['Properties']
             data = {'down': 0, 'up': 1, 'north': 2, 'south': 3, 'west': 4, 'east': 5}[p['facing']]
-            if ((key.endswith('piston') and p.get('extended', 'false') == 'true') or
-                (key == 'minecraft:piston_head' and p.get('type', 'normal') == 'sticky') or
-                (key == 'minecraft:observer' and p.get('powered', 'false') == 'true')):
+            if ((block in self.group_piston and p.get('extended', 'false') == 'true') or (block == ids.minecraft__piston_head and p.get('type', 'normal') == 'sticky') or (block == ids.minecraft__observer and p.get('powered', 'false') == 'true')):
                 data |= 0x08
-        elif (key.endswith('_log') or key.endswith('_wood') or
-              key in ['minecraft:bone_block', 'minecraft:warped_stem',
-                      'minecraft:stripped_warped_stem', 'minecraft:crimson_stem',
-                      'minecraft:stripped_crimson_stem']):
+
+        elif block in self.group_log_and_wood or block in self.group_bwscs:
             axis = palette_entry['Properties']['axis']
             if axis == 'x':
                 data |= 4
             elif axis == 'z':
                 data |= 8
-        elif key == 'minecraft:quartz_pillar':
+
+        elif block == ids.minecraft__quartz_pillar:
             axis = palette_entry['Properties']['axis']
             if axis == 'x':
                 data = 3
             if axis == 'z':
                 data = 4
-        elif key == 'minecraft:basalt' or key == 'minecraft:polished_basalt':
+
+        elif block in self.group_basalt:
             axis = palette_entry['Properties']['axis']
             data = {'y': 0, 'x': 1, 'z': 2}[axis]
-        elif key in ['minecraft:torch', 'minecraft:redstone_torch','minecraft:redstone_wall_torch','minecraft:wall_torch']:
-            if key.startswith('minecraft:redstone_') and palette_entry['Properties']['lit'] == 'true':
+
+        elif block in self.group_torch:
+            if block in self.group_lit_torch and palette_entry['Properties']['lit'] == 'true':
                 block += 1
-            if key.endswith('wall_torch'):
+            if block in self.group_wall_torch:
                 facing = palette_entry['Properties'].get('facing')
                 data = {'east': 1, 'west': 2, 'south': 3, 'north': 4}[facing]
             # else:
             #     data = 5
-        elif (key in ['minecraft:carved_pumpkin', 'minecraft:jack_o_lantern',
-                      'minecraft:stonecutter', 'minecraft:loom'] or
-              key.endswith('glazed_terracotta')):
+
+        elif (block in self.group_cjsl or block in self.group_terracotta):
             facing = palette_entry['Properties']['facing']
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
-        elif key in ['minecraft:vine', 'minecraft:brown_mushroom_block',
-                     'minecraft:red_mushroom_block', 'minecraft:mushroom_stem']:
+
+        elif block in self.group_vbrm:
             p = palette_entry['Properties']
             if p['south'] == 'true':
                 data |= 1
-            if p['west']  == 'true':
+            if p['west'] == 'true':
                 data |= 2
             if p['north'] == 'true':
                 data |= 4
-            if p['east']  == 'true':
+            if p['east'] == 'true':
                 data |= 8
-            if p['up']    == 'true':
+            if p['up'] == 'true':
                 data |= 16
             # Not all blocks here have the down property, so use dict.get() to avoid errors
             if p.get('down', 'false') == 'true':
                 data |= 32
-        elif key.endswith('anvil'):
+
+        elif block in self.group_anvil:
             facing = palette_entry['Properties']['facing']
-            if facing == 'west':  data += 1
-            if facing == 'north': data += 2
-            if facing == 'east':  data += 3
-        elif key.endswith('sign'):
-            if key.endswith('wall_sign'):
+            if facing == 'west':
+                data += 1
+            if facing == 'north':
+                data += 2
+            if facing == 'east':
+                data += 3
+
+        elif block in self.group_all_sign:
+            if block in self.group_wall_sign:
                 facing = palette_entry['Properties']['facing']
-                if   facing == 'north': data = 2
-                elif facing == 'west':  data = 4
-                elif facing == 'south': data = 3
-                elif facing == 'east':  data = 5
+                if facing == 'north':
+                    data = 2
+                elif facing == 'west':
+                    data = 4
+                elif facing == 'south':
+                    data = 3
+                elif facing == 'east':
+                    data = 5
             else:
                 p = palette_entry['Properties']
                 data = p['rotation']
-        elif key.endswith('_fence'):
+
+        elif block in self.group_fence:
             p = palette_entry['Properties']
-            if p['north'] == 'true': data |= 1
-            if p['west']  == 'true': data |= 2
-            if p['south'] == 'true': data |= 4
-            if p['east']  == 'true': data |= 8
-        elif key.endswith('_stairs'):
+            if p['north'] == 'true':
+                data |= 1
+            if p['west'] == 'true':
+                data |= 2
+            if p['south'] == 'true':
+                data |= 4
+            if p['east'] == 'true':
+                data |= 8
+
+        elif block in self.group_stairs:
             facing = palette_entry['Properties']['facing']
-            if   facing == 'south': data = 2
-            elif facing == 'east':  data = 0
-            elif facing == 'north': data = 3
-            elif facing == 'west':  data = 1
+            if facing == 'south':
+                data = 2
+            elif facing == 'east':
+                data = 0
+            elif facing == 'north':
+                data = 3
+            elif facing == 'west':
+                data = 1
             if palette_entry['Properties']['half'] == 'top':
                 data |= 0x4
-        elif key.endswith('_door'):
+
+        elif block in self.group_door:
             p = palette_entry['Properties']
-            if p['hinge'] == 'left': data |= 0x10
-            if p['open'] == 'true': data |= 0x04
-            if p['half'] == 'upper': data |= 0x08
-            data |= {
-                'north': 0x03,
-                'west':  0x02,
-                'south': 0x01,
-                'east':  0x00,
-               }[p['facing']]
-        elif key.endswith('_trapdoor'):
+            if p['hinge'] == 'left':
+                data |= 0x10
+            if p['open'] == 'true':
+                data |= 0x04
+            if p['half'] == 'upper':
+                data |= 0x08
+            data |= {'north': 0x03, 'west': 0x02, 'south': 0x01, 'east': 0x00}[p['facing']]
+
+        elif block in self.group_trapdoor:
             p = palette_entry['Properties']
             data = {'south': 1, 'north': 0, 'east': 3, 'west': 2}[p['facing']]
-            if p['open'] == 'true': data |= 0x04
-            if p['half'] == 'top': data |= 0x08
-        elif key in ['minecraft:beetroots', 'minecraft:melon_stem', 'minecraft:wheat',
-                     'minecraft:pumpkin_stem', 'minecraft:potatoes', 'minecraft:carrots',
-                     'minecraft:sweet_berry_bush']:
-            data = palette_entry['Properties']['age']
-        elif key == 'minecraft:lantern':
+            if p['open'] == 'true':
+                data |= 0x04
+            if p['half'] == 'top':
+                data |= 0x08
+
+        elif block == ids.minecraft__lantern:
             if palette_entry['Properties']['hanging'] == 'true':
                 data = 1
             else:
                 data = 0
-        elif key == "minecraft:composter":
+
+        elif block == ids.minecraft__composter:
             data = palette_entry['Properties']['level']
-        elif key == "minecraft:barrel":
+
+        elif block == ids.minecraft__barrel:
             facing_data = {'up': 0, 'down': 1, 'south': 2, 'east': 3, 'north': 4, 'west': 5}
-            data = (
-                (facing_data[palette_entry['Properties']['facing']] << 1) +
-                (1 if palette_entry['Properties']['open'] == 'true' else 0)
-            )
-        elif key.endswith('_bed'):
+            data = ((facing_data[palette_entry['Properties']['facing']] << 1) + (1 if palette_entry['Properties']['open'] == 'true' else 0))
+
+        elif block in self.group_bed:
             facing = palette_entry['Properties']['facing']
             data |= {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             if palette_entry['Properties'].get('part', 'foot') == 'head':
                 data |= 8
-        elif key == 'minecraft:end_portal_frame':
+
+        elif block == ids.minecraft__end_portal_frame:
             facing = palette_entry['Properties']['facing']
             data |= {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             if palette_entry['Properties'].get('eye', 'false') == 'true':
                 data |= 4
-        elif key == 'minecraft:cauldron':
+
+        elif block == ids.minecraft__cauldron:
             data = int(palette_entry['Properties'].get('level', '0'))
-        elif key == 'minecraft:structure_block':
+
+        elif block == ids.minecraft__structure_block:
             block_mode = palette_entry['Properties'].get('mode', 'save')
             data = {'save': 0, 'load': 1, 'corner': 2, 'data': 3}.get(block_mode, 0)
-        elif key == 'minecraft:cake':
+
+        elif block == ids.minecraft__cake:
             data = int(palette_entry['Properties'].get('bites', '0'))
-        elif key == 'minecraft:farmland':
+
+        elif block == ids.minecraft__farmland:
             # A moisture level of 7 has a different texture from other farmland
             data = 1 if palette_entry['Properties'].get('moisture', '0') == '7' else 0
-        elif key in ['minecraft:grindstone', 'minecraft:lectern', 'minecraft:campfire',
-                     'minecraft:bell', 'minecraft:soul_campfire']:
+
+        elif block in self.group_glcbs:
             p = palette_entry['Properties']
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[p['facing']]
-            if key == 'minecraft:grindstone':
+            if block == ids.minecraft__grindstone:
                 data |= {'floor': 0, 'wall': 4, 'ceiling': 8}[p['face']]
-            elif key == 'minecraft:lectern':
+            elif block == ids.minecraft__lectern:
                 if p['has_book'] == 'true':
                     data |= 4
-            elif key == 'minecraft:campfire' or key == 'minecraft:soul_campfire':
+            elif block == ids.minecraft__campfire or block == ids.minecraft__soul_campfire:
                 if p['lit'] == 'true':
                     data |= 4
-            elif key == 'minecraft:bell':
+            elif block == ids.minecraft__bell:
                 data |= {'floor': 0, 'ceiling': 4, 'single_wall': 8,
                          'double_wall': 12}[p['attachment']]
-
 
         return (block, data)
 
