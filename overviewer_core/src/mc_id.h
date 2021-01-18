@@ -333,6 +333,8 @@ enum mc_block_id {
     block_jungle_sign = 158,
     block_acacia_sign = 159,
     block_dark_oak_sign = 160,
+    block_crimson_sign = 722,
+    block_warped_sign = 723,
 
     block_oak_door = 161,
     block_iron_door = 173,
@@ -353,6 +355,8 @@ enum mc_block_id {
     block_jungle_wall_sign = 168,
     block_acacia_wall_sign = 169,
     block_dark_oak_wall_sign = 170,
+    block_crimson_wall_sign = 724,
+    block_warped_wall_sign = 725,
 
     block_lever = 171,
 

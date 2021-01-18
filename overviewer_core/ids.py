@@ -736,6 +736,440 @@ minecraft__stripped_crimson_hyphae = 695
 
 minecraft__lantern = 678
 
+minecraft__crimson_sign = 722
+minecraft__warped_sign = 723
+
+minecraft__crimson_wall_sign = 724
+minecraft__warped_wall_sign = 725
+
+## Group
+
+group_concrete = [minecraft__white_concrete, minecraft__orange_concrete, minecraft__magenta_concrete, minecraft__light_blue_concrete, minecraft__yellow_concrete, minecraft__lime_concrete, minecraft__pink_concrete, minecraft__gray_concrete, minecraft__light_gray_concrete, minecraft__cyan_concrete, minecraft__purple_concrete, minecraft__blue_concrete, minecraft__brown_concrete, minecraft__green_concrete, minecraft__red_concrete, minecraft__black_concrete]
+
+group_concrete_powder = [minecraft__white_concrete_powder, minecraft__orange_concrete_powder, minecraft__magenta_concrete_powder, minecraft__light_blue_concrete_powder, minecraft__yellow_concrete_powder, minecraft__lime_concrete_powder, minecraft__pink_concrete_powder, minecraft__gray_concrete_powder, minecraft__light_gray_concrete_powder, minecraft__cyan_concrete_powder, minecraft__purple_concrete_powder, minecraft__blue_concrete_powder, minecraft__brown_concrete_powder, minecraft__green_concrete_powder, minecraft__red_concrete_powder, minecraft__black_concrete_powder]
+
+group_carpet = [minecraft__white_carpet, minecraft__orange_carpet, minecraft__magenta_carpet, minecraft__light_blue_carpet, minecraft__yellow_carpet, minecraft__lime_carpet, minecraft__pink_carpet, minecraft__gray_carpet, minecraft__light_gray_carpet, minecraft__cyan_carpet, minecraft__purple_carpet, minecraft__blue_carpet, minecraft__brown_carpet, minecraft__green_carpet, minecraft__red_carpet, minecraft__black_carpet]
+
+group_wall = [minecraft__andesite_wall, minecraft__brick_wall, minecraft__cobblestone_wall, minecraft__diorite_wall, minecraft__end_stone_brick_wall, minecraft__granite_wall, minecraft__mossy_cobblestone_wall, minecraft__mossy_stone_brick_wall, minecraft__nether_brick_wall, minecraft__prismarine_wall, minecraft__red_nether_brick_wall, minecraft__red_sandstone_wall, minecraft__sandstone_wall, minecraft__stone_brick_wall]
+
+group_wall_chorus = group_wall + [minecraft__chorus_plant]
+
+group_command_block = [minecraft__command_block, minecraft__repeating_command_block, minecraft__chain_command_block]
+
+group_melon_pumpkin_stem = [minecraft__attached_pumpkin_stem, minecraft__attached_melon_stem, minecraft__pumpkin_stem, minecraft__melon_stem]
+
+group_pane_and_bars = [minecraft__iron_bars, minecraft__glass_pane, minecraft__white_stained_glass_pane, minecraft__orange_stained_glass_pane, minecraft__magenta_stained_glass_pane, minecraft__light_blue_stained_glass_pane, minecraft__yellow_stained_glass_pane, minecraft__lime_stained_glass_pane, minecraft__pink_stained_glass_pane, minecraft__gray_stained_glass_pane, minecraft__light_gray_stained_glass_pane, minecraft__cyan_stained_glass_pane, minecraft__purple_stained_glass_pane, minecraft__blue_stained_glass_pane, minecraft__brown_stained_glass_pane, minecraft__green_stained_glass_pane, minecraft__red_stained_glass_pane, minecraft__black_stained_glass_pane]
+
+group_stone_bricks = [minecraft__stone_bricks, minecraft__mossy_stone_bricks, minecraft__cracked_stone_bricks, minecraft__chiseled_stone_bricks]
+
+group_infested = [minecraft__infested_cobblestone, minecraft__infested_stone, minecraft__infested_stone_bricks, minecraft__infested_mossy_stone_bricks, minecraft__infested_cracked_stone_bricks, minecraft__infested_chiseled_stone_bricks]
+
+group_pressure_plate = [minecraft__stone_pressure_plate, minecraft__oak_pressure_plate, minecraft__spruce_pressure_plate, minecraft__birch_pressure_plate, minecraft__jungle_pressure_plate, minecraft__acacia_pressure_plate, minecraft__dark_oak_pressure_plate, minecraft__light_weighted_pressure_plate, minecraft__heavy_weighted_pressure_plate]
+
+group_table = [minecraft__crafting_table, minecraft__cartography_table, minecraft__fletching_table, minecraft__smithing_table]
+
+group_flower = [minecraft__poppy, minecraft__blue_orchid, minecraft__allium, minecraft__azure_bluet, minecraft__red_tulip, minecraft__orange_tulip, minecraft__white_tulip, minecraft__pink_tulip, minecraft__oxeye_daisy, minecraft__dandelion, minecraft__wither_rose, minecraft__cornflower, minecraft__lily_of_the_valley]
+
+group_wool = [minecraft__white_wool, minecraft__orange_wool, minecraft__magenta_wool, minecraft__light_blue_wool, minecraft__yellow_wool, minecraft__lime_wool, minecraft__pink_wool, minecraft__gray_wool, minecraft__light_gray_wool, minecraft__cyan_wool, minecraft__purple_wool, minecraft__blue_wool, minecraft__brown_wool, minecraft__green_wool, minecraft__red_wool, minecraft__black_wool]
+
+group_leaves = [minecraft__oak_leaves, minecraft__spruce_leaves, minecraft__birch_leaves, minecraft__jungle_leaves, minecraft__acacia_leaves, minecraft__dark_oak_leaves]
+
+group_slabs_stained_glass = [minecraft__white_stained_glass, minecraft__orange_stained_glass, minecraft__magenta_stained_glass, minecraft__light_blue_stained_glass, minecraft__yellow_stained_glass, minecraft__lime_stained_glass, minecraft__pink_stained_glass, minecraft__gray_stained_glass, minecraft__light_gray_stained_glass, minecraft__cyan_stained_glass, minecraft__purple_stained_glass, minecraft__blue_stained_glass, minecraft__brown_stained_glass, minecraft__green_stained_glass, minecraft__red_stained_glass, minecraft__black_stained_glass]
+
+group_no_inner_surfaces = group_slabs_stained_glass + [minecraft__water, minecraft__glass, minecraft__ice]
+
+group_slabs = [minecraft__stone_slab, minecraft__sandstone_slab, minecraft__oak_slab, minecraft__cobblestone_slab, minecraft__brick_slab, minecraft__stone_brick_slab, minecraft__nether_brick_slab, minecraft__quartz_slab, minecraft__spruce_slab, minecraft__birch_slab, minecraft__jungle_slab, minecraft__acacia_slab, minecraft__dark_oak_slab, minecraft__red_sandstone_slab, minecraft__purpur_slab, minecraft__petrified_oak_slab, minecraft__prismarine_slab, minecraft__dark_prismarine_slab, minecraft__prismarine_brick_slab, minecraft__andesite_slab, minecraft__diorite_slab, minecraft__granite_slab, minecraft__polished_andesite_slab, minecraft__polished_diorite_slab, minecraft__polished_granite_slab, minecraft__red_nether_brick_slab, minecraft__smooth_sandstone_slab, minecraft__cut_sandstone_slab, minecraft__smooth_red_sandstone_slab, minecraft__cut_red_sandstone_slab, minecraft__end_stone_brick_slab, minecraft__mossy_cobblestone_slab, minecraft__mossy_stone_brick_slab, minecraft__smooth_quartz_slab, minecraft__smooth_stone_slab, minecraft__crimson_slab, minecraft__warped_slab]
+
+double_slabs = {
+    minecraft__stone_slab: minecraft__stone,
+    minecraft__sandstone_slab: minecraft__sandstone,
+    minecraft__oak_slab: minecraft__oak_planks,
+    minecraft__cobblestone_slab: minecraft__cobblestone,
+    minecraft__brick_slab: minecraft__bricks,
+    minecraft__stone_brick_slab: minecraft__stone_bricks,
+    minecraft__nether_brick_slab: minecraft__nether_bricks,
+    minecraft__quartz_slab: minecraft__quartz_block,
+    minecraft__spruce_slab: minecraft__spruce_planks,
+    minecraft__birch_slab: minecraft__birch_planks,
+    minecraft__jungle_slab: minecraft__jungle_planks,
+    minecraft__acacia_slab: minecraft__acacia_planks,
+    minecraft__dark_oak_slab: minecraft__dark_oak_planks,
+    minecraft__red_sandstone_slab: minecraft__red_sandstone,
+    minecraft__purpur_slab: minecraft__purpur_block,
+    minecraft__petrified_oak_slab: minecraft__oak_planks,
+    minecraft__prismarine_slab: minecraft__prismarine,
+    minecraft__dark_prismarine_slab: minecraft__dark_prismarine,
+    minecraft__prismarine_brick_slab: minecraft__prismarine_bricks,
+    minecraft__andesite_slab: minecraft__andesite,
+    minecraft__diorite_slab: minecraft__diorite,
+    minecraft__granite_slab: minecraft__granite,
+    minecraft__polished_andesite_slab: minecraft__polished_andesite,
+    minecraft__polished_diorite_slab: minecraft__polished_diorite,
+    minecraft__polished_granite_slab: minecraft__polished_granite,
+    minecraft__red_nether_brick_slab: minecraft__red_nether_bricks,
+    minecraft__smooth_sandstone_slab: minecraft__smooth_sandstone,
+    minecraft__cut_sandstone_slab: minecraft__cut_sandstone,
+    minecraft__smooth_red_sandstone_slab: minecraft__smooth_red_sandstone,
+    minecraft__cut_red_sandstone_slab: minecraft__cut_red_sandstone,
+    minecraft__end_stone_brick_slab: minecraft__end_stone_bricks,
+    minecraft__mossy_cobblestone_slab: minecraft__mossy_cobblestone,
+    minecraft__mossy_stone_brick_slab: minecraft__mossy_stone_bricks,
+    minecraft__smooth_quartz_slab: minecraft__smooth_quartz,
+    minecraft__smooth_stone_slab: minecraft__smooth_stone,
+    minecraft__crimson_slab: minecraft__crimson_planks,
+    minecraft__warped_slab: minecraft__warped_planks,
+}
+
+group_gate = [
+    minecraft__oak_fence_gate,
+    minecraft__spruce_fence_gate,
+    minecraft__birch_fence_gate,
+    minecraft__jungle_fence_gate,
+    minecraft__acacia_fence_gate,
+    minecraft__dark_oak_fence_gate,
+]
+
+group_small_grass = [
+    minecraft__dead_bush,
+    minecraft__grass,
+    minecraft__fern,
+]
+
+group_power_rail = [
+    minecraft__powered_rail,
+    minecraft__detector_rail,
+    minecraft__activator_rail,
+]
+
+group_rail = [minecraft__rail] + group_power_rail
+
+group_redstone_device = [
+    minecraft__comparator,
+    minecraft__repeater,
+]
+
+group_tall_sprite = [
+    minecraft__sunflower,
+    minecraft__lilac,
+    minecraft__tall_grass,
+    minecraft__large_fern,
+    minecraft__rose_bush,
+    minecraft__peony,
+]
+
+group_only_facing = [
+    minecraft__ladder,
+]
+
+group_chest = [
+    minecraft__chest,
+    minecraft__ender_chest,
+    minecraft__trapped_chest,
+]
+
+group_furnace_smoker = [
+    minecraft__furnace,
+    minecraft__blast_furnace,
+    minecraft__smoker,
+]
+
+group_bee = [
+    minecraft__beehive,
+    minecraft__bee_nest,
+]
+
+group_button = [
+    minecraft__stone_button,
+    minecraft__oak_button,
+    minecraft__spruce_button,
+    minecraft__birch_button,
+    minecraft__jungle_button,
+    minecraft__acacia_button,
+    minecraft__dark_oak_button,
+]
+
+group_age_8 = [minecraft__wheat, minecraft__carrots, minecraft__potatoes]
+
+group_age_4 = [minecraft__beetroots, minecraft__sweet_berry_bush, minecraft__nether_wart]
+
+group_age = [minecraft__melon_stem, minecraft__pumpkin_stem] + group_age_8 + group_age_4
+
+group_shulker = [
+    minecraft__shulker_box,
+    minecraft__white_shulker_box,
+    minecraft__orange_shulker_box,
+    minecraft__magenta_shulker_box,
+    minecraft__light_blue_shulker_box,
+    minecraft__yellow_shulker_box,
+    minecraft__lime_shulker_box,
+    minecraft__pink_shulker_box,
+    minecraft__gray_shulker_box,
+    minecraft__light_gray_shulker_box,
+    minecraft__cyan_shulker_box,
+    minecraft__purple_shulker_box,
+    minecraft__blue_shulker_box,
+    minecraft__brown_shulker_box,
+    minecraft__green_shulker_box,
+    minecraft__red_shulker_box,
+    minecraft__black_shulker_box,
+]
+
+group_piston = [
+    minecraft__sticky_piston,
+    minecraft__piston,
+    minecraft__piston_head,
+]
+
+group_oddj = [
+    minecraft__observer,
+    minecraft__dropper,
+    minecraft__dispenser,
+    minecraft__jigsaw,
+]
+
+group_log_wood_bone = [
+    minecraft__oak_log,
+    minecraft__spruce_log,
+    minecraft__birch_log,
+    minecraft__jungle_log,
+    minecraft__acacia_log,
+    minecraft__dark_oak_log,
+    minecraft__stripped_oak_log,
+    minecraft__stripped_spruce_log,
+    minecraft__stripped_birch_log,
+    minecraft__stripped_jungle_log,
+    minecraft__stripped_acacia_log,
+    minecraft__stripped_dark_oak_log,
+    minecraft__oak_wood,
+    minecraft__spruce_wood,
+    minecraft__birch_wood,
+    minecraft__jungle_wood,
+    minecraft__acacia_wood,
+    minecraft__dark_oak_wood,
+    minecraft__stripped_oak_wood,
+    minecraft__stripped_spruce_wood,
+    minecraft__stripped_birch_wood,
+    minecraft__stripped_jungle_wood,
+    minecraft__stripped_acacia_wood,
+    minecraft__stripped_dark_oak_wood,
+    minecraft__bone_block,
+    minecraft__warped_stem,
+    minecraft__stripped_warped_stem,
+    minecraft__crimson_stem,
+    minecraft__stripped_crimson_stem,
+    minecraft__stripped_warped_hyphae,
+    minecraft__stripped_crimson_hyphae,
+]
+
+group_basalt = [
+    minecraft__basalt,
+    minecraft__polished_basalt,
+]
+
+group_wall_torch = [
+    minecraft__redstone_wall_torch,
+    minecraft__wall_torch,
+]
+
+group_lit_torch = [
+    minecraft__redstone_torch,
+    minecraft__redstone_wall_torch,
+]
+
+group_torch = list(set([
+    minecraft__torch,
+] + group_lit_torch + group_wall_torch))
+
+
+group_terracotta = [
+    minecraft__terracotta,
+    minecraft__white_terracotta,
+    minecraft__orange_terracotta,
+    minecraft__magenta_terracotta,
+    minecraft__light_blue_terracotta,
+    minecraft__yellow_terracotta,
+    minecraft__lime_terracotta,
+    minecraft__pink_terracotta,
+    minecraft__gray_terracotta,
+    minecraft__light_gray_terracotta,
+    minecraft__cyan_terracotta,
+    minecraft__purple_terracotta,
+    minecraft__blue_terracotta,
+    minecraft__brown_terracotta,
+    minecraft__green_terracotta,
+    minecraft__red_terracotta,
+    minecraft__black_terracotta,
+]
+
+group_glazed_terracotta = [
+    minecraft__white_glazed_terracotta,
+    minecraft__orange_glazed_terracotta,
+    minecraft__magenta_glazed_terracotta,
+    minecraft__light_blue_glazed_terracotta,
+    minecraft__yellow_glazed_terracotta,
+    minecraft__lime_glazed_terracotta,
+    minecraft__pink_glazed_terracotta,
+    minecraft__gray_glazed_terracotta,
+    minecraft__light_gray_glazed_terracotta,
+    minecraft__cyan_glazed_terracotta,
+    minecraft__purple_glazed_terracotta,
+    minecraft__blue_glazed_terracotta,
+    minecraft__brown_glazed_terracotta,
+    minecraft__green_glazed_terracotta,
+    minecraft__red_glazed_terracotta,
+    minecraft__black_glazed_terracotta,
+]
+
+group_all_terracotta = group_glazed_terracotta + group_terracotta
+
+group_pumpkin = [
+    minecraft__carved_pumpkin,
+    minecraft__jack_o_lantern,
+    minecraft__pumpkin,
+]
+
+group_cjsl = [
+    minecraft__carved_pumpkin,
+    minecraft__jack_o_lantern,
+    minecraft__stonecutter,
+    minecraft__loom,
+]
+
+group_vbrm = [
+    minecraft__vine,
+    minecraft__brown_mushroom_block,
+    minecraft__red_mushroom_block,
+    minecraft__mushroom_stem,
+]
+
+group_mushroom = [
+    minecraft__brown_mushroom_block,
+    minecraft__red_mushroom_block,
+    minecraft__mushroom_stem,
+]
+
+group_anvil = [
+    minecraft__anvil,
+    minecraft__chipped_anvil,
+    minecraft__damaged_anvil,
+]
+
+group_sign = [
+    minecraft__oak_sign,
+    minecraft__spruce_sign,
+    minecraft__birch_sign,
+    minecraft__acacia_sign,
+    minecraft__jungle_sign,
+    minecraft__dark_oak_sign,
+    minecraft__warped_sign,
+    minecraft__crimson_sign,
+]
+
+group_wall_sign = [
+    minecraft__oak_wall_sign,
+    minecraft__spruce_wall_sign,
+    minecraft__birch_wall_sign,
+    minecraft__acacia_wall_sign,
+    minecraft__jungle_wall_sign,
+    minecraft__dark_oak_wall_sign,
+    minecraft__warped_wall_sign,
+    minecraft__crimson_wall_sign,
+]
+
+group_all_sign = group_sign + group_sign
+
+group_fence = [
+    minecraft__oak_fence,
+    minecraft__nether_brick_fence,
+    minecraft__spruce_fence,
+    minecraft__birch_fence,
+    minecraft__jungle_fence,
+    minecraft__acacia_fence,
+    minecraft__dark_oak_fence,
+]
+
+group_stairs = [
+    minecraft__oak_stairs,
+    minecraft__cobblestone_stairs,
+    minecraft__brick_stairs,
+    minecraft__stone_brick_stairs,
+    minecraft__nether_brick_stairs,
+    minecraft__sandstone_stairs,
+    minecraft__spruce_stairs,
+    minecraft__birch_stairs,
+    minecraft__jungle_stairs,
+    minecraft__quartz_stairs,
+    minecraft__acacia_stairs,
+    minecraft__dark_oak_stairs,
+    minecraft__red_sandstone_stairs,
+    minecraft__purpur_stairs,
+    minecraft__prismarine_stairs,
+    minecraft__dark_prismarine_stairs,
+    minecraft__prismarine_brick_stairs,
+    minecraft__mossy_stone_brick_stairs,
+    minecraft__mossy_cobblestone_stairs,
+    minecraft__smooth_sandstone_stairs,
+    minecraft__smooth_quartz_stairs,
+    minecraft__polished_granite_stairs,
+    minecraft__polished_diorite_stairs,
+    minecraft__polished_andesite_stairs,
+    minecraft__stone_stairs,
+    minecraft__granite_stairs,
+    minecraft__diorite_stairs,
+    minecraft__andesite_stairs,
+    minecraft__end_stone_brick_stairs,
+    minecraft__red_nether_brick_stairs,
+    minecraft__smooth_red_sandstone_stairs,
+]
+
+group_door = [
+    minecraft__oak_door,
+    minecraft__iron_door,
+    minecraft__spruce_door,
+    minecraft__birch_door,
+    minecraft__jungle_door,
+    minecraft__acacia_door,
+    minecraft__dark_oak_door,
+]
+
+group_trapdoor = [
+    minecraft__oak_trapdoor,
+    minecraft__iron_trapdoor,
+    minecraft__spruce_trapdoor,
+    minecraft__birch_trapdoor,
+    minecraft__jungle_trapdoor,
+    minecraft__acacia_trapdoor,
+    minecraft__dark_oak_trapdoor,
+]
+
+group_bed = [
+    minecraft__white_bed,
+    minecraft__orange_bed,
+    minecraft__magenta_bed,
+    minecraft__light_blue_bed,
+    minecraft__yellow_bed,
+    minecraft__lime_bed,
+    minecraft__pink_bed,
+    minecraft__gray_bed,
+    minecraft__light_gray_bed,
+    minecraft__cyan_bed,
+    minecraft__purple_bed,
+    minecraft__blue_bed,
+    minecraft__brown_bed,
+    minecraft__green_bed,
+    minecraft__red_bed,
+    minecraft__black_bed,
+]
+
+group_glcbs = [
+    minecraft__grindstone,
+    minecraft__lectern,
+    minecraft__campfire,
+    minecraft__soul_campfire,
+    minecraft__bell,
+]
+
+group_campfire = [minecraft__campfire, minecraft__soul_campfire]
 
 
 
@@ -754,13 +1188,11 @@ minecraft__warped_stairs = 717
 minecraft__blackstone_stairs = 744
 minecraft__polished_blackstone_brick_stairs = 752
 minecraft__polished_blackstone_stairs = 755
-minecraft__crimson_sign = 722
-minecraft__warped_sign = 723
+
 minecraft__crimson_pressure_plate = 708
 minecraft__warped_pressure_plate = 709
 minecraft__polished_blackstone_pressure_plate = 757
-minecraft__crimson_wall_sign = 724
-minecraft__warped_wall_sign = 725
+
 minecraft__crimson_button = 718
 minecraft__warped_button = 719
 minecraft__polished_blackstone_button = 758
