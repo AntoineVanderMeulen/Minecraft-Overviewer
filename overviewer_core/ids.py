@@ -760,17 +760,9 @@ group_melon_pumpkin_stem = [minecraft__attached_pumpkin_stem, minecraft__attache
 
 group_pane_and_bars = [minecraft__iron_bars, minecraft__glass_pane, minecraft__white_stained_glass_pane, minecraft__orange_stained_glass_pane, minecraft__magenta_stained_glass_pane, minecraft__light_blue_stained_glass_pane, minecraft__yellow_stained_glass_pane, minecraft__lime_stained_glass_pane, minecraft__pink_stained_glass_pane, minecraft__gray_stained_glass_pane, minecraft__light_gray_stained_glass_pane, minecraft__cyan_stained_glass_pane, minecraft__purple_stained_glass_pane, minecraft__blue_stained_glass_pane, minecraft__brown_stained_glass_pane, minecraft__green_stained_glass_pane, minecraft__red_stained_glass_pane, minecraft__black_stained_glass_pane]
 
-group_stone_bricks = [minecraft__stone_bricks, minecraft__mossy_stone_bricks, minecraft__cracked_stone_bricks, minecraft__chiseled_stone_bricks]
-
-group_infested = [minecraft__infested_cobblestone, minecraft__infested_stone, minecraft__infested_stone_bricks, minecraft__infested_mossy_stone_bricks, minecraft__infested_cracked_stone_bricks, minecraft__infested_chiseled_stone_bricks]
-
 group_pressure_plate = [minecraft__stone_pressure_plate, minecraft__oak_pressure_plate, minecraft__spruce_pressure_plate, minecraft__birch_pressure_plate, minecraft__jungle_pressure_plate, minecraft__acacia_pressure_plate, minecraft__dark_oak_pressure_plate, minecraft__light_weighted_pressure_plate, minecraft__heavy_weighted_pressure_plate]
 
 group_table = [minecraft__crafting_table, minecraft__cartography_table, minecraft__fletching_table, minecraft__smithing_table]
-
-group_flower = [minecraft__poppy, minecraft__blue_orchid, minecraft__allium, minecraft__azure_bluet, minecraft__red_tulip, minecraft__orange_tulip, minecraft__white_tulip, minecraft__pink_tulip, minecraft__oxeye_daisy, minecraft__dandelion, minecraft__wither_rose, minecraft__cornflower, minecraft__lily_of_the_valley]
-
-group_wool = [minecraft__white_wool, minecraft__orange_wool, minecraft__magenta_wool, minecraft__light_blue_wool, minecraft__yellow_wool, minecraft__lime_wool, minecraft__pink_wool, minecraft__gray_wool, minecraft__light_gray_wool, minecraft__cyan_wool, minecraft__purple_wool, minecraft__blue_wool, minecraft__brown_wool, minecraft__green_wool, minecraft__red_wool, minecraft__black_wool]
 
 group_leaves = [minecraft__oak_leaves, minecraft__spruce_leaves, minecraft__birch_leaves, minecraft__jungle_leaves, minecraft__acacia_leaves, minecraft__dark_oak_leaves]
 
@@ -827,12 +819,6 @@ group_gate = [
     minecraft__jungle_fence_gate,
     minecraft__acacia_fence_gate,
     minecraft__dark_oak_fence_gate,
-]
-
-group_small_grass = [
-    minecraft__dead_bush,
-    minecraft__grass,
-    minecraft__fern,
 ]
 
 group_power_rail = [
@@ -981,26 +967,6 @@ group_torch = list(set([
 ] + group_lit_torch + group_wall_torch))
 
 
-group_terracotta = [
-    minecraft__terracotta,
-    minecraft__white_terracotta,
-    minecraft__orange_terracotta,
-    minecraft__magenta_terracotta,
-    minecraft__light_blue_terracotta,
-    minecraft__yellow_terracotta,
-    minecraft__lime_terracotta,
-    minecraft__pink_terracotta,
-    minecraft__gray_terracotta,
-    minecraft__light_gray_terracotta,
-    minecraft__cyan_terracotta,
-    minecraft__purple_terracotta,
-    minecraft__blue_terracotta,
-    minecraft__brown_terracotta,
-    minecraft__green_terracotta,
-    minecraft__red_terracotta,
-    minecraft__black_terracotta,
-]
-
 group_glazed_terracotta = [
     minecraft__white_glazed_terracotta,
     minecraft__orange_glazed_terracotta,
@@ -1019,8 +985,6 @@ group_glazed_terracotta = [
     minecraft__red_glazed_terracotta,
     minecraft__black_glazed_terracotta,
 ]
-
-group_all_terracotta = group_glazed_terracotta + group_terracotta
 
 group_pumpkin = [
     minecraft__carved_pumpkin,

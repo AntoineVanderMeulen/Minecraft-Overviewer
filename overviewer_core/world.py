@@ -1238,7 +1238,7 @@ class RegionSet(object):
             # else:
             #     data = 5
 
-        elif (block in ids.group_cjsl or block in ids.group_all_terracotta):
+        elif (block in ids.group_cjsl or block in ids.group_glazed_terracotta):
             facing = palette_entry['Properties']['facing']
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
 
