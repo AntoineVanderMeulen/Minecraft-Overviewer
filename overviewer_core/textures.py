@@ -915,10 +915,10 @@ def billboard(blockid=[], imagename=None, **kwargs):
     def inner_billboard(self, unused_id, unused_data):
         return self.build_billboard(self.load_image_texture(imagename))
     return inner_billboard
-
 ##
 ## and finally: actual texture definitions
 ##
+
 
 # simple bloc only 1 or 2 textures
 block(blockid=ids.minecraft__stone, top_image="assets/minecraft/textures/block/stone.png")
@@ -1043,9 +1043,9 @@ block(blockid=ids.minecraft__black_terracotta, top_image="assets/minecraft/textu
 block(blockid=ids.minecraft__coal_block, top_image="assets/minecraft/textures/block/coal_block.png")
 block(blockid=ids.minecraft__packed_ice, top_image="assets/minecraft/textures/block/packed_ice.png")
 block(blockid=ids.minecraft__blue_ice, top_image="assets/minecraft/textures/block/blue_ice.png")
-block(blockid=ids.minecraft__smooth_stone, top_image="assets/minecraft/textures/block/smooth_stone.png") # stone
-block(blockid=ids.minecraft__smooth_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png") # sandstone
-block(blockid=ids.minecraft__smooth_red_sandstone, top_image="assets/minecraft/textures/block/red_sandstone_top.png") # red sandstone
+block(blockid=ids.minecraft__smooth_stone, top_image="assets/minecraft/textures/block/smooth_stone.png")
+block(blockid=ids.minecraft__smooth_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png")
+block(blockid=ids.minecraft__smooth_red_sandstone, top_image="assets/minecraft/textures/block/red_sandstone_top.png")
 block(blockid=ids.minecraft__brain_coral_block, top_image="assets/minecraft/textures/block/brain_coral_block.png")
 block(blockid=ids.minecraft__bubble_coral_block, top_image="assets/minecraft/textures/block/bubble_coral_block.png")
 block(blockid=ids.minecraft__fire_coral_block, top_image="assets/minecraft/textures/block/fire_coral_block.png")
@@ -1062,38 +1062,38 @@ block(blockid=ids.minecraft__magma_block, top_image="assets/minecraft/textures/b
 block(blockid=ids.minecraft__nether_wart_block, top_image="assets/minecraft/textures/block/nether_wart_block.png")
 block(blockid=ids.minecraft__warped_wart_block, top_image="assets/minecraft/textures/block/warped_wart_block.png")
 block(blockid=ids.minecraft__red_nether_bricks, top_image="assets/minecraft/textures/block/red_nether_bricks.png")
-block(blockid=ids.minecraft__white_concrete,top_image="assets/minecraft/textures/block/white_concrete.png")
-block(blockid=ids.minecraft__orange_concrete,top_image="assets/minecraft/textures/block/orange_concrete.png")
-block(blockid=ids.minecraft__magenta_concrete,top_image="assets/minecraft/textures/block/magenta_concrete.png")
-block(blockid=ids.minecraft__light_blue_concrete,top_image="assets/minecraft/textures/block/light_blue_concrete.png")
-block(blockid=ids.minecraft__yellow_concrete,top_image="assets/minecraft/textures/block/yellow_concrete.png")
-block(blockid=ids.minecraft__lime_concrete,top_image="assets/minecraft/textures/block/lime_concrete.png")
-block(blockid=ids.minecraft__pink_concrete,top_image="assets/minecraft/textures/block/pink_concrete.png")
-block(blockid=ids.minecraft__gray_concrete,top_image="assets/minecraft/textures/block/gray_concrete.png")
-block(blockid=ids.minecraft__light_gray_concrete,top_image="assets/minecraft/textures/block/light_gray_concrete.png")
-block(blockid=ids.minecraft__cyan_concrete,top_image="assets/minecraft/textures/block/cyan_concrete.png")
-block(blockid=ids.minecraft__purple_concrete,top_image="assets/minecraft/textures/block/purple_concrete.png")
-block(blockid=ids.minecraft__blue_concrete,top_image="assets/minecraft/textures/block/blue_concrete.png")
-block(blockid=ids.minecraft__brown_concrete,top_image="assets/minecraft/textures/block/brown_concrete.png")
-block(blockid=ids.minecraft__green_concrete,top_image="assets/minecraft/textures/block/green_concrete.png")
-block(blockid=ids.minecraft__red_concrete,top_image="assets/minecraft/textures/block/red_concrete.png")
-block(blockid=ids.minecraft__black_concrete,top_image="assets/minecraft/textures/block/black_concrete.png")
-block(blockid=ids.minecraft__white_concrete_powder,top_image="assets/minecraft/textures/block/white_concrete_powder.png")
-block(blockid=ids.minecraft__orange_concrete_powder,top_image="assets/minecraft/textures/block/orange_concrete_powder.png")
-block(blockid=ids.minecraft__magenta_concrete_powder,top_image="assets/minecraft/textures/block/magenta_concrete_powder.png")
-block(blockid=ids.minecraft__light_blue_concrete_powder,top_image="assets/minecraft/textures/block/light_blue_concrete_powder.png")
-block(blockid=ids.minecraft__yellow_concrete_powder,top_image="assets/minecraft/textures/block/yellow_concrete_powder.png")
-block(blockid=ids.minecraft__lime_concrete_powder,top_image="assets/minecraft/textures/block/lime_concrete_powder.png")
-block(blockid=ids.minecraft__pink_concrete_powder,top_image="assets/minecraft/textures/block/pink_concrete_powder.png")
-block(blockid=ids.minecraft__gray_concrete_powder,top_image="assets/minecraft/textures/block/gray_concrete_powder.png")
-block(blockid=ids.minecraft__light_gray_concrete_powder,top_image="assets/minecraft/textures/block/light_gray_concrete_powder.png")
-block(blockid=ids.minecraft__cyan_concrete_powder,top_image="assets/minecraft/textures/block/cyan_concrete_powder.png")
-block(blockid=ids.minecraft__purple_concrete_powder,top_image="assets/minecraft/textures/block/purple_concrete_powder.png")
-block(blockid=ids.minecraft__blue_concrete_powder,top_image="assets/minecraft/textures/block/blue_concrete_powder.png")
-block(blockid=ids.minecraft__brown_concrete_powder,top_image="assets/minecraft/textures/block/brown_concrete_powder.png")
-block(blockid=ids.minecraft__green_concrete_powder,top_image="assets/minecraft/textures/block/green_concrete_powder.png")
-block(blockid=ids.minecraft__red_concrete_powder,top_image="assets/minecraft/textures/block/red_concrete_powder.png")
-block(blockid=ids.minecraft__black_concrete_powder,top_image="assets/minecraft/textures/block/black_concrete_powder.png")
+block(blockid=ids.minecraft__white_concrete, top_image="assets/minecraft/textures/block/white_concrete.png")
+block(blockid=ids.minecraft__orange_concrete, top_image="assets/minecraft/textures/block/orange_concrete.png")
+block(blockid=ids.minecraft__magenta_concrete, top_image="assets/minecraft/textures/block/magenta_concrete.png")
+block(blockid=ids.minecraft__light_blue_concrete, top_image="assets/minecraft/textures/block/light_blue_concrete.png")
+block(blockid=ids.minecraft__yellow_concrete, top_image="assets/minecraft/textures/block/yellow_concrete.png")
+block(blockid=ids.minecraft__lime_concrete, top_image="assets/minecraft/textures/block/lime_concrete.png")
+block(blockid=ids.minecraft__pink_concrete, top_image="assets/minecraft/textures/block/pink_concrete.png")
+block(blockid=ids.minecraft__gray_concrete, top_image="assets/minecraft/textures/block/gray_concrete.png")
+block(blockid=ids.minecraft__light_gray_concrete, top_image="assets/minecraft/textures/block/light_gray_concrete.png")
+block(blockid=ids.minecraft__cyan_concrete, top_image="assets/minecraft/textures/block/cyan_concrete.png")
+block(blockid=ids.minecraft__purple_concrete, top_image="assets/minecraft/textures/block/purple_concrete.png")
+block(blockid=ids.minecraft__blue_concrete, top_image="assets/minecraft/textures/block/blue_concrete.png")
+block(blockid=ids.minecraft__brown_concrete, top_image="assets/minecraft/textures/block/brown_concrete.png")
+block(blockid=ids.minecraft__green_concrete, top_image="assets/minecraft/textures/block/green_concrete.png")
+block(blockid=ids.minecraft__red_concrete, top_image="assets/minecraft/textures/block/red_concrete.png")
+block(blockid=ids.minecraft__black_concrete, top_image="assets/minecraft/textures/block/black_concrete.png")
+block(blockid=ids.minecraft__white_concrete_powder, top_image="assets/minecraft/textures/block/white_concrete_powder.png")
+block(blockid=ids.minecraft__orange_concrete_powder, top_image="assets/minecraft/textures/block/orange_concrete_powder.png")
+block(blockid=ids.minecraft__magenta_concrete_powder, top_image="assets/minecraft/textures/block/magenta_concrete_powder.png")
+block(blockid=ids.minecraft__light_blue_concrete_powder, top_image="assets/minecraft/textures/block/light_blue_concrete_powder.png")
+block(blockid=ids.minecraft__yellow_concrete_powder, top_image="assets/minecraft/textures/block/yellow_concrete_powder.png")
+block(blockid=ids.minecraft__lime_concrete_powder, top_image="assets/minecraft/textures/block/lime_concrete_powder.png")
+block(blockid=ids.minecraft__pink_concrete_powder, top_image="assets/minecraft/textures/block/pink_concrete_powder.png")
+block(blockid=ids.minecraft__gray_concrete_powder, top_image="assets/minecraft/textures/block/gray_concrete_powder.png")
+block(blockid=ids.minecraft__light_gray_concrete_powder, top_image="assets/minecraft/textures/block/light_gray_concrete_powder.png")
+block(blockid=ids.minecraft__cyan_concrete_powder, top_image="assets/minecraft/textures/block/cyan_concrete_powder.png")
+block(blockid=ids.minecraft__purple_concrete_powder, top_image="assets/minecraft/textures/block/purple_concrete_powder.png")
+block(blockid=ids.minecraft__blue_concrete_powder, top_image="assets/minecraft/textures/block/blue_concrete_powder.png")
+block(blockid=ids.minecraft__brown_concrete_powder, top_image="assets/minecraft/textures/block/brown_concrete_powder.png")
+block(blockid=ids.minecraft__green_concrete_powder, top_image="assets/minecraft/textures/block/green_concrete_powder.png")
+block(blockid=ids.minecraft__red_concrete_powder, top_image="assets/minecraft/textures/block/red_concrete_powder.png")
+block(blockid=ids.minecraft__black_concrete_powder, top_image="assets/minecraft/textures/block/black_concrete_powder.png")
 block(blockid=ids.minecraft__dried_kelp_block, top_image="assets/minecraft/textures/block/dried_kelp_top.png", side_image="assets/minecraft/textures/block/dried_kelp_side.png")
 block(blockid=ids.minecraft__scaffolding, top_image="assets/minecraft/textures/block/scaffolding_top.png", side_image="assets/minecraft/textures/block/scaffolding_side.png", solid=False, transparent=True)
 block(blockid=ids.minecraft__honeycomb_block, top_image="assets/minecraft/textures/block/honeycomb_block.png")
@@ -1141,7 +1141,8 @@ billboard(blockid=ids.minecraft__weeping_vines_plant, imagename="assets/minecraf
 billboard(blockid=ids.minecraft__twisting_vines, imagename="assets/minecraft/textures/block/weeping_vines.png")
 billboard(blockid=ids.minecraft__twisting_vines_plant, imagename="assets/minecraft/textures/block/weeping_vines_plant.png")
 
-@material(blockid=ids.minecraft__grass_block, data=list(range(11))+[0x10,], solid=True)
+
+@material(blockid=ids.minecraft__grass_block, data=list(range(11)) + [0x10], solid=True)
 def grass(self, blockid, data):
     # 0x10 bit means SNOW
     side_img = self.load_image_texture("assets/minecraft/textures/block/grass_block_side.png")
@@ -1151,6 +1152,7 @@ def grass(self, blockid, data):
     if not data & 0x10:
         alpha_over(img, self.biome_grass_texture, (0, 0), self.biome_grass_texture)
     return img
+
 
 # water, glass, and ice (no inner surfaces)
 # uses pseudo-ancildata found in iterate.c
