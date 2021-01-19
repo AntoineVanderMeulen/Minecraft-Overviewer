@@ -328,6 +328,8 @@ enum mc_block_id {
     block_jungle_door = 487,
     block_acacia_door = 488,
     block_dark_oak_door = 489,
+    block_crimson_door = 720,
+    block_warped_door = 721,
 
     block_ladder = 162,
 
@@ -544,6 +546,9 @@ enum mc_block_id {
     block_red_sandstone_wall = 656,
     block_sandstone_wall = 663,
     block_stone_brick_wall = 659,
+    block_polished_blackstone_brick_wall = 753,
+    block_polished_blackstone_wall = 759,
+    block_blackstone_wall = 745
     // end of walls
     block_chorus_plant = 491,
 

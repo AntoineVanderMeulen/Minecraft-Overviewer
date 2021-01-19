@@ -112,7 +112,9 @@ const mc_block_t block_class_door[] = {
     block_birch_door,
     block_jungle_door,
     block_acacia_door,
-    block_dark_oak_door};
+    block_dark_oak_door,
+    block_crimson_door,
+    block_warped_door};
 const size_t block_class_door_len = COUNT_OF(block_class_door);
 
 const mc_block_t block_class_fence[] = {
@@ -146,6 +148,8 @@ const mc_block_t block_class_ancil[] = {
     block_jungle_door,
     block_acacia_door,
     block_dark_oak_door,
+    block_crimson_door,
+    block_warped_door,
     block_oak_stairs,
     block_brick_stairs,
     block_stone_brick_stairs,
@@ -208,6 +212,9 @@ const mc_block_t block_class_ancil[] = {
     block_red_sandstone_wall,
     block_sandstone_wall,
     block_stone_brick_wall,
+    block_blackstone_wall,
+    block_polished_blackstone_brick_wall,
+    block_polished_blackstone_wall,
     block_double_plant,
     block_white_stained_glass_pane,
     block_orange_stained_glass_pane,
