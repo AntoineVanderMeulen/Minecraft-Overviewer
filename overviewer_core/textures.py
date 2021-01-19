@@ -3498,14 +3498,18 @@ def buttons(self, blockid, data):
         elif data == 5: data = 6
         elif data == 6: data = 5
 
-    texturepath = {ids.minecraft__stone_button: "assets/minecraft/textures/block/stone.png",
-                   ids.minecraft__oak_button: "assets/minecraft/textures/block/oak_planks.png",
-                   ids.minecraft__spruce_button: "assets/minecraft/textures/block/spruce_planks.png",
-                   ids.minecraft__birch_button: "assets/minecraft/textures/block/birch_planks.png",
-                   ids.minecraft__jungle_button: "assets/minecraft/textures/block/jungle_planks.png",
-                   ids.minecraft__acacia_button: "assets/minecraft/textures/block/acacia_planks.png",
-                   ids.minecraft__dark_oak_button: "assets/minecraft/textures/block/dark_oak_planks.png"
-                  }[blockid]
+    texturepath = {
+        ids.minecraft__stone_button: "assets/minecraft/textures/block/stone.png",
+        ids.minecraft__oak_button: "assets/minecraft/textures/block/oak_planks.png",
+        ids.minecraft__spruce_button: "assets/minecraft/textures/block/spruce_planks.png",
+        ids.minecraft__birch_button: "assets/minecraft/textures/block/birch_planks.png",
+        ids.minecraft__jungle_button: "assets/minecraft/textures/block/jungle_planks.png",
+        ids.minecraft__acacia_button: "assets/minecraft/textures/block/acacia_planks.png",
+        ids.minecraft__dark_oak_button: "assets/minecraft/textures/block/dark_oak_planks.png",
+        ids.minecraft__crimson_button: "assets/minecraft/textures/block/crimson_planks.png",
+        ids.minecraft__warped_button: "assets/minecraft/textures/block/warped_planks.png",
+        ids.minecraft__polished_blackstone_button: "assets/minecraft/textures/block/polished_blackstone.png",
+    }[blockid]
     t = self.load_image_texture(texturepath).copy()
 
     # generate the texture for the button

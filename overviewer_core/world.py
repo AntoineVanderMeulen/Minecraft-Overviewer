@@ -674,6 +674,9 @@ class RegionSet(object):
             'minecraft:jungle_button': (ids.minecraft__jungle_button, 0),  # 11328
             'minecraft:acacia_button': (ids.minecraft__acacia_button, 0),  # 11329
             'minecraft:dark_oak_button': (ids.minecraft__dark_oak_button, 0),  # 11330
+            'minecraft:crimson_button': (ids.minecraft__crimson_button, 0),
+            'minecraft:warped_button': (ids.minecraft__warped_button, 0),
+            'minecraft:polished_blackstone_button': (ids.minecraft__polished_blackstone_button, 0),
 
             'minecraft:snow': (ids.minecraft__snow, 0),
             'minecraft:snow_block': (ids.minecraft__snow_block, 0),
