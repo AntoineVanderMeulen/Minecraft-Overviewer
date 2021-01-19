@@ -694,6 +694,12 @@ enum mc_block_id {
 
     block_lantern = 678,
 
+    block_crimson_fence = 710,
+    block_warped_fence = 711,
+    block_crimson_fence_gate = 714,
+    block_warped_fence_gate = 715,
+
+
     //TODO
     block_sapling = 116,
     

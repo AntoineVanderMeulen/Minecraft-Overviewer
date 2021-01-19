@@ -3656,6 +3656,14 @@ def fence(self, blockid, data):
         fence_top = self.load_image_texture("assets/minecraft/textures/block/nether_bricks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/nether_bricks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/nether_bricks.png").copy()
+    elif blockid == ids.minecraft__crimson_fence:
+        fence_top = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png").copy()
+        fence_side = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png").copy()
+        fence_small_side = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png").copy()
+    elif blockid == ids.minecraft__warped_fence:
+        fence_top = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png").copy()
+        fence_side = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png").copy()
+        fence_small_side = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png").copy()
 
     # generate the textures of the fence
     ImageDraw.Draw(fence_top).rectangle((0,0,5,15),outline=(0,0,0,0),fill=(0,0,0,0))
@@ -4412,6 +4420,12 @@ def fence_gate(self, blockid, data):
         gate_side = self.load_image_texture("assets/minecraft/textures/block/dark_oak_planks.png").copy()
     elif blockid == ids.minecraft__acacia_fence_gate: # Acacia
         gate_side = self.load_image_texture("assets/minecraft/textures/block/acacia_planks.png").copy()
+    elif blockid == ids.minecraft__crimson_fence_gate: # Acacia
+        gate_side = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png").copy()
+    elif blockid == ids.minecraft__warped_fence_gate: # Acacia
+        gate_side = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png").copy()
+
+
     else:
         return None
 

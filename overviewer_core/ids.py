@@ -759,6 +759,10 @@ minecraft__end_gateway = 499
 minecraft__polished_blackstone_bricks = 748
 minecraft__polished_blackstone = 747
 
+minecraft__crimson_fence = 710
+minecraft__warped_fence = 711
+minecraft__crimson_fence_gate = 714
+minecraft__warped_fence_gate = 715
 
 ## Group
 
@@ -838,6 +842,8 @@ group_gate = [
     minecraft__jungle_fence_gate,
     minecraft__acacia_fence_gate,
     minecraft__dark_oak_fence_gate,
+    minecraft__crimson_fence_gate,
+    minecraft__warped_fence_gate,
 ]
 
 group_power_rail = [
@@ -1072,6 +1078,8 @@ group_fence = [
     minecraft__jungle_fence,
     minecraft__acacia_fence,
     minecraft__dark_oak_fence,
+    minecraft__crimson_fence,
+    minecraft__warped_fence,
 ]
 
 group_stairs = [
@@ -1178,10 +1186,7 @@ group_campfire = [minecraft__campfire, minecraft__soul_campfire]
 
 
 
-minecraft__crimson_fence = 710
-minecraft__warped_fence = 711
-minecraft__crimson_fence_gate = 714
-minecraft__warped_fence_gate = 715
+
 minecraft__crimson_trapdoor = 712
 minecraft__warped_trapdoor = 713
 minecraft__blackstone_wall = 745

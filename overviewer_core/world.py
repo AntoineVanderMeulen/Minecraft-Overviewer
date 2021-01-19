@@ -694,6 +694,8 @@ class RegionSet(object):
             'minecraft:jungle_fence': (ids.minecraft__jungle_fence, 0),  # 190
             'minecraft:dark_oak_fence': (ids.minecraft__acacia_fence, 0),  # 191
             'minecraft:acacia_fence': (ids.minecraft__dark_oak_fence, 0),  # 192
+            'minecraft:crimson_fence': (ids.minecraft__crimson_fence, 0),
+            'minecraft:warped_fence': (ids.minecraft__warped_fence, 0),
 
             'minecraft:oak_fence_gate': (ids.minecraft__oak_fence_gate, 0),  # 107
             'minecraft:spruce_fence_gate': (ids.minecraft__spruce_fence_gate, 0),  # 183
@@ -701,6 +703,8 @@ class RegionSet(object):
             'minecraft:jungle_fence_gate': (ids.minecraft__jungle_fence_gate, 0),  # 185
             'minecraft:dark_oak_fence_gate': (ids.minecraft__acacia_fence_gate, 0),  # 186
             'minecraft:acacia_fence_gate': (ids.minecraft__dark_oak_fence_gate, 0),  # 187
+            'minecraft:crimson_fence_gate': (ids.minecraft__crimson_fence_gate, 0),
+            'minecraft:warped_fence_gate': (ids.minecraft__warped_fence_gate, 0),
 
             'minecraft:pumpkin': (ids.minecraft__pumpkin, 0),
             'minecraft:jack_o_lantern': (ids.minecraft__jack_o_lantern, 0),
