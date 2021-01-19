@@ -3441,6 +3441,9 @@ def pressure_plate(self, blockid, data):
                     ids.minecraft__dark_oak_pressure_plate: "assets/minecraft/textures/block/dark_oak_planks.png",  # dark oak
                     ids.minecraft__light_weighted_pressure_plate: "assets/minecraft/textures/block/gold_block.png",  # light golden
                     ids.minecraft__heavy_weighted_pressure_plate: "assets/minecraft/textures/block/iron_block.png",  # heavy iron
+                    ids.minecraft__crimson_pressure_plate: "assets/minecraft/textures/block/crimson_planks.png",
+                    ids.minecraft__warped_pressure_plate: "assets/minecraft/textures/block/warped_planks.png",
+                    ids.minecraft__polished_blackstone_pressure_plate: "assets/minecraft/textures/block/polished_blackstone.png",
                    }[blockid]
     t = self.load_image_texture(texture_name).copy()
     

@@ -334,7 +334,9 @@ minecraft__acacia_pressure_plate = 178
 minecraft__dark_oak_pressure_plate = 179
 minecraft__light_weighted_pressure_plate = 330
 minecraft__heavy_weighted_pressure_plate = 331
-
+minecraft__crimson_pressure_plate = 708
+minecraft__warped_pressure_plate = 709
+minecraft__polished_blackstone_pressure_plate = 757
 minecraft__redstone_ore = 180
 
 minecraft__stone_button = 183
@@ -771,7 +773,7 @@ group_melon_pumpkin_stem = [minecraft__attached_pumpkin_stem, minecraft__attache
 
 group_pane_and_bars = [minecraft__iron_bars, minecraft__glass_pane, minecraft__white_stained_glass_pane, minecraft__orange_stained_glass_pane, minecraft__magenta_stained_glass_pane, minecraft__light_blue_stained_glass_pane, minecraft__yellow_stained_glass_pane, minecraft__lime_stained_glass_pane, minecraft__pink_stained_glass_pane, minecraft__gray_stained_glass_pane, minecraft__light_gray_stained_glass_pane, minecraft__cyan_stained_glass_pane, minecraft__purple_stained_glass_pane, minecraft__blue_stained_glass_pane, minecraft__brown_stained_glass_pane, minecraft__green_stained_glass_pane, minecraft__red_stained_glass_pane, minecraft__black_stained_glass_pane]
 
-group_pressure_plate = [minecraft__stone_pressure_plate, minecraft__oak_pressure_plate, minecraft__spruce_pressure_plate, minecraft__birch_pressure_plate, minecraft__jungle_pressure_plate, minecraft__acacia_pressure_plate, minecraft__dark_oak_pressure_plate, minecraft__light_weighted_pressure_plate, minecraft__heavy_weighted_pressure_plate]
+group_pressure_plate = [minecraft__stone_pressure_plate, minecraft__oak_pressure_plate, minecraft__spruce_pressure_plate, minecraft__birch_pressure_plate, minecraft__jungle_pressure_plate, minecraft__acacia_pressure_plate, minecraft__dark_oak_pressure_plate, minecraft__light_weighted_pressure_plate, minecraft__heavy_weighted_pressure_plate, minecraft__crimson_pressure_plate, minecraft__warped_pressure_plate, minecraft__polished_blackstone_pressure_plate]
 
 group_table = [minecraft__crafting_table, minecraft__cartography_table, minecraft__fletching_table, minecraft__smithing_table]
 
@@ -1167,9 +1169,7 @@ group_campfire = [minecraft__campfire, minecraft__soul_campfire]
 
 
 
-minecraft__crimson_pressure_plate = 708
-minecraft__warped_pressure_plate = 709
-minecraft__polished_blackstone_pressure_plate = 757
+
 
 minecraft__crimson_button = 718
 minecraft__warped_button = 719

@@ -661,6 +661,9 @@ class RegionSet(object):
             'minecraft:dark_oak_pressure_plate': (ids.minecraft__dark_oak_pressure_plate, 0),  # 11305
             'minecraft:light_weighted_pressure_plate': (ids.minecraft__light_weighted_pressure_plate, 0),  # 147
             'minecraft:heavy_weighted_pressure_plate': (ids.minecraft__heavy_weighted_pressure_plate, 0),  # 148
+            'minecraft:crimson_pressure_plate': (ids.minecraft__crimson_pressure_plate, 0),
+            'minecraft:warped_pressure_plate': (ids.minecraft__warped_pressure_plate, 0),
+            'minecraft:polished_blackstone_pressure_plate': (ids.minecraft__polished_blackstone_pressure_plate, 0),
 
             'minecraft:redstone_ore': (ids.minecraft__redstone_ore, 0),
 
