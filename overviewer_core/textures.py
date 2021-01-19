@@ -1799,12 +1799,13 @@ def piston_extension(self, blockid, data):
 
     return img
 
+
 # double slabs and slabs
 # these wooden slabs are unobtainable without cheating, they are still
 # here because lots of pre-1.3 worlds use this blocks, add prismarine slabs
 @material(blockid=ids.group_slabs, data=[0, 1], transparent=ids.group_slabs, solid=True)
 def slabs(self, blockid, data):
-    # if blockid == 44 or blockid == 182: 
+    # if blockid == 44 or blockid == 182:
     #     texture = data & 7
     # else: # data > 8 are special double slabs
     #     texture = data
@@ -1890,11 +1891,6 @@ def slabs(self, blockid, data):
         side = self.load_image_texture("assets/minecraft/textures/block/blackstone.png")
     elif blockid == ids.minecraft__polished_blackstone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/polished_blackstone.png")
-
-
-
-
-
 
     # if blockid == 43 or blockid == 181 or blockid == 204: # double slab
     #     return self.build_block(top, side)
@@ -2192,6 +2188,11 @@ def stairs(self, blockid, data):
         ids.minecraft__end_stone_brick_stairs: "assets/minecraft/textures/block/end_stone_bricks.png",
         ids.minecraft__red_nether_brick_stairs: "assets/minecraft/textures/block/red_nether_bricks.png",
         ids.minecraft__smooth_red_sandstone_stairs: "assets/minecraft/textures/block/red_sandstone_top.png",
+        ids.minecraft__crimson_stairs: "assets/minecraft/textures/block/crimson_planks.png",
+        ids.minecraft__warped_stairs: "assets/minecraft/textures/block/warped_planks.png",
+        ids.minecraft__blackstone_stairs: "assets/minecraft/textures/block/blackstone.png",
+        ids.minecraft__polished_blackstone_brick_stairs: "assets/minecraft/textures/block/polished_blackstone_bricks.png",
+        ids.minecraft__polished_blackstone_stairs: "assets/minecraft/textures/block/polished_blackstone.png",
     }
 
     texture = self.load_image_texture(stair_id_to_tex[blockid]).copy()

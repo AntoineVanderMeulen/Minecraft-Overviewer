@@ -265,6 +265,11 @@ minecraft__andesite_stairs = 637
 minecraft__end_stone_brick_stairs = 632
 minecraft__red_nether_brick_stairs = 638
 minecraft__smooth_red_sandstone_stairs = 628
+minecraft__crimson_stairs = 716
+minecraft__warped_stairs = 717
+minecraft__blackstone_stairs = 744
+minecraft__polished_blackstone_brick_stairs = 752
+minecraft__polished_blackstone_stairs = 755
 
 minecraft__chest = 147
 minecraft__ender_chest = 270
@@ -1093,6 +1098,11 @@ group_stairs = [
     minecraft__end_stone_brick_stairs,
     minecraft__red_nether_brick_stairs,
     minecraft__smooth_red_sandstone_stairs,
+    minecraft__crimson_stairs,
+    minecraft__warped_stairs,
+    minecraft__blackstone_stairs,
+    minecraft__polished_blackstone_brick_stairs,
+    minecraft__polished_blackstone_stairs,
 ]
 
 group_door = [
@@ -1155,11 +1165,7 @@ group_campfire = [minecraft__campfire, minecraft__soul_campfire]
 
 
 
-minecraft__crimson_stairs = 716
-minecraft__warped_stairs = 717
-minecraft__blackstone_stairs = 744
-minecraft__polished_blackstone_brick_stairs = 752
-minecraft__polished_blackstone_stairs = 755
+
 
 minecraft__crimson_pressure_plate = 708
 minecraft__warped_pressure_plate = 709

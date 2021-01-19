@@ -587,6 +587,11 @@ class RegionSet(object):
             'minecraft:end_stone_brick_stairs': (ids.minecraft__end_stone_brick_stairs, 0),  # 11383
             'minecraft:red_nether_brick_stairs': (ids.minecraft__red_nether_brick_stairs, 0),  # 11384
             'minecraft:smooth_red_sandstone_stairs': (ids.minecraft__smooth_red_sandstone_stairs, 0),  # 11415
+            'minecraft:crimson_stairs': (ids.minecraft__crimson_stairs, 0),
+            'minecraft:warped_stairs': (ids.minecraft__warped_stairs, 0),
+            'minecraft:blackstone_stairs': (ids.minecraft__blackstone_stairs, 0),
+            'minecraft:polished_blackstone_brick_stairs': (ids.minecraft__polished_blackstone_brick_stairs, 0),
+            'minecraft:polished_blackstone_stairs': (ids.minecraft__polished_blackstone_stairs, 0),
 
             'minecraft:chest': (ids.minecraft__chest, 0),
             'minecraft:ender_chest': (ids.minecraft__ender_chest, 0),

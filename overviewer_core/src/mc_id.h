@@ -282,6 +282,11 @@ enum mc_block_id {
     block_end_stone_brick_stairs = 632,
     block_red_nether_brick_stairs = 638,
     block_smooth_red_sandstone_stairs = 628,
+    block_crimson_stairs = 716,
+    block_warped_stairs = 717,
+    block_blackstone_stairs = 744,
+    block_polished_blackstone_brick_stairs = 752,
+    block_polished_blackstone_stairs = 755,
 
     block_chest = 147,
     block_ender_chest = 270,
