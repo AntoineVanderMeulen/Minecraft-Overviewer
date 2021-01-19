@@ -190,34 +190,6 @@ enum mc_block_id {
     block_gold_block = 134,
     block_iron_block = 135,
 
-    // block_stone_slab = 44,
-    // block_double_stone_slab = 43,
-    // block_double_wooden_slab = 125,
-    // block_wooden_slab = 126,
-    // block_double_stone_slab2 = 181,
-    // block_stone_slab2 = 182,
-    // block_purpur_double_slab = 204,
-    // block_purpur_slab = 205,
-    // block_prismarine_slab = 11340,
-    // block_dark_prismarine_slab = 11341,
-    // block_prismarine_brick_slab = 11342,
-    // block_andesite_slab = 11343,
-    // block_diorite_slab = 11344,
-    // block_granite_slab = 11345,
-    // block_polished_andesite_slab = 11346,
-    // block_polished_diorite_slab = 11347,
-    // block_polished_granite_slab = 11348,
-    // block_red_nether_brick_slab = 11349,
-    // block_smooth_sandstone_slab = 11350,
-    // block_cut_sandstone_slab = 11351,
-    // block_smooth_red_sandstone_slab = 11352,
-    // block_cut_red_sandstone_slab = 11353,
-    // block_end_stone_brick_slab = 11354,
-    // block_mossy_cobblestone_slab = 11355,
-    // block_mossy_stone_brick_slab = 11356,
-    // block_smooth_quartz_slab = 11357,
-    // block_smooth_stone_slab = 11358,
-
     block_oak_slab = 452,
     block_spruce_slab = 453,
     block_birch_slab = 454,
@@ -255,6 +227,14 @@ enum mc_block_id {
     block_smooth_stone_slab = 459,
     block_crimson_slab = 706,
     block_warped_slab = 707,
+    block_polished_blackstone_brick_slab = 751,
+    block_blackstone_slab = 746,
+    block_polished_blackstone_slab = 756,
+
+
+
+
+
 
     block_brick = 136,
     block_tnt = 137,

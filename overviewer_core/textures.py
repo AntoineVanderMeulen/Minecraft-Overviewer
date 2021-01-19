@@ -1102,6 +1102,8 @@ block(blockid=ids.minecraft__ancient_debris, top_image="assets/minecraft/texture
 block(blockid=ids.minecraft__blackstone, top_image="assets/minecraft/textures/block/blackstone_top.png",
       side_image="assets/minecraft/textures/block/blackstone.png")
 block(blockid=ids.minecraft__netherite_block, top_image="assets/minecraft/textures/block/netherite_block.png")
+block(blockid=ids.minecraft__polished_blackstone_bricks, top_image="assets/minecraft/textures/block/polished_blackstone_bricks.png")
+block(blockid=ids.minecraft__polished_blackstone, top_image="assets/minecraft/textures/block/polished_blackstone.png")
 
 # simple sprite
 sprite(blockid=ids.minecraft__oak_sapling, imagename="assets/minecraft/textures/block/oak_sapling.png")
@@ -1881,6 +1883,18 @@ def slabs(self, blockid, data):
     elif blockid == ids.minecraft__smooth_stone_slab:
         top = self.load_image_texture("assets/minecraft/textures/block/smooth_stone.png")
         side = self.load_image_texture("assets/minecraft/textures/block/smooth_stone_slab_side.png")
+    elif blockid == ids.minecraft__polished_blackstone_brick_slab:
+        top = side = self.load_image_texture("assets/minecraft/textures/block/polished_blackstone_bricks.png")
+    elif blockid == ids.minecraft__blackstone_slab:
+        top = self.load_image_texture("assets/minecraft/textures/block/blackstone_top.png")
+        side = self.load_image_texture("assets/minecraft/textures/block/blackstone.png")
+    elif blockid == ids.minecraft__polished_blackstone_slab:
+        top = side = self.load_image_texture("assets/minecraft/textures/block/polished_blackstone.png")
+
+
+
+
+
 
     # if blockid == 43 or blockid == 181 or blockid == 204: # double slab
     #     return self.build_block(top, side)
@@ -4514,7 +4528,7 @@ def cauldron(self, blockid, data):
 
 
 # end portal and end_gateway
-@material(blockid=[ids.minecraft__end_portal], transparent=True, nodata=True)
+@material(blockid=ids.group_end_portal, transparent=True, nodata=True)
 def end_portal(self, blockid, data):
     img = Image.new("RGBA", (24,24), self.bgcolor)
     # generate a black texure with white, blue and grey dots resembling stars

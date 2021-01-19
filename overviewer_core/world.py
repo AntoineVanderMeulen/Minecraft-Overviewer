@@ -536,6 +536,10 @@ class RegionSet(object):
             "minecraft:smooth_stone_slab": (ids.minecraft__smooth_stone_slab, 0),  # 11358-0
             "minecraft:crimson_slab": (ids.minecraft__crimson_slab, 0),
             "minecraft:warped_slab": (ids.minecraft__warped_slab, 0),
+            "minecraft:polished_blackstone_brick_slab": (ids.minecraft__polished_blackstone_brick_slab, 0),
+            "minecraft:blackstone_slab": (ids.minecraft__blackstone_slab, 0),
+            "minecraft:polished_blackstone_slab": (ids.minecraft__polished_blackstone_slab, 0),
+
 
             'minecraft:bricks': (ids.minecraft__bricks, 0),
             'minecraft:tnt': (ids.minecraft__tnt, 0),
@@ -1062,6 +1066,11 @@ class RegionSet(object):
             'minecraft:stripped_crimson_hyphae': (ids.minecraft__stripped_crimson_hyphae, 0),  # 1009 3
 
             "minecraft:lantern": (ids.minecraft__lantern, 0),
+
+            "minecraft:polished_blackstone_bricks": (ids.minecraft__polished_blackstone_bricks, 0),
+            "minecraft:polished_blackstone": (ids.minecraft__polished_blackstone, 0),
+
+
 
             'minecraft:skeleton_wall_skull': (144, 0),  # not rendering
             'minecraft:wither_skeleton_wall_skull': (144, 1),   # not rendering

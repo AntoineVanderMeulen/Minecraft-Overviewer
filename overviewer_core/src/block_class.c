@@ -302,7 +302,10 @@ const mc_block_t block_class_alt_height[] = {
     block_smooth_quartz_slab,
     block_smooth_stone_slab,
     block_crimson_slab,
-    block_warped_slab
+    block_warped_slab,
+    block_polished_blackstone_brick_slab,
+    block_blackstone_slab,
+    block_polished_blackstone_slab
     };
 const size_t block_class_alt_height_len = COUNT_OF(block_class_alt_height);
 
@@ -343,7 +346,10 @@ const mc_block_t block_class_slab[] = {
     block_smooth_quartz_slab,
     block_smooth_stone_slab,
     block_crimson_slab,
-    block_warped_slab
+    block_warped_slab,
+    block_polished_blackstone_brick_slab,
+    block_blackstone_slab,
+    block_polished_blackstone_slab
     };
 const size_t block_class_slab_len = COUNT_OF(block_class_slab);
 

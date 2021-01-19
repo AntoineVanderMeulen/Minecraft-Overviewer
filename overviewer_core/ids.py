@@ -187,7 +187,6 @@ minecraft__petrified_oak_slab = 462
 minecraft__crimson_slab = 706
 minecraft__warped_slab = 707
 
-
 minecraft__stone_slab = 458
 minecraft__sandstone_slab = 460
 minecraft__cobblestone_slab = 463
@@ -216,6 +215,9 @@ minecraft__mossy_cobblestone_slab = 645
 minecraft__mossy_stone_brick_slab = 643
 minecraft__smooth_quartz_slab = 648
 minecraft__smooth_stone_slab = 459
+minecraft__polished_blackstone_brick_slab = 751
+minecraft__blackstone_slab = 746
+minecraft__polished_blackstone_slab = 756
 
 minecraft__bricks = 136
 minecraft__tnt = 137
@@ -742,7 +744,15 @@ minecraft__warped_sign = 723
 minecraft__crimson_wall_sign = 724
 minecraft__warped_wall_sign = 725
 
+minecraft__end_gateway = 499
+
+minecraft__polished_blackstone_bricks = 748
+minecraft__polished_blackstone = 747
+
+
 ## Group
+
+group_end_portal = [minecraft__end_gateway, minecraft__end_portal]
 
 group_carpet = [minecraft__white_carpet, minecraft__orange_carpet, minecraft__magenta_carpet, minecraft__light_blue_carpet, minecraft__yellow_carpet, minecraft__lime_carpet, minecraft__pink_carpet, minecraft__gray_carpet, minecraft__light_gray_carpet, minecraft__cyan_carpet, minecraft__purple_carpet, minecraft__blue_carpet, minecraft__brown_carpet, minecraft__green_carpet, minecraft__red_carpet, minecraft__black_carpet]
 
@@ -766,7 +776,7 @@ group_slabs_stained_glass = [minecraft__white_stained_glass, minecraft__orange_s
 
 group_no_inner_surfaces = group_slabs_stained_glass + [minecraft__water, minecraft__glass, minecraft__ice]
 
-group_slabs = [minecraft__stone_slab, minecraft__sandstone_slab, minecraft__oak_slab, minecraft__cobblestone_slab, minecraft__brick_slab, minecraft__stone_brick_slab, minecraft__nether_brick_slab, minecraft__quartz_slab, minecraft__spruce_slab, minecraft__birch_slab, minecraft__jungle_slab, minecraft__acacia_slab, minecraft__dark_oak_slab, minecraft__red_sandstone_slab, minecraft__purpur_slab, minecraft__petrified_oak_slab, minecraft__prismarine_slab, minecraft__dark_prismarine_slab, minecraft__prismarine_brick_slab, minecraft__andesite_slab, minecraft__diorite_slab, minecraft__granite_slab, minecraft__polished_andesite_slab, minecraft__polished_diorite_slab, minecraft__polished_granite_slab, minecraft__red_nether_brick_slab, minecraft__smooth_sandstone_slab, minecraft__cut_sandstone_slab, minecraft__smooth_red_sandstone_slab, minecraft__cut_red_sandstone_slab, minecraft__end_stone_brick_slab, minecraft__mossy_cobblestone_slab, minecraft__mossy_stone_brick_slab, minecraft__smooth_quartz_slab, minecraft__smooth_stone_slab, minecraft__crimson_slab, minecraft__warped_slab]
+group_slabs = [minecraft__stone_slab, minecraft__sandstone_slab, minecraft__oak_slab, minecraft__cobblestone_slab, minecraft__brick_slab, minecraft__stone_brick_slab, minecraft__nether_brick_slab, minecraft__quartz_slab, minecraft__spruce_slab, minecraft__birch_slab, minecraft__jungle_slab, minecraft__acacia_slab, minecraft__dark_oak_slab, minecraft__red_sandstone_slab, minecraft__purpur_slab, minecraft__petrified_oak_slab, minecraft__prismarine_slab, minecraft__dark_prismarine_slab, minecraft__prismarine_brick_slab, minecraft__andesite_slab, minecraft__diorite_slab, minecraft__granite_slab, minecraft__polished_andesite_slab, minecraft__polished_diorite_slab, minecraft__polished_granite_slab, minecraft__red_nether_brick_slab, minecraft__smooth_sandstone_slab, minecraft__cut_sandstone_slab, minecraft__smooth_red_sandstone_slab, minecraft__cut_red_sandstone_slab, minecraft__end_stone_brick_slab, minecraft__mossy_cobblestone_slab, minecraft__mossy_stone_brick_slab, minecraft__smooth_quartz_slab, minecraft__smooth_stone_slab, minecraft__crimson_slab, minecraft__warped_slab, minecraft__polished_blackstone_brick_slab,minecraft__blackstone_slab, minecraft__polished_blackstone_slab]
 
 double_slabs = {
     minecraft__stone_slab: minecraft__stone,
@@ -806,6 +816,9 @@ double_slabs = {
     minecraft__smooth_stone_slab: minecraft__smooth_stone,
     minecraft__crimson_slab: minecraft__crimson_planks,
     minecraft__warped_slab: minecraft__warped_planks,
+    minecraft__polished_blackstone_brick_slab: minecraft__polished_blackstone_bricks,
+    minecraft__blackstone_slab: minecraft__blackstone,
+    minecraft__polished_blackstone_slab: minecraft__polished_blackstone,
 }
 
 group_gate = [
@@ -1139,10 +1152,9 @@ group_campfire = [minecraft__campfire, minecraft__soul_campfire]
 
 
 # TODO
-minecraft__end_gateway = 499
 
-minecraft__blackstone_slab = 746
-minecraft__polished_blackstone_slab = 756
+
+
 minecraft__crimson_stairs = 716
 minecraft__warped_stairs = 717
 minecraft__blackstone_stairs = 744
@@ -1298,11 +1310,10 @@ minecraft__lodestone = 742
 
 
 
-minecraft__polished_blackstone = 747
-minecraft__polished_blackstone_bricks = 748
+
+
 minecraft__cracked_polished_blackstone_bricks = 749
 minecraft__chiseled_polished_blackstone = 750
-minecraft__polished_blackstone_brick_slab = 751
 
 
 minecraft__gilded_blackstone = 754
