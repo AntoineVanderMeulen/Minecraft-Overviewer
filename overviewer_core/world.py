@@ -1319,10 +1319,10 @@ class RegionSet(object):
 
         elif block in ids.group_torch:
             if block in ids.group_lit_torch and palette_entry['Properties']['lit'] == 'true':
-                block += 1
+                data += 0b1000
             if block in ids.group_wall_torch:
                 facing = palette_entry['Properties'].get('facing')
-                data = {'east': 1, 'west': 2, 'south': 3, 'north': 4}[facing]
+                data += {'east': 1, 'west': 2, 'south': 3, 'north': 4}[facing]
             # else:
             #     data = 5
 
