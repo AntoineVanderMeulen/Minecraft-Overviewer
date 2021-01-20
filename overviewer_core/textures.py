@@ -1100,11 +1100,19 @@ block(blockid=ids.block_scaffolding, top_image="assets/minecraft/textures/block/
 block(blockid=ids.block_honeycomb_block, top_image="assets/minecraft/textures/block/honeycomb_block.png")
 block(blockid=ids.block_honey_block, top_image="assets/minecraft/textures/block/honey_block_top.png", side_image="assets/minecraft/textures/block/honey_block_side.png")
 block(blockid=ids.block_ancient_debris, top_image="assets/minecraft/textures/block/ancient_debris_top.png", side_image="assets/minecraft/textures/block/ancient_debris_side.png")
-block(blockid=ids.block_blackstone, top_image="assets/minecraft/textures/block/blackstone_top.png",
-      side_image="assets/minecraft/textures/block/blackstone.png")
+block(blockid=ids.block_blackstone, top_image="assets/minecraft/textures/block/blackstone_top.png", side_image="assets/minecraft/textures/block/blackstone.png")
 block(blockid=ids.block_netherite_block, top_image="assets/minecraft/textures/block/netherite_block.png")
 block(blockid=ids.block_polished_blackstone_bricks, top_image="assets/minecraft/textures/block/polished_blackstone_bricks.png")
 block(blockid=ids.block_polished_blackstone, top_image="assets/minecraft/textures/block/polished_blackstone.png")
+block(blockid=ids.block_gilded_blackstone, top_image="assets/minecraft/textures/block/gilded_blackstone.png")
+block(blockid=ids.block_lodestone, top_image="assets/minecraft/textures/block/lodestone_top.png", side_image="assets/minecraft/textures/block/lodestone_side.png")
+block(blockid=ids.block_crying_obsidian, top_image="assets/minecraft/textures/block/crying_obsidian.png")
+block(blockid=ids.block_target, top_image="assets/minecraft/textures/block/target_top.png", side_image="assets/minecraft/textures/block/target_side.png"),
+block(blockid=ids.block_cracked_polished_blackstone_bricks, top_image="assets/minecraft/textures/block/cracked_polished_blackstone_bricks.png"),
+block(blockid=ids.block_chiseled_polished_blackstone, top_image="assets/minecraft/textures/block/chiseled_polished_blackstone.png"),
+block(blockid=ids.block_chiseled_nether_bricks, top_image="assets/minecraft/textures/block/chiseled_nether_bricks.png"),
+block(blockid=ids.block_cracked_nether_bricks, top_image="assets/minecraft/textures/block/cracked_nether_bricks.png"),
+block(blockid=ids.block_quartz_bricks, top_image="assets/minecraft/textures/block/quartz_bricks.png"),
 
 # simple sprite
 sprite(blockid=ids.block_oak_sapling, imagename="assets/minecraft/textures/block/oak_sapling.png")
@@ -1137,6 +1145,7 @@ sprite(blockid=ids.block_crimson_fungus, imagename="assets/minecraft/textures/bl
 sprite(blockid=ids.block_warped_roots, imagename="assets/minecraft/textures/block/warped_roots.png")
 sprite(blockid=ids.block_crimson_roots, imagename="assets/minecraft/textures/block/crimson_roots.png")
 sprite(blockid=ids.block_sugar_cane, imagename="assets/minecraft/textures/block/sugar_cane.png")
+sprite(blockid=ids.block_nether_sprouts, imagename="assets/minecraft/textures/block/nether_sprouts.png")
 
 # simple billboard
 billboard(blockid=ids.block_weeping_vines, imagename="assets/minecraft/textures/block/twisting_vines.png")
@@ -1900,10 +1909,12 @@ def slabs(self, blockid, data):
 
 
 # torch, redstone torch (off), redstone torch(on)
-@material(blockid=ids.group_torch, data=[1, 2, 3, 4, 5], transparent=True)
+@material(blockid=ids.group_torch, data=[0, 1, 2, 3, 4, 8, 9, 10, 11, 12], transparent=True)
 def torches(self, blockid, data):
     img = None
     # first, rotations
+    on = (data & 0b1000 == 8)
+    data = data & 0b111
     if self.rotation == 1:
         if data == 1:
             data = 3
@@ -1932,13 +1943,25 @@ def torches(self, blockid, data):
         elif data == 4:
             data = 2
 
-    # choose the proper texture
-    if blockid == ids.block_torch or blockid == ids.block_wall_torch:  # torch
+    # # choose the proper texture
+    # if blockid == ids.block_torch or blockid == ids.block_wall_torch:  # torch
+    #     small = self.load_image_texture("assets/minecraft/textures/block/torch.png")
+    # elif blockid == ids.block_redstone_wall_torch or blockid == ids.block_redstone_torch:  # off redstone torch
+    #     small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch_off.png")
+    # else:  # on redstone torch
+    #     small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch.png")
+
+    if blockid == ids.block_redstone_torch or blockid == ids.block_redstone_wall_torch:
+        if on:
+            small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch.png")
+        else:
+            small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch_off.png")
+
+    elif blockid == ids.block_torch or blockid == ids.block_wall_torch:
         small = self.load_image_texture("assets/minecraft/textures/block/torch.png")
-    elif blockid == ids.block_redstone_wall_torch or blockid == ids.block_redstone_torch:  # off redstone torch
-        small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch_off.png")
-    else:  # on redstone torch
-        small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch.png")
+
+    elif blockid == ids.block_soul_torch or blockid == ids.block_soul_wall_torch:   
+        small = self.load_image_texture("assets/minecraft/textures/block/soul_torch.png")
 
     # compose a torch bigger than the normal
     # (better for doing transformations)
@@ -4797,7 +4820,7 @@ def cobblestone_wall(self, blockid, data):
         ids.block_stone_brick_wall: "assets/minecraft/textures/block/stone_bricks.png",
         ids.block_polished_blackstone_brick_wall: "assets/minecraft/textures/block/polished_blackstone_bricks.png",
         ids.block_polished_blackstone_wall: "assets/minecraft/textures/block/polished_blackstone.png",
-        ids.minecraft_blackstone_wall: "assets/minecraft/textures/block/blackstone.png",
+        ids.block_blackstone_wall: "assets/minecraft/textures/block/blackstone.png",
     }
     t = self.load_image_texture(walls_id_to_tex[blockid]).copy()
 

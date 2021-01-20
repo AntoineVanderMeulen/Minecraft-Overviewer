@@ -247,6 +247,8 @@ enum mc_block_id {
     block_wall_torch = 142,
     block_redstone_torch = 181,
     block_redstone_wall_torch = 182,
+    block_soul_torch = 198,
+    block_soul_wall_torch = 199,
 
     block_fire = 143,
     block_spawner = 145,
@@ -548,7 +550,7 @@ enum mc_block_id {
     block_stone_brick_wall = 659,
     block_polished_blackstone_brick_wall = 753,
     block_polished_blackstone_wall = 759,
-    block_blackstone_wall = 745
+    block_blackstone_wall = 745,
     // end of walls
     block_chorus_plant = 491,
 
@@ -704,6 +706,7 @@ enum mc_block_id {
     block_crimson_fence_gate = 714,
     block_warped_fence_gate = 715,
 
+    block_gilded_blackstone = 754,
 
     //TODO
     block_sapling = 116,

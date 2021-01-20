@@ -785,6 +785,11 @@ class RegionSet(object):
 
             'minecraft:flower_pot': (ids.block_flower_pot, 0),  # Pots not rendering
 
+            'minecraft:potted_crimson_fungus': (ids.block_potted_crimson_fungus, 0),  # Pots not rendering
+            'minecraft:potted_warped_fungus': (ids.block_potted_warped_fungus, 0),  # Pots not rendering
+            'minecraft:potted_crimson_roots': (ids.block_potted_crimson_roots, 0),  # Pots not rendering
+            'minecraft:potted_warped_roots': (ids.block_potted_warped_roots, 0),  # Pots not rendering
+
             'minecraft:iron_bars': (ids.block_iron_bars, 0),
             'minecraft:glass_pane': (ids.block_glass_pane, 0),
             'minecraft:white_stained_glass_pane': (ids.block_white_stained_glass_pane, 0),
@@ -1085,53 +1090,66 @@ class RegionSet(object):
             'minecraft:stripped_warped_hyphae': (ids.block_stripped_warped_hyphae, 0),  # 1009 1
             'minecraft:crimson_hyphae': (ids.block_crimson_hyphae, 0),  # 1009 2
             'minecraft:stripped_crimson_hyphae': (ids.block_stripped_crimson_hyphae, 0),  # 1009 3
-            'minecraft:white_banner': (ids.block_white_banner, 0)  # not Rendering
-            'minecraft:orange_banner': (ids.block_orange_banner, 0)  # not Rendering
-            'minecraft:magenta_banner': (ids.block_magenta_banner, 0)  # not Rendering
-            'minecraft:light_blue_banner': (ids.block_light_blue_banner, 0)  # not Rendering
-            'minecraft:yellow_banner': (ids.block_yellow_banner, 0)  # not Rendering
-            'minecraft:lime_banner': (ids.block_lime_banner, 0)  # not Rendering
-            'minecraft:pink_banner': (ids.block_pink_banner, 0)  # not Rendering
-            'minecraft:gray_banner': (ids.block_gray_banner, 0)  # not Rendering
-            'minecraft:light_gray_banner': (ids.block_light_gray_banner, 0)  # not Rendering
-            'minecraft:cyan_banner': (ids.block_cyan_banner, 0)  # not Rendering
-            'minecraft:purple_banner': (ids.block_purple_banner, 0)  # not Rendering
-            'minecraft:blue_banner': (ids.block_blue_banner, 0)  # not Rendering
-            'minecraft:brown_banner': (ids.block_brown_banner, 0)  # not Rendering
-            'minecraft:green_banner': (ids.block_green_banner, 0)  # not Rendering
-            'minecraft:red_banner': (ids.block_red_banner, 0)  # not Rendering
-            'minecraft:black_banner': (ids.block_black_banner, 0)  # not Rendering
-            'minecraft:white_wall_banner': (ids.block_white_wall_banner, 0)  # not Rendering
-            'minecraft:orange_wall_banner': (ids.block_orange_wall_banner, 0)  # not Rendering
-            'minecraft:magenta_wall_banner': (ids.block_magenta_wall_banner, 0)  # not Rendering
-            'minecraft:light_blue_wall_banner': (ids.block_light_blue_wall_banner, 0)  # not Rendering
-            'minecraft:yellow_wall_banner': (ids.block_yellow_wall_banner, 0)  # not Rendering
-            'minecraft:lime_wall_banner': (ids.block_lime_wall_banner, 0)  # not Rendering
-            'minecraft:pink_wall_banner': (ids.block_pink_wall_banner, 0)  # not Rendering
-            'minecraft:gray_wall_banner': (ids.block_gray_wall_banner, 0)  # not Rendering
-            'minecraft:light_gray_wall_banner': (ids.block_light_gray_wall_banner, 0)  # not Rendering
-            'minecraft:cyan_wall_banner': (ids.block_cyan_wall_banner, 0)  # not Rendering
-            'minecraft:purple_wall_banner': (ids.block_purple_wall_banner, 0)  # not Rendering
-            'minecraft:blue_wall_banner': (ids.block_blue_wall_banner, 0)  # not Rendering
-            'minecraft:brown_wall_banner': (ids.block_brown_wall_banner, 0)  # not Rendering
-            'minecraft:green_wall_banner': (ids.block_green_wall_banner, 0)  # not Rendering
-            'minecraft:red_wall_banner': (ids.block_red_wall_banner, 0)  # not Rendering
-            'minecraft:black_wall_banner': (ids.block_black_wall_banner, 0)  # not Rendering
-
+            'minecraft:white_banner': (ids.block_white_banner, 0),  # not Rendering
+            'minecraft:orange_banner': (ids.block_orange_banner, 0),  # not Rendering
+            'minecraft:magenta_banner': (ids.block_magenta_banner, 0),  # not Rendering
+            'minecraft:light_blue_banner': (ids.block_light_blue_banner, 0),  # not Rendering
+            'minecraft:yellow_banner': (ids.block_yellow_banner, 0),  # not Rendering
+            'minecraft:lime_banner': (ids.block_lime_banner, 0),  # not Rendering
+            'minecraft:pink_banner': (ids.block_pink_banner, 0),  # not Rendering
+            'minecraft:gray_banner': (ids.block_gray_banner, 0),  # not Rendering
+            'minecraft:light_gray_banner': (ids.block_light_gray_banner, 0),  # not Rendering
+            'minecraft:cyan_banner': (ids.block_cyan_banner, 0),  # not Rendering
+            'minecraft:purple_banner': (ids.block_purple_banner, 0),  # not Rendering
+            'minecraft:blue_banner': (ids.block_blue_banner, 0),  # not Rendering
+            'minecraft:brown_banner': (ids.block_brown_banner, 0),  # not Rendering
+            'minecraft:green_banner': (ids.block_green_banner, 0),  # not Rendering
+            'minecraft:red_banner': (ids.block_red_banner, 0),  # not Rendering
+            'minecraft:black_banner': (ids.block_black_banner, 0),  # not Rendering
+            'minecraft:white_wall_banner': (ids.block_white_wall_banner, 0),  # not Rendering
+            'minecraft:orange_wall_banner': (ids.block_orange_wall_banner, 0),  # not Rendering
+            'minecraft:magenta_wall_banner': (ids.block_magenta_wall_banner, 0),  # not Rendering
+            'minecraft:light_blue_wall_banner': (ids.block_light_blue_wall_banner, 0),  # not Rendering
+            'minecraft:yellow_wall_banner': (ids.block_yellow_wall_banner, 0),  # not Rendering
+            'minecraft:lime_wall_banner': (ids.block_lime_wall_banner, 0),  # not Rendering
+            'minecraft:pink_wall_banner': (ids.block_pink_wall_banner, 0),  # not Rendering
+            'minecraft:gray_wall_banner': (ids.block_gray_wall_banner, 0),  # not Rendering
+            'minecraft:light_gray_wall_banner': (ids.block_light_gray_wall_banner, 0),  # not Rendering
+            'minecraft:cyan_wall_banner': (ids.block_cyan_wall_banner, 0),  # not Rendering
+            'minecraft:purple_wall_banner': (ids.block_purple_wall_banner, 0),  # not Rendering
+            'minecraft:blue_wall_banner': (ids.block_blue_wall_banner, 0),  # not Rendering
+            'minecraft:brown_wall_banner': (ids.block_brown_wall_banner, 0),  # not Rendering
+            'minecraft:green_wall_banner': (ids.block_green_wall_banner, 0),  # not Rendering
+            'minecraft:red_wall_banner': (ids.block_red_wall_banner, 0),  # not Rendering
+            'minecraft:black_wall_banner': (ids.block_black_wall_banner, 0),  # not Rendering
 
             "minecraft:lantern": (ids.block_lantern, 0),
 
             "minecraft:polished_blackstone_bricks": (ids.block_polished_blackstone_bricks, 0),
             "minecraft:polished_blackstone": (ids.block_polished_blackstone, 0),
 
+            'minecraft:soul_wall_torch': (ids.block_soul_wall_torch, 0),
+            'minecraft:soul_torch': (ids.block_soul_torch, 0),
 
+            'minecraft:gilded_blackstone': (ids.block_gilded_blackstone, 0),
+            'minecraft:lodestone': (ids.block_lodestone, 0),
+            'minecraft:crying_obsidian': (ids.block_crying_obsidian, 0),
+
+            'minecraft:nether_sprouts': (ids.block_nether_sprouts, 0),
+
+            'minecraft:target': (ids.block_target, 0),
+            'minecraft:cracked_polished_blackstone_bricks': (ids.block_cracked_polished_blackstone_bricks, 0),
+            'minecraft:chiseled_polished_blackstone': (ids.block_chiseled_polished_blackstone, 0),
+            'minecraft:chiseled_nether_bricks': (ids.block_chiseled_nether_bricks, 0),
+            'minecraft:cracked_nether_bricks': (ids.block_cracked_nether_bricks, 0),
+            'minecraft:quartz_bricks': (ids.block_quartz_bricks, 0),
 
             'minecraft:skeleton_wall_skull': (144, 0),  # not rendering
-            'minecraft:wither_skeleton_wall_skull': (144, 1),   # not rendering
-            'minecraft:zombie_wall_head': (144, 2),     # not rendering
-            'minecraft:player_wall_head': (144, 3),     # not rendering
-            'minecraft:creeper_wall_head': (144, 4),    # not rendering
-            'minecraft:dragon_wall_head': (144, 5),     # not rendering
+            'minecraft:wither_skeleton_wall_skull': (144, 1),  # not rendering
+            'minecraft:zombie_wall_head': (144, 2),  # not rendering
+            'minecraft:player_wall_head': (144, 3),  # not rendering
+            'minecraft:creeper_wall_head': (144, 4),  # not rendering
+            'minecraft:dragon_wall_head': (144, 5),  # not rendering
             'minecraft:end_rod': (198, 0),  # not rendering
             'minecraft:standing_banner': (176, 0),
             'minecraft:wall_banner': (177, 0),

@@ -446,6 +446,11 @@ block_potted_dead_bush = 304
 block_potted_cactus = 305
 block_potted_bamboo = 623
 
+block_potted_crimson_fungus = 738
+block_potted_warped_fungus = 739
+block_potted_crimson_roots = 740
+block_potted_warped_roots = 741
+
 block_flower_pot = 281
 
 block_iron_bars = 241
@@ -806,7 +811,21 @@ block_green_wall_banner = 445
 block_red_wall_banner = 446
 block_black_wall_banner = 447
 
+block_soul_torch = 198
+block_soul_wall_torch = 199
 
+block_gilded_blackstone = 754
+block_lodestone = 742
+block_crying_obsidian = 736
+
+block_nether_sprouts = 691
+
+block_target = 729
+block_cracked_polished_blackstone_bricks = 749
+block_chiseled_polished_blackstone = 750
+block_chiseled_nether_bricks = 760
+block_cracked_nether_bricks = 761
+block_quartz_bricks = 762
 
 
 ## Group
@@ -1028,6 +1047,7 @@ group_basalt = [
 group_wall_torch = [
     block_redstone_wall_torch,
     block_wall_torch,
+    block_soul_wall_torch,
 ]
 
 group_lit_torch = [
@@ -1037,8 +1057,8 @@ group_lit_torch = [
 
 group_torch = list(set([
     block_torch,
+    block_soul_torch,
 ] + group_lit_torch + group_wall_torch))
-
 
 group_glazed_terracotta = [
     block_white_glazed_terracotta,
@@ -1243,8 +1263,7 @@ group_campfire = [block_campfire, block_soul_campfire]
 block_moving_piston = 118
 block_soul_fire = 144
 
-block_soul_torch = 198
-block_soul_wall_torch = 199
+
 
 block_chain = 242
 
@@ -1262,9 +1281,6 @@ block_dragon_head = 324
 block_dragon_wall_head = 325
 
 block_barrier = 378
-
-
-
 
 block_end_rod = 490
 
@@ -1318,39 +1334,10 @@ block_void_air = 624
 block_cave_air = 625
 block_bubble_column = 626
 
-
 block_soul_lantern = 679
 
 
-
-block_nether_sprouts = 691
-
-
-
-
-block_target = 729
-
-block_crying_obsidian = 736
 block_respawn_anchor = 737
-block_potted_crimson_fungus = 738
-block_potted_warped_fungus = 739
-block_potted_crimson_roots = 740
-block_potted_warped_roots = 741
-block_lodestone = 742
 
 
 
-
-
-block_cracked_polished_blackstone_bricks = 749
-block_chiseled_polished_blackstone = 750
-
-
-block_gilded_blackstone = 754
-
-
-
-
-block_chiseled_nether_bricks = 760
-block_cracked_nether_bricks = 761
-block_quartz_bricks = 762
