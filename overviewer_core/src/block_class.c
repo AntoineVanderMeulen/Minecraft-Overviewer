@@ -190,7 +190,6 @@ const mc_block_t block_class_ancil[] = {
     block_flowing_water,
     block_water,
     block_glass,
-    block_redstone_wire,
     block_ice,
     block_oak_fence,
     block_nether_portal,

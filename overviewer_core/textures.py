@@ -2544,81 +2544,100 @@ def chests(self, blockid, data):
 
     return img
 
+
 # redstone wire
 # uses pseudo-ancildata found in iterate.c
-@material(blockid=ids.block_redstone_wire, data=list(range(128)), transparent=True)
+@material(blockid=ids.block_redstone_wire, data=[0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 21, 32, 33, 34, 35, 36, 37, 40, 41, 42, 43, 44, 45, 48, 49, 50, 51, 52, 53, 64, 65, 66, 67, 68, 69, 72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 84, 85, 128, 129, 130, 131, 132, 133, 136, 137, 138, 139, 140, 141, 144, 145, 146, 147, 148, 149, 160, 161, 162, 163, 164, 165, 168, 169, 170, 171, 172, 173, 176, 177, 178, 179, 180, 181, 192, 193, 194, 195, 196, 197, 200, 201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 256, 257, 258, 259, 260, 261, 264, 265, 266, 267, 268, 269, 272, 273, 274, 275, 276, 277, 288, 289, 290, 291, 292, 293, 296, 297, 298, 299, 300, 301, 304, 305, 306, 307, 308, 309, 320, 321, 322, 323, 324, 325, 328, 329, 330, 331, 332, 333, 336, 337, 338, 339, 340, 341], transparent=True)
 def wire(self, blockid, data):
 
-    if data & 0b1000000 == 64: # powered redstone wire
+    redstone_cross_t = None
+    if data & 0b1 == 1:  # powered redstone wire
         redstone_wire_t = self.load_image_texture("assets/minecraft/textures/block/redstone_dust_line0.png").rotate(90)
-        redstone_wire_t = self.tint_texture(redstone_wire_t,(255,0,0))
+        redstone_wire_t = self.tint_texture(redstone_wire_t, (255, 0, 0))
+        redstone_dust_t = self.load_image_texture("assets/minecraft/textures/block/redstone_dust_dot.png")
+        redstone_dust_t = self.tint_texture(redstone_dust_t, (255, 0, 0))
 
-        redstone_cross_t = self.load_image_texture("assets/minecraft/textures/block/redstone_dust_dot.png")
-        redstone_cross_t = self.tint_texture(redstone_cross_t,(255,0,0))
-
-        
-    else: # unpowered redstone wire
+    else:  # unpowered redstone wire
         redstone_wire_t = self.load_image_texture("assets/minecraft/textures/block/redstone_dust_line0.png").rotate(90)
-        redstone_wire_t = self.tint_texture(redstone_wire_t,(48,0,0))
-        
-        redstone_cross_t = self.load_image_texture("assets/minecraft/textures/block/redstone_dust_dot.png")
-        redstone_cross_t = self.tint_texture(redstone_cross_t,(48,0,0))
+        redstone_wire_t = self.tint_texture(redstone_wire_t, (48, 0, 0))
+        redstone_dust_t = self.load_image_texture("assets/minecraft/textures/block/redstone_dust_dot.png")
+        redstone_dust_t = self.tint_texture(redstone_dust_t, (48, 0, 0))
 
-    # generate an image per redstone direction
-    branch_top_left = redstone_cross_t.copy()
-    ImageDraw.Draw(branch_top_left).rectangle((0,0,4,15),outline=(0,0,0,0),fill=(0,0,0,0))
-    ImageDraw.Draw(branch_top_left).rectangle((11,0,15,15),outline=(0,0,0,0),fill=(0,0,0,0))
-    ImageDraw.Draw(branch_top_left).rectangle((0,11,15,15),outline=(0,0,0,0),fill=(0,0,0,0))
-    
-    branch_top_right = redstone_cross_t.copy()
-    ImageDraw.Draw(branch_top_right).rectangle((0,0,15,4),outline=(0,0,0,0),fill=(0,0,0,0))
-    ImageDraw.Draw(branch_top_right).rectangle((0,0,4,15),outline=(0,0,0,0),fill=(0,0,0,0))
-    ImageDraw.Draw(branch_top_right).rectangle((0,11,15,15),outline=(0,0,0,0),fill=(0,0,0,0))
-    
-    branch_bottom_right = redstone_cross_t.copy()
-    ImageDraw.Draw(branch_bottom_right).rectangle((0,0,15,4),outline=(0,0,0,0),fill=(0,0,0,0))
-    ImageDraw.Draw(branch_bottom_right).rectangle((0,0,4,15),outline=(0,0,0,0),fill=(0,0,0,0))
-    ImageDraw.Draw(branch_bottom_right).rectangle((11,0,15,15),outline=(0,0,0,0),fill=(0,0,0,0))
+    # data & 2 --> east side
+    # data & 8 --> north side
+    # data & 32 --> west side
+    # data & 128 --> south side
+    # data & 4 --> east up
+    # data & 16 --> north up
+    # data & 64 --> west up
+    # data & 256 --> south up
 
-    branch_bottom_left = redstone_cross_t.copy()
-    ImageDraw.Draw(branch_bottom_left).rectangle((0,0,15,4),outline=(0,0,0,0),fill=(0,0,0,0))
-    ImageDraw.Draw(branch_bottom_left).rectangle((11,0,15,15),outline=(0,0,0,0),fill=(0,0,0,0))
-    ImageDraw.Draw(branch_bottom_left).rectangle((0,11,15,15),outline=(0,0,0,0),fill=(0,0,0,0))
-            
-    # generate the bottom texture
-    if data & 0b111111 == 0:
+    # [0, 270, 180, 90][self.rotation]
+    for i in range(0, self.rotation):
+        dirData = data >> 1
+        data = (((dirData >> 2) + ((dirData & 0b11) << 6)) << 1) + (data & 0b1)
+
+    has_e_up = bool(data & 4)
+    has_n_up = bool(data & 16)
+    has_w_up = bool(data & 64)
+    has_s_up = bool(data & 256)
+    has_e = bool(data & 2 or has_e_up)
+    has_n = bool(data & 8 or has_n_up)
+    has_w = bool(data & 32 or has_w_up)
+    has_s = bool(data & 128 or has_s_up)
+
+    if has_n and has_e and has_w and has_s:
+        redstone_cross_t = redstone_dust_t.copy()
+        alpha_over(redstone_cross_t, redstone_wire_t.copy())
+        alpha_over(redstone_cross_t, redstone_wire_t.copy().rotate(90))
         bottom = redstone_cross_t.copy()
 
-    # see iterate.c for where these masks come from
-    has_x = (data & 0b1010) > 0
-    has_z = (data & 0b0101) > 0
-    if has_x and has_z:
-        bottom = redstone_cross_t.copy()
-        if has_x:
-            alpha_over(bottom, redstone_wire_t.copy())
-        if has_z:
-            alpha_over(bottom, redstone_wire_t.copy().rotate(90))
+    elif has_n and has_s and not(has_w or has_e):
+        bottom = redstone_wire_t.copy().rotate(90)
+
+    elif has_w and has_e and not(has_n or has_s):
+        bottom = redstone_wire_t.copy()
 
     else:
-        if has_x:
-            bottom = redstone_wire_t.copy()
-        elif has_z:
-            bottom = redstone_wire_t.copy().rotate(90)
-        elif data & 0b1111 == 0: 
-            bottom = redstone_cross_t.copy()
+        bottom = redstone_dust_t.copy()
+        if not redstone_cross_t:
+            redstone_cross_t = redstone_dust_t.copy()
+            alpha_over(redstone_cross_t, redstone_wire_t.copy())
+            alpha_over(redstone_cross_t, redstone_wire_t.copy().rotate(90))
+        if has_e:
+            branch_right = redstone_cross_t.copy()
+            ImageDraw.Draw(branch_right).rectangle((0, 0, 15, 4), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            ImageDraw.Draw(branch_right).rectangle((0, 0, 4, 15), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            ImageDraw.Draw(branch_right).rectangle((0, 11, 15, 15), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            alpha_over(bottom, branch_right.copy())
+        if has_n:
+            # generate an image per redstone direction
+            branch_top = redstone_cross_t.copy()
+            ImageDraw.Draw(branch_top).rectangle((0, 0, 4, 15), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            ImageDraw.Draw(branch_top).rectangle((11, 0, 15, 15), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            ImageDraw.Draw(branch_top).rectangle((0, 11, 15, 15), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            alpha_over(bottom, branch_top.copy())
+        if has_s:
+            branch_bottom = redstone_cross_t.copy()
+            ImageDraw.Draw(branch_bottom).rectangle((0, 0, 15, 4), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            ImageDraw.Draw(branch_bottom).rectangle((0, 0, 4, 15), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            ImageDraw.Draw(branch_bottom).rectangle((11, 0, 15, 15), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            alpha_over(bottom, branch_bottom.copy())
+        if has_w:
+            branch_left = redstone_cross_t.copy()
+            ImageDraw.Draw(branch_left).rectangle((0, 0, 15, 4), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            ImageDraw.Draw(branch_left).rectangle((11, 0, 15, 15), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            ImageDraw.Draw(branch_left).rectangle((0, 11, 15, 15), outline=(0, 0, 0, 0), fill=(0, 0, 0, 0))
+            alpha_over(bottom, branch_left.copy())
 
-    # check for going up redstone wire
-    if data & 0b100000 == 32:
-        side1 = redstone_wire_t.rotate(90)
-    else:
-        side1 = None
-        
-    if data & 0b010000 == 16:
+    side1 = None
+    side2 = None
+    if has_e_up:
         side2 = redstone_wire_t.rotate(90)
-    else:
-        side2 = None
+    if has_n_up:
+        side1 = redstone_wire_t.rotate(90)
 
-    img = self.build_full_block(None,side1,side2,None,None,bottom)
+    img = self.build_full_block(None, side1, side2, None, None, bottom)
 
     return img
 

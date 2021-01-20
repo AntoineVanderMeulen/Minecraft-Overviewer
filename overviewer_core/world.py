@@ -1233,7 +1233,14 @@ class RegionSet(object):
                 block = 178
 
         elif block == ids.block_redstone_wire:
-            data = palette_entry['Properties']['power']
+            data = int(palette_entry['Properties']['power'] != '0')
+            index = 1
+            for direction in ['east', 'north', 'west', 'south']:
+                if palette_entry['Properties'][direction] == "side":
+                    data += (0b1 << index)
+                elif palette_entry['Properties'][direction] == "up":
+                    data += (0b10 << index)
+                index += 2
 
         elif block == ids.block_grass_block:
             if palette_entry['Properties']['snowy'] == 'true':
