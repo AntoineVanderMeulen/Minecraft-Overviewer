@@ -778,39 +778,6 @@ block_polished_blackstone_brick_wall = 753
 block_polished_blackstone_wall = 759
 block_blackstone_wall = 745
 
-block_white_banner = 416
-block_orange_banner = 417
-block_magenta_banner = 418
-block_light_blue_banner = 419
-block_yellow_banner = 420
-block_lime_banner = 421
-block_pink_banner = 422
-block_gray_banner = 423
-block_light_gray_banner = 424
-block_cyan_banner = 425
-block_purple_banner = 426
-block_blue_banner = 427
-block_brown_banner = 428
-block_green_banner = 429
-block_red_banner = 430
-block_black_banner = 431
-block_white_wall_banner = 432
-block_orange_wall_banner = 433
-block_magenta_wall_banner = 434
-block_light_blue_wall_banner = 435
-block_yellow_wall_banner = 436
-block_lime_wall_banner = 437
-block_pink_wall_banner = 438
-block_gray_wall_banner = 439
-block_light_gray_wall_banner = 440
-block_cyan_wall_banner = 441
-block_purple_wall_banner = 442
-block_blue_wall_banner = 443
-block_brown_wall_banner = 444
-block_green_wall_banner = 445
-block_red_wall_banner = 446
-block_black_wall_banner = 447
-
 block_soul_torch = 198
 block_soul_wall_torch = 199
 
@@ -1274,6 +1241,39 @@ group_campfire = [block_campfire, block_soul_campfire]
 
 
 # TODO
+
+block_white_banner = 416
+block_orange_banner = 417
+block_magenta_banner = 418
+block_light_blue_banner = 419
+block_yellow_banner = 420
+block_lime_banner = 421
+block_pink_banner = 422
+block_gray_banner = 423
+block_light_gray_banner = 424
+block_cyan_banner = 425
+block_purple_banner = 426
+block_blue_banner = 427
+block_brown_banner = 428
+block_green_banner = 429
+block_red_banner = 430
+block_black_banner = 431
+block_white_wall_banner = 432
+block_orange_wall_banner = 433
+block_magenta_wall_banner = 434
+block_light_blue_wall_banner = 435
+block_yellow_wall_banner = 436
+block_lime_wall_banner = 437
+block_pink_wall_banner = 438
+block_gray_wall_banner = 439
+block_light_gray_wall_banner = 440
+block_cyan_wall_banner = 441
+block_purple_wall_banner = 442
+block_blue_wall_banner = 443
+block_brown_wall_banner = 444
+block_green_wall_banner = 445
+block_red_wall_banner = 446
+block_black_wall_banner = 447
 
 block_moving_piston = 118
 block_soul_fire = 144

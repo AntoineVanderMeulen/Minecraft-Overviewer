@@ -1170,51 +1170,75 @@ class RegionSet(object):
 
             'minecraft:respawn_anchor': (ids.block_respawn_anchor, 0),
 
-            'minecraft:skeleton_wall_skull': (144, 0),  # not rendering
-            'minecraft:wither_skeleton_wall_skull': (144, 1),  # not rendering
-            'minecraft:zombie_wall_head': (144, 2),  # not rendering
-            'minecraft:player_wall_head': (144, 3),  # not rendering
-            'minecraft:creeper_wall_head': (144, 4),  # not rendering
-            'minecraft:dragon_wall_head': (144, 5),  # not rendering
-            'minecraft:end_rod': (198, 0),  # not rendering
-            'minecraft:standing_banner': (176, 0),
-            'minecraft:wall_banner': (177, 0),
-            'minecraft:armor_stand': (416, 0),  # not rendering
-            # Some 1.16 stuff that I'll arbitrarily shove in here due to ID bloat
-            # Nether logs aka stem
-            # hyphae
-            # nether biomes
-            
-
-
-            # New blocks
-           
-
-
-            
-
-            
-            # 1.15 blocks below
-
-            
-            # adding a gap in the numbering of walls to keep them all
+            # minecraft:white_banner  # Not rendering
+            # minecraft:orange_banner  # Not rendering
+            # minecraft:magenta_banner  # Not rendering
+            # minecraft:light_blue_banner  # Not rendering
+            # minecraft:yellow_banner  # Not rendering
+            # minecraft:lime_banner  # Not rendering
+            # minecraft:pink_banner  # Not rendering
+            # minecraft:gray_banner  # Not rendering
+            # minecraft:light_gray_banner  # Not rendering
+            # minecraft:cyan_banner  # Not rendering
+            # minecraft:purple_banner  # Not rendering
+            # minecraft:blue_banner  # Not rendering
+            # minecraft:brown_banner  # Not rendering
+            # minecraft:green_banner  # Not rendering
+            # minecraft:red_banner  # Not rendering
+            # minecraft:black_banner  # Not rendering
+            # minecraft:white_wall_banner  # Not rendering
+            # minecraft:orange_wall_banner  # Not rendering
+            # minecraft:magenta_wall_banner  # Not rendering
+            # minecraft:light_blue_wall_banner  # Not rendering
+            # minecraft:yellow_wall_banner  # Not rendering
+            # minecraft:lime_wall_banner  # Not rendering
+            # minecraft:pink_wall_banner  # Not rendering
+            # minecraft:gray_wall_banner  # Not rendering
+            # minecraft:light_gray_wall_banner  # Not rendering
+            # minecraft:cyan_wall_banner  # Not rendering
+            # minecraft:purple_wall_banner  # Not rendering
+            # minecraft:blue_wall_banner  # Not rendering
+            # minecraft:brown_wall_banner  # Not rendering
+            # minecraft:green_wall_banner  # Not rendering
+            # minecraft:red_wall_banner  # Not rendering
+            # minecraft:black_wall_banner  # Not rendering
+            # minecraft:moving_piston  # Not rendering
+            # minecraft:soul_fire  # Not rendering
+            # minecraft:chain  # Not rendering
+            # minecraft:skeleton_skull  # Not rendering
+            # minecraft:skeleton_wall_skull  # Not rendering
+            # minecraft:wither_skeleton_skull  # Not rendering
+            # minecraft:wither_skeleton_wall_skull  # Not rendering
+            # minecraft:zombie_head  # Not rendering
+            # minecraft:zombie_wall_head  # Not rendering
+            # minecraft:player_head  # Not rendering
+            # minecraft:player_wall_head  # Not rendering
+            # minecraft:creeper_head  # Not rendering
+            # minecraft:creeper_wall_head  # Not rendering
+            # minecraft:dragon_head  # Not rendering
+            # minecraft:dragon_wall_head  # Not rendering
+            # minecraft:barrier  # Not rendering
+            # minecraft:end_rod  # Not rendering
+            # minecraft:structure_void  # Not rendering
+            # minecraft:kelp  # Not rendering
+            # minecraft:kelp_plant  # Not rendering
+            # minecraft:turtle_egg  # Not rendering
+            # minecraft:dead_tube_coral_wall_fan  # Not rendering
+            # minecraft:dead_brain_coral_wall_fan  # Not rendering
+            # minecraft:dead_bubble_coral_wall_fan  # Not rendering
+            # minecraft:dead_fire_coral_wall_fan  # Not rendering
+            # minecraft:dead_horn_coral_wall_fan  # Not rendering
+            # minecraft:tube_coral_wall_fan  # Not rendering
+            # minecraft:brain_coral_wall_fan  # Not rendering
+            # minecraft:bubble_coral_wall_fan  # Not rendering
+            # minecraft:fire_coral_wall_fan  # Not rendering
+            # minecraft:horn_coral_wall_fan  # Not rendering
+            # minecraft:conduit  # Not rendering
+            # minecraft:void_air  # Not rendering
+            # minecraft:cave_air  # Not rendering
+            # minecraft:bubble_column  # Not rendering
+            # minecraft:soul_lantern  # Not rendering
         }
-
-        colors = [   'white', 'orange', 'magenta', 'light_blue',
-                    'yellow',   'lime',    'pink',       'gray',
-                'light_gray',   'cyan',  'purple',       'blue',
-                     'brown',  'green',     'red',      'black']
-        # for i in range(len(colors)):
-            # For beds: bits 1-2 indicate facing, bit 3 occupancy, bit 4 foot (0) or head (1)
-            # self._blockmap['minecraft:%s_bed'                % colors[i]] = (26, i << 4)
-            # self._blockmap['minecraft:%s_stained_glass'      % colors[i]] = (95, i)
-            # self._blockmap['minecraft:%s_stained_glass_pane' % colors[i]] = (160, i)
-            # self._blockmap['minecraft:%s_banner'             % colors[i]] = (176, i)  # not rendering
-            # self._blockmap['minecraft:%s_wall_banner'        % colors[i]] = (177, i)  # not rendering
-            # self._blockmap['minecraft:%s_shulker_box'        % colors[i]] = (219 + i, 0)
-            # self._blockmap['minecraft:%s_glazed_terracotta'  % colors[i]] = (235 + i, 0)
-            # self._blockmap['minecraft:%s_concrete'           % colors[i]] = (251, i)
-            # self._blockmap['minecraft:%s_concrete_powder'    % colors[i]] = (252, i)
 
     # Re-initialize upon unpickling
     def __getstate__(self):
