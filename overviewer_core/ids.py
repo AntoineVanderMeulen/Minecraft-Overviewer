@@ -827,6 +827,33 @@ block_chiseled_nether_bricks = 760
 block_cracked_nether_bricks = 761
 block_quartz_bricks = 762
 
+block_dead_brain_coral = 589
+block_dead_bubble_coral = 590
+block_dead_fire_coral = 591
+block_dead_horn_coral = 592
+block_dead_tube_coral = 588
+
+block_dead_tube_coral_fan = 598
+block_dead_brain_coral_fan = 599
+block_dead_bubble_coral_fan = 600
+block_dead_fire_coral_fan = 601
+block_dead_horn_coral_fan = 602
+
+block_tube_coral = 593
+block_brain_coral = 594
+block_bubble_coral = 595
+block_fire_coral = 596
+block_horn_coral = 597
+
+block_tube_coral_fan = 603
+block_brain_coral_fan = 604
+block_bubble_coral_fan = 605
+block_fire_coral_fan = 606
+block_horn_coral_fan = 607
+
+block_respawn_anchor = 737
+
+block_sea_pickle = 618
 
 ## Group
 
@@ -1248,23 +1275,8 @@ group_campfire = [block_campfire, block_soul_campfire]
 
 # TODO
 
-
-
-
-
-
-
-
-
-
-
-
-
 block_moving_piston = 118
 block_soul_fire = 144
-
-
-
 block_chain = 242
 
 block_skeleton_skull = 314
@@ -1281,63 +1293,28 @@ block_dragon_head = 324
 block_dragon_wall_head = 325
 
 block_barrier = 378
-
 block_end_rod = 490
-
-
 block_structure_void = 507
-
-
-
 
 block_kelp = 574
 block_kelp_plant = 575
 block_turtle_egg = 577
 
 
-
-
-block_dead_tube_coral = 588
-block_dead_brain_coral = 589
-block_dead_bubble_coral = 590
-block_dead_fire_coral = 591
-block_dead_horn_coral = 592
-block_tube_coral = 593
-block_brain_coral = 594
-block_bubble_coral = 595
-block_fire_coral = 596
-block_horn_coral = 597
-block_dead_tube_coral_fan = 598
-block_dead_brain_coral_fan = 599
-block_dead_bubble_coral_fan = 600
-block_dead_fire_coral_fan = 601
-block_dead_horn_coral_fan = 602
-block_tube_coral_fan = 603
-block_brain_coral_fan = 604
-block_bubble_coral_fan = 605
-block_fire_coral_fan = 606
-block_horn_coral_fan = 607
 block_dead_tube_coral_wall_fan = 608
 block_dead_brain_coral_wall_fan = 609
 block_dead_bubble_coral_wall_fan = 610
 block_dead_fire_coral_wall_fan = 611
 block_dead_horn_coral_wall_fan = 612
+
 block_tube_coral_wall_fan = 613
 block_brain_coral_wall_fan = 614
 block_bubble_coral_wall_fan = 615
 block_fire_coral_wall_fan = 616
 block_horn_coral_wall_fan = 617
-block_sea_pickle = 618
-block_conduit = 620
 
+block_conduit = 620
 block_void_air = 624
 block_cave_air = 625
 block_bubble_column = 626
-
 block_soul_lantern = 679
-
-
-block_respawn_anchor = 737
-
-
-

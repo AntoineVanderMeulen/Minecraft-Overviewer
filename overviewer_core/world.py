@@ -352,7 +352,7 @@ class RegionSet(object):
             'minecraft:horn_coral_wall_fan': (ids.block_water, 0),
             'minecraft:kelp': (ids.block_water, 0),
             'minecraft:kelp_plant': (ids.block_water, 0),
-            'minecraft:sea_pickle': (ids.block_water, 0),
+            'minecraft:sea_pickle': (ids.block_sea_pickle, 0),
             'minecraft:seagrass': (ids.block_water, 0),
             'minecraft:tall_seagrass': (ids.block_water, 0),
             'minecraft:tube_coral': (ids.block_water, 0),
@@ -1144,6 +1144,32 @@ class RegionSet(object):
             'minecraft:cracked_nether_bricks': (ids.block_cracked_nether_bricks, 0),
             'minecraft:quartz_bricks': (ids.block_quartz_bricks, 0),
 
+            'minecraft:dead_brain_coral': (ids.block_dead_brain_coral, 0),
+            'minecraft:dead_bubble_coral': (ids.block_dead_bubble_coral, 0),
+            'minecraft:dead_fire_coral': (ids.block_dead_fire_coral, 0),
+            'minecraft:dead_horn_coral': (ids.block_dead_horn_coral, 0),
+            'minecraft:dead_tube_coral': (ids.block_dead_tube_coral, 0),
+
+            'minecraft:dead_tube_coral_fan': (ids.block_dead_tube_coral_fan, 0),
+            'minecraft:dead_brain_coral_fan': (ids.block_dead_brain_coral_fan, 0),
+            'minecraft:dead_bubble_coral_fan': (ids.block_dead_bubble_coral_fan, 0),
+            'minecraft:dead_fire_coral_fan': (ids.block_dead_fire_coral_fan, 0),
+            'minecraft:dead_horn_coral_fan': (ids.block_dead_horn_coral_fan, 0),
+
+            'minecraft:tube_coral': (ids.block_tube_coral, 0),
+            'minecraft:brain_coral': (ids.block_brain_coral, 0),
+            'minecraft:bubble_coral': (ids.block_bubble_coral, 0),
+            'minecraft:fire_coral': (ids.block_fire_coral, 0),
+            'minecraft:horn_coral': (ids.block_horn_coral, 0),
+
+            'minecraft:tube_coral_fan': (ids.block_tube_coral_fan, 0),
+            'minecraft:brain_coral_fan': (ids.block_brain_coral_fan, 0),
+            'minecraft:bubble_coral_fan': (ids.block_bubble_coral_fan, 0),
+            'minecraft:fire_coral_fan': (ids.block_fire_coral_fan, 0),
+            'minecraft:horn_coral_fan': (ids.block_horn_coral_fan, 0),
+
+            'minecraft:respawn_anchor': (ids.block_respawn_anchor, 0),
+
             'minecraft:skeleton_wall_skull': (144, 0),  # not rendering
             'minecraft:wither_skeleton_wall_skull': (144, 1),  # not rendering
             'minecraft:zombie_wall_head': (144, 2),  # not rendering
@@ -1465,6 +1491,15 @@ class RegionSet(object):
             elif block == ids.block_bell:
                 data |= {'floor': 0, 'ceiling': 4, 'single_wall': 8,
                          'double_wall': 12}[p['attachment']]
+
+        elif block == ids.block_respawn_anchor:
+            data = palette_entry['Properties']['charges']
+
+        elif block == ids.block_sea_pickle:
+            if palette_entry['Properties'].get('waterlogged', False):
+                block = ids.block_air
+            else:
+                block = ids.block_water
 
         return (block, data)
 

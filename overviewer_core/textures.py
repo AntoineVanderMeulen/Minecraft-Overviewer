@@ -1146,6 +1146,26 @@ sprite(blockid=ids.block_warped_roots, imagename="assets/minecraft/textures/bloc
 sprite(blockid=ids.block_crimson_roots, imagename="assets/minecraft/textures/block/crimson_roots.png")
 sprite(blockid=ids.block_sugar_cane, imagename="assets/minecraft/textures/block/sugar_cane.png")
 sprite(blockid=ids.block_nether_sprouts, imagename="assets/minecraft/textures/block/nether_sprouts.png")
+sprite(blockid=ids.block_dead_brain_coral, imagename="assets/minecraft/textures/block/dead_brain_coral.png")
+sprite(blockid=ids.block_dead_bubble_coral, imagename="assets/minecraft/textures/block/dead_bubble_coral.png")
+sprite(blockid=ids.block_dead_fire_coral, imagename="assets/minecraft/textures/block/dead_fire_coral.png")
+sprite(blockid=ids.block_dead_horn_coral, imagename="assets/minecraft/textures/block/dead_horn_coral.png")
+sprite(blockid=ids.block_dead_tube_coral, imagename="assets/minecraft/textures/block/dead_tube_coral.png")
+sprite(blockid=ids.block_dead_tube_coral_fan, imagename="assets/minecraft/textures/block/dead_tube_coral_fan.png")
+sprite(blockid=ids.block_dead_brain_coral_fan, imagename="assets/minecraft/textures/block/dead_brain_coral_fan.png")
+sprite(blockid=ids.block_dead_bubble_coral_fan, imagename="assets/minecraft/textures/block/dead_bubble_coral_fan.png")
+sprite(blockid=ids.block_dead_fire_coral_fan, imagename="assets/minecraft/textures/block/dead_fire_coral_fan.png")
+sprite(blockid=ids.block_dead_horn_coral_fan, imagename="assets/minecraft/textures/block/dead_horn_coral_fan.png")
+sprite(blockid=ids.block_tube_coral, imagename="assets/minecraft/textures/block/tube_coral.png")
+sprite(blockid=ids.block_brain_coral, imagename="assets/minecraft/textures/block/brain_coral.png")
+sprite(blockid=ids.block_bubble_coral, imagename="assets/minecraft/textures/block/bubble_coral.png")
+sprite(blockid=ids.block_fire_coral, imagename="assets/minecraft/textures/block/fire_coral.png")
+sprite(blockid=ids.block_horn_coral, imagename="assets/minecraft/textures/block/horn_coral.png")
+sprite(blockid=ids.block_tube_coral_fan, imagename="assets/minecraft/textures/block/tube_coral_fan.png")
+sprite(blockid=ids.block_brain_coral_fan, imagename="assets/minecraft/textures/block/brain_coral_fan.png")
+sprite(blockid=ids.block_bubble_coral_fan, imagename="assets/minecraft/textures/block/bubble_coral_fan.png")
+sprite(blockid=ids.block_fire_coral_fan, imagename="assets/minecraft/textures/block/fire_coral_fan.png")
+sprite(blockid=ids.block_horn_coral_fan, imagename="assets/minecraft/textures/block/horn_coral_fan.png")
 
 # simple billboard
 billboard(blockid=ids.block_weeping_vines, imagename="assets/minecraft/textures/block/twisting_vines.png")
@@ -5799,4 +5819,14 @@ def basalt(self, blockid, data):
         return self.build_full_block(side, None, None, side.rotate(270), top)
 
 
+# respawn anchor
+@material(blockid=ids.block_respawn_anchor, data=list(range(0, 5)), solid=True)
+def respawn_anchor(self, blockid, data):
+    side = self.load_image_texture("assets/minecraft/textures/block/respawn_anchor_side%s.png" % data)
 
+    if data > 0:
+        top = self.load_image_texture("assets/minecraft/textures/block/respawn_anchor_top.png")
+    else:
+        top = self.load_image_texture("assets/minecraft/textures/block/respawn_anchor_top_off.png")
+
+    return self.build_block(top, side)
