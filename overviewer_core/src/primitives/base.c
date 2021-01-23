@@ -23,7 +23,7 @@
 typedef struct {
     int32_t use_biomes;
     /* grasscolor and foliagecolor lookup tables */
-    PyObject *grasscolor, *foliagecolor, *watercolor;
+    PyObject *grasscolor, *foliagecolor; //, *watercolor;
     /* biome-compatible grass/leaf textures */
     PyObject* grass_texture;
 } PrimitiveBase;
@@ -41,7 +41,7 @@ base_start(void* data, RenderState* state, PyObject* support) {
     /* color lookup tables */
     self->foliagecolor = PyObject_CallMethod(state->textures, "load_foliage_color", "");
     self->grasscolor = PyObject_CallMethod(state->textures, "load_grass_color", "");
-    self->watercolor = PyObject_CallMethod(state->textures, "load_water_color", "");
+    // self->watercolor = PyObject_CallMethod(state->textures, "load_water_color", "");
 
     return false;
 }
@@ -52,7 +52,7 @@ base_finish(void* data, RenderState* state) {
 
     Py_XDECREF(self->foliagecolor);
     Py_XDECREF(self->grasscolor);
-    Py_XDECREF(self->watercolor);
+    // Py_XDECREF(self->watercolor);
     Py_XDECREF(self->grass_texture);
 }
 
@@ -121,15 +121,15 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
 
         if (block_class_is_subset(state->block, (mc_block_t[]){block_grass_block, block_dead_bush, block_grass, block_fern, block_pumpkin_stem, block_melon_stem, block_vine, block_lily_pad, block_double_plant, block_attached_pumpkin_stem, block_attached_melon_stem, block_tall_grass}, 12)) {
             color_table = self->grasscolor;
-        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
-            color_table = self->watercolor;
+        // } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+        //     color_table = self->watercolor;
         } else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
             color_table = self->foliagecolor;
             /* birch foliage color is flipped XY-ways */
             flip_xy = state->block_data == 2;
         }
 
-        if (color_table) {
+        if (color_table || block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
             uint8_t biome;
             int32_t dx, dz;
             uint8_t tablex, tabley;
@@ -152,9 +152,19 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
 
                         temp += biome_table[biome].temperature;
                         rain += biome_table[biome].rainfall;
-                        multr += biome_table[biome].r;
-                        multg += biome_table[biome].g;
-                        multb += biome_table[biome].b;
+
+
+                        
+                        if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+                                multr += biome_table[biome].wr;
+                                multg += biome_table[biome].wg;
+                                multb += biome_table[biome].wb;
+                            }
+                        else {
+                                multr += biome_table[biome].r;
+                                multg += biome_table[biome].g;
+                                multb += biome_table[biome].b;
+                            }
                     }
                 }
 
@@ -171,35 +181,36 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
                 multg = biome_table[DEFAULT_BIOME].g;
                 multb = biome_table[DEFAULT_BIOME].b;
             }
+            if (!(block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2))) {
+                /* second coordinate is actually scaled to fit inside the triangle
+                   so store it in rain */
+                rain *= temp;
 
-            /* second coordinate is actually scaled to fit inside the triangle
-               so store it in rain */
-            rain *= temp;
+                /* make sure they're sane */
+                temp = OV_CLAMP(temp, 0.0, 1.0);
+                rain = OV_CLAMP(rain, 0.0, 1.0);
 
-            /* make sure they're sane */
-            temp = OV_CLAMP(temp, 0.0, 1.0);
-            rain = OV_CLAMP(rain, 0.0, 1.0);
+                /* convert to x/y coordinates in color table */
+                tablex = 255 - (255 * temp);
+                tabley = 255 - (255 * rain);
+                if (flip_xy) {
+                    uint8_t tmp = 255 - tablex;
+                    tablex = 255 - tabley;
+                    tabley = tmp;
+                }
 
-            /* convert to x/y coordinates in color table */
-            tablex = 255 - (255 * temp);
-            tabley = 255 - (255 * rain);
-            if (flip_xy) {
-                uint8_t tmp = 255 - tablex;
-                tablex = 255 - tabley;
-                tabley = tmp;
+                /* look up color! */
+                color = PySequence_GetItem(color_table, tabley * 256 + tablex);
+                r = PyLong_AsLong(PyTuple_GET_ITEM(color, 0));
+                g = PyLong_AsLong(PyTuple_GET_ITEM(color, 1));
+                b = PyLong_AsLong(PyTuple_GET_ITEM(color, 2));
+                Py_DECREF(color);
             }
-
-            /* look up color! */
-            color = PySequence_GetItem(color_table, tabley * 256 + tablex);
-            r = PyLong_AsLong(PyTuple_GET_ITEM(color, 0));
-            g = PyLong_AsLong(PyTuple_GET_ITEM(color, 1));
-            b = PyLong_AsLong(PyTuple_GET_ITEM(color, 2));
-            Py_DECREF(color);
-
             /* do the after-coloration */
             r = OV_MULDIV255(r, multr, tmp);
             g = OV_MULDIV255(g, multg, tmp);
             b = OV_MULDIV255(b, multb, tmp);
+
         }
 
         /* final coloration */

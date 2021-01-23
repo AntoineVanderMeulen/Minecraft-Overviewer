@@ -441,11 +441,11 @@ class Textures(object):
         return self.foliagecolor
 
     #I guess "watercolor" is wrong. But I can't correct as my texture pack don't define water color.
-    def load_water_color(self):
-        """Helper function to load the water color texture."""
-        if not hasattr(self, "watercolor"):
-            self.watercolor = list(self.load_image("watercolor.png").getdata())
-        return self.watercolor
+    # def load_water_color(self):
+    #     """Helper function to load the water color texture."""
+    #     if not hasattr(self, "watercolor"):
+    #         self.watercolor = list(self.load_image("watercolor.png").getdata())
+    #     return self.watercolor
 
     def _split_terrain(self, terrain):
         """Builds and returns a length 256 array of each 16x16 chunk
