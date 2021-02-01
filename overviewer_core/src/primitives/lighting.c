@@ -321,7 +321,8 @@ lighting_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyO
     } else if (is_transparent(state->block) &&
                !block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves, block_ice, block_piston, block_sticky_piston}, 9)) {
         /* transparent: do shading on whole block */
-        do_shading_with_mask(self, state, x, y, z, mask_light);
+        // TODO Top Stairs to dark !
+        // do_shading_with_mask(self, state, x, y, z, mask_light);
     } else {
         /* opaque: do per-face shading */
         do_shading_with_mask(self, state, x, y + 1, z, self->facemasks[0]);
