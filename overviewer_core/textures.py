@@ -2183,22 +2183,39 @@ def fire(self, blockid, data):
     
     return img
 
-# wooden, cobblestone, red brick, stone brick, netherbrick, sandstone, spruce, birch,
-# jungle, quartz, red sandstone, (dark) prismarine, mossy brick and mossy cobblestone, stone smooth_quartz
-# polished_granite polished_andesite polished_diorite granite diorite andesite end_stone_bricks red_nether_brick stairs
-# smooth_red_sandstone_stairs
-@material(blockid=ids.group_stairs, data=list(range(128)), transparent=True, solid=True, nospawn=True)
+@material(blockid=ids.group_stairs, data=[10, 11, 18, 19, 34, 35, 66, 67, 14, 15, 12, 13, 22, 23, 20, 21, 38, 39, 36, 37, 70, 71, 68, 69], transparent=True, solid=True, nospawn=True)
 def stairs(self, blockid, data):
-    # preserve the upside-down bit
-    upside_down = data & 0x4
 
-    # find solid quarters within the top or bottom half of the block
-    #                   NW           NE           SE           SW
-    quarters = [data & 0x8, data & 0x10, data & 0x20, data & 0x40]
+    # data & 1 --> top
+    # not(data & 1) --> bottom
+    # (data & 7) >> 1 == 1 --> straight shape
+    # (data & 7) >> 1 == 2 --> outer_right shape
+    # (data & 7) >> 1 == 3 --> inner_right shape
+    # data & 8 --> north facing
+    # data & 16 --> east facing
+    # data & 32 --> south facing
+    # data & 64 --> west facing
 
-    # rotate the quarters so we can pretend northdirection is always upper-left
-    numpy.roll(quarters, [0, 1, 3, 2][self.rotation])
-    nw,ne,se,sw = quarters
+    def rect(tex, coords, outline=(0, 0, 0, 0), fill=(0, 0, 0, 0)):
+        t = tex.copy()
+        ImageDraw.Draw(t).rectangle(coords, outline=outline, fill=fill)
+        return t
+
+    def removeAlphaSup100(img):
+        t = numpy.array(img)
+        tAlpha = t[:, :, 3]
+        t[numpy.all([tAlpha > 100, tAlpha < 255], axis=0), 3] = 255
+        return Image.fromarray(t)
+
+    # slide only the facing bits self.rotation times
+    for i in range(0, self.rotation):
+        # take only facing bits 4 bits
+        dirData = data >> 3
+        # dirData >> 1 move bits on the left
+        # ((dirData & 0b1) << 3)) the first bit goto last bit
+        # << 3 add 3 0 bits
+        # (data & 7) add all other bits at the same place
+        data = (((dirData >> 1) + ((dirData & 0b1) << 3)) << 3) + (data & 7)
 
     stair_id_to_tex = {
         ids.block_oak_stairs: "assets/minecraft/textures/block/oak_planks.png",
@@ -2239,13 +2256,6 @@ def stairs(self, blockid, data):
         ids.block_polished_blackstone_stairs: "assets/minecraft/textures/block/polished_blackstone.png",
     }
 
-    texture = self.load_image_texture(stair_id_to_tex[blockid]).copy()
-
-    outside_l = texture.copy()
-    outside_r = texture.copy()
-    inside_l = texture.copy()
-    inside_r = texture.copy()
-
     # sandstone, red sandstone, and quartz stairs have special top texture
     special_tops = {
         ids.block_sandstone_stairs: "assets/minecraft/textures/block/sandstone_top.png",
@@ -2254,74 +2264,306 @@ def stairs(self, blockid, data):
         ids.block_smooth_quartz_stairs: "assets/minecraft/textures/block/quartz_block_top.png",
     }
 
-    if blockid in special_tops:
-        texture = self.load_image_texture(special_tops[blockid]).copy()
+    # Texture: 12
+    #          34
 
-    slab_top = texture.copy()
+    dict_textures = {}
+    dict_textures[0] = self.load_image_texture(stair_id_to_tex[blockid]).copy()
 
-    push = 8 if upside_down else 0
+    dict_textures_top = {}
+    dict_textures_top[0] = self.load_image_texture(special_tops[blockid]).copy() if blockid in special_tops.keys() else self.load_image_texture(stair_id_to_tex[blockid]).copy()
 
-    def rect(tex,coords):
-        ImageDraw.Draw(tex).rectangle(coords,outline=(0,0,0,0),fill=(0,0,0,0))
+    for dict_texture in [dict_textures, dict_textures_top]:
+        # Straight
+        dict_texture[12] = rect(dict_texture[0], coords=(0, 8, 15, 15))  # 12
+        dict_texture[34] = rect(dict_texture[0], coords=(0, 0, 15, 7))  # 34
+        dict_texture[13] = rect(dict_texture[0], coords=(8, 0, 15, 15))  # 13
+        dict_texture[24] = rect(dict_texture[0], coords=(0, 0, 7, 15))  # 24
+        # Inner
+        dict_texture[123] = rect(dict_texture[0], coords=(8, 8, 15, 15))  # 123
+        dict_texture[124] = rect(dict_texture[0], coords=(0, 8, 7, 15))  # 124
+        dict_texture[234] = rect(dict_texture[0], coords=(0, 0, 7, 7))  # 234
+        dict_texture[134] = rect(dict_texture[0], coords=(8, 0, 15, 7))  # 134
+        # Outer
+        dict_texture[1] = rect(rect(dict_texture[0], coords=(8, 0, 15, 7)), coords=(0, 8, 15, 15))  # 1
+        dict_texture[2] = rect(rect(dict_texture[0], coords=(0, 0, 7, 7)), coords=(0, 8, 15, 15))  # 2
+        dict_texture[3] = rect(rect(dict_texture[0], coords=(0, 0, 15, 7)), coords=(8, 8, 15, 15))  # 3
+        dict_texture[4] = rect(rect(dict_texture[0], coords=(0, 0, 15, 7)), coords=(0, 8, 7, 15))  # 4
 
-    # cut out top or bottom half from inner surfaces
-    rect(inside_l, (0,8-push,15,15-push))
-    rect(inside_r, (0,8-push,15,15-push))
+    top_out = None
+    top_in = None
+    front_out = None
+    front_in = None
+    side_left_out = None
+    side_left_in = None
+    back_out = None
+    back_in = None
+    side_right_out = None
+    side_right_in = None
+    inBlock = None
 
-    # cut out missing or obstructed quarters from each surface
-    if not nw:
-        rect(outside_l, (0,push,7,7+push))
-        rect(texture, (0,0,7,7))
-    if not nw or sw:
-        rect(inside_r, (8,push,15,7+push)) # will be flipped
-    if not ne:
-        rect(texture, (8,0,15,7))
-    if not ne or nw:
-        rect(inside_l, (0,push,7,7+push))
-    if not ne or se:
-        rect(inside_r, (0,push,7,7+push)) # will be flipped
-    if not se:
-        rect(outside_r, (0,push,7,7+push)) # will be flipped
-        rect(texture, (8,8,15,15))
-    if not se or sw:
-        rect(inside_l, (8,push,15,7+push))
-    if not sw:
-        rect(outside_l, (8,push,15,7+push))
-        rect(outside_r, (8,push,15,7+push)) # will be flipped
-        rect(texture, (0,8,7,15))
+    sides = {"top": None, "front": None, "side_left": None, "side_right": None, "back": None, "in": None}
+    orderKeySide = ["in", "front", "side_left", "top"]
 
-    img = Image.new("RGBA", (24,24), self.bgcolor)
+    if (data & 7) >> 1 == 1:  # --> Straight shape
+        if data & 1:  # --> top
+            top_out = dict_textures[0]
 
-    if upside_down:
-        # top should have no cut-outs after all
-        texture = slab_top
-    else:
-        # render the slab-level surface
-        slab_top = self.transform_image_top(slab_top)
-        alpha_over(img, slab_top, (0,6))
+            if data & 8:  # --> north facing
+                front_out = dict_textures[12]
+                front_in = dict_textures[34]
+                side_left_out = dict_textures[123]
 
-    # render inner left surface
-    inside_l = self.transform_image_side(inside_l)
-    # Darken the vertical part of the second step
-    sidealpha = inside_l.split()[3]
-    # darken it a bit more than usual, looks better
-    inside_l = ImageEnhance.Brightness(inside_l).enhance(0.8)
-    inside_l.putalpha(sidealpha)
-    alpha_over(img, inside_l, (6,3))
+            elif data & 16:  # --> east facing
+                front_out = dict_textures[123]
+                side_left_out = dict_textures[12]
+                side_left_in = dict_textures[34]
+                orderKeySide = ["top", "side_left", "front"]
 
-    # render inner right surface
-    inside_r = self.transform_image_side(inside_r).transpose(Image.FLIP_LEFT_RIGHT)
-    # Darken the vertical part of the second step
-    sidealpha = inside_r.split()[3]
-    # darken it a bit more than usual, looks better
-    inside_r = ImageEnhance.Brightness(inside_r).enhance(0.7)
-    inside_r.putalpha(sidealpha)
-    alpha_over(img, inside_r, (6,3))
+            elif data & 32:  # --> south facing
+                front_out = dict_textures[0]
+                side_left_out = dict_textures[124]
 
-    # render outer surfaces
-    alpha_over(img, self.build_full_block(texture, None, None, outside_l, outside_r))
+            elif data & 64:  # --> west facing
+                front_out = dict_textures[124]
+                side_left_out = dict_textures[0]
 
-    return img
+        else:  # --> bottom
+            if data & 8:  # --> north facing
+                top_out = dict_textures[12]
+                top_in = dict_textures[34]
+                front_out = dict_textures[34]
+                front_in = dict_textures[12]
+                side_left_out = dict_textures[134]
+
+            elif data & 16:  # --> east facing
+                top_out = dict_textures[24]
+                top_in = dict_textures[13]
+                front_out = dict_textures[134]
+                side_left_out = dict_textures[34]
+                side_left_in = dict_textures[12]
+
+            elif data & 32:  # --> south facing
+                top_out = dict_textures[34]
+                top_in = dict_textures[12]
+                front_out = dict_textures[0]
+                side_left_out = dict_textures[234]
+                orderKeySide = ["top", "front", "side_left"]
+
+            elif data & 64:  # --> west facing
+                top_out = dict_textures[13]
+                top_in = dict_textures[24]
+                front_out = dict_textures[234]
+                side_left_out = dict_textures[0]
+                orderKeySide = ["top", "front", "side_left"]
+
+    elif (data & 7) >> 1 == 2:  # --> outer_right shape
+        if data & 1:  # --> top
+            top_out = dict_textures[0]
+            if data & 8:  # --> north facing
+                front_out = dict_textures[12]
+                side_left_out = dict_textures[12]
+                inBlock = Image.new("RGBA", (24, 24), self.bgcolor)
+                front_in = ImageOps.mirror(self.transform_image_side(dict_textures[3]))
+                side_left_in = self.transform_image_side(dict_textures[3])
+                front_in = ImageEnhance.Brightness(front_in).enhance(0.85)
+                side_left_in = ImageEnhance.Brightness(side_left_in).enhance(0.85)
+                alpha_over(inBlock, side_left_in, (6, 3))
+                alpha_over(inBlock, front_in, (6, 3))
+                front_in = None
+                side_left_in = None
+
+                orderKeySide = ["in", "top", "side_left", "front"]
+
+            elif data & 16:  # --> east facing
+                front_out = dict_textures[123]
+                side_left_out = dict_textures[12]
+                side_left_in = dict_textures[4]
+                orderKeySide = ["top", "side_left", "front"]
+
+            elif data & 32:  # --> south facing
+                front_out = dict_textures[124]
+                side_left_out = dict_textures[124]
+
+            elif data & 64:  # --> west facing
+                front_out = dict_textures[12]
+                inBlock = Image.new("RGBA", (24, 24), self.bgcolor)
+                front_in = ImageOps.mirror(self.transform_image_side(dict_textures[4]))
+                front_in = ImageEnhance.Brightness(front_in).enhance(0.85)
+                alpha_over(inBlock, front_in, (6, 3))
+                front_in = None
+                side_left_out = dict_textures[123]
+
+        else:
+            if data & 8:  # --> north facing
+                top_out = dict_textures[2]
+                top_in = dict_textures[134]
+                front_out = dict_textures[34]
+                front_in = dict_textures[1]
+                side_left_out = dict_textures[34]
+                side_left_in = dict_textures[1]
+
+            elif data & 16:  # --> east facing
+                top_out = dict_textures[4]
+                inBlock = Image.new("RGBA", (24, 24), self.bgcolor)
+                top_in = self.transform_image_top(dict_textures[123])
+                alpha_over(inBlock, top_in, (0, 6))
+                front_out = dict_textures[134]
+                side_left_out = dict_textures[34]
+                side_left_in = dict_textures[2]
+                top_in = None
+
+            elif data & 32:  # --> south facing
+                top_out = dict_textures[3]
+                inBlock = Image.new("RGBA", (24, 24), self.bgcolor)
+                top_in = self.transform_image_top(dict_textures[124])
+                alpha_over(inBlock, top_in, (0, 6))
+                front_out = dict_textures[234]
+                side_left_out = dict_textures[234]
+                top_in = None
+
+            elif data & 64:  # --> west facing
+                top_out = dict_textures[1]
+                top_in = dict_textures[234]
+                front_out = dict_textures[34]
+                front_in = dict_textures[2]
+                side_left_out = dict_textures[134]
+                side_left_in = None
+
+                orderKeySide = ["top", "front", "side_left"]
+
+    elif (data & 7) >> 1 == 3:  # --> inner_right shape
+        if data & 1:  # --> top
+            top_out = dict_textures[0]
+            if data & 8:  # --> north facing
+                front_out = dict_textures[123]
+                side_left_out = dict_textures[123]
+                front_in = ImageOps.mirror(self.transform_image_side(dict_textures[4]))
+                side_left_in = self.transform_image_side(dict_textures[4])
+                if data & 1:  # --> top
+                    front_in = ImageEnhance.Brightness(front_in).enhance(0.85)
+                    side_left_in = ImageEnhance.Brightness(side_left_in).enhance(0.85)
+                inBlock = Image.new("RGBA", (24, 24), self.bgcolor)
+                alpha_over(inBlock, front_in, (6, 3))
+                alpha_over(inBlock, side_left_in, (6, 3))
+                front_in = None
+                side_left_in = None
+
+                orderKeySide = ["in", "top", "side_left", "front"]
+
+            elif data & 16:  # --> east facing
+                front_out = dict_textures[0]
+                side_left_out = dict_textures[124]
+
+            elif data & 32:  # --> south facing
+                front_out = dict_textures[0]
+                side_left_out = dict_textures[0]
+
+            elif data & 64:  # --> west facing
+                front_out = dict_textures[124]
+                side_left_out = dict_textures[0]
+
+        else:
+            if data & 8:  # --> north facing
+                front_out = dict_textures[134]
+                front_in = dict_textures[2]
+                side_left_out = dict_textures[134]
+                side_left_in = dict_textures[2]
+                top_out = dict_textures[124]
+                top_in = dict_textures[3]
+                orderKeySide = ["top", "side_left", "front"]
+
+            elif data & 16:  # --> east facing
+                front_out = dict_textures[0]
+                side_left_out = dict_textures[234]
+                top_out = dict_textures[234]
+                top_in = self.transform_image_top(dict_textures[1])
+                side_left_in = self.transform_image_side(dict_textures[1])
+                if data & 1:  # --> top
+                    side_left_in = ImageEnhance.Brightness(side_left_in).enhance(0.85)
+                inBlock = Image.new("RGBA", (24, 24), self.bgcolor)
+                alpha_over(inBlock, top_in, (0, 6))
+                alpha_over(inBlock, side_left_in, (6, 3))
+                top_in = None
+                side_left_in = None
+
+                orderKeySide = ["in", "side_left", "top", "front"]
+
+            elif data & 32:  # --> south facing
+                top_out = dict_textures[134]
+                front_out = dict_textures[0]
+                side_left_out = dict_textures[0]
+
+            elif data & 64:  # --> west facing
+                top_out = dict_textures[123]
+                top_in = dict_textures[4]
+                front_out = dict_textures[234]
+                side_left_out = dict_textures[0]
+
+                orderKeySide = ["top", "side_left", "front"]
+
+    if inBlock:
+        sides["in"] = inBlock
+
+    sides["top"] = Image.new("RGBA", (24, 24), self.bgcolor)
+    if top_out:
+        top_out = self.transform_image_top(top_out)
+        # Make Top face: merge top_out and top_in
+        alpha_over(sides["top"], top_out, (0, 0))
+        sides["top"].save("%s_top_out2.png" % data)
+    if top_in:
+        top_in = self.transform_image_top(top_in)
+        alpha_over(sides["top"], top_in, (0, 6))
+
+    sides["front"] = Image.new("RGBA", (24, 24), self.bgcolor)
+    if front_out:
+        front_out = ImageOps.mirror(self.transform_image_side(front_out))
+        # Make front face: merge front_out and front_in
+        alpha_over(sides["front"], front_out, (12, 6))
+    if front_in:
+        front_in = ImageOps.mirror(self.transform_image_side(front_in))
+        alpha_over(sides["front"], front_in, (6, 3))
+    sides["front"] = ImageEnhance.Brightness(sides["front"]).enhance(0.85)
+
+    sides["side_left"] = Image.new("RGBA", (24, 24), self.bgcolor)
+    if side_left_out:
+        side_left_out = self.transform_image_side(side_left_out)
+        # Make side left face: merge side_left_out and side_left_in
+        alpha_over(sides["side_left"], side_left_out, (0, 6))
+    if side_left_in:
+        side_left_in = self.transform_image_side(side_left_in)
+        if data & 1:  # --> top
+            side_left_in = ImageEnhance.Brightness(side_left_in).enhance(0.9)
+        alpha_over(sides["side_left"], side_left_in, (6, 3))
+    sides["side_left"] = ImageEnhance.Brightness(sides["side_left"]).enhance(0.85)
+
+    sides["side_right"] = Image.new("RGBA", (24, 24), self.bgcolor)
+    if side_right_out:
+        # Make side right face: merge side_right_out and side_right_in
+        alpha_over(sides["side_right"], side_right_out, (11, 0))
+    if side_right_in:
+        alpha_over(sides["side_right"], side_right_in, (11, 0))
+
+    sides["back"] = Image.new("RGBA", (24, 24), self.bgcolor)
+    if back_out:
+        # Make back face: merge back_out and back_in
+        back_out = ImageOps.mirror(self.transform_image_side(back_out))
+        alpha_over(sides["back"], back_out, (0, 0))
+    if back_in:
+        back_in = ImageOps.mirror(self.transform_image_side(back_in))
+        alpha_over(sides["back"], back_in, (0, 0))
+
+    block = Image.new("RGBA", (24, 24), self.bgcolor)
+
+    for side in orderKeySide:
+        if sides[side]:
+            alpha_over(block, sides[side], (0, 0))
+
+    block = removeAlphaSup100(block)
+    block.save("%s_block.png" % data)
+
+    return block
+
 
 # normal, locked (used in april's fool day), ender and trapped chest
 # NOTE:  locked chest used to be id95 (which is now stained glass)

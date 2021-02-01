@@ -1432,18 +1432,39 @@ class RegionSet(object):
                 data |= 8
 
         elif block in ids.group_stairs:
-            facing = palette_entry['Properties']['facing']
-            if facing == 'south':
-                data = 2
-            elif facing == 'east':
-                data = 0
-            elif facing == 'north':
-                data = 3
-            elif facing == 'west':
-                data = 1
-            if palette_entry['Properties']['half'] == 'top':
-                data |= 0x4
 
+            # inner_right north --> inner_left east
+            # outer_right north --> outer_left east
+            # inner_right east --> inner_left south
+            # outer_right east --> outer_left south
+            # inner_right south --> inner_left west
+            # outer_right south --> outer_left west
+            # inner_right west --> inner_left north
+            # outer_right west --> outer_left north
+
+            half = palette_entry['Properties']['half']
+            if half == 'bottom':
+                data = 0
+            else:
+                data = 1
+
+            shape = palette_entry['Properties']['shape']
+            if shape == 'straight':
+                data += 2
+            elif shape in ['outer_right', 'outer_left']:
+                data += 4
+            elif shape in ['inner_right', 'inner_left']:
+                data += 6
+
+            facing = palette_entry['Properties']['facing']
+            if facing == 'north':
+                data += 8
+            elif facing == 'east':
+                data += 16
+            elif facing == 'south':
+                data += 32
+            elif facing == 'west':
+                data += 64
         elif block in ids.group_door:
             p = palette_entry['Properties']
             if p['hinge'] == 'left':
