@@ -2510,7 +2510,6 @@ def stairs(self, blockid, data):
         top_out = self.transform_image_top(top_out)
         # Make Top face: merge top_out and top_in
         alpha_over(sides["top"], top_out, (0, 0))
-        sides["top"].save("%s_top_out2.png" % data)
     if top_in:
         top_in = self.transform_image_top(top_in)
         alpha_over(sides["top"], top_in, (0, 6))
@@ -2560,7 +2559,6 @@ def stairs(self, blockid, data):
             alpha_over(block, sides[side], (0, 0))
 
     block = removeAlphaSup100(block)
-    block.save("%s_block.png" % data)
 
     return block
 

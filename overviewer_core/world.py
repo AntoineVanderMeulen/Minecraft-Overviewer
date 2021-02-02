@@ -1458,13 +1458,26 @@ class RegionSet(object):
 
             facing = palette_entry['Properties']['facing']
             if facing == 'north':
-                data += 8
+                if shape in ['outer_left', 'inner_left']:
+                    data += 64
+                else:
+                    data += 8
             elif facing == 'east':
-                data += 16
+                if shape in ['outer_left', 'inner_left']:
+                    data += 8
+                else:
+                    data += 16
             elif facing == 'south':
-                data += 32
+                if shape in ['outer_left', 'inner_left']:
+                    data += 16
+                else:
+                    data += 32
             elif facing == 'west':
-                data += 64
+                if shape in ['outer_left', 'inner_left']:
+                    data += 32
+                else:
+                    data += 64
+
         elif block in ids.group_door:
             p = palette_entry['Properties']
             if p['hinge'] == 'left':
