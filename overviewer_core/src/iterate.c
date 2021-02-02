@@ -358,7 +358,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         pr = pr * pr * 42317861 + pr * 11;
         rotation = 3 & (pr >> 16);
         return rotation;
-    } else if (block_class_is_subset(state->block, block_class_stair, block_class_stair_len)) { /* stairs */
+    } else if (0==1 && block_class_is_subset(state->block, block_class_stair, block_class_stair_len)) { /* stairs */
         /* 4 ancillary bits will be added to indicate which quarters of the block contain the 
          * upper step. Regular stairs will have 2 bits set & corner stairs will have 1 or 3.
          *     Southwest quarter is part of the upper step - 0x40
