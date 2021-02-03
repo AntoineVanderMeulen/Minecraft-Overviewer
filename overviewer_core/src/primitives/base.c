@@ -153,18 +153,19 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
                         temp += biome_table[biome].temperature;
                         rain += biome_table[biome].rainfall;
 
-
-                        
                         if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
                                 multr += biome_table[biome].wr;
                                 multg += biome_table[biome].wg;
                                 multb += biome_table[biome].wb;
-                            }
-                        else {
-                                multr += biome_table[biome].r;
-                                multg += biome_table[biome].g;
-                                multb += biome_table[biome].b;
-                            }
+                        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
+                            multr += biome_table[biome].fr;
+                            multg += biome_table[biome].fg;
+                            multb += biome_table[biome].fb;                                
+                        } else {
+                            multr += biome_table[biome].gr;
+                            multg += biome_table[biome].gg;
+                            multb += biome_table[biome].gb;
+                        }
                     }
                 }
 
@@ -177,9 +178,22 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
                 /* don't use biomes, just use the default */
                 temp = biome_table[DEFAULT_BIOME].temperature;
                 rain = biome_table[DEFAULT_BIOME].rainfall;
-                multr = biome_table[DEFAULT_BIOME].r;
-                multg = biome_table[DEFAULT_BIOME].g;
-                multb = biome_table[DEFAULT_BIOME].b;
+
+                if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+                    multr = biome_table[DEFAULT_BIOME].wr;
+                    multg = biome_table[DEFAULT_BIOME].wg;
+                    multb = biome_table[DEFAULT_BIOME].wb;
+                }
+                else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
+                    multr = biome_table[DEFAULT_BIOME].fr;
+                    multg = biome_table[DEFAULT_BIOME].fg;
+                    multb = biome_table[DEFAULT_BIOME].fb;                                
+                }
+                else {
+                    multr = biome_table[DEFAULT_BIOME].gr;
+                    multg = biome_table[DEFAULT_BIOME].gg;
+                    multb = biome_table[DEFAULT_BIOME].gb;
+                }
             }
             if (!(block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2))) {
                 /* second coordinate is actually scaled to fit inside the triangle
