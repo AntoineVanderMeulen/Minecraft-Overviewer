@@ -1233,6 +1233,8 @@ group_glcbs = [
 
 group_campfire = [block_campfire, block_soul_campfire]
 
+group_fluid = [block_water]
+
 # TODO
 
 block_white_banner = 416
