@@ -275,29 +275,12 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         // data += ancilData;
 
         return data;
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_glass, block_ice, block_white_stained_glass, block_orange_stained_glass, block_magenta_stained_glass, block_light_blue_stained_glass, block_yellow_stained_glass, block_lime_stained_glass, block_pink_stained_glass, block_gray_stained_glass, block_light_gray_stained_glass, block_cyan_stained_glass, block_purple_stained_glass, block_blue_stained_glass, block_brown_stained_glass, block_green_stained_glass, block_red_stained_glass, block_black_stained_glass}, 18)) { /* glass and ice and stained glass*/
+    } else if (block_class_is_subset(state->block, block_class_no_inner_surfaces, block_class_no_inner_surfaces_len)) { /* glass and ice and stained glass*/
         /* an aditional bit for top is added to the 4 bits of check_adjacent_blocks
          * Note that stained glass encodes 16 colors using 4 bits.  this pushes us over the 8-bits of an uint8_t, 
          * forcing us to use an uint16_t to hold 16 bits of pseudo ancil data
          * */
-        if ((get_data(state, BLOCKS, x, y + 1, z) == block_glass) || 
-            (get_data(state, BLOCKS, x, y + 1, z) == block_white_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_orange_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_magenta_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_light_blue_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_yellow_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_lime_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_pink_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_gray_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_light_gray_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_cyan_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_purple_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_blue_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_brown_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_green_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_red_stained_glass) ||
-            (get_data(state, BLOCKS, x, y + 1, z) == block_black_stained_glass)
-            ) {
+        if (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z), block_class_no_inner_surfaces, block_class_no_inner_surfaces_len) && !(get_data(state, BLOCKS, x, y + 1, z) == block_ice)) {
             data = 0;
         } else {
             data = 16;
@@ -310,7 +293,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
                check_adjacent_blocks(state, x, y, z, block_oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_birch_fence_gate) | check_adjacent_blocks(state, x, y, z, block_jungle_fence_gate) |
                check_adjacent_blocks(state, x, y, z, block_dark_oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_acacia_fence_gate);
 
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_iron_bars, block_glass_pane, block_white_stained_glass_pane, block_orange_stained_glass_pane, block_magenta_stained_glass_pane, block_light_blue_stained_glass_pane, block_yellow_stained_glass_pane, block_lime_stained_glass_pane, block_pink_stained_glass_pane, block_gray_stained_glass_pane, block_light_gray_stained_glass_pane, block_cyan_stained_glass_pane, block_purple_stained_glass_pane, block_blue_stained_glass_pane, block_brown_stained_glass_pane, block_green_stained_glass_pane, block_red_stained_glass_pane, block_black_stained_glass_pane}, 18)) {
+    } else if (block_class_is_subset(state->block, block_class_pane_and_bars, block_class_pane_and_bars_len)) {
         /* iron bars and glass panes:
          * they seem to stick to almost everything but air,
          * not sure yet! Still a TODO! */

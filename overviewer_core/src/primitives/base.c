@@ -119,7 +119,7 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
             facemask = self->grass_texture;
         }
 
-        if (block_class_is_subset(state->block, (mc_block_t[]){block_grass_block, block_dead_bush, block_grass, block_fern, block_pumpkin_stem, block_melon_stem, block_vine, block_lily_pad, block_double_plant, block_attached_pumpkin_stem, block_attached_melon_stem, block_tall_grass}, 12)) {
+        if (block_class_is_subset(state->block, (mc_block_t[]){block_grass_block, block_dead_bush, block_grass, block_fern, block_pumpkin_stem, block_melon_stem, block_vine, block_lily_pad, block_double_plant, block_attached_pumpkin_stem, block_attached_melon_stem, block_tall_grass, block_large_fern}, 13)) {
             color_table = self->grasscolor;
         // } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
         //     color_table = self->watercolor;

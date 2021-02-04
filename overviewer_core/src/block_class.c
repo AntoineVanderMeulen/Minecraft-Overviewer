@@ -388,3 +388,45 @@ const mc_block_t block_class_nether_roof[] = {
     block_soul_soil,
     block_nether_gold_ore};
 const size_t block_class_nether_roof_len = COUNT_OF(block_class_nether_roof);
+
+const mc_block_t block_class_no_inner_surfaces[] = {
+    block_white_stained_glass,
+    block_orange_stained_glass,
+    block_magenta_stained_glass,
+    block_light_blue_stained_glass,
+    block_yellow_stained_glass,
+    block_lime_stained_glass,
+    block_pink_stained_glass,
+    block_gray_stained_glass,
+    block_light_gray_stained_glass,
+    block_cyan_stained_glass,
+    block_purple_stained_glass,
+    block_blue_stained_glass,
+    block_brown_stained_glass,
+    block_green_stained_glass,
+    block_red_stained_glass,
+    block_black_stained_glass,
+    block_glass,
+    block_ice};
+const size_t block_class_no_inner_surfaces_len = COUNT_OF(block_class_no_inner_surfaces);
+
+const mc_block_t block_class_pane_and_bars[] = {
+    block_iron_bars,
+    block_glass_pane,
+    block_white_stained_glass_pane,
+    block_orange_stained_glass_pane,
+    block_magenta_stained_glass_pane,
+    block_light_blue_stained_glass_pane,
+    block_yellow_stained_glass_pane,
+    block_lime_stained_glass_pane,
+    block_pink_stained_glass_pane,
+    block_gray_stained_glass_pane,
+    block_light_gray_stained_glass_pane,
+    block_cyan_stained_glass_pane,
+    block_purple_stained_glass_pane,
+    block_blue_stained_glass_pane,
+    block_brown_stained_glass_pane,
+    block_green_stained_glass_pane,
+    block_red_stained_glass_pane,
+    block_black_stained_glass_pane};
+const size_t block_class_pane_and_bars_len = COUNT_OF(block_class_pane_and_bars);
