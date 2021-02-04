@@ -130,6 +130,7 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
         }
 
         if (color_table || block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+            uint8_t radius_biome_blend = 7;
             uint8_t biome;
             int32_t dx, dz;
             uint8_t tablex, tabley;
@@ -140,8 +141,8 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
 
             if (self->use_biomes) {
                 /* average over all neighbors */
-                for (dx = -1; dx <= 1; dx++) {
-                    for (dz = -1; dz <= 1; dz++) {
+                for (dx = -1*((radius_biome_blend - 1)/2); dx <= ((radius_biome_blend - 1)/2); dx++) {
+                    for (dz = -1*((radius_biome_blend - 1)/2); dz <= ((radius_biome_blend - 1)/2); dz++) {
                         biome = get_data(state, BIOMES, state->x + dx, state->y, state->z + dz);
                         if (biome >= NUM_BIOMES) {
                             /* note -- biome 255 shows up on map borders.
@@ -169,11 +170,11 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
                     }
                 }
 
-                temp /= 9.0;
-                rain /= 9.0;
-                multr /= 9;
-                multg /= 9;
-                multb /= 9;
+                temp /= radius_biome_blend*radius_biome_blend;
+                rain /= radius_biome_blend*radius_biome_blend;
+                multr /= radius_biome_blend*radius_biome_blend;
+                multg /= radius_biome_blend*radius_biome_blend;
+                multb /= radius_biome_blend*radius_biome_blend;
             } else {
                 /* don't use biomes, just use the default */
                 temp = biome_table[DEFAULT_BIOME].temperature;
