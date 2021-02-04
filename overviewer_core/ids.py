@@ -846,7 +846,7 @@ group_leaves = [block_oak_leaves, block_spruce_leaves, block_birch_leaves, block
 
 group_slabs_stained_glass = [block_white_stained_glass, block_orange_stained_glass, block_magenta_stained_glass, block_light_blue_stained_glass, block_yellow_stained_glass, block_lime_stained_glass, block_pink_stained_glass, block_gray_stained_glass, block_light_gray_stained_glass, block_cyan_stained_glass, block_purple_stained_glass, block_blue_stained_glass, block_brown_stained_glass, block_green_stained_glass, block_red_stained_glass, block_black_stained_glass]
 
-group_no_inner_surfaces = group_slabs_stained_glass + [block_water, block_glass, block_ice]
+group_no_inner_surfaces = group_slabs_stained_glass + [block_glass, block_ice]
 
 group_slabs = [block_stone_slab, block_sandstone_slab, block_oak_slab, block_cobblestone_slab, block_brick_slab, block_stone_brick_slab, block_nether_brick_slab, block_quartz_slab, block_spruce_slab, block_birch_slab, block_jungle_slab, block_acacia_slab, block_dark_oak_slab, block_red_sandstone_slab, block_purpur_slab, block_petrified_oak_slab, block_prismarine_slab, block_dark_prismarine_slab, block_prismarine_brick_slab, block_andesite_slab, block_diorite_slab, block_granite_slab, block_polished_andesite_slab, block_polished_diorite_slab, block_polished_granite_slab, block_red_nether_brick_slab, block_smooth_sandstone_slab, block_cut_sandstone_slab, block_smooth_red_sandstone_slab, block_cut_red_sandstone_slab, block_end_stone_brick_slab, block_mossy_cobblestone_slab, block_mossy_stone_brick_slab, block_smooth_quartz_slab, block_smooth_stone_slab, block_crimson_slab, block_warped_slab, block_polished_blackstone_brick_slab, block_blackstone_slab, block_polished_blackstone_slab]
 
@@ -1232,13 +1232,6 @@ group_glcbs = [
 ]
 
 group_campfire = [block_campfire, block_soul_campfire]
-
-
-
-
-
-
-
 
 # TODO
 

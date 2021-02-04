@@ -353,8 +353,8 @@ class RegionSet(object):
             'minecraft:kelp': (ids.block_water, 0),
             'minecraft:kelp_plant': (ids.block_water, 0),
             'minecraft:sea_pickle': (ids.block_sea_pickle, 0),
-            'minecraft:seagrass': (ids.block_water, 0),
-            'minecraft:tall_seagrass': (ids.block_water, 0),
+            'minecraft:seagrass': (ids.block_seagrass, 0),
+            'minecraft:tall_seagrass': (ids.block_tall_seagrass, 0),
             'minecraft:tube_coral': (ids.block_water, 0),
             'minecraft:tube_coral_fan': (ids.block_water, 0),
             'minecraft:tube_coral_wall_fan': (ids.block_water, 0),
@@ -1257,6 +1257,13 @@ class RegionSet(object):
         if block in [ids.block_redstone_ore, ids.block_redstone_lamp]:
             if palette_entry['Properties']['lit'] == 'true':
                 data = 1
+
+        elif block in [ids.block_tall_seagrass, ids.block_seagrass]:
+            block = ids.block_water
+            data = 0
+
+        # elif block == ids.block_water:
+        #     data = int(palette_entry['Properties'].get('level', 0)) << 6
 
         elif block in ids.group_gate:
             facing = palette_entry['Properties']['facing']

@@ -263,6 +263,17 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         /* an aditional bit for top is added to the 4 bits of check_adjacent_blocks */
         if (get_data(state, BLOCKS, x, y + 1, z) != state->block)
             data |= 0x10;
+
+        if (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z), (mc_block_t[]){block_flowing_water, block_water}, 2) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x + 1, y + 1, z), (mc_block_t[]){block_flowing_water, block_water}, 2)) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x - 1, y + 1, z), (mc_block_t[]){block_flowing_water, block_water}, 2)) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z - 1), (mc_block_t[]){block_flowing_water, block_water}, 2)) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z + 1), (mc_block_t[]){block_flowing_water, block_water}, 2))) {
+            data |= 0x20;
+        }
+
+        // data += ancilData;
+
         return data;
     } else if (block_class_is_subset(state->block, (mc_block_t[]){block_glass, block_ice, block_white_stained_glass, block_orange_stained_glass, block_magenta_stained_glass, block_light_blue_stained_glass, block_yellow_stained_glass, block_lime_stained_glass, block_pink_stained_glass, block_gray_stained_glass, block_light_gray_stained_glass, block_cyan_stained_glass, block_purple_stained_glass, block_blue_stained_glass, block_brown_stained_glass, block_green_stained_glass, block_red_stained_glass, block_black_stained_glass}, 18)) { /* glass and ice and stained glass*/
         /* an aditional bit for top is added to the 4 bits of check_adjacent_blocks

@@ -1185,14 +1185,65 @@ def grass(self, blockid, data):
         alpha_over(img, self.biome_grass_texture, (0, 0), self.biome_grass_texture)
     return img
 
+@material(blockid=ids.group_fluid, data=list(range(512)), fluid=ids.group_fluid, transparent=True, nospawn=True)
+def water(self, blockid, data):
+    texture = self.load_water()
 
-# water, glass, and ice (no inner surfaces)
+    def rect(tex, coords, outline=(0, 0, 0, 0), fill=(0, 0, 0, 0)):
+        t = tex.copy()
+        ImageDraw.Draw(t).rectangle(coords, outline=outline, fill=fill)
+        return t
+
+    level = data >> 6
+
+    if (data & 0b10000) == 16:
+        top = texture
+    else:
+        top = None
+
+    if (data & 0b0001) == 1:
+        side1 = texture    # top left
+    else:
+        side1 = None
+
+    if (data & 0b1000) == 8:
+        side2 = texture    # top right
+    else:
+        side2 = None
+
+    if (data & 0b0010) == 2:
+        side3 = texture    # bottom left
+    else:
+        side3 = None
+
+    if (data & 0b0100) == 4:
+        side4 = texture    # bottom right
+    else:
+        side4 = None
+
+    # if nothing shown do not draw at all
+    if top is None and side3 is None and side4 is None:
+        return None
+
+    img = self.build_full_block(None, None, None, side3, side4)
+
+    if top:
+        top = self.transform_image_top(top)
+        if (data & 0b100000):
+            alpha_over(img, top)
+        else:
+            if side3 and side4:
+                alpha_over(img, top)
+            else:
+                alpha_over(img, top, (0, 2))
+
+    return img
+
+# glass, and ice (no inner surfaces)
 # uses pseudo-ancildata found in iterate.c
-@material(blockid=ids.group_no_inner_surfaces, data=list(range(512)), fluid=(ids.block_water), transparent=True, nospawn=True, solid=ids.group_no_inner_surfaces)
+@material(blockid=ids.group_no_inner_surfaces, data=list(range(512)), transparent=True, nospawn=True, solid=ids.group_no_inner_surfaces)
 def no_inner_surfaces(self, blockid, data):
-    if blockid == ids.block_water:
-        texture = self.load_water()
-    elif blockid == ids.block_glass:
+    if blockid == ids.block_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/glass.png")
     elif blockid == ids.block_white_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/white_stained_glass.png")
@@ -1230,8 +1281,7 @@ def no_inner_surfaces(self, blockid, data):
         texture = self.load_image_texture("assets/minecraft/textures/block/ice.png")
 
     # now that we've used the lower 4 bits to get color, shift down to get the 5 bits that encode face hiding
-    if not (blockid == ids.block_water):  # water doesn't have a shifted pseudodata
-        data = data >> 4
+    data = data >> 4
 
     if (data & 0b10000) == 16:
         top = texture
