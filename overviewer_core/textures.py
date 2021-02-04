@@ -3908,13 +3908,13 @@ def snow(self, blockid, data):
 
 
 # cactus
-@material(blockid=ids.block_cactus, data=list(range(15)), transparent=True, solid=True, nospawn=True)
+@material(blockid=ids.block_cactus, data=0, transparent=False, solid=True, nospawn=True)
 def cactus(self, blockid, data):
     top = self.load_image_texture("assets/minecraft/textures/block/cactus_top.png")
     side = self.load_image_texture("assets/minecraft/textures/block/cactus_side.png")
 
-    img = Image.new("RGBA", (24,24), self.bgcolor)
-    
+    img = Image.new("RGBA", (24, 24), self.bgcolor)
+
     top = self.transform_image_top(top)
     side = self.transform_image_side(side)
     otherside = side.transpose(Image.FLIP_LEFT_RIGHT)
@@ -3926,10 +3926,10 @@ def cactus(self, blockid, data):
     otherside = ImageEnhance.Brightness(otherside).enhance(0.8)
     otherside.putalpha(othersidealpha)
 
-    alpha_over(img, side, (1,6), side)
-    alpha_over(img, otherside, (11,6), otherside)
-    alpha_over(img, top, (0,0), top)
-    
+    alpha_over(img, side, (1, 6), side)
+    alpha_over(img, otherside, (11, 6), otherside)
+    alpha_over(img, top, (0, 0), top)
+
     return img
 
 

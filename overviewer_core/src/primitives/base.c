@@ -94,7 +94,7 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
      * biome-compliant ones! The tinting is now all done here.
      */
     if (/* grass, but not snowgrass */
-        (state->block == block_grass_block && get_data(state, BLOCKS, state->x, state->y + 1, state->z) != 78) ||
+        (state->block == block_grass_block && get_data(state, BLOCKS, state->x, state->y + 1, state->z) != block_snow) ||
         block_class_is_subset(state->block, (mc_block_t[]){block_vine, block_lily_pad, block_flowing_water, block_water, block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves},
                               10) ||
         /* tallgrass, but not dead shrubs */

@@ -255,8 +255,8 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
 
     if (state->block == block_grass_block) { /* grass */
         /* return 0x10 if grass is covered in snow */
-        if (get_data(state, BLOCKS, x, y + 1, z) == 78)
-            return 0x10;
+        if (get_data(state, BLOCKS, x, y + 1, z) == block_snow)
+            ancilData |= 0x10;
         return ancilData;
     } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) { /* water */
         data = check_adjacent_blocks(state, x, y, z, state->block) ^ 0x0f;
