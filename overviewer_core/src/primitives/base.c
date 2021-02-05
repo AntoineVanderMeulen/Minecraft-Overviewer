@@ -23,7 +23,7 @@
 typedef struct {
     int32_t use_biomes;
     /* grasscolor and foliagecolor lookup tables */
-    PyObject *grasscolor, *foliagecolor, *watercolor;
+    PyObject *grasscolor, *foliagecolor; //, *watercolor;
     /* biome-compatible grass/leaf textures */
     PyObject* grass_texture;
 } PrimitiveBase;
@@ -41,7 +41,7 @@ base_start(void* data, RenderState* state, PyObject* support) {
     /* color lookup tables */
     self->foliagecolor = PyObject_CallMethod(state->textures, "load_foliage_color", "");
     self->grasscolor = PyObject_CallMethod(state->textures, "load_grass_color", "");
-    self->watercolor = PyObject_CallMethod(state->textures, "load_water_color", "");
+    // self->watercolor = PyObject_CallMethod(state->textures, "load_water_color", "");
 
     return false;
 }
@@ -52,7 +52,7 @@ base_finish(void* data, RenderState* state) {
 
     Py_XDECREF(self->foliagecolor);
     Py_XDECREF(self->grasscolor);
-    Py_XDECREF(self->watercolor);
+    // Py_XDECREF(self->watercolor);
     Py_XDECREF(self->grass_texture);
 }
 
@@ -94,11 +94,14 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
      * biome-compliant ones! The tinting is now all done here.
      */
     if (/* grass, but not snowgrass */
-        (state->block == block_grass && get_data(state, BLOCKS, state->x, state->y + 1, state->z) != 78) ||
-        block_class_is_subset(state->block, (mc_block_t[]){block_vine, block_waterlily, block_flowing_water, block_water, block_leaves, block_leaves2},
-                              6) ||
+        (state->block == block_grass_block && get_data(state, BLOCKS, state->x, state->y + 1, state->z) != block_snow) ||
+        block_class_is_subset(state->block, (mc_block_t[]){block_vine, block_lily_pad, block_flowing_water, block_water, block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves},
+                              10) ||
         /* tallgrass, but not dead shrubs */
-        (state->block == block_tallgrass && state->block_data != 0) ||
+        (state->block == block_tall_grass) ||
+        (state->block == block_grass) ||
+        (state->block == block_fern) ||
+        (state->block == block_large_fern) ||
         /* pumpkin/melon stem, not fully grown. Fully grown stems
          * get constant brown color (see textures.py) */
         (((state->block == block_pumpkin_stem) || (state->block == block_melon_stem)) && (state->block_data != 7)) ||
@@ -112,21 +115,23 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
         PyObject* color_table = NULL;
         bool flip_xy = false;
 
-        if (state->block == block_grass) {
+        if (state->block == block_grass_block) {
             /* grass needs a special facemask */
             facemask = self->grass_texture;
         }
-        if (block_class_is_subset(state->block, (mc_block_t[]){block_grass, block_tallgrass, block_pumpkin_stem, block_melon_stem, block_vine, block_waterlily, block_double_plant}, 7)) {
+
+        if (block_class_is_subset(state->block, (mc_block_t[]){block_grass_block, block_dead_bush, block_grass, block_fern, block_pumpkin_stem, block_melon_stem, block_vine, block_lily_pad, block_double_plant, block_attached_pumpkin_stem, block_attached_melon_stem, block_tall_grass, block_large_fern}, 13)) {
             color_table = self->grasscolor;
-        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
-            color_table = self->watercolor;
-        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_leaves, block_leaves2}, 2)) {
+        // } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+        //     color_table = self->watercolor;
+        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
             color_table = self->foliagecolor;
             /* birch foliage color is flipped XY-ways */
             flip_xy = state->block_data == 2;
         }
 
-        if (color_table) {
+        if (color_table || block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+            uint8_t radius_biome_blend = 7;
             uint8_t biome;
             int32_t dx, dz;
             uint8_t tablex, tabley;
@@ -137,8 +142,8 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
 
             if (self->use_biomes) {
                 /* average over all neighbors */
-                for (dx = -1; dx <= 1; dx++) {
-                    for (dz = -1; dz <= 1; dz++) {
+                for (dx = -1*((radius_biome_blend - 1)/2); dx <= ((radius_biome_blend - 1)/2); dx++) {
+                    for (dz = -1*((radius_biome_blend - 1)/2); dz <= ((radius_biome_blend - 1)/2); dz++) {
                         biome = get_data(state, BIOMES, state->x + dx, state->y, state->z + dz);
                         if (biome >= NUM_BIOMES) {
                             /* note -- biome 255 shows up on map borders.
@@ -149,54 +154,79 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
 
                         temp += biome_table[biome].temperature;
                         rain += biome_table[biome].rainfall;
-                        multr += biome_table[biome].r;
-                        multg += biome_table[biome].g;
-                        multb += biome_table[biome].b;
+
+                        if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+                                multr += biome_table[biome].wr;
+                                multg += biome_table[biome].wg;
+                                multb += biome_table[biome].wb;
+                        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
+                            multr += biome_table[biome].fr;
+                            multg += biome_table[biome].fg;
+                            multb += biome_table[biome].fb;                                
+                        } else {
+                            multr += biome_table[biome].gr;
+                            multg += biome_table[biome].gg;
+                            multb += biome_table[biome].gb;
+                        }
                     }
                 }
 
-                temp /= 9.0;
-                rain /= 9.0;
-                multr /= 9;
-                multg /= 9;
-                multb /= 9;
+                temp /= radius_biome_blend*radius_biome_blend;
+                rain /= radius_biome_blend*radius_biome_blend;
+                multr /= radius_biome_blend*radius_biome_blend;
+                multg /= radius_biome_blend*radius_biome_blend;
+                multb /= radius_biome_blend*radius_biome_blend;
             } else {
                 /* don't use biomes, just use the default */
                 temp = biome_table[DEFAULT_BIOME].temperature;
                 rain = biome_table[DEFAULT_BIOME].rainfall;
-                multr = biome_table[DEFAULT_BIOME].r;
-                multg = biome_table[DEFAULT_BIOME].g;
-                multb = biome_table[DEFAULT_BIOME].b;
+
+                if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+                    multr = biome_table[DEFAULT_BIOME].wr;
+                    multg = biome_table[DEFAULT_BIOME].wg;
+                    multb = biome_table[DEFAULT_BIOME].wb;
+                }
+                else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
+                    multr = biome_table[DEFAULT_BIOME].fr;
+                    multg = biome_table[DEFAULT_BIOME].fg;
+                    multb = biome_table[DEFAULT_BIOME].fb;                                
+                }
+                else {
+                    multr = biome_table[DEFAULT_BIOME].gr;
+                    multg = biome_table[DEFAULT_BIOME].gg;
+                    multb = biome_table[DEFAULT_BIOME].gb;
+                }
             }
+            if (!(block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2))) {
+                /* second coordinate is actually scaled to fit inside the triangle
+                   so store it in rain */
+                rain *= temp;
 
-            /* second coordinate is actually scaled to fit inside the triangle
-               so store it in rain */
-            rain *= temp;
+                /* make sure they're sane */
+                temp = OV_CLAMP(temp, 0.0, 1.0);
+                rain = OV_CLAMP(rain, 0.0, 1.0);
 
-            /* make sure they're sane */
-            temp = OV_CLAMP(temp, 0.0, 1.0);
-            rain = OV_CLAMP(rain, 0.0, 1.0);
+                /* convert to x/y coordinates in color table */
+                tablex = 255 - (255 * temp);
+                tabley = 255 - (255 * rain);
+                if (flip_xy) {
+                    uint8_t tmp = 255 - tablex;
+                    tablex = 255 - tabley;
+                    tabley = tmp;
+                }
 
-            /* convert to x/y coordinates in color table */
-            tablex = 255 - (255 * temp);
-            tabley = 255 - (255 * rain);
-            if (flip_xy) {
-                uint8_t tmp = 255 - tablex;
-                tablex = 255 - tabley;
-                tabley = tmp;
+                /* look up color! */
+                color = PySequence_GetItem(color_table, tabley * 256 + tablex);
+                r = PyLong_AsLong(PyTuple_GET_ITEM(color, 0));
+                g = PyLong_AsLong(PyTuple_GET_ITEM(color, 1));
+                b = PyLong_AsLong(PyTuple_GET_ITEM(color, 2));
+                Py_DECREF(color);
             }
-
-            /* look up color! */
-            color = PySequence_GetItem(color_table, tabley * 256 + tablex);
-            r = PyLong_AsLong(PyTuple_GET_ITEM(color, 0));
-            g = PyLong_AsLong(PyTuple_GET_ITEM(color, 1));
-            b = PyLong_AsLong(PyTuple_GET_ITEM(color, 2));
-            Py_DECREF(color);
-
             /* do the after-coloration */
             r = OV_MULDIV255(r, multr, tmp);
             g = OV_MULDIV255(g, multg, tmp);
             b = OV_MULDIV255(b, multb, tmp);
+
         }
 
         /* final coloration */

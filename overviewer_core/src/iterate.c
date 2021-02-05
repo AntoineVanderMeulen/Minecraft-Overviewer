@@ -253,23 +253,34 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
     int32_t x = state->x, y = state->y, z = state->z;
     uint16_t data = 0;
 
-    if (state->block == block_grass) { /* grass */
+    if (state->block == block_grass_block) { /* grass */
         /* return 0x10 if grass is covered in snow */
-        if (get_data(state, BLOCKS, x, y + 1, z) == 78)
-            return 0x10;
+        if (get_data(state, BLOCKS, x, y + 1, z) == block_snow)
+            ancilData |= 0x10;
         return ancilData;
     } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) { /* water */
         data = check_adjacent_blocks(state, x, y, z, state->block) ^ 0x0f;
         /* an aditional bit for top is added to the 4 bits of check_adjacent_blocks */
         if (get_data(state, BLOCKS, x, y + 1, z) != state->block)
             data |= 0x10;
+
+        if (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z), (mc_block_t[]){block_flowing_water, block_water}, 2) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x + 1, y + 1, z), (mc_block_t[]){block_flowing_water, block_water}, 2)) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x - 1, y + 1, z), (mc_block_t[]){block_flowing_water, block_water}, 2)) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z - 1), (mc_block_t[]){block_flowing_water, block_water}, 2)) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z + 1), (mc_block_t[]){block_flowing_water, block_water}, 2))) {
+            data |= 0x20;
+        }
+
+        // data += ancilData;
+
         return data;
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_glass, block_ice, block_stained_glass}, 3)) { /* glass and ice and stained glass*/
+    } else if (block_class_is_subset(state->block, block_class_no_inner_surfaces, block_class_no_inner_surfaces_len)) { /* glass and ice and stained glass*/
         /* an aditional bit for top is added to the 4 bits of check_adjacent_blocks
          * Note that stained glass encodes 16 colors using 4 bits.  this pushes us over the 8-bits of an uint8_t, 
          * forcing us to use an uint16_t to hold 16 bits of pseudo ancil data
          * */
-        if ((get_data(state, BLOCKS, x, y + 1, z) == 20) || (get_data(state, BLOCKS, x, y + 1, z) == 95)) {
+        if (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z), block_class_no_inner_surfaces, block_class_no_inner_surfaces_len) && !(get_data(state, BLOCKS, x, y + 1, z) == block_ice)) {
             data = 0;
         } else {
             data = 16;
@@ -278,45 +289,11 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         return (data << 4) | (ancilData & 0x0f);
     } else if (block_class_is_subset(state->block, block_class_fence, block_class_fence_len)) { /* fences */
         /* check for fences AND fence gates */
-        return check_adjacent_blocks(state, x, y, z, state->block) | check_adjacent_blocks(state, x, y, z, block_fence_gate) |
-               check_adjacent_blocks(state, x, y, z, block_fence_gate) | check_adjacent_blocks(state, x, y, z, block_birch_fence_gate) | check_adjacent_blocks(state, x, y, z, block_jungle_fence_gate) |
+        return check_adjacent_blocks(state, x, y, z, state->block) | check_adjacent_blocks(state, x, y, z, block_oak_fence_gate) |
+               check_adjacent_blocks(state, x, y, z, block_oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_birch_fence_gate) | check_adjacent_blocks(state, x, y, z, block_jungle_fence_gate) |
                check_adjacent_blocks(state, x, y, z, block_dark_oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_acacia_fence_gate);
 
-    } else if (state->block == block_redstone_wire) { /* redstone */
-        /* three addiotional bit are added, one for on/off state, and
-         * another two for going-up redstone wire in the same block
-         * (connection with the level y+1) */
-        uint8_t above_level_data = 0, same_level_data = 0, below_level_data = 0, possibly_connected = 0, final_data = 0;
-
-        /* check for air in y+1, no air = no connection with upper level */
-        if (get_data(state, BLOCKS, x, y + 1, z) == 0) {
-            above_level_data = check_adjacent_blocks(state, x, y + 1, z, state->block);
-        } /* else above_level_data = 0 */
-
-        /* check connection with same level (other redstone and trapped chests */
-        same_level_data = check_adjacent_blocks(state, x, y, z, 55) | check_adjacent_blocks(state, x, y, z, 146);
-
-        /* check the posibility of connection with y-1 level, check for air */
-        possibly_connected = check_adjacent_blocks(state, x, y, z, 0);
-
-        /* check connection with y-1 level */
-        below_level_data = check_adjacent_blocks(state, x, y - 1, z, state->block);
-
-        final_data = above_level_data | same_level_data | (below_level_data & possibly_connected);
-
-        /* add the three bits */
-        if (ancilData > 0) { /* powered redstone wire */
-            final_data = final_data | 0x40;
-        }
-        if ((above_level_data & 0x01)) { /* draw top left going up redstonewire */
-            final_data = final_data | 0x20;
-        }
-        if ((above_level_data & 0x08)) { /* draw top right going up redstonewire */
-            final_data = final_data | 0x10;
-        }
-        return final_data;
-
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_iron_bars, block_glass_pane, block_stained_glass_pane}, 3)) {
+    } else if (block_class_is_subset(state->block, block_class_pane_and_bars, block_class_pane_and_bars_len)) {
         /* iron bars and glass panes:
          * they seem to stick to almost everything but air,
          * not sure yet! Still a TODO! */
@@ -325,7 +302,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         data = (check_adjacent_blocks(state, x, y, z, 0) ^ 0x0f);
         return (data << 4) | (ancilData & 0xf);
 
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_portal, block_nether_brick_fence}, 2)) {
+    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_nether_portal, block_nether_brick_fence}, 2)) {
         /* portal and nether brick fences */
         return check_adjacent_blocks(state, x, y, z, state->block);
 
@@ -361,7 +338,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         } else {
             return check_adjacent_blocks(state, x, y, z, state->block);
         }
-    } else if (state->block == block_waterlily) {
+    } else if (state->block == block_lily_pad) {
         int32_t wx, wz, wy, rotation;
         int64_t pr;
         /* calculate the global block coordinates of this position */
@@ -375,7 +352,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         pr = pr * pr * 42317861 + pr * 11;
         rotation = 3 & (pr >> 16);
         return rotation;
-    } else if (block_class_is_subset(state->block, block_class_stair, block_class_stair_len)) { /* stairs */
+    } else if (0==1 && block_class_is_subset(state->block, block_class_stair, block_class_stair_len)) { /* stairs */
         /* 4 ancillary bits will be added to indicate which quarters of the block contain the 
          * upper step. Regular stairs will have 2 bits set & corner stairs will have 1 or 3.
          *     Southwest quarter is part of the upper step - 0x40
@@ -651,7 +628,7 @@ chunk_render(PyObject* self, PyObject* args) {
                 /* if we found a proper texture, render it! */
                 if (t != NULL && t != Py_None) {
                     PyObject *src, *mask, *mask_light;
-                    int32_t do_rand = (state.block == block_tallgrass /*|| state.block == block_red_flower || state.block == block_double_plant*/);
+                    int32_t do_rand = (state.block == block_grass || state.block == block_fern /*|| state.block == block_red_flower || state.block == block_double_plant*/);
                     int32_t randx = 0, randy = 0;
                     src = PyTuple_GetItem(t, 0);
                     mask = PyTuple_GetItem(t, 0);

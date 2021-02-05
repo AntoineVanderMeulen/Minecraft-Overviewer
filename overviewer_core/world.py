@@ -29,6 +29,8 @@ from . import nbt
 from . import cache
 from .biome import reshape_biome_data
 
+from . import ids
+
 """
 This module has routines for extracting information about available worlds
 
@@ -300,580 +302,948 @@ class RegionSet(object):
             'minecraft:air': (0, 0),
             'minecraft:cave_air': (0, 0),
             'minecraft:void_air': (0, 0),
-            'minecraft:stone': (1, 0),
-            'minecraft:granite': (1, 1),
-            'minecraft:polished_granite': (1, 2),
-            'minecraft:diorite': (1, 3),
-            'minecraft:polished_diorite': (1, 4),
-            'minecraft:andesite': (1, 5),
-            'minecraft:polished_andesite': (1, 6),
-            'minecraft:grass_block': (2, 0),
-            'minecraft:dirt': (3, 0),
-            'minecraft:coarse_dirt': (3, 1),
-            'minecraft:podzol': (3, 2),
-            'minecraft:cobblestone': (4, 0),
-            'minecraft:infested_cobblestone': (4, 0),
-            'minecraft:oak_planks': (5, 0),
-            'minecraft:spruce_planks': (5, 1),
-            'minecraft:birch_planks': (5, 2),
-            'minecraft:jungle_planks': (5, 3),
-            'minecraft:acacia_planks': (5, 4),
-            'minecraft:dark_oak_planks': (5, 5),
-            'minecraft:sapling': (6, 0),
-            'minecraft:bedrock': (7, 0),
-            'minecraft:water': (8, 0),
-            'minecraft:lava': (11, 0),
-            'minecraft:sand': (12, 0),
-            'minecraft:red_sand': (12, 1),
-            'minecraft:gravel': (13, 0),
-            'minecraft:gold_ore': (14, 0),
-            'minecraft:iron_ore': (15, 0),
-            'minecraft:coal_ore': (16, 0),
-            'minecraft:oak_log': (17, 0),
-            'minecraft:spruce_log': (17, 1),
-            'minecraft:birch_log': (17, 2),
-            'minecraft:jungle_log': (17, 3),
-            'minecraft:oak_leaves': (18, 0),
-            'minecraft:spruce_leaves': (18, 1),
-            'minecraft:birch_leaves': (18, 2),
-            'minecraft:jungle_leaves': (18, 3),
-            'minecraft:acacia_leaves': (18, 4),
-            'minecraft:dark_oak_leaves': (18, 5),
-            'minecraft:sponge': (19, 0),
-            'minecraft:wet_sponge': (19, 1),
-            'minecraft:glass': (20, 0),
-            'minecraft:lapis_ore': (21, 0),
-            'minecraft:lapis_block': (22, 0),
-            'minecraft:dispenser': (23, 0),
-            'minecraft:sandstone': (24, 0),
-            'minecraft:chiseled_sandstone': (24, 1),
-            'minecraft:cut_sandstone': (24, 2),
-            'minecraft:note_block': (25, 0),
-            'minecraft:powered_rail': (27, 0),
-            'minecraft:detector_rail': (28, 0),
-            'minecraft:sticky_piston': (29, 0),
-            'minecraft:cobweb': (30, 0),
-            'minecraft:dead_bush': (31, 0),
-            'minecraft:grass': (31, 1),
-            'minecraft:fern': (31, 2),
-            'minecraft:piston': (33, 0),
-            'minecraft:piston_head': (34, 0),
-            'minecraft:white_wool': (35, 0),
-            'minecraft:orange_wool': (35, 1),
-            'minecraft:magenta_wool': (35, 2),
-            'minecraft:light_blue_wool': (35, 3),
-            'minecraft:yellow_wool': (35, 4),
-            'minecraft:lime_wool': (35, 5),
-            'minecraft:pink_wool': (35, 6),
-            'minecraft:gray_wool': (35, 7),
-            'minecraft:light_gray_wool': (35, 8),
-            'minecraft:cyan_wool': (35, 9),
-            'minecraft:purple_wool': (35, 10),
-            'minecraft:blue_wool': (35, 11),
-            'minecraft:brown_wool': (35, 12),
-            'minecraft:green_wool': (35, 13),
-            'minecraft:red_wool': (35, 14),
-            'minecraft:black_wool': (35, 15),
-            # Flowers
-            'minecraft:poppy': (38, 0),
-            'minecraft:blue_orchid': (38, 1),
-            'minecraft:allium': (38, 2),
-            'minecraft:azure_bluet': (38, 3),
-            'minecraft:red_tulip': (38, 4),
-            'minecraft:orange_tulip': (38, 5),
-            'minecraft:white_tulip': (38, 6),
-            'minecraft:pink_tulip': (38, 7),
-            'minecraft:oxeye_daisy': (38, 8),
-            'minecraft:dandelion': (38, 9),
-            "minecraft:wither_rose": (38, 10),
-            "minecraft:cornflower": (38, 11),
-            "minecraft:lily_of_the_valley": (38, 12),
 
-            'minecraft:brown_mushroom': (39, 0),
-            'minecraft:red_mushroom': (40, 0),
-            'minecraft:gold_block': (41, 0),
-            'minecraft:iron_block': (42, 0),
-            'minecraft:stone_slab': (44, 0),
-            'minecraft:sandstone_slab': (44, 1),
-            'minecraft:oak_slab': (44, 2),
-            'minecraft:cobblestone_slab': (44, 3),
-            'minecraft:brick_slab': (44, 4),
-            'minecraft:stone_brick_slab': (44, 5),
-            'minecraft:nether_brick_slab': (44, 6),
-            'minecraft:quartz_slab': (44, 7),
-            'minecraft:bricks': (45, 0),
-            'minecraft:tnt': (46, 0),
-            'minecraft:bookshelf': (47, 0),
-            'minecraft:mossy_cobblestone': (48, 0),
-            'minecraft:obsidian': (49, 0),
-            'minecraft:wall_torch': (50, 0),
-            'minecraft:torch': (50, 5),
-            'minecraft:fire': (51, 0),
-            'minecraft:spawner': (52, 0),
-            'minecraft:oak_stairs': (53, 0),
-            'minecraft:chest': (54, 0),
-            'minecraft:redstone_wire': (55, 0),
-            'minecraft:diamond_ore': (56, 0),
-            'minecraft:diamond_block': (57, 0),
-            'minecraft:crafting_table': (58, 0),
-            'minecraft:wheat': (59, 0),
-            'minecraft:farmland': (60, 0),
-            'minecraft:furnace': (61, 0),
-            'minecraft:sign': (63, 0),
-            'minecraft:oak_sign': (11401, 0),
-            'minecraft:spruce_sign': (11402, 0),
-            'minecraft:birch_sign': (11403, 0),
-            'minecraft:jungle_sign': (11404, 0),
-            'minecraft:acacia_sign': (11405, 0),
-            'minecraft:dark_oak_sign': (11406, 0),
-            'minecraft:oak_door': (64, 0),
-            'minecraft:ladder': (65, 0),
-            'minecraft:rail': (66, 0),
-            'minecraft:cobblestone_stairs': (67, 0),
-            'minecraft:wall_sign': (68, 0),
-            'minecraft:oak_wall_sign': (11407, 0),
-            'minecraft:spruce_wall_sign': (11408, 0),
-            'minecraft:birch_wall_sign': (11409, 0),
-            'minecraft:jungle_wall_sign': (11410, 0),
-            'minecraft:acacia_wall_sign': (11411, 0),
-            'minecraft:dark_oak_wall_sign': (11412, 0),
-            'minecraft:lever': (69, 0),
-            'minecraft:stone_pressure_plate': (70, 0),
-            'minecraft:iron_door': (71, 0),
-            'minecraft:oak_pressure_plate': (72, 0),
-            'minecraft:redstone_ore': (73, 0),
-            'minecraft:redstone_wall_torch': (75, 0),
-            'minecraft:redstone_torch': (75, 5),
-            'minecraft:stone_button': (77, 0),
-            'minecraft:snow': (78, 0),
-            'minecraft:ice': (79, 0),
-            'minecraft:snow_block': (80, 0),
-            'minecraft:cactus': (81, 0),
-            'minecraft:clay': (82, 0),
-            'minecraft:sugar_cane': (83, 0),
-            'minecraft:jukebox': (84, 0),
-            'minecraft:oak_fence': (85, 0),
-            'minecraft:pumpkin': (86, 0),
-            'minecraft:netherrack': (87, 0),
-            'minecraft:soul_sand': (88, 0),
-            'minecraft:glowstone': (89, 0),
-            'minecraft:nether_portal': (90, 0),
-            'minecraft:jack_o_lantern': (91, 0),
-            'minecraft:cake': (92, 0),
-            'minecraft:repeater': (93,0),
-            'minecraft:oak_trapdoor': (96, 0),
-            'minecraft:infested_stone': (97, 0),
-            'minecraft:stone_bricks': (98, 0),
-            'minecraft:infested_stone_bricks': (98, 0),
-            'minecraft:mossy_stone_bricks': (98, 1),
-            'minecraft:infested_mossy_stone_bricks': (98, 1),
-            'minecraft:cracked_stone_bricks': (98, 2),
-            'minecraft:infested_cracked_stone_bricks': (98, 2),
-            'minecraft:chiseled_stone_bricks': (98, 3),
-            'minecraft:infested_chiseled_stone_bricks': (98, 3),
-            'minecraft:brown_mushroom_block': (99, 0),
-            'minecraft:red_mushroom_block': (100, 0),
-            'minecraft:iron_bars': (101, 0),
-            'minecraft:glass_pane': (102, 0),
-            'minecraft:melon': (103,0),
-            'minecraft:attached_pumpkin_stem': (104, 0),
-            'minecraft:attached_melon_stem': (104, 0),
-            'minecraft:pumpkin_stem': (105, 0),
-            'minecraft:melon_stem': (105, 0),
-            'minecraft:vine': (106, 0),
-            'minecraft:oak_fence_gate': (107, 0),
-            'minecraft:brick_stairs': (108, 0),
-            'minecraft:stone_brick_stairs': (109, 0),
-            'minecraft:mycelium': (110, 0),
-            'minecraft:lily_pad': (111, 0),
-            'minecraft:nether_bricks': (112, 0),
-            'minecraft:nether_brick_fence': (113, 0),
-            'minecraft:nether_brick_stairs': (114, 0),
-            'minecraft:nether_wart': (115, 0),
-            'minecraft:enchanting_table': (116, 0),
-            'minecraft:brewing_stand': (117, 0),
-            'minecraft:cauldron': (118, 0),
-            'minecraft:end_portal': (119, 0),
-            'minecraft:end_portal_frame': (120, 0),
-            'minecraft:end_stone': (121, 0),
-            'minecraft:dragon_egg': (122, 0),
-            'minecraft:redstone_lamp': (123, 0),
-            'minecraft:oak_slab': (126, 0),
-            'minecraft:spruce_slab': (126, 1),
-            'minecraft:birch_slab': (126, 2),
-            'minecraft:jungle_slab': (126, 3),
-            'minecraft:acacia_slab': (126, 4),
-            'minecraft:dark_oak_slab': (126, 5),
-            'minecraft:cocoa': (127, 0),
-            'minecraft:sandstone_stairs': (128, 0),
-            'minecraft:emerald_ore': (129, 0),
-            'minecraft:ender_chest': (130, 0),
-            'minecraft:tripwire': (131, 0),
-            'minecraft:tripwire_hook': (132, 0),
-            'minecraft:emerald_block': (133, 0),
-            'minecraft:spruce_stairs': (134, 0),
-            'minecraft:birch_stairs': (135, 0),
-            'minecraft:jungle_stairs': (136, 0),
-            'minecraft:command_block': (137, 0),
-            'minecraft:beacon': (138, 0),
-            'minecraft:mushroom_stem': (139, 0),
-            'minecraft:flower_pot': (140, 0),
-            'minecraft:potted_poppy': (140, 0),  # Pots not rendering
-            'minecraft:potted_blue_orchid': (140, 0),
-            'minecraft:potted_allium': (140, 0),
-            'minecraft:potted_azure_bluet': (140, 0),
-            'minecraft:potted_red_tulip': (140, 0),
-            'minecraft:potted_orange_tulip': (140, 0),
-            'minecraft:potted_white_tulip': (140, 0),
-            'minecraft:potted_pink_tulip': (140, 0),
-            'minecraft:potted_oxeye_daisy': (140, 0),
-            'minecraft:potted_oak_sapling': (140, 0),
-            'minecraft:potted_spruce_sapling': (140, 0),
-            'minecraft:potted_birch_sapling': (140, 0),
-            'minecraft:potted_jungle_sapling': (140, 0),
-            'minecraft:potted_acacia_sapling': (140, 0),
-            'minecraft:potted_dark_oak_sapling': (140, 0),
-            'minecraft:potted_red_mushroom': (140, 0),
-            'minecraft:potted_brown_mushroom': (140, 0),
-            'minecraft:potted_fern': (140, 0),
-            'minecraft:potted_dead_bush': (140, 0),
-            'minecraft:potted_cactus': (140, 0),
-            'minecraft:potted_bamboo': (140, 0),
-            'minecraft:carrots': (141, 0),
-            'minecraft:potatoes': (142, 0),
-            'minecraft:oak_button': (143, 0),
-            'minecraft:skeleton_wall_skull': (144, 0),  # not rendering
-            'minecraft:wither_skeleton_wall_skull': (144, 1),   # not rendering
-            'minecraft:zombie_wall_head': (144, 2),     # not rendering
-            'minecraft:player_wall_head': (144, 3),     # not rendering
-            'minecraft:creeper_wall_head': (144, 4),    # not rendering
-            'minecraft:dragon_wall_head': (144, 5),     # not rendering
-            'minecraft:anvil': (145, 0),
-            'minecraft:chipped_anvil': (145, 4),
-            'minecraft:damaged_anvil': (145, 8),
-            'minecraft:trapped_chest': (146, 0),
-            'minecraft:light_weighted_pressure_plate': (147, 0),
-            'minecraft:heavy_weighted_pressure_plate': (148, 0),
-            'minecraft:comparator': (149, 0),
-            'minecraft:daylight_detector': (151, 0),
-            'minecraft:redstone_block': (152, 0),
-            'minecraft:nether_quartz_ore': (153, 0),
-            'minecraft:hopper': (154, 0),
-            'minecraft:quartz_block': (155, 0),
-            'minecraft:smooth_quartz': (155, 0),    # Only bottom texture is different
-            'minecraft:quartz_pillar': (155, 2),
-            'minecraft:chiseled_quartz_block': (155, 1),
-            'minecraft:quartz_stairs': (156, 0),
-            'minecraft:activator_rail': (157, 0),
-            'minecraft:dropper': (158, 0),
-            'minecraft:white_terracotta': (159, 0),
-            'minecraft:orange_terracotta': (159, 1),
-            'minecraft:magenta_terracotta': (159, 2),
-            'minecraft:light_blue_terracotta': (159, 3),
-            'minecraft:yellow_terracotta': (159, 4),
-            'minecraft:lime_terracotta': (159, 5),
-            'minecraft:pink_terracotta': (159, 6),
-            'minecraft:gray_terracotta': (159, 7),
-            'minecraft:light_gray_terracotta': (159, 8),
-            'minecraft:cyan_terracotta': (159, 9),
-            'minecraft:purple_terracotta': (159, 10),
-            'minecraft:blue_terracotta': (159, 11),
-            'minecraft:brown_terracotta': (159, 12),
-            'minecraft:green_terracotta': (159, 13),
-            'minecraft:red_terracotta': (159, 14),
-            'minecraft:black_terracotta': (159, 15),
-            'minecraft:acacia_log': (162, 0),
-            'minecraft:dark_oak_log': (162, 1),
-            'minecraft:acacia_stairs': (163, 0),
-            'minecraft:dark_oak_stairs': (164, 0),
-            'minecraft:slime_block': (165,0),
-            'minecraft:iron_trapdoor': (167, 0),
-            'minecraft:prismarine': (168, 0),
-            'minecraft:dark_prismarine': (168, 2),
-            'minecraft:prismarine_bricks': (168, 1),
-            'minecraft:sea_lantern': (169, 0),
-            'minecraft:hay_block': (170, 0),
-            'minecraft:white_carpet': (171, 0),
-            'minecraft:orange_carpet': (171, 1),
-            'minecraft:magenta_carpet': (171, 2),
-            'minecraft:light_blue_carpet': (171, 3),
-            'minecraft:yellow_carpet': (171, 4),
-            'minecraft:lime_carpet': (171, 5),
-            'minecraft:pink_carpet': (171, 6),
-            'minecraft:gray_carpet': (171, 7),
-            'minecraft:light_gray_carpet': (171, 8),
-            'minecraft:cyan_carpet': (171, 9),
-            'minecraft:purple_carpet': (171, 10),
-            'minecraft:blue_carpet': (171, 11),
-            'minecraft:brown_carpet': (171, 12),
-            'minecraft:green_carpet': (171, 13),
-            'minecraft:red_carpet': (171, 14),
-            'minecraft:black_carpet': (171, 15),
-            'minecraft:terracotta': (172, 0),
-            'minecraft:coal_block': (173, 0),
-            'minecraft:packed_ice': (174, 0),
-            'minecraft:sunflower': (175, 0),
-            'minecraft:lilac': (175, 1),
-            'minecraft:tall_grass': (175, 2),
-            'minecraft:large_fern': (175, 3),
-            'minecraft:rose_bush': (175, 4),
-            'minecraft:peony': (175, 5),
-            'minecraft:standing_banner': (176, 0),
-            'minecraft:wall_banner': (177, 0),
-            'minecraft:red_sandstone': (179, 0),
-            'minecraft:chiseled_red_sandstone': (179, 1),
-            'minecraft:cut_red_sandstone': (179, 2),
-            'minecraft:red_sandstone_stairs': (180, 0),
-            'minecraft:red_sandstone_slab': (182,0),
-            'minecraft:spruce_fence_gate': (183, 0),
-            'minecraft:birch_fence_gate': (184, 0),
-            'minecraft:jungle_fence_gate': (185, 0),
-            'minecraft:dark_oak_fence_gate': (186, 0),
-            'minecraft:acacia_fence_gate': (187, 0),
-            'minecraft:spruce_fence': (188, 0),
-            'minecraft:birch_fence': (189, 0),
-            'minecraft:jungle_fence': (190, 0),
-            'minecraft:dark_oak_fence': (191, 0),
-            'minecraft:acacia_fence': (192, 0),
-            'minecraft:spruce_door': (193, 0),
-            'minecraft:birch_door': (194, 0),
-            'minecraft:jungle_door': (195, 0),
-            'minecraft:acacia_door': (196, 0),
-            'minecraft:dark_oak_door': (197, 0),
-            'minecraft:end_rod': (198, 0),  # not rendering
-            'minecraft:chorus_plant': (199, 0),
-            'minecraft:chorus_flower': (200, 0),
-            'minecraft:purpur_block': (201, 0),
-            'minecraft:purpur_pillar': (202, 0),
-            'minecraft:purpur_stairs': (203, 0),
-            'minecraft:purpur_slab': (205, 0),
-            'minecraft:end_stone_bricks': (206, 0),
-            'minecraft:beetroots': (207, 0),
-            'minecraft:grass_path': (208, 0),
-            'minecraft:repeating_command_block': (210, 0),
-            'minecraft:chain_command_block': (211, 0),
-            'minecraft:frosted_ice': (212, 0),
-            'minecraft:magma_block': (213, 0),
-            'minecraft:nether_wart_block': (214, 0),
-            'minecraft:red_nether_bricks': (215, 0),
-            'minecraft:bone_block': (216, 0),
-            'minecraft:observer': (218, 0),
+            'minecraft:stone': (ids.block_stone, 0),
+            'minecraft:granite': (ids.block_granite, 0),
+            'minecraft:polished_granite': (ids.block_polished_granite, 0),
+            'minecraft:diorite': (ids.block_diorite, 0),
+            'minecraft:polished_diorite': (ids.block_polished_diorite, 0),
+            'minecraft:andesite': (ids.block_andesite, 0),
+            'minecraft:polished_andesite': (ids.block_polished_andesite, 0),
+            'minecraft:grass_block': (ids.block_grass_block, 0),
+            'minecraft:dirt': (ids.block_dirt, 0),
+            'minecraft:coarse_dirt': (ids.block_coarse_dirt, 0),
+            'minecraft:podzol': (ids.block_podzol, 0),
+            'minecraft:cobblestone': (ids.block_cobblestone, 0),
 
-            'minecraft:structure_block': (255, 0),
-            'minecraft:jigsaw': (256, 0),
-            'minecraft:shulker_box': (257, 0),
+            'minecraft:oak_planks': (ids.block_oak_planks, 0),
+            'minecraft:spruce_planks': (ids.block_spruce_planks, 0),
+            'minecraft:birch_planks': (ids.block_birch_planks, 0),
+            'minecraft:jungle_planks': (ids.block_jungle_planks, 0),
+            'minecraft:acacia_planks': (ids.block_acacia_planks, 0),
+            'minecraft:dark_oak_planks': (ids.block_dark_oak_planks, 0),
+            'minecraft:crimson_planks': (ids.block_crimson_planks, 0),
+            'minecraft:warped_planks': (ids.block_warped_planks, 0),
 
-            'minecraft:armor_stand': (416, 0),  # not rendering
+            'minecraft:oak_sapling': (ids.block_oak_sapling, 0),
+            'minecraft:spruce_sapling': (ids.block_spruce_sapling, 0),
+            'minecraft:birch_sapling': (ids.block_birch_sapling, 0),
+            'minecraft:jungle_sapling': (ids.block_jungle_sapling, 0),
+            'minecraft:acacia_sapling': (ids.block_acacia_sapling, 0),
+            'minecraft:dark_oak_sapling': (ids.block_dark_oak_sapling, 0),
+            'minecraft:bedrock': (ids.block_bedrock, 0),
+            'minecraft:water': (ids.block_water, 0),
+            'minecraft:lava': (ids.block_lava, 0),
 
             # The following blocks are underwater and are not yet rendered.
             # To avoid spurious warnings, we'll treat them as water for now.
-            'minecraft:brain_coral': (8, 0),
-            'minecraft:brain_coral_fan': (8, 0),
-            'minecraft:brain_coral_wall_fan': (8, 0),
-            'minecraft:bubble_column': (8, 0),
-            'minecraft:bubble_coral': (8, 0),
-            'minecraft:bubble_coral_fan': (8, 0),
-            'minecraft:bubble_coral_wall_fan': (8, 0),
-            'minecraft:fire_coral': (8, 0),
-            'minecraft:fire_coral_fan': (8, 0),
-            'minecraft:fire_coral_wall_fan': (8, 0),
-            'minecraft:horn_coral': (8, 0),
-            'minecraft:horn_coral_fan': (8, 0),
-            'minecraft:horn_coral_wall_fan': (8, 0),
-            'minecraft:kelp': (8, 0),
-            'minecraft:kelp_plant': (8, 0),
-            'minecraft:sea_pickle': (8, 0),
-            'minecraft:seagrass': (8, 0),
-            'minecraft:tall_seagrass': (8, 0),
-            'minecraft:tube_coral': (8, 0),
-            'minecraft:tube_coral_fan': (8, 0),
-            'minecraft:tube_coral_wall_fan': (8, 0),
+            'minecraft:brain_coral': (ids.block_water, 0),
+            'minecraft:brain_coral_fan': (ids.block_water, 0),
+            'minecraft:brain_coral_wall_fan': (ids.block_water, 0),
+            'minecraft:bubble_column': (ids.block_water, 0),
+            'minecraft:bubble_coral': (ids.block_water, 0),
+            'minecraft:bubble_coral_fan': (ids.block_water, 0),
+            'minecraft:bubble_coral_wall_fan': (ids.block_water, 0),
+            'minecraft:fire_coral': (ids.block_water, 0),
+            'minecraft:fire_coral_fan': (ids.block_water, 0),
+            'minecraft:fire_coral_wall_fan': (ids.block_water, 0),
+            'minecraft:horn_coral': (ids.block_water, 0),
+            'minecraft:horn_coral_fan': (ids.block_water, 0),
+            'minecraft:horn_coral_wall_fan': (ids.block_water, 0),
+            'minecraft:kelp': (ids.block_water, 0),
+            'minecraft:kelp_plant': (ids.block_water, 0),
+            'minecraft:sea_pickle': (ids.block_sea_pickle, 0),
+            'minecraft:seagrass': (ids.block_seagrass, 0),
+            'minecraft:tall_seagrass': (ids.block_tall_seagrass, 0),
+            'minecraft:tube_coral': (ids.block_water, 0),
+            'minecraft:tube_coral_fan': (ids.block_water, 0),
+            'minecraft:tube_coral_wall_fan': (ids.block_water, 0),
 
-            # Some 1.16 stuff that I'll arbitrarily shove in here due to ID bloat
-            'minecraft:ancient_debris': (1000, 0),
-            'minecraft:basalt':         (1001, 0),
-            'minecraft:polished_basalt':  (1002, 0),
-            'minecraft:soul_campfire':  (1003, 0),
-            'minecraft:blackstone':  (1004, 0),
-            'minecraft:netherite_block':  (1005, 0),
-            'minecraft:warped_nylium':  (1006, 0),
-            'minecraft:crimson_nylium':  (1007, 0),
-            # Nether logs aka stem
-            'minecraft:warped_stem':  (1008, 0),
-            'minecraft:stripped_warped_stem':  (1008, 1),
-            'minecraft:crimson_stem':  (1008, 2),
-            'minecraft:stripped_crimson_stem':  (1008, 3),
-            # hyphae
-            'minecraft:warped_hyphae':  (1009, 0),
-            'minecraft:stripped_warped_hyphae':  (1009, 1),
-            'minecraft:crimson_hyphae':  (1009, 2),
-            'minecraft:stripped_crimson_hyphae':  (1009, 3),
-            # nether biomes
-            'minecraft:warped_wart_block': (1010, 0),
-            'minecraft:shroomlight': (1011, 0),
-            'minecraft:twisting_vines': (1012, 0),
-            'minecraft:twisting_vines_plant': (1013, 0),
-            'minecraft:weeping_vines': (1014, 0),
-            'minecraft:weeping_vines_plant': (1015, 0),
-            'minecraft:warped_fungus': (1016, 0),
-            'minecraft:crimson_fungus': (1017, 0),
-            'minecraft:warped_roots': (1018, 0),
-            'minecraft:crimson_roots': (1019, 0),
-            'minecraft:soul_soil': (1020, 0),
-            'minecraft:nether_gold_ore': (1021, 0),
+            'minecraft:white_stained_glass': (ids.block_white_stained_glass, 0),
+            'minecraft:orange_stained_glass': (ids.block_orange_stained_glass, 0),
+            'minecraft:magenta_stained_glass': (ids.block_magenta_stained_glass, 0),
+            'minecraft:light_blue_stained_glass': (ids.block_light_blue_stained_glass, 0),
+            'minecraft:yellow_stained_glass': (ids.block_yellow_stained_glass, 0),
+            'minecraft:lime_stained_glass': (ids.block_lime_stained_glass, 0),
+            'minecraft:pink_stained_glass': (ids.block_pink_stained_glass, 0),
+            'minecraft:gray_stained_glass': (ids.block_gray_stained_glass, 0),
+            'minecraft:light_gray_stained_glass': (ids.block_light_gray_stained_glass, 0),
+            'minecraft:cyan_stained_glass': (ids.block_cyan_stained_glass, 0),
+            'minecraft:purple_stained_glass': (ids.block_purple_stained_glass, 0),
+            'minecraft:blue_stained_glass': (ids.block_blue_stained_glass, 0),
+            'minecraft:brown_stained_glass': (ids.block_brown_stained_glass, 0),
+            'minecraft:green_stained_glass': (ids.block_green_stained_glass, 0),
+            'minecraft:red_stained_glass': (ids.block_red_stained_glass, 0),
+            'minecraft:black_stained_glass': (ids.block_black_stained_glass, 0),
 
-            # New blocks
-            'minecraft:carved_pumpkin': (11300, 0),
-            'minecraft:spruce_pressure_plate': (11301, 0),
-            'minecraft:birch_pressure_plate': (11302, 0),
-            'minecraft:jungle_pressure_plate': (11303, 0),
-            'minecraft:acacia_pressure_plate': (11304, 0),
-            'minecraft:dark_oak_pressure_plate': (11305, 0),
-            'minecraft:stripped_oak_log': (11306, 0),
-            'minecraft:stripped_spruce_log': (11306, 1),
-            'minecraft:stripped_birch_log': (11306, 2),
-            'minecraft:stripped_jungle_log': (11306, 3),
-            'minecraft:stripped_acacia_log': (11307, 0),
-            'minecraft:stripped_dark_oak_log': (11307, 1),
-            'minecraft:oak_wood': (11308, 0),
-            'minecraft:spruce_wood': (11308, 1),
-            'minecraft:birch_wood': (11308, 2),
-            'minecraft:jungle_wood': (11308, 3),
-            'minecraft:acacia_wood': (11309, 0),
-            'minecraft:dark_oak_wood': (11309, 1),
-            'minecraft:stripped_oak_wood': (11310, 0),
-            'minecraft:stripped_spruce_wood': (11310, 1),
-            'minecraft:stripped_birch_wood': (11310, 2),
-            'minecraft:stripped_jungle_wood': (11310, 3),
-            'minecraft:stripped_acacia_wood': (11311, 0),
-            'minecraft:stripped_dark_oak_wood': (11311, 1),
-            'minecraft:blue_ice': (11312, 0),
-            'minecraft:smooth_stone': (11313, 0),
-            'minecraft:smooth_sandstone': (11314, 0),
-            'minecraft:smooth_red_sandstone': (11315, 0),
-            'minecraft:brain_coral_block': (11316, 0),
-            'minecraft:bubble_coral_block': (11317, 0),
-            'minecraft:fire_coral_block': (11318, 0),
-            'minecraft:horn_coral_block': (11319, 0),
-            'minecraft:tube_coral_block': (11320, 0),
-            'minecraft:dead_brain_coral_block': (11321, 0),
-            'minecraft:dead_bubble_coral_block': (11322, 0),
-            'minecraft:dead_fire_coral_block': (11323, 0),
-            'minecraft:dead_horn_coral_block': (11324, 0),
-            'minecraft:dead_tube_coral_block': (11325, 0),
-            'minecraft:spruce_button': (11326,0),
-            'minecraft:birch_button': (11327,0),
-            'minecraft:jungle_button': (11328,0),
-            'minecraft:acacia_button': (11329,0),
-            'minecraft:dark_oak_button': (11330,0),
-            'minecraft:dried_kelp_block': (11331,0),
-            'minecraft:spruce_trapdoor': (11332, 0),
-            'minecraft:birch_trapdoor': (11333, 0),
-            'minecraft:jungle_trapdoor': (11334, 0),
-            'minecraft:acacia_trapdoor': (11335, 0),
-            'minecraft:dark_oak_trapdoor': (11336, 0),
-            'minecraft:petrified_oak_slab': (126, 0),
-            'minecraft:prismarine_stairs': (11337, 0),
-            'minecraft:dark_prismarine_stairs': (11338, 0),
-            'minecraft:prismarine_brick_stairs': (11339,0),
-            'minecraft:prismarine_slab': (11340, 0),
-            'minecraft:dark_prismarine_slab': (11341, 0),
-            'minecraft:prismarine_brick_slab': (11342, 0),
-            "minecraft:andesite_slab": (11343, 0),
-            "minecraft:diorite_slab": (11344, 0),
-            "minecraft:granite_slab": (11345, 0),
-            "minecraft:polished_andesite_slab": (11346, 0),
-            "minecraft:polished_diorite_slab": (11347, 0),
-            "minecraft:polished_granite_slab": (11348, 0),
-            "minecraft:red_nether_brick_slab": (11349, 0),
-            "minecraft:smooth_sandstone_slab": (11350, 0),
-            "minecraft:cut_sandstone_slab": (11351, 0),
-            "minecraft:smooth_red_sandstone_slab": (11352, 0),
-            "minecraft:cut_red_sandstone_slab": (11353, 0),
-            "minecraft:end_stone_brick_slab": (11354, 0),
-            "minecraft:mossy_cobblestone_slab": (11355, 0),
-            "minecraft:mossy_stone_brick_slab": (11356, 0),
-            "minecraft:smooth_quartz_slab": (11357, 0),
-            "minecraft:smooth_stone_slab": (11358, 0),
-            "minecraft:fletching_table": (11359, 0),
-            "minecraft:cartography_table": (11360, 0),
-            "minecraft:smithing_table": (11361, 0),
-            "minecraft:blast_furnace": (11362, 0),
-            "minecraft:smoker": (11364, 0),
-            "minecraft:lectern": (11366, 0),
-            "minecraft:loom": (11367, 0),
-            "minecraft:stonecutter": (11368, 0),
-            "minecraft:grindstone": (11369, 0),
-            "minecraft:mossy_stone_brick_stairs": (11370, 0),
-            "minecraft:mossy_cobblestone_stairs": (11371, 0),
-            "minecraft:lantern": (11373, 0),
-            "minecraft:smooth_sandstone_stairs": (11374, 0),
-            'minecraft:smooth_quartz_stairs': (11375, 0),
-            'minecraft:polished_granite_stairs': (11376, 0),
-            'minecraft:polished_diorite_stairs': (11377, 0),
-            'minecraft:polished_andesite_stairs': (11378, 0),
-            'minecraft:stone_stairs': (11379, 0),
-            'minecraft:granite_stairs': (11380, 0),
-            'minecraft:diorite_stairs': (11381, 0),
-            'minecraft:andesite_stairs': (11382, 0),
-            'minecraft:end_stone_brick_stairs': (11383, 0),
-            'minecraft:red_nether_brick_stairs': (11384, 0),
-            'minecraft:oak_sapling': (11385, 0),
-            'minecraft:spruce_sapling': (11386, 0),
-            'minecraft:birch_sapling': (11387, 0),
-            'minecraft:jungle_sapling': (11388, 0),
-            'minecraft:acacia_sapling': (11389, 0),
-            'minecraft:dark_oak_sapling': (11390, 0),
-            'minecraft:bamboo_sapling': (11413, 0),
-            'minecraft:scaffolding': (11414, 0),
-            "minecraft:smooth_red_sandstone_stairs": (11415, 0),
-            'minecraft:bamboo': (11416, 0),
-            "minecraft:composter": (11417, 0),
-            "minecraft:barrel": (11418, 0),
-            # 1.15 blocks below
-            'minecraft:beehive': (11501, 0),
-            'minecraft:bee_nest': (11502, 0),
-            'minecraft:honeycomb_block': (11503, 0),
-            'minecraft:honey_block': (11504, 0),
-            'minecraft:sweet_berry_bush': (11505, 0),
-            'minecraft:campfire': (11506, 0),
-            'minecraft:bell': (11507, 0),
-            # adding a gap in the numbering of walls to keep them all
-            'minecraft:andesite_wall': (1792, 0),
-            'minecraft:brick_wall': (1793, 0),
-            'minecraft:cobblestone_wall': (1794, 0),
-            'minecraft:diorite_wall': (1795, 0),
-            'minecraft:end_stone_brick_wall': (1796, 0),
-            'minecraft:granite_wall': (1797, 0),
-            'minecraft:mossy_cobblestone_wall': (1798, 0),
-            'minecraft:mossy_stone_brick_wall': (1799, 0),
-            'minecraft:nether_brick_wall': (1800, 0),
-            'minecraft:prismarine_wall': (1801, 0),
-            'minecraft:red_nether_brick_wall': (1802, 0),
-            'minecraft:red_sandstone_wall': (1803, 0),
-            'minecraft:sandstone_wall': (1804, 0),
-            'minecraft:stone_brick_wall': (1805, 0),
+            'minecraft:glass': (ids.block_glass, 0),
+            'minecraft:ice': (ids.block_ice, 0),
+            'minecraft:sand': (ids.block_sand, 0),
+            'minecraft:red_sand': (ids.block_red_sand, 0),
+
+            'minecraft:gravel': (ids.block_gravel, 0),
+            'minecraft:gold_ore': (ids.block_gold_ore, 0),
+            'minecraft:iron_ore': (ids.block_iron_ore, 0),
+            'minecraft:coal_ore': (ids.block_coal_ore, 0),
+
+            'minecraft:nether_gold_ore': (ids.block_nether_gold_ore, 0),
+
+            'minecraft:oak_log': (ids.block_oak_log, 0),
+            'minecraft:spruce_log': (ids.block_spruce_log, 0),
+            'minecraft:birch_log': (ids.block_birch_log, 0),
+            'minecraft:jungle_log': (ids.block_jungle_log, 0),
+            'minecraft:acacia_log': (ids.block_acacia_log, 0),
+            'minecraft:dark_oak_log': (ids.block_dark_oak_log, 0),
+
+            'minecraft:stripped_oak_log': (ids.block_stripped_oak_log, 0),
+            'minecraft:stripped_spruce_log': (ids.block_stripped_spruce_log, 0),
+            'minecraft:stripped_birch_log': (ids.block_stripped_birch_log, 0),
+            'minecraft:stripped_jungle_log': (ids.block_stripped_jungle_log, 0),
+            'minecraft:stripped_acacia_log': (ids.block_stripped_acacia_log, 0),
+            'minecraft:stripped_dark_oak_log': (ids.block_stripped_dark_oak_log, 0),
+
+            'minecraft:oak_wood': (ids.block_oak_wood, 0),
+            'minecraft:spruce_wood': (ids.block_spruce_wood, 0),
+            'minecraft:birch_wood': (ids.block_birch_wood, 0),
+            'minecraft:jungle_wood': (ids.block_jungle_wood, 0),
+            'minecraft:acacia_wood': (ids.block_acacia_wood, 0),
+            'minecraft:dark_oak_wood': (ids.block_dark_oak_wood, 0),
+            'minecraft:stripped_oak_wood': (ids.block_stripped_oak_wood, 0),
+            'minecraft:stripped_spruce_wood': (ids.block_stripped_spruce_wood, 0),
+            'minecraft:stripped_birch_wood': (ids.block_stripped_birch_wood, 0),
+            'minecraft:stripped_jungle_wood': (ids.block_stripped_jungle_wood, 0),
+            'minecraft:stripped_acacia_wood': (ids.block_stripped_acacia_wood, 0),
+            'minecraft:stripped_dark_oak_wood': (ids.block_stripped_dark_oak_wood, 0),
+
+            'minecraft:oak_leaves': (ids.block_oak_leaves, 0),
+            'minecraft:spruce_leaves': (ids.block_spruce_leaves, 0),
+            'minecraft:birch_leaves': (ids.block_birch_leaves, 0),
+            'minecraft:jungle_leaves': (ids.block_jungle_leaves, 0),
+            'minecraft:acacia_leaves': (ids.block_acacia_leaves, 0),
+            'minecraft:dark_oak_leaves': (ids.block_dark_oak_leaves, 0),
+
+            'minecraft:sponge': (ids.block_sponge, 0),
+            'minecraft:wet_sponge': (ids.block_wet_sponge, 0),
+            'minecraft:lapis_ore': (ids.block_lapis_ore, 0),
+            'minecraft:lapis_block': (ids.block_lapis_block, 0),
+
+            'minecraft:sandstone': (ids.block_sandstone, 0),
+            'minecraft:chiseled_sandstone': (ids.block_chiseled_sandstone, 0),
+            'minecraft:cut_sandstone': (ids.block_cut_sandstone, 0),
+
+            'minecraft:note_block': (ids.block_note_block, 0),
+
+            'minecraft:white_bed': (ids.block_white_bed, 0),
+            'minecraft:orange_bed': (ids.block_orange_bed, 0),
+            'minecraft:magenta_bed': (ids.block_magenta_bed, 0),
+            'minecraft:light_blue_bed': (ids.block_light_blue_bed, 0),
+            'minecraft:yellow_bed': (ids.block_yellow_bed, 0),
+            'minecraft:lime_bed': (ids.block_lime_bed, 0),
+            'minecraft:pink_bed': (ids.block_pink_bed, 0),
+            'minecraft:gray_bed': (ids.block_gray_bed, 0),
+            'minecraft:light_gray_bed': (ids.block_light_gray_bed, 0),
+            'minecraft:cyan_bed': (ids.block_cyan_bed, 0),
+            'minecraft:purple_bed': (ids.block_purple_bed, 0),
+            'minecraft:blue_bed': (ids.block_blue_bed, 0),
+            'minecraft:brown_bed': (ids.block_brown_bed, 0),
+            'minecraft:green_bed': (ids.block_green_bed, 0),
+            'minecraft:red_bed': (ids.block_red_bed, 0),
+            'minecraft:black_bed': (ids.block_black_bed, 0),
+
+            'minecraft:powered_rail': (ids.block_powered_rail, 0),
+            'minecraft:detector_rail': (ids.block_detector_rail, 0),
+
+            'minecraft:sticky_piston': (ids.block_sticky_piston, 0),
+            'minecraft:piston': (ids.block_piston, 0),
+            'minecraft:piston_head': (ids.block_piston_head, 0),
+
+            'minecraft:cobweb': (ids.block_cobweb, 0),
+            'minecraft:dead_bush': (ids.block_dead_bush, 0),
+            'minecraft:grass': (ids.block_grass, 0),
+            'minecraft:fern': (ids.block_fern, 0),
+
+            'minecraft:white_wool': (ids.block_white_wool, 0),
+            'minecraft:orange_wool': (ids.block_orange_wool, 0),
+            'minecraft:magenta_wool': (ids.block_magenta_wool, 0),
+            'minecraft:light_blue_wool': (ids.block_light_blue_wool, 0),
+            'minecraft:yellow_wool': (ids.block_yellow_wool, 0),
+            'minecraft:lime_wool': (ids.block_lime_wool, 0),
+            'minecraft:pink_wool': (ids.block_pink_wool, 0),
+            'minecraft:gray_wool': (ids.block_gray_wool, 0),
+            'minecraft:light_gray_wool': (ids.block_light_gray_wool, 0),
+            'minecraft:cyan_wool': (ids.block_cyan_wool, 0),
+            'minecraft:purple_wool': (ids.block_purple_wool, 0),
+            'minecraft:blue_wool': (ids.block_blue_wool, 0),
+            'minecraft:brown_wool': (ids.block_brown_wool, 0),
+            'minecraft:green_wool': (ids.block_green_wool, 0),
+            'minecraft:red_wool': (ids.block_red_wool, 0),
+            'minecraft:black_wool': (ids.block_black_wool, 0),
+            # Flowers
+            'minecraft:poppy': (ids.block_poppy, 0),
+            'minecraft:blue_orchid': (ids.block_blue_orchid, 0),
+            'minecraft:allium': (ids.block_allium, 0),
+            'minecraft:azure_bluet': (ids.block_azure_bluet, 0),
+            'minecraft:red_tulip': (ids.block_red_tulip, 0),
+            'minecraft:orange_tulip': (ids.block_orange_tulip, 0),
+            'minecraft:white_tulip': (ids.block_white_tulip, 0),
+            'minecraft:pink_tulip': (ids.block_pink_tulip, 0),
+            'minecraft:oxeye_daisy': (ids.block_oxeye_daisy, 0),
+            'minecraft:dandelion': (ids.block_dandelion, 0),
+            "minecraft:wither_rose": (ids.block_wither_rose, 0),
+            "minecraft:cornflower": (ids.block_cornflower, 0),
+            "minecraft:lily_of_the_valley": (ids.block_lily_of_the_valley, 0),
+
+            'minecraft:brown_mushroom': (ids.block_brown_mushroom, 0),
+            'minecraft:red_mushroom': (ids.block_red_mushroom, 0),
+
+            'minecraft:gold_block': (ids.block_gold_block, 0),
+            'minecraft:iron_block': (ids.block_iron_block, 0),
+
+            'minecraft:stone_slab': (ids.block_stone_slab, 0),  # 44-0
+            'minecraft:sandstone_slab': (ids.block_sandstone_slab, 0),  # 44-1
+            'minecraft:oak_slab': (ids.block_oak_slab, 0),  # 44-2
+            'minecraft:cobblestone_slab': (ids.block_cobblestone_slab, 0),  # 44-3
+            'minecraft:brick_slab': (ids.block_brick_slab, 0),  # 44-4
+            'minecraft:stone_brick_slab': (ids.block_stone_brick_slab, 0),  # 44-5
+            'minecraft:nether_brick_slab': (ids.block_nether_brick_slab, 0),  # 44-6
+            'minecraft:quartz_slab': (ids.block_quartz_slab, 0),  # 44-7
+            'minecraft:spruce_slab': (ids.block_spruce_slab, 0),  # 126-1
+            'minecraft:birch_slab': (ids.block_birch_slab, 0),  # 126-2
+            'minecraft:jungle_slab': (ids.block_jungle_slab, 0),  # 126-3
+            'minecraft:acacia_slab': (ids.block_acacia_slab, 0),  # 126-4
+            'minecraft:dark_oak_slab': (ids.block_dark_oak_slab, 0),  # 126-5
+            'minecraft:red_sandstone_slab': (ids.block_red_sandstone_slab, 0),  # 182-0
+            'minecraft:purpur_slab': (ids.block_purpur_slab, 0),  # 205-0
+            'minecraft:petrified_oak_slab': (ids.block_petrified_oak_slab, 0),  # 126-0
+            'minecraft:prismarine_slab': (ids.block_prismarine_slab, 0),  # 11340-0
+            'minecraft:dark_prismarine_slab': (ids.block_dark_prismarine_slab, 0),  # 11341-0
+            'minecraft:prismarine_brick_slab': (ids.block_prismarine_brick_slab, 0),  # 11342-0
+            "minecraft:andesite_slab": (ids.block_andesite_slab, 0),  # 11343-0
+            "minecraft:diorite_slab": (ids.block_diorite_slab, 0),  # 11344-0
+            "minecraft:granite_slab": (ids.block_granite_slab, 0),  # 11345-0
+            "minecraft:polished_andesite_slab": (ids.block_polished_andesite_slab, 0),  # 11346-0
+            "minecraft:polished_diorite_slab": (ids.block_polished_diorite_slab, 0),  # 11347-0
+            "minecraft:polished_granite_slab": (ids.block_polished_granite_slab, 0),  # 11348-0
+            "minecraft:red_nether_brick_slab": (ids.block_red_nether_brick_slab, 0),  # 11349-0
+            "minecraft:smooth_sandstone_slab": (ids.block_smooth_sandstone_slab, 0),  # 11350-0
+            "minecraft:cut_sandstone_slab": (ids.block_cut_sandstone_slab, 0),  # 11351-0
+            "minecraft:smooth_red_sandstone_slab": (ids.block_smooth_red_sandstone_slab, 0),  # 11352-0
+            "minecraft:cut_red_sandstone_slab": (ids.block_cut_red_sandstone_slab, 0),  # 11353-0
+            "minecraft:end_stone_brick_slab": (ids.block_end_stone_brick_slab, 0),  # 11354-0
+            "minecraft:mossy_cobblestone_slab": (ids.block_mossy_cobblestone_slab, 0),  # 11355-0
+            "minecraft:mossy_stone_brick_slab": (ids.block_mossy_stone_brick_slab, 0),  # 11356-0
+            "minecraft:smooth_quartz_slab": (ids.block_smooth_quartz_slab, 0),  # 11357-0
+            "minecraft:smooth_stone_slab": (ids.block_smooth_stone_slab, 0),  # 11358-0
+            "minecraft:crimson_slab": (ids.block_crimson_slab, 0),
+            "minecraft:warped_slab": (ids.block_warped_slab, 0),
+            "minecraft:polished_blackstone_brick_slab": (ids.block_polished_blackstone_brick_slab, 0),
+            "minecraft:blackstone_slab": (ids.block_blackstone_slab, 0),
+            "minecraft:polished_blackstone_slab": (ids.block_polished_blackstone_slab, 0),
+
+
+            'minecraft:bricks': (ids.block_bricks, 0),
+            'minecraft:tnt': (ids.block_tnt, 0),
+            'minecraft:bookshelf': (ids.block_bookshelf, 0),
+            'minecraft:mossy_cobblestone': (ids.block_mossy_cobblestone, 0),
+            'minecraft:obsidian': (ids.block_obsidian, 0),
+
+            'minecraft:wall_torch': (ids.block_wall_torch, 0),
+            'minecraft:torch': (ids.block_torch, 0),
+            'minecraft:redstone_wall_torch': (ids.block_redstone_wall_torch, 0),
+            'minecraft:redstone_torch': (ids.block_redstone_torch, 0),
+
+            'minecraft:fire': (ids.block_fire, 0),
+
+            'minecraft:spawner': (ids.block_spawner, 0),
+
+            'minecraft:oak_stairs': (ids.block_oak_stairs, 0),  # 53
+            'minecraft:cobblestone_stairs': (ids.block_cobblestone_stairs, 0),  # 67
+            'minecraft:brick_stairs': (ids.block_brick_stairs, 0),  # 108
+            'minecraft:stone_brick_stairs': (ids.block_stone_brick_stairs, 0),  # 109
+            'minecraft:nether_brick_stairs': (ids.block_nether_brick_stairs, 0),  # 114
+            'minecraft:sandstone_stairs': (ids.block_sandstone_stairs, 0),  # 128
+            'minecraft:spruce_stairs': (ids.block_spruce_stairs, 0),  # 134
+            'minecraft:birch_stairs': (ids.block_birch_stairs, 0),  # 135
+            'minecraft:jungle_stairs': (ids.block_jungle_stairs, 0),  # 136
+            'minecraft:quartz_stairs': (ids.block_quartz_stairs, 0),  # 156
+            'minecraft:acacia_stairs': (ids.block_acacia_stairs, 0),  # 163
+            'minecraft:dark_oak_stairs': (ids.block_dark_oak_stairs, 0),  # 164
+            'minecraft:red_sandstone_stairs': (ids.block_red_sandstone_stairs, 0),  # 180
+            'minecraft:purpur_stairs': (ids.block_purpur_stairs, 0),  # 203
+            'minecraft:prismarine_stairs': (ids.block_prismarine_stairs, 0),  # 11337
+            'minecraft:dark_prismarine_stairs': (ids.block_dark_prismarine_stairs, 0),  # 11338
+            'minecraft:prismarine_brick_stairs': (ids.block_prismarine_brick_stairs, 0),  # 11339
+            'minecraft:mossy_stone_brick_stairs': (ids.block_mossy_stone_brick_stairs, 0),  # 11370
+            'minecraft:mossy_cobblestone_stairs': (ids.block_mossy_cobblestone_stairs, 0),  # 11371
+            'minecraft:smooth_sandstone_stairs': (ids.block_smooth_sandstone_stairs, 0),  # 11374
+            'minecraft:smooth_quartz_stairs': (ids.block_smooth_quartz_stairs, 0),  # 11375
+            'minecraft:polished_granite_stairs': (ids.block_polished_granite_stairs, 0),  # 11376
+            'minecraft:polished_diorite_stairs': (ids.block_polished_diorite_stairs, 0),  # 11377
+            'minecraft:polished_andesite_stairs': (ids.block_polished_andesite_stairs, 0),  # 11378
+            'minecraft:stone_stairs': (ids.block_stone_stairs, 0),  # 11379
+            'minecraft:granite_stairs': (ids.block_granite_stairs, 0),  # 11380
+            'minecraft:diorite_stairs': (ids.block_diorite_stairs, 0),  # 11381
+            'minecraft:andesite_stairs': (ids.block_andesite_stairs, 0),  # 11382
+            'minecraft:end_stone_brick_stairs': (ids.block_end_stone_brick_stairs, 0),  # 11383
+            'minecraft:red_nether_brick_stairs': (ids.block_red_nether_brick_stairs, 0),  # 11384
+            'minecraft:smooth_red_sandstone_stairs': (ids.block_smooth_red_sandstone_stairs, 0),  # 11415
+            'minecraft:crimson_stairs': (ids.block_crimson_stairs, 0),
+            'minecraft:warped_stairs': (ids.block_warped_stairs, 0),
+            'minecraft:blackstone_stairs': (ids.block_blackstone_stairs, 0),
+            'minecraft:polished_blackstone_brick_stairs': (ids.block_polished_blackstone_brick_stairs, 0),
+            'minecraft:polished_blackstone_stairs': (ids.block_polished_blackstone_stairs, 0),
+
+            'minecraft:chest': (ids.block_chest, 0),
+            'minecraft:ender_chest': (ids.block_ender_chest, 0),
+            'minecraft:trapped_chest': (ids.block_trapped_chest, 0),
+
+            'minecraft:redstone_wire': (ids.block_redstone_wire, 0),
+
+            'minecraft:diamond_ore': (ids.block_diamond_ore, 0),
+            'minecraft:diamond_block': (ids.block_diamond_block, 0),
+
+            'minecraft:crafting_table': (ids.block_crafting_table, 0),
+            "minecraft:fletching_table": (ids.block_fletching_table, 0),
+            "minecraft:cartography_table": (ids.block_cartography_table, 0),
+            "minecraft:smithing_table": (ids.block_smithing_table, 0),
+
+            'minecraft:wheat': (ids.block_wheat, 0),
+
+            'minecraft:farmland': (ids.block_farmland, 0),
+            'minecraft:grass_path': (ids.block_grass_path, 0),
+
+            'minecraft:dispenser': (ids.block_dispenser, 0),
+            'minecraft:furnace': (ids.block_furnace, 0),
+            'minecraft:dropper': (ids.block_dropper, 0),
+            "minecraft:blast_furnace": (ids.block_blast_furnace, 0),
+            "minecraft:smoker": (ids.block_smoker, 0),
+
+            # 'minecraft:sign': (63, 0),
+            'minecraft:oak_sign': (ids.block_oak_sign, 0),
+            'minecraft:spruce_sign': (ids.block_spruce_sign, 0),
+            'minecraft:birch_sign': (ids.block_birch_sign, 0),
+            'minecraft:jungle_sign': (ids.block_acacia_sign, 0),
+            'minecraft:acacia_sign': (ids.block_jungle_sign, 0),
+            'minecraft:dark_oak_sign': (ids.block_dark_oak_sign, 0),
+            'minecraft:warped_sign': (ids.block_warped_sign, 0),
+            'minecraft:crimson_sign': (ids.block_crimson_sign, 0),
+
+            'minecraft:oak_door': (ids.block_oak_door, 0),
+            'minecraft:iron_door': (ids.block_iron_door, 0),
+            'minecraft:spruce_door': (ids.block_spruce_door, 0),
+            'minecraft:birch_door': (ids.block_birch_door, 0),
+            'minecraft:jungle_door': (ids.block_jungle_door, 0),
+            'minecraft:acacia_door': (ids.block_acacia_door, 0),
+            'minecraft:dark_oak_door': (ids.block_dark_oak_door, 0),
+            'minecraft:crimson_door': (ids.block_crimson_door, 0),
+            'minecraft:warped_door': (ids.block_warped_door, 0),
+
+            'minecraft:ladder': (ids.block_ladder, 0),
+
+            'minecraft:rail': (ids.block_rail, 0),
+            'minecraft:activator_rail': (ids.block_activator_rail, 0),
+
+            'minecraft:oak_wall_sign': (ids.block_oak_wall_sign, 0),
+            'minecraft:spruce_wall_sign': (ids.block_spruce_wall_sign, 0),
+            'minecraft:birch_wall_sign': (ids.block_birch_wall_sign, 0),
+            'minecraft:jungle_wall_sign': (ids.block_acacia_wall_sign, 0),
+            'minecraft:acacia_wall_sign': (ids.block_jungle_wall_sign, 0),
+            'minecraft:dark_oak_wall_sign': (ids.block_dark_oak_wall_sign, 0),
+            'minecraft:warped_wall_sign': (ids.block_warped_wall_sign, 0),
+            'minecraft:crimson_wall_sign': (ids.block_crimson_wall_sign, 0),
+
+            'minecraft:lever': (ids.block_lever, 0),
+
+            'minecraft:stone_pressure_plate': (ids.block_stone_pressure_plate, 0),  # 70
+            'minecraft:oak_pressure_plate': (ids.block_oak_pressure_plate, 0),  # 72
+            'minecraft:spruce_pressure_plate': (ids.block_spruce_pressure_plate, 0),  # 11301
+            'minecraft:birch_pressure_plate': (ids.block_birch_pressure_plate, 0),  # 11302
+            'minecraft:jungle_pressure_plate': (ids.block_jungle_pressure_plate, 0),  # 11303
+            'minecraft:acacia_pressure_plate': (ids.block_acacia_pressure_plate, 0),  # 11304
+            'minecraft:dark_oak_pressure_plate': (ids.block_dark_oak_pressure_plate, 0),  # 11305
+            'minecraft:light_weighted_pressure_plate': (ids.block_light_weighted_pressure_plate, 0),  # 147
+            'minecraft:heavy_weighted_pressure_plate': (ids.block_heavy_weighted_pressure_plate, 0),  # 148
+            'minecraft:crimson_pressure_plate': (ids.block_crimson_pressure_plate, 0),
+            'minecraft:warped_pressure_plate': (ids.block_warped_pressure_plate, 0),
+            'minecraft:polished_blackstone_pressure_plate': (ids.block_polished_blackstone_pressure_plate, 0),
+
+            'minecraft:redstone_ore': (ids.block_redstone_ore, 0),
+
+            'minecraft:stone_button': (ids.block_stone_button, 0),  # 77
+            'minecraft:oak_button': (ids.block_oak_button, 0),  # 143
+            'minecraft:spruce_button': (ids.block_spruce_button, 0),  # 11326
+            'minecraft:birch_button': (ids.block_birch_button, 0),  # 11327
+            'minecraft:jungle_button': (ids.block_jungle_button, 0),  # 11328
+            'minecraft:acacia_button': (ids.block_acacia_button, 0),  # 11329
+            'minecraft:dark_oak_button': (ids.block_dark_oak_button, 0),  # 11330
+            'minecraft:crimson_button': (ids.block_crimson_button, 0),
+            'minecraft:warped_button': (ids.block_warped_button, 0),
+            'minecraft:polished_blackstone_button': (ids.block_polished_blackstone_button, 0),
+
+            'minecraft:snow': (ids.block_snow, 0),
+            'minecraft:snow_block': (ids.block_snow_block, 0),
+
+            'minecraft:cactus': (ids.block_cactus, 0),
+            'minecraft:clay': (ids.block_clay, 0),
+
+            'minecraft:sugar_cane': (ids.block_sugar_cane, 0),
+            'minecraft:jukebox': (ids.block_jukebox, 0),
+
+            'minecraft:oak_fence': (ids.block_oak_fence, 0),  # 85
+            'minecraft:nether_brick_fence': (ids.block_nether_brick_fence, 0),  # 113
+            'minecraft:spruce_fence': (ids.block_spruce_fence, 0),  # 188
+            'minecraft:birch_fence': (ids.block_birch_fence, 0),  # 189
+            'minecraft:jungle_fence': (ids.block_jungle_fence, 0),  # 190
+            'minecraft:dark_oak_fence': (ids.block_acacia_fence, 0),  # 191
+            'minecraft:acacia_fence': (ids.block_dark_oak_fence, 0),  # 192
+            'minecraft:crimson_fence': (ids.block_crimson_fence, 0),
+            'minecraft:warped_fence': (ids.block_warped_fence, 0),
+
+            'minecraft:oak_fence_gate': (ids.block_oak_fence_gate, 0),  # 107
+            'minecraft:spruce_fence_gate': (ids.block_spruce_fence_gate, 0),  # 183
+            'minecraft:birch_fence_gate': (ids.block_birch_fence_gate, 0),  # 184
+            'minecraft:jungle_fence_gate': (ids.block_jungle_fence_gate, 0),  # 185
+            'minecraft:dark_oak_fence_gate': (ids.block_acacia_fence_gate, 0),  # 186
+            'minecraft:acacia_fence_gate': (ids.block_dark_oak_fence_gate, 0),  # 187
+            'minecraft:crimson_fence_gate': (ids.block_crimson_fence_gate, 0),
+            'minecraft:warped_fence_gate': (ids.block_warped_fence_gate, 0),
+
+            'minecraft:pumpkin': (ids.block_pumpkin, 0),
+            'minecraft:jack_o_lantern': (ids.block_jack_o_lantern, 0),
+            'minecraft:carved_pumpkin': (ids.block_carved_pumpkin, 0),
+
+            'minecraft:netherrack': (ids.block_netherrack, 0),  # 87
+            'minecraft:soul_sand': (ids.block_soul_sand, 0),  # 88
+            'minecraft:glowstone': (ids.block_glowstone, 0),  # 89
+
+            'minecraft:nether_portal': (ids.block_nether_portal, 0),
+
+            'minecraft:oak_trapdoor': (ids.block_oak_trapdoor, 0),  # 96
+            'minecraft:iron_trapdoor': (ids.block_iron_trapdoor, 0),  # 167
+            'minecraft:spruce_trapdoor': (ids.block_spruce_trapdoor, 0),  # 11332
+            'minecraft:birch_trapdoor': (ids.block_birch_trapdoor, 0),  # 11333
+            'minecraft:jungle_trapdoor': (ids.block_jungle_trapdoor, 0),  # 11334
+            'minecraft:acacia_trapdoor': (ids.block_acacia_trapdoor, 0),  # 11335
+            'minecraft:dark_oak_trapdoor': (ids.block_dark_oak_trapdoor, 0),  # 11336
+            'minecraft:crimson_trapdoor': (ids.block_crimson_trapdoor, 0),
+            'minecraft:warped_trapdoor': (ids.block_warped_trapdoor, 0),
+
+            'minecraft:infested_cobblestone': (ids.block_infested_cobblestone, 0),
+            'minecraft:infested_stone': (ids.block_infested_stone, 0),
+            'minecraft:infested_stone_bricks': (ids.block_infested_stone_bricks, 0),
+            'minecraft:infested_mossy_stone_bricks': (ids.block_infested_mossy_stone_bricks, 0),
+            'minecraft:infested_cracked_stone_bricks': (ids.block_infested_cracked_stone_bricks, 0),
+            'minecraft:infested_chiseled_stone_bricks': (ids.block_infested_chiseled_stone_bricks, 0),
+
+            'minecraft:stone_bricks': (ids.block_stone_bricks, 0),
+            'minecraft:mossy_stone_bricks': (ids.block_mossy_stone_bricks, 0),
+            'minecraft:cracked_stone_bricks': (ids.block_cracked_stone_bricks, 0),
+            'minecraft:chiseled_stone_bricks': (ids.block_chiseled_stone_bricks, 0),
+
+            'minecraft:brown_mushroom_block': (ids.block_brown_mushroom_block, 0),
+            'minecraft:red_mushroom_block': (ids.block_red_mushroom_block, 0),
+            'minecraft:mushroom_stem': (ids.block_mushroom_stem, 0),
+
+            'minecraft:prismarine': (ids.block_prismarine, 0),
+            'minecraft:dark_prismarine': (ids.block_dark_prismarine, 0),
+            'minecraft:prismarine_bricks': (ids.block_prismarine_bricks, 0),
+
+            'minecraft:cake': (ids.block_cake, 0),
+
+            'minecraft:repeater': (ids.block_repeater, 0),
+
+            'minecraft:potted_oak_sapling': (ids.block_potted_oak_sapling, 0),  # Pots not rendering
+            'minecraft:potted_spruce_sapling': (ids.block_potted_spruce_sapling, 0),  # Pots not rendering
+            'minecraft:potted_birch_sapling': (ids.block_potted_birch_sapling, 0),  # Pots not rendering
+            'minecraft:potted_jungle_sapling': (ids.block_potted_jungle_sapling, 0),  # Pots not rendering
+
+            'minecraft:potted_acacia_sapling': (ids.block_potted_acacia_sapling, 0),  # Pots not rendering
+            'minecraft:potted_dark_oak_sapling': (ids.block_potted_dark_oak_sapling, 0),  # Pots not rendering
+            'minecraft:potted_dandelion': (ids.block_potted_dandelion, 0),  # Pots not rendering
+            'minecraft:potted_fern': (ids.block_potted_fern, 0),  # Pots not rendering
+            'minecraft:potted_poppy': (ids.block_potted_poppy, 0),  # Pots not rendering
+
+            'minecraft:potted_blue_orchid': (ids.block_potted_blue_orchid, 0),  # Pots not rendering
+            'minecraft:potted_allium': (ids.block_potted_allium, 0),  # Pots not rendering
+            'minecraft:potted_azure_bluet': (ids.block_potted_azure_bluet, 0),  # Pots not rendering
+            'minecraft:potted_red_tulip': (ids.block_potted_red_tulip, 0),  # Pots not rendering
+
+            'minecraft:potted_orange_tulip': (ids.block_potted_orange_tulip, 0),  # Pots not rendering
+            'minecraft:potted_white_tulip': (ids.block_potted_white_tulip, 0),  # Pots not rendering
+            'minecraft:potted_pink_tulip': (ids.block_potted_pink_tulip, 0),  # Pots not rendering
+            'minecraft:potted_oxeye_daisy': (ids.block_potted_oxeye_daisy, 0),  # Pots not rendering
+
+            'minecraft:potted_cornflower': (ids.block_potted_cornflower, 0),  # Pots not rendering
+            'minecraft:potted_lily_of_the_valley': (ids.block_potted_lily_of_the_valley, 0),  # Pots not rendering
+            'minecraft:potted_wither_rose': (ids.block_potted_wither_rose, 0),  # Pots not rendering
+
+            'minecraft:potted_red_mushroom': (ids.block_potted_red_mushroom, 0),  # Pots not rendering
+            'minecraft:potted_brown_mushroom': (ids.block_potted_brown_mushroom, 0),  # Pots not rendering
+            'minecraft:potted_dead_bush': (ids.block_potted_dead_bush, 0),  # Pots not rendering
+            'minecraft:potted_cactus': (ids.block_potted_cactus, 0),  # Pots not rendering
+            'minecraft:potted_bamboo': (ids.block_potted_bamboo, 0),  # Pots not rendering
+
+            'minecraft:flower_pot': (ids.block_flower_pot, 0),  # Pots not rendering
+
+            'minecraft:potted_crimson_fungus': (ids.block_potted_crimson_fungus, 0),  # Pots not rendering
+            'minecraft:potted_warped_fungus': (ids.block_potted_warped_fungus, 0),  # Pots not rendering
+            'minecraft:potted_crimson_roots': (ids.block_potted_crimson_roots, 0),  # Pots not rendering
+            'minecraft:potted_warped_roots': (ids.block_potted_warped_roots, 0),  # Pots not rendering
+
+            'minecraft:iron_bars': (ids.block_iron_bars, 0),
+            'minecraft:glass_pane': (ids.block_glass_pane, 0),
+            'minecraft:white_stained_glass_pane': (ids.block_white_stained_glass_pane, 0),
+            'minecraft:orange_stained_glass_pane': (ids.block_orange_stained_glass_pane, 0),
+            'minecraft:magenta_stained_glass_pane': (ids.block_magenta_stained_glass_pane, 0),
+            'minecraft:light_blue_stained_glass_pane': (ids.block_light_blue_stained_glass_pane, 0),
+            'minecraft:yellow_stained_glass_pane': (ids.block_yellow_stained_glass_pane, 0),
+            'minecraft:lime_stained_glass_pane': (ids.block_lime_stained_glass_pane, 0),
+            'minecraft:pink_stained_glass_pane': (ids.block_pink_stained_glass_pane, 0),
+            'minecraft:gray_stained_glass_pane': (ids.block_gray_stained_glass_pane, 0),
+            'minecraft:light_gray_stained_glass_pane': (ids.block_light_gray_stained_glass_pane, 0),
+            'minecraft:cyan_stained_glass_pane': (ids.block_cyan_stained_glass_pane, 0),
+            'minecraft:purple_stained_glass_pane': (ids.block_purple_stained_glass_pane, 0),
+            'minecraft:blue_stained_glass_pane': (ids.block_blue_stained_glass_pane, 0),
+            'minecraft:brown_stained_glass_pane': (ids.block_brown_stained_glass_pane, 0),
+            'minecraft:green_stained_glass_pane': (ids.block_green_stained_glass_pane, 0),
+            'minecraft:red_stained_glass_pane': (ids.block_red_stained_glass_pane, 0),
+            'minecraft:black_stained_glass_pane': (ids.block_black_stained_glass_pane, 0),
+
+            'minecraft:melon': (ids.block_melon, 0),
+            'minecraft:attached_pumpkin_stem': (ids.block_attached_pumpkin_stem, 0),  # 104
+            'minecraft:attached_melon_stem': (ids.block_attached_melon_stem, 0),
+            'minecraft:pumpkin_stem': (ids.block_pumpkin_stem, 0),
+            'minecraft:melon_stem': (ids.block_melon_stem, 0),
+
+            'minecraft:terracotta': (ids.block_terracotta, 0),
+            'minecraft:white_terracotta': (ids.block_white_terracotta, 0),
+            'minecraft:orange_terracotta': (ids.block_orange_terracotta, 0),
+            'minecraft:magenta_terracotta': (ids.block_magenta_terracotta, 0),
+            'minecraft:light_blue_terracotta': (ids.block_light_blue_terracotta, 0),
+            'minecraft:yellow_terracotta': (ids.block_yellow_terracotta, 0),
+            'minecraft:lime_terracotta': (ids.block_lime_terracotta, 0),
+            'minecraft:pink_terracotta': (ids.block_pink_terracotta, 0),
+            'minecraft:gray_terracotta': (ids.block_gray_terracotta, 0),
+            'minecraft:light_gray_terracotta': (ids.block_light_gray_terracotta, 0),
+            'minecraft:cyan_terracotta': (ids.block_cyan_terracotta, 0),
+            'minecraft:purple_terracotta': (ids.block_purple_terracotta, 0),
+            'minecraft:blue_terracotta': (ids.block_blue_terracotta, 0),
+            'minecraft:brown_terracotta': (ids.block_brown_terracotta, 0),
+            'minecraft:green_terracotta': (ids.block_green_terracotta, 0),
+            'minecraft:red_terracotta': (ids.block_red_terracotta, 0),
+            'minecraft:black_terracotta': (ids.block_black_terracotta, 0),
+
+            'minecraft:white_glazed_terracotta': (ids.block_white_glazed_terracotta, 0),
+            'minecraft:orange_glazed_terracotta': (ids.block_orange_glazed_terracotta, 0),
+            'minecraft:magenta_glazed_terracotta': (ids.block_magenta_glazed_terracotta, 0),
+            'minecraft:light_blue_glazed_terracotta': (ids.block_light_blue_glazed_terracotta, 0),
+            'minecraft:yellow_glazed_terracotta': (ids.block_yellow_glazed_terracotta, 0),
+            'minecraft:lime_glazed_terracotta': (ids.block_lime_glazed_terracotta, 0),
+            'minecraft:pink_glazed_terracotta': (ids.block_pink_glazed_terracotta, 0),
+            'minecraft:gray_glazed_terracotta': (ids.block_gray_glazed_terracotta, 0),
+            'minecraft:light_gray_glazed_terracotta': (ids.block_light_gray_glazed_terracotta, 0),
+            'minecraft:cyan_glazed_terracotta': (ids.block_cyan_glazed_terracotta, 0),
+            'minecraft:purple_glazed_terracotta': (ids.block_purple_glazed_terracotta, 0),
+            'minecraft:blue_glazed_terracotta': (ids.block_blue_glazed_terracotta, 0),
+            'minecraft:brown_glazed_terracotta': (ids.block_brown_glazed_terracotta, 0),
+            'minecraft:green_glazed_terracotta': (ids.block_green_glazed_terracotta, 0),
+            'minecraft:red_glazed_terracotta': (ids.block_red_glazed_terracotta, 0),
+            'minecraft:black_glazed_terracotta': (ids.block_black_glazed_terracotta, 0),
+
+            'minecraft:vine': (ids.block_vine, 0),
+
+            'minecraft:mycelium': (ids.block_mycelium, 0),
+
+            'minecraft:lily_pad': (ids.block_lily_pad, 0),
+
+            'minecraft:nether_bricks': (ids.block_nether_bricks, 0),
+
+            'minecraft:nether_wart': (ids.block_nether_wart, 0),
+
+            'minecraft:enchanting_table': (ids.block_enchanting_table, 0),  # 116
+            'minecraft:brewing_stand': (ids.block_brewing_stand, 0),  # 117
+            'minecraft:cauldron': (ids.block_cauldron, 0),  # 118
+            'minecraft:end_portal': (ids.block_end_portal, 0),  # 119
+            'minecraft:end_portal_frame': (ids.block_end_portal_frame, 0),  # 120
+            'minecraft:end_stone': (ids.block_end_stone, 0),  # 121
+            'minecraft:dragon_egg': (ids.block_dragon_egg, 0),  # 122
+            'minecraft:redstone_lamp': (ids.block_redstone_lamp, 0),  # 123
+
+
+            'minecraft:cocoa': (ids.block_cocoa, 0),  # 127
+            'minecraft:emerald_ore': (ids.block_emerald_ore, 0),  # 129
+            'minecraft:tripwire': (ids.block_tripwire, 0),  # 131 not rendering
+            'minecraft:tripwire_hook': (ids.block_tripwire_hook, 0),  # 132 not rendering
+            'minecraft:emerald_block': (ids.block_emerald_block, 0),  # 133
+
+            'minecraft:beacon': (ids.block_beacon, 0),  # 138
+            'minecraft:carrots': (ids.block_carrots, 0),  # 141
+            'minecraft:potatoes': (ids.block_potatoes, 0),  # 142
+
+            'minecraft:redstone_block': (ids.block_redstone_block, 0),  # 152
+            'minecraft:nether_quartz_ore': (ids.block_nether_quartz_ore, 0),  # 153
+            'minecraft:quartz_block': (ids.block_quartz_block, 0),  # 155
+            'minecraft:smooth_quartz': (ids.block_smooth_quartz, 0),    # Only bottom texture is different  # 155
+            'minecraft:quartz_pillar': (ids.block_quartz_pillar, 0),  # 155
+            'minecraft:chiseled_quartz_block': (ids.block_chiseled_quartz_block, 0),  # 155
+
+            'minecraft:command_block': (ids.block_command_block, 0),  # 137
+            'minecraft:repeating_command_block': (ids.block_repeating_command_block, 0),  # 210
+            'minecraft:chain_command_block': (ids.block_chain_command_block, 0),  # 211
+            'minecraft:slime_block': (ids.block_slime_block, 0),  # 165
+
+            'minecraft:anvil': (ids.block_anvil, 0),  # 145
+            'minecraft:chipped_anvil': (ids.block_chipped_anvil, 0),  # 145
+            'minecraft:damaged_anvil': (ids.block_damaged_anvil, 0),  # 145
+
+            'minecraft:chorus_plant': (ids.block_chorus_plant, 0),  # 199
+            'minecraft:andesite_wall': (ids.block_andesite_wall, 0),  # 1792
+            'minecraft:brick_wall': (ids.block_brick_wall, 0),  # 1793
+            'minecraft:cobblestone_wall': (ids.block_cobblestone_wall, 0),  # 1794
+            'minecraft:diorite_wall': (ids.block_diorite_wall, 0),  # 1795
+            'minecraft:end_stone_brick_wall': (ids.block_end_stone_brick_wall, 0),  # 1796
+            'minecraft:granite_wall': (ids.block_granite_wall, 0),  # 1797
+            'minecraft:mossy_cobblestone_wall': (ids.block_mossy_cobblestone_wall, 0),  # 1798
+            'minecraft:mossy_stone_brick_wall': (ids.block_mossy_stone_brick_wall, 0),  # 1799
+            'minecraft:nether_brick_wall': (ids.block_nether_brick_wall, 0),  # 1800
+            'minecraft:prismarine_wall': (ids.block_prismarine_wall, 0),  # 1801
+            'minecraft:red_nether_brick_wall': (ids.block_red_nether_brick_wall, 0),  # 1802
+            'minecraft:red_sandstone_wall': (ids.block_red_sandstone_wall, 0),  # 1803
+            'minecraft:sandstone_wall': (ids.block_sandstone_wall, 0),  # 1804
+            'minecraft:stone_brick_wall': (ids.block_stone_brick_wall, 0),  # 1805
+            'minecraft:polished_blackstone_brick_wall': (ids.block_polished_blackstone_brick_wall, 0),
+            'minecraft:polished_blackstone_wall': (ids.block_polished_blackstone_wall, 0),
+
+            'minecraft:comparator': (ids.block_comparator, 0),  # 149
+            'minecraft:daylight_detector': (ids.block_daylight_detector, 0),  # 151
+            'minecraft:hopper': (ids.block_hopper, 0),  # 154
+
+            'minecraft:white_carpet': (ids.block_white_carpet, 0),  # 171
+            'minecraft:orange_carpet': (ids.block_orange_carpet, 0),  # 171
+            'minecraft:magenta_carpet': (ids.block_magenta_carpet, 0),  # 171
+            'minecraft:light_blue_carpet': (ids.block_light_blue_carpet, 0),  # 171
+            'minecraft:yellow_carpet': (ids.block_yellow_carpet, 0),  # 171
+            'minecraft:lime_carpet': (ids.block_lime_carpet, 0),  # 171
+            'minecraft:pink_carpet': (ids.block_pink_carpet, 0),  # 171
+            'minecraft:gray_carpet': (ids.block_gray_carpet, 0),  # 171
+            'minecraft:light_gray_carpet': (ids.block_light_gray_carpet, 0),  # 171
+            'minecraft:cyan_carpet': (ids.block_cyan_carpet, 0),  # 171
+            'minecraft:purple_carpet': (ids.block_purple_carpet, 0),  # 171
+            'minecraft:blue_carpet': (ids.block_blue_carpet, 0),  # 171
+            'minecraft:brown_carpet': (ids.block_brown_carpet, 0),  # 171
+            'minecraft:green_carpet': (ids.block_green_carpet, 0),  # 171
+            'minecraft:red_carpet': (ids.block_red_carpet, 0),  # 171
+            'minecraft:black_carpet': (ids.block_black_carpet, 0),  # 171
+
+            'minecraft:sunflower': (ids.block_sunflower, 0),  # 175
+            'minecraft:lilac': (ids.block_lilac, 0),  # 175
+            'minecraft:tall_grass': (ids.block_tall_grass, 0),  # 175
+            'minecraft:large_fern': (ids.block_large_fern, 0),  # 175
+            'minecraft:rose_bush': (ids.block_rose_bush, 0),  # 175
+            'minecraft:peony': (ids.block_peony, 0),  # 175
+
+            'minecraft:chorus_flower': (ids.block_chorus_flower, 0),  # 200
+            'minecraft:purpur_block': (ids.block_purpur_block, 0),  # 201
+            'minecraft:purpur_pillar': (ids.block_purpur_pillar, 0),  # 202
+
+            'minecraft:sea_lantern': (ids.block_sea_lantern, 0),  # 169
+            'minecraft:hay_block': (ids.block_hay_block, 0),  # 170
+            'minecraft:coal_block': (ids.block_coal_block, 0),  # 173
+            'minecraft:packed_ice': (ids.block_packed_ice, 0),  # 174
+
+            'minecraft:red_sandstone': (ids.block_red_sandstone, 0),  # 179 0
+            'minecraft:chiseled_red_sandstone': (ids.block_chiseled_red_sandstone, 0),  # 179 1
+            'minecraft:cut_red_sandstone': (ids.block_cut_red_sandstone, 0),  # 179 2
+
+            'minecraft:end_stone_bricks': (ids.block_end_stone_bricks, 0),  # 206
+            'minecraft:beetroots': (ids.block_beetroots, 0),  # 207
+            'minecraft:sweet_berry_bush': (ids.block_sweet_berry_bush, 0),
+            'minecraft:frosted_ice': (ids.block_frosted_ice, 0),  # 212
+            'minecraft:magma_block': (ids.block_magma_block, 0),  # 213
+            'minecraft:nether_wart_block': (ids.block_nether_wart_block, 0),  # 214
+            'minecraft:red_nether_bricks': (ids.block_red_nether_bricks, 0),  # 215
+            'minecraft:bone_block': (ids.block_bone_block, 0),  # 216
+
+            'minecraft:shulker_box': (ids.block_shulker_box, 0),  # 257
+            'minecraft:white_shulker_box': (ids.block_white_shulker_box, 0),
+            'minecraft:orange_shulker_box': (ids.block_orange_shulker_box, 0),
+            'minecraft:magenta_shulker_box': (ids.block_magenta_shulker_box, 0),
+            'minecraft:light_blue_shulker_box': (ids.block_light_blue_shulker_box, 0),
+            'minecraft:yellow_shulker_box': (ids.block_yellow_shulker_box, 0),
+            'minecraft:lime_shulker_box': (ids.block_lime_shulker_box, 0),
+            'minecraft:pink_shulker_box': (ids.block_pink_shulker_box, 0),
+            'minecraft:gray_shulker_box': (ids.block_gray_shulker_box, 0),
+            'minecraft:light_gray_shulker_box': (ids.block_light_gray_shulker_box, 0),
+            'minecraft:cyan_shulker_box': (ids.block_cyan_shulker_box, 0),
+            'minecraft:purple_shulker_box': (ids.block_purple_shulker_box, 0),
+            'minecraft:blue_shulker_box': (ids.block_blue_shulker_box, 0),
+            'minecraft:brown_shulker_box': (ids.block_brown_shulker_box, 0),
+            'minecraft:green_shulker_box': (ids.block_green_shulker_box, 0),
+            'minecraft:red_shulker_box': (ids.block_red_shulker_box, 0),
+            'minecraft:black_shulker_box': (ids.block_black_shulker_box, 0),
+
+            'minecraft:smooth_stone': (ids.block_smooth_stone, 0),  # 11313
+            'minecraft:smooth_sandstone': (ids.block_smooth_sandstone, 0),  # 11314
+            'minecraft:smooth_red_sandstone': (ids.block_smooth_red_sandstone, 0),  # 11315
+            'minecraft:blue_ice': (ids.block_blue_ice, 0),
+
+            'minecraft:brain_coral_block': (ids.block_brain_coral_block, 0),  # 11316
+            'minecraft:bubble_coral_block': (ids.block_bubble_coral_block, 0),  # 11317
+            'minecraft:fire_coral_block': (ids.block_fire_coral_block, 0),  # 11318
+            'minecraft:horn_coral_block': (ids.block_horn_coral_block, 0),  # 11319
+            'minecraft:tube_coral_block': (ids.block_tube_coral_block, 0),  # 11320
+            'minecraft:dead_brain_coral_block': (ids.block_dead_brain_coral_block, 0),  # 11321
+            'minecraft:dead_bubble_coral_block': (ids.block_dead_bubble_coral_block, 0),  # 11322
+            'minecraft:dead_fire_coral_block': (ids.block_dead_fire_coral_block, 0),  # 11323
+            'minecraft:dead_horn_coral_block': (ids.block_dead_horn_coral_block, 0),  # 11324
+            'minecraft:dead_tube_coral_block': (ids.block_dead_tube_coral_block, 0),  # 11325
+
+            'minecraft:observer': (ids.block_observer, 0),  # 218
+
+            'minecraft:ancient_debris': (ids.block_ancient_debris, 0),  # 1000
+            'minecraft:basalt': (ids.block_basalt, 0),  # 1001
+            'minecraft:polished_basalt': (ids.block_polished_basalt, 0),  # 1002
+            'minecraft:soul_campfire': (ids.block_soul_campfire, 0),  # 1003
+            'minecraft:campfire': (ids.block_campfire, 0),
+            'minecraft:blackstone': (ids.block_blackstone, 0),  # 1004
+            'minecraft:netherite_block': (ids.block_netherite_block, 0),  # 1005
+
+            'minecraft:warped_nylium': (ids.block_warped_nylium, 0),  # 1006
+            'minecraft:crimson_nylium': (ids.block_crimson_nylium, 0),  # 1007
+            'minecraft:soul_soil': (ids.block_soul_soil, 0),  # 1020
+
+            'minecraft:bell': (ids.block_bell, 0),
+            "minecraft:barrel": (ids.block_barrel, 0),
+
+            'minecraft:beehive': (ids.block_beehive, 0),  # 11501
+            'minecraft:bee_nest': (ids.block_bee_nest, 0),  # 11502
+            'minecraft:honeycomb_block': (ids.block_honeycomb_block, 0),  # 11503
+            'minecraft:honey_block': (ids.block_honey_block, 0),  # 11504
+
+            'minecraft:dried_kelp_block': (ids.block_dried_kelp_block, 0),  # 11331
+            'minecraft:scaffolding': (ids.block_scaffolding, 0),  # 11414
+
+            'block_white_concrete': (ids.block_white_concrete, 0),
+            'block_orange_concrete': (ids.block_orange_concrete, 0),
+            'block_magenta_concrete': (ids.block_magenta_concrete, 0),
+            'block_light_blue_concrete': (ids.block_light_blue_concrete, 0),
+            'block_yellow_concrete': (ids.block_yellow_concrete, 0),
+            'block_lime_concrete': (ids.block_lime_concrete, 0),
+            'block_pink_concrete': (ids.block_pink_concrete, 0),
+            'block_gray_concrete': (ids.block_gray_concrete, 0),
+            'block_light_gray_concrete': (ids.block_light_gray_concrete, 0),
+            'block_cyan_concrete': (ids.block_cyan_concrete, 0),
+            'block_purple_concrete': (ids.block_purple_concrete, 0),
+            'block_blue_concrete': (ids.block_blue_concrete, 0),
+            'block_brown_concrete': (ids.block_brown_concrete, 0),
+            'block_green_concrete': (ids.block_green_concrete, 0),
+            'block_red_concrete': (ids.block_red_concrete, 0),
+            'block_black_concrete': (ids.block_black_concrete, 0),
+            'block_white_concrete_powder': (ids.block_white_concrete_powder, 0),
+            'block_orange_concrete_powder': (ids.block_orange_concrete_powder, 0),
+            'block_magenta_concrete_powder': (ids.block_magenta_concrete_powder, 0),
+            'block_light_blue_concrete_powder': (ids.block_light_blue_concrete_powder, 0),
+            'block_yellow_concrete_powder': (ids.block_yellow_concrete_powder, 0),
+            'block_lime_concrete_powder': (ids.block_lime_concrete_powder, 0),
+            'block_pink_concrete_powder': (ids.block_pink_concrete_powder, 0),
+            'block_gray_concrete_powder': (ids.block_gray_concrete_powder, 0),
+            'block_light_gray_concrete_powder': (ids.block_light_gray_concrete_powder, 0),
+            'block_cyan_concrete_powder': (ids.block_cyan_concrete_powder, 0),
+            'block_purple_concrete_powder': (ids.block_purple_concrete_powder, 0),
+            'block_blue_concrete_powder': (ids.block_blue_concrete_powder, 0),
+            'block_brown_concrete_powder': (ids.block_brown_concrete_powder, 0),
+            'block_green_concrete_powder': (ids.block_green_concrete_powder, 0),
+            'block_red_concrete_powder': (ids.block_red_concrete_powder, 0),
+            'block_black_concrete_powder': (ids.block_black_concrete_powder, 0),
+
+            'minecraft:jigsaw': (ids.block_jigsaw, 0),
+            'minecraft:structure_block': (ids.block_structure_block, 0),
+            'minecraft:warped_wart_block': (ids.block_warped_wart_block, 0),
+
+            'minecraft:twisting_vines': (ids.block_weeping_vines, 0),  # 1012
+            'minecraft:twisting_vines_plant': (ids.block_weeping_vines_plant, 0),  # 1013
+            'minecraft:weeping_vines': (ids.block_twisting_vines, 0),  # 1014
+            'minecraft:weeping_vines_plant': (ids.block_twisting_vines_plant, 0),  # 1015
+
+            'minecraft:shroomlight': (ids.block_shroomlight, 0),
+
+            "minecraft:grindstone": (ids.block_grindstone, 0),
+            "minecraft:loom": (ids.block_loom, 0),  # 11367
+            "minecraft:stonecutter": (ids.block_stonecutter, 0),  # 11368
+            "minecraft:lectern": (ids.block_lectern, 0),
+
+            "minecraft:composter": (ids.block_composter, 0),
+
+            'minecraft:bamboo': (ids.block_bamboo, 0),
+            'minecraft:warped_fungus': (ids.block_warped_fungus, 0),  # 1016
+            'minecraft:crimson_fungus': (ids.block_crimson_fungus, 0),  # 1017
+            'minecraft:warped_roots': (ids.block_warped_roots, 0),  # 1018
+            'minecraft:crimson_roots': (ids.block_crimson_roots, 0),  # 1019
+
+            'minecraft:bamboo_sapling': (ids.block_bamboo_sapling, 0),
+
+            'minecraft:warped_stem': (ids.block_warped_stem, 0),  # 1008 0
+            'minecraft:stripped_warped_stem': (ids.block_stripped_warped_stem, 0),  # 1008 1
+            'minecraft:crimson_stem': (ids.block_crimson_stem, 0),  # 1008 2
+            'minecraft:stripped_crimson_stem': (ids.block_stripped_crimson_stem, 0),  # 1008 3
+            'minecraft:warped_hyphae': (ids.block_warped_hyphae, 0),  # 1009 0
+            'minecraft:stripped_warped_hyphae': (ids.block_stripped_warped_hyphae, 0),  # 1009 1
+            'minecraft:crimson_hyphae': (ids.block_crimson_hyphae, 0),  # 1009 2
+            'minecraft:stripped_crimson_hyphae': (ids.block_stripped_crimson_hyphae, 0),  # 1009 3
+            'minecraft:white_banner': (ids.block_white_banner, 0),  # not Rendering
+            'minecraft:orange_banner': (ids.block_orange_banner, 0),  # not Rendering
+            'minecraft:magenta_banner': (ids.block_magenta_banner, 0),  # not Rendering
+            'minecraft:light_blue_banner': (ids.block_light_blue_banner, 0),  # not Rendering
+            'minecraft:yellow_banner': (ids.block_yellow_banner, 0),  # not Rendering
+            'minecraft:lime_banner': (ids.block_lime_banner, 0),  # not Rendering
+            'minecraft:pink_banner': (ids.block_pink_banner, 0),  # not Rendering
+            'minecraft:gray_banner': (ids.block_gray_banner, 0),  # not Rendering
+            'minecraft:light_gray_banner': (ids.block_light_gray_banner, 0),  # not Rendering
+            'minecraft:cyan_banner': (ids.block_cyan_banner, 0),  # not Rendering
+            'minecraft:purple_banner': (ids.block_purple_banner, 0),  # not Rendering
+            'minecraft:blue_banner': (ids.block_blue_banner, 0),  # not Rendering
+            'minecraft:brown_banner': (ids.block_brown_banner, 0),  # not Rendering
+            'minecraft:green_banner': (ids.block_green_banner, 0),  # not Rendering
+            'minecraft:red_banner': (ids.block_red_banner, 0),  # not Rendering
+            'minecraft:black_banner': (ids.block_black_banner, 0),  # not Rendering
+            'minecraft:white_wall_banner': (ids.block_white_wall_banner, 0),  # not Rendering
+            'minecraft:orange_wall_banner': (ids.block_orange_wall_banner, 0),  # not Rendering
+            'minecraft:magenta_wall_banner': (ids.block_magenta_wall_banner, 0),  # not Rendering
+            'minecraft:light_blue_wall_banner': (ids.block_light_blue_wall_banner, 0),  # not Rendering
+            'minecraft:yellow_wall_banner': (ids.block_yellow_wall_banner, 0),  # not Rendering
+            'minecraft:lime_wall_banner': (ids.block_lime_wall_banner, 0),  # not Rendering
+            'minecraft:pink_wall_banner': (ids.block_pink_wall_banner, 0),  # not Rendering
+            'minecraft:gray_wall_banner': (ids.block_gray_wall_banner, 0),  # not Rendering
+            'minecraft:light_gray_wall_banner': (ids.block_light_gray_wall_banner, 0),  # not Rendering
+            'minecraft:cyan_wall_banner': (ids.block_cyan_wall_banner, 0),  # not Rendering
+            'minecraft:purple_wall_banner': (ids.block_purple_wall_banner, 0),  # not Rendering
+            'minecraft:blue_wall_banner': (ids.block_blue_wall_banner, 0),  # not Rendering
+            'minecraft:brown_wall_banner': (ids.block_brown_wall_banner, 0),  # not Rendering
+            'minecraft:green_wall_banner': (ids.block_green_wall_banner, 0),  # not Rendering
+            'minecraft:red_wall_banner': (ids.block_red_wall_banner, 0),  # not Rendering
+            'minecraft:black_wall_banner': (ids.block_black_wall_banner, 0),  # not Rendering
+
+            "minecraft:lantern": (ids.block_lantern, 0),
+
+            "minecraft:polished_blackstone_bricks": (ids.block_polished_blackstone_bricks, 0),
+            "minecraft:polished_blackstone": (ids.block_polished_blackstone, 0),
+
+            'minecraft:soul_wall_torch': (ids.block_soul_wall_torch, 0),
+            'minecraft:soul_torch': (ids.block_soul_torch, 0),
+
+            'minecraft:gilded_blackstone': (ids.block_gilded_blackstone, 0),
+            'minecraft:lodestone': (ids.block_lodestone, 0),
+            'minecraft:crying_obsidian': (ids.block_crying_obsidian, 0),
+
+            'minecraft:nether_sprouts': (ids.block_nether_sprouts, 0),
+
+            'minecraft:target': (ids.block_target, 0),
+            'minecraft:cracked_polished_blackstone_bricks': (ids.block_cracked_polished_blackstone_bricks, 0),
+            'minecraft:chiseled_polished_blackstone': (ids.block_chiseled_polished_blackstone, 0),
+            'minecraft:chiseled_nether_bricks': (ids.block_chiseled_nether_bricks, 0),
+            'minecraft:cracked_nether_bricks': (ids.block_cracked_nether_bricks, 0),
+            'minecraft:quartz_bricks': (ids.block_quartz_bricks, 0),
+
+            'minecraft:dead_brain_coral': (ids.block_dead_brain_coral, 0),
+            'minecraft:dead_bubble_coral': (ids.block_dead_bubble_coral, 0),
+            'minecraft:dead_fire_coral': (ids.block_dead_fire_coral, 0),
+            'minecraft:dead_horn_coral': (ids.block_dead_horn_coral, 0),
+            'minecraft:dead_tube_coral': (ids.block_dead_tube_coral, 0),
+
+            'minecraft:dead_tube_coral_fan': (ids.block_dead_tube_coral_fan, 0),
+            'minecraft:dead_brain_coral_fan': (ids.block_dead_brain_coral_fan, 0),
+            'minecraft:dead_bubble_coral_fan': (ids.block_dead_bubble_coral_fan, 0),
+            'minecraft:dead_fire_coral_fan': (ids.block_dead_fire_coral_fan, 0),
+            'minecraft:dead_horn_coral_fan': (ids.block_dead_horn_coral_fan, 0),
+
+            'minecraft:tube_coral': (ids.block_tube_coral, 0),
+            'minecraft:brain_coral': (ids.block_brain_coral, 0),
+            'minecraft:bubble_coral': (ids.block_bubble_coral, 0),
+            'minecraft:fire_coral': (ids.block_fire_coral, 0),
+            'minecraft:horn_coral': (ids.block_horn_coral, 0),
+
+            'minecraft:tube_coral_fan': (ids.block_tube_coral_fan, 0),
+            'minecraft:brain_coral_fan': (ids.block_brain_coral_fan, 0),
+            'minecraft:bubble_coral_fan': (ids.block_bubble_coral_fan, 0),
+            'minecraft:fire_coral_fan': (ids.block_fire_coral_fan, 0),
+            'minecraft:horn_coral_fan': (ids.block_horn_coral_fan, 0),
+
+            'minecraft:respawn_anchor': (ids.block_respawn_anchor, 0),
+
+            # minecraft:white_banner  # Not rendering
+            # minecraft:orange_banner  # Not rendering
+            # minecraft:magenta_banner  # Not rendering
+            # minecraft:light_blue_banner  # Not rendering
+            # minecraft:yellow_banner  # Not rendering
+            # minecraft:lime_banner  # Not rendering
+            # minecraft:pink_banner  # Not rendering
+            # minecraft:gray_banner  # Not rendering
+            # minecraft:light_gray_banner  # Not rendering
+            # minecraft:cyan_banner  # Not rendering
+            # minecraft:purple_banner  # Not rendering
+            # minecraft:blue_banner  # Not rendering
+            # minecraft:brown_banner  # Not rendering
+            # minecraft:green_banner  # Not rendering
+            # minecraft:red_banner  # Not rendering
+            # minecraft:black_banner  # Not rendering
+            # minecraft:white_wall_banner  # Not rendering
+            # minecraft:orange_wall_banner  # Not rendering
+            # minecraft:magenta_wall_banner  # Not rendering
+            # minecraft:light_blue_wall_banner  # Not rendering
+            # minecraft:yellow_wall_banner  # Not rendering
+            # minecraft:lime_wall_banner  # Not rendering
+            # minecraft:pink_wall_banner  # Not rendering
+            # minecraft:gray_wall_banner  # Not rendering
+            # minecraft:light_gray_wall_banner  # Not rendering
+            # minecraft:cyan_wall_banner  # Not rendering
+            # minecraft:purple_wall_banner  # Not rendering
+            # minecraft:blue_wall_banner  # Not rendering
+            # minecraft:brown_wall_banner  # Not rendering
+            # minecraft:green_wall_banner  # Not rendering
+            # minecraft:red_wall_banner  # Not rendering
+            # minecraft:black_wall_banner  # Not rendering
+            # minecraft:moving_piston  # Not rendering
+            # minecraft:soul_fire  # Not rendering
+            # minecraft:chain  # Not rendering
+            # minecraft:skeleton_skull  # Not rendering
+            # minecraft:skeleton_wall_skull  # Not rendering
+            # minecraft:wither_skeleton_skull  # Not rendering
+            # minecraft:wither_skeleton_wall_skull  # Not rendering
+            # minecraft:zombie_head  # Not rendering
+            # minecraft:zombie_wall_head  # Not rendering
+            # minecraft:player_head  # Not rendering
+            # minecraft:player_wall_head  # Not rendering
+            # minecraft:creeper_head  # Not rendering
+            # minecraft:creeper_wall_head  # Not rendering
+            # minecraft:dragon_head  # Not rendering
+            # minecraft:dragon_wall_head  # Not rendering
+            # minecraft:barrier  # Not rendering
+            # minecraft:end_rod  # Not rendering
+            # minecraft:structure_void  # Not rendering
+            # minecraft:kelp  # Not rendering
+            # minecraft:kelp_plant  # Not rendering
+            # minecraft:turtle_egg  # Not rendering
+            # minecraft:dead_tube_coral_wall_fan  # Not rendering
+            # minecraft:dead_brain_coral_wall_fan  # Not rendering
+            # minecraft:dead_bubble_coral_wall_fan  # Not rendering
+            # minecraft:dead_fire_coral_wall_fan  # Not rendering
+            # minecraft:dead_horn_coral_wall_fan  # Not rendering
+            # minecraft:tube_coral_wall_fan  # Not rendering
+            # minecraft:brain_coral_wall_fan  # Not rendering
+            # minecraft:bubble_coral_wall_fan  # Not rendering
+            # minecraft:fire_coral_wall_fan  # Not rendering
+            # minecraft:horn_coral_wall_fan  # Not rendering
+            # minecraft:conduit  # Not rendering
+            # minecraft:void_air  # Not rendering
+            # minecraft:cave_air  # Not rendering
+            # minecraft:bubble_column  # Not rendering
+            # minecraft:soul_lantern  # Not rendering
         }
-
-        colors = [   'white', 'orange', 'magenta', 'light_blue',
-                    'yellow',   'lime',    'pink',       'gray',
-                'light_gray',   'cyan',  'purple',       'blue',
-                     'brown',  'green',     'red',      'black']
-        for i in range(len(colors)):
-            # For beds: bits 1-2 indicate facing, bit 3 occupancy, bit 4 foot (0) or head (1)
-            self._blockmap['minecraft:%s_bed'                % colors[i]] = (26, i << 4)
-            self._blockmap['minecraft:%s_stained_glass'      % colors[i]] = (95, i)
-            self._blockmap['minecraft:%s_stained_glass_pane' % colors[i]] = (160, i)
-            self._blockmap['minecraft:%s_banner'             % colors[i]] = (176, i)  # not rendering
-            self._blockmap['minecraft:%s_wall_banner'        % colors[i]] = (177, i)  # not rendering
-            self._blockmap['minecraft:%s_shulker_box'        % colors[i]] = (219 + i, 0)
-            self._blockmap['minecraft:%s_glazed_terracotta'  % colors[i]] = (235 + i, 0)
-            self._blockmap['minecraft:%s_concrete'           % colors[i]] = (251, i)
-            self._blockmap['minecraft:%s_concrete_powder'    % colors[i]] = (252, i)
 
     # Re-initialize upon unpickling
     def __getstate__(self):
         return (self.regiondir, self.rel)
+
     def __setstate__(self, state):
         return self.__init__(*state)
 
@@ -881,159 +1251,94 @@ class RegionSet(object):
         return "<RegionSet regiondir=%r>" % self.regiondir
 
     def _get_block(self, palette_entry):
-        wood_slabs = ('minecraft:oak_slab','minecraft:spruce_slab','minecraft:birch_slab','minecraft:jungle_slab',
-                        'minecraft:acacia_slab','minecraft:dark_oak_slab','minecraft:petrified_oak_slab')
-        stone_slabs = ('minecraft:stone_slab', 'minecraft:sandstone_slab','minecraft:red_sandstone_slab',
-                        'minecraft:cobblestone_slab', 'minecraft:brick_slab','minecraft:purpur_slab',
-                        'minecraft:stone_brick_slab', 'minecraft:nether_brick_slab',
-                        'minecraft:quartz_slab', "minecraft:andesite_slab", 'minecraft:diorite_slab',
-                        'minecraft:granite_slab', 'minecraft:polished_andesite_slab',
-                        'minecraft:polished_diorite_slab','minecraft:polished_granite_slab',
-                        'minecraft:red_nether_brick_slab','minecraft:smooth_sandstone_slab',
-                        'minecraft:cut_sandstone_slab','minecraft:smooth_red_sandstone_slab',
-                        'minecraft:cut_red_sandstone_slab','minecraft:end_stone_brick_slab',
-                        'minecraft:mossy_cobblestone_slab','minecraft:mossy_stone_brick_slab',
-                        'minecraft:smooth_quartz_slab','minecraft:smooth_stone_slab'
-                         )
-        prismarine_slabs = ('minecraft:prismarine_slab','minecraft:dark_prismarine_slab','minecraft:prismarine_brick_slab')
-
         key = palette_entry['Name']
         (block, data) = self._blockmap[key]
-        if key in ['minecraft:redstone_ore', 'minecraft:redstone_lamp']:
+
+        if block in [ids.block_redstone_ore, ids.block_redstone_lamp]:
             if palette_entry['Properties']['lit'] == 'true':
-                block += 1
-        elif key.endswith('gate'):
+                data = 1
+
+        elif block in [ids.block_tall_seagrass, ids.block_seagrass]:
+            block = ids.block_water
+            data = 0
+
+        # elif block == ids.block_water:
+        #     data = int(palette_entry['Properties'].get('level', 0)) << 6
+
+        elif block in ids.group_gate:
             facing = palette_entry['Properties']['facing']
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             if palette_entry['Properties']['open'] == 'true':
                 data += 4
-        elif key.endswith('rail'):
+
+        elif block in ids.group_rail:
             shape = palette_entry['Properties']['shape']
-            data = {'north_south':0, 'east_west': 1, 'ascending_east': 2, 'ascending_west': 3, 'ascending_north': 4, 'ascending_south': 5, 'south_east': 6, 'south_west': 7, 'north_west': 8, 'north_east': 9}[shape]
-            if key == 'minecraft:powered_rail' and palette_entry['Properties']['powered'] == 'true':
+            data = {'north_south': 0, 'east_west': 1, 'ascending_east': 2, 'ascending_west': 3, 'ascending_north': 4, 'ascending_south': 5, 'south_east': 6, 'south_west': 7, 'north_west': 8, 'north_east': 9}[shape]
+            if block in ids.group_power_rail and palette_entry['Properties']['powered'] == 'true':
                 data |= 8
-        elif key in ['minecraft:comparator', 'minecraft:repeater']:
+
+        elif block in ids.group_redstone_device:
             # Bits 1-2 indicates facing, bits 3-4 indicates delay
             if palette_entry['Properties']['powered'] == 'true':
                 block += 1
             facing = palette_entry['Properties']['facing']
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             data |= (int(palette_entry['Properties'].get('delay', '1')) - 1) << 2
-        elif key == 'minecraft:daylight_detector':
+
+        elif block == ids.block_daylight_detector:
             if palette_entry['Properties']['inverted'] == 'true':
                 block = 178
-        elif key == 'minecraft:redstone_wire':
-            data = palette_entry['Properties']['power']
-        elif key == 'minecraft:grass_block':
+
+        elif block == ids.block_redstone_wire:
+            data = int(palette_entry['Properties']['power'] != '0')
+            index = 1
+            for direction in ['east', 'north', 'west', 'south']:
+                if palette_entry['Properties'][direction] == "side":
+                    data += (0b1 << index)
+                elif palette_entry['Properties'][direction] == "up":
+                    data += (0b10 << index)
+                index += 2
+
+        elif block == ids.block_grass_block:
             if palette_entry['Properties']['snowy'] == 'true':
                 data |= 0x10
-        elif key in ('minecraft:sunflower', 'minecraft:lilac', 'minecraft:tall_grass', 'minecraft:large_fern', 'minecraft:rose_bush', 'minecraft:peony'):
+
+        elif block in ids.group_tall_sprite:
             if palette_entry['Properties']['half'] == 'upper':
-                data |= 0x08
-        elif key in wood_slabs + stone_slabs + prismarine_slabs:
-        # handle double slabs 
+                data = 1
+
+        elif block in ids.group_slabs:
             if palette_entry['Properties']['type'] == 'top':
-                data |= 0x08
+                data = 1
             elif palette_entry['Properties']['type'] == 'double':
-                if key in wood_slabs:
-                    block = 125         # block_double_wooden_slab
-                elif key in stone_slabs:
-                    if key == 'minecraft:stone_brick_slab':
-                        block = 98
-                    elif key == 'minecraft:stone_slab':
-                        block = 1      # stone data 0
-                    elif key == 'minecraft:cobblestone_slab':
-                        block = 4       # cobblestone
-                    elif key == 'minecraft:sandstone_slab':
-                        block = 24      # minecraft:sandstone
-                    elif key == 'minecraft:red_sandstone_slab':
-                        block = 179     # minecraft:red_sandstone
-                    elif key == 'minecraft:nether_brick_slab':
-                        block = 112     # minecraft:nether_bricks
-                    elif key == 'minecraft:quartz_slab':
-                        block = 155     # minecraft:quartz_block
-                    elif key == 'minecraft:brick_slab':
-                        block = 45      # minecraft:bricks
-                    elif key == 'minecraft:purpur_slab':
-                        block = 201     # minecraft:purpur_block
-                    elif key == 'minecraft:andesite_slab':
-                        block = 1   # minecraft:andesite
-                        data  = 5
-                    elif key == 'minecraft:diorite_slab':
-                        block = 1   # minecraft:diorite
-                        data  = 3
-                    elif key == 'minecraft:granite_slab':
-                        block = 1   # minecraft:granite
-                        data  = 1
-                    elif key == 'minecraft:polished_andesite_slab':
-                        block = 1   # minecraft: polished_andesite
-                        data  = 6
-                    elif key == 'minecraft:polished_diorite_slab':
-                        block = 1   # minecraft: polished_diorite
-                        data  = 4
-                    elif key == 'minecraft:polished_granite_slab':
-                        block = 1   # minecraft: polished_granite
-                        data  = 2
-                    elif key == 'minecraft:red_nether_brick_slab':
-                        block = 215   # minecraft: red_nether_brick
-                        data  = 0
-                    elif key == 'minecraft:smooth_sandstone_slab':
-                        block = 11314   # minecraft: smooth_sandstone
-                        data  = 0
-                    elif key == 'minecraft:cut_sandstone_slab':
-                        block = 24   # minecraft: cut_sandstone
-                        data  = 2
-                    elif key == 'minecraft:smooth_red_sandstone_slab':
-                        block = 11315   # minecraft: smooth_red_sandstone
-                        data  = 0
-                    elif key == 'minecraft:cut_red_sandstone_slab':
-                        block = 179   # minecraft: cut_red_sandstone
-                        data  = 2
-                    elif key == 'minecraft:end_stone_brick_slab':
-                        block = 206   # minecraft:end_stone_bricks
-                        data  = 0
-                    elif key == 'minecraft:mossy_cobblestone_slab':
-                        block = 48   # minecraft:mossy_cobblestone
-                        data  = 0
-                    elif key == 'minecraft:mossy_stone_brick_slab':
-                        block = 98   # minecraft:mossy_stone_bricks
-                        data  = 1
-                    elif key == 'minecraft:smooth_quartz_slab':
-                        block = 155   # minecraft:smooth_quartz
-                        data  = 0
-                    elif key == 'minecraft:smooth_stone_slab':
-                        block = 11313   # minecraft:smooth_stone
-                        data  = 0
+                block = ids.double_slabs[key]
 
-                elif key in  prismarine_slabs:
-                    block = 168         # minecraft:prismarine variants
-                    if key == 'minecraft:prismarine_slab':
-                        data = 0
-                    elif key == 'minecraft:prismarine_brick_slab':
-                        data = 1
-                    elif key == 'minecraft:dark_prismarine_slab':
-                        data = 2
-
-        elif key in ['minecraft:ladder', 'minecraft:chest', 'minecraft:ender_chest',
-                     'minecraft:trapped_chest', 'minecraft:furnace',
-                     'minecraft:blast_furnace', 'minecraft:smoker']:
+        elif block in ids.group_only_facing:
             facing = palette_entry['Properties']['facing']
             data = {'north': 2, 'south': 3, 'west': 4, 'east': 5}[facing]
-            if key in ['minecraft:chest', 'minecraft:trapped_chest']:
-                # type property should exist, but default to 'single' just in case
-                chest_type = palette_entry['Properties'].get('type', 'single')
-                data |= {'left': 0x8, 'right': 0x10, 'single': 0x0}[chest_type]
-            elif key in ['minecraft:furnace', 'minecraft:blast_furnace', 'minecraft:smoker']:
-                data |= 8 if palette_entry['Properties'].get('lit', 'false') == 'true' else 0
-        elif key in ['minecraft:beehive', 'minecraft:bee_nest']:
+
+        elif block in ids.group_chest:
+            facing = palette_entry['Properties']['facing']
+            data = {'north': 2, 'south': 3, 'west': 4, 'east': 5}[facing]
+            # type property should exist, but default to 'single' just in case
+            chest_type = palette_entry['Properties'].get('type', 'single')
+            data |= {'left': 0x8, 'right': 0x10, 'single': 0x0}[chest_type]
+
+        elif block in ids.group_furnace_smoker:
+            facing = palette_entry['Properties']['facing']
+            data = {'north': 2, 'south': 3, 'west': 4, 'east': 5}[facing]
+            data |= 8 if palette_entry['Properties'].get('lit', 'false') == 'true' else 0
+
+        elif block in ids.group_bee:
             facing = palette_entry['Properties']['facing']
             honey_level = int(palette_entry['Properties']['honey_level'])
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             if honey_level == 5:
                 data = {'south': 4, 'west': 5, 'north': 6, 'east': 7}[facing]
-        elif key.endswith('_button'):
+
+        elif block in ids.group_button:
             facing = palette_entry['Properties']['facing']
-            face   = palette_entry['Properties']['face']
+            face = palette_entry['Properties']['face']
             if face == 'ceiling':
                 block = 0
                 data = 0
@@ -1041,161 +1346,225 @@ class RegionSet(object):
                 data = {'east': 1, 'west': 2, 'south': 3, 'north': 4}[facing]
             elif face == 'floor':
                 data = {'east': 6, 'west': 6, 'south': 5, 'north': 5}[facing]
-        elif key == 'minecraft:nether_wart':
-            data = int(palette_entry['Properties']['age'])
-        elif (key.endswith('shulker_box') or key.endswith('piston') or
-              key in ['minecraft:observer', 'minecraft:dropper', 'minecraft:dispenser',
-                      'minecraft:piston_head', 'minecraft:jigsaw']):
+
+        elif block in ids.group_age:
+            data = palette_entry['Properties']['age']
+
+        elif block in ids.group_shulker or block in ids.group_piston or block in ids.group_oddj:
             p = palette_entry['Properties']
             data = {'down': 0, 'up': 1, 'north': 2, 'south': 3, 'west': 4, 'east': 5}[p['facing']]
-            if ((key.endswith('piston') and p.get('extended', 'false') == 'true') or
-                (key == 'minecraft:piston_head' and p.get('type', 'normal') == 'sticky') or
-                (key == 'minecraft:observer' and p.get('powered', 'false') == 'true')):
+            if ((block in ids.group_piston and p.get('extended', 'false') == 'true') or (block == ids.block_piston_head and p.get('type', 'normal') == 'sticky') or (block == ids.block_observer and p.get('powered', 'false') == 'true')):
                 data |= 0x08
-        elif (key.endswith('_log') or key.endswith('_wood') or
-              key in ['minecraft:bone_block', 'minecraft:warped_stem',
-                      'minecraft:stripped_warped_stem', 'minecraft:crimson_stem',
-                      'minecraft:stripped_crimson_stem']):
+
+        elif block in ids.group_log_wood_bone:
             axis = palette_entry['Properties']['axis']
             if axis == 'x':
                 data |= 4
             elif axis == 'z':
                 data |= 8
-        elif key == 'minecraft:quartz_pillar':
+
+        elif block == ids.block_quartz_pillar:
             axis = palette_entry['Properties']['axis']
             if axis == 'x':
                 data = 3
             if axis == 'z':
                 data = 4
-        elif key == 'minecraft:basalt' or key == 'minecraft:polished_basalt':
+
+        elif block in ids.group_basalt:
             axis = palette_entry['Properties']['axis']
             data = {'y': 0, 'x': 1, 'z': 2}[axis]
-        elif key in ['minecraft:redstone_torch','minecraft:redstone_wall_torch','minecraft:wall_torch']:
-            if key.startswith('minecraft:redstone_') and palette_entry['Properties']['lit'] == 'true':
-                block += 1
-            if key.endswith('wall_torch'):
+
+        elif block in ids.group_torch:
+            if block in ids.group_lit_torch and palette_entry['Properties']['lit'] == 'true':
+                data += 0b1000
+            if block in ids.group_wall_torch:
                 facing = palette_entry['Properties'].get('facing')
-                data = {'east': 1, 'west': 2, 'south': 3, 'north': 4}[facing]
-            else:
-                data = 5
-        elif (key in ['minecraft:carved_pumpkin', 'minecraft:jack_o_lantern',
-                      'minecraft:stonecutter', 'minecraft:loom'] or
-              key.endswith('glazed_terracotta')):
+                data += {'east': 1, 'west': 2, 'south': 3, 'north': 4}[facing]
+            # else:
+            #     data = 5
+
+        elif (block in ids.group_cjsl or block in ids.group_glazed_terracotta):
             facing = palette_entry['Properties']['facing']
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
-        elif key in ['minecraft:vine', 'minecraft:brown_mushroom_block',
-                     'minecraft:red_mushroom_block', 'minecraft:mushroom_stem']:
+
+        elif block in ids.group_vbrm:
             p = palette_entry['Properties']
             if p['south'] == 'true':
                 data |= 1
-            if p['west']  == 'true':
+            if p['west'] == 'true':
                 data |= 2
             if p['north'] == 'true':
                 data |= 4
-            if p['east']  == 'true':
+            if p['east'] == 'true':
                 data |= 8
-            if p['up']    == 'true':
+            if p['up'] == 'true':
                 data |= 16
             # Not all blocks here have the down property, so use dict.get() to avoid errors
             if p.get('down', 'false') == 'true':
                 data |= 32
-        elif key.endswith('anvil'):
+
+        elif block in ids.group_anvil:
             facing = palette_entry['Properties']['facing']
-            if facing == 'west':  data += 1
-            if facing == 'north': data += 2
-            if facing == 'east':  data += 3
-        elif key.endswith('sign'):
-            if key.endswith('wall_sign'):
+            if facing == 'west':
+                data += 1
+            if facing == 'north':
+                data += 2
+            if facing == 'east':
+                data += 3
+
+        elif block in ids.group_all_sign:
+            if block in ids.group_wall_sign:
                 facing = palette_entry['Properties']['facing']
-                if   facing == 'north': data = 2
-                elif facing == 'west':  data = 4
-                elif facing == 'south': data = 3
-                elif facing == 'east':  data = 5
+                if facing == 'north':
+                    data = 2
+                elif facing == 'west':
+                    data = 4
+                elif facing == 'south':
+                    data = 3
+                elif facing == 'east':
+                    data = 5
             else:
                 p = palette_entry['Properties']
                 data = p['rotation']
-        elif key.endswith('_fence'):
+
+        elif block in ids.group_fence:
             p = palette_entry['Properties']
-            if p['north'] == 'true': data |= 1
-            if p['west']  == 'true': data |= 2
-            if p['south'] == 'true': data |= 4
-            if p['east']  == 'true': data |= 8
-        elif key.endswith('_stairs'):
+            if p['north'] == 'true':
+                data |= 1
+            if p['west'] == 'true':
+                data |= 2
+            if p['south'] == 'true':
+                data |= 4
+            if p['east'] == 'true':
+                data |= 8
+
+        elif block in ids.group_stairs:
+
+            # inner_right north --> inner_left east
+            # outer_right north --> outer_left east
+            # inner_right east --> inner_left south
+            # outer_right east --> outer_left south
+            # inner_right south --> inner_left west
+            # outer_right south --> outer_left west
+            # inner_right west --> inner_left north
+            # outer_right west --> outer_left north
+
+            half = palette_entry['Properties']['half']
+            if half == 'bottom':
+                data = 0
+            else:
+                data = 1
+
+            shape = palette_entry['Properties']['shape']
+            if shape == 'straight':
+                data += 2
+            elif shape in ['outer_right', 'outer_left']:
+                data += 4
+            elif shape in ['inner_right', 'inner_left']:
+                data += 6
+
             facing = palette_entry['Properties']['facing']
-            if   facing == 'south': data = 2
-            elif facing == 'east':  data = 0
-            elif facing == 'north': data = 3
-            elif facing == 'west':  data = 1
-            if palette_entry['Properties']['half'] == 'top':
-                data |= 0x4
-        elif key.endswith('_door'):
+            if facing == 'north':
+                if shape in ['outer_left', 'inner_left']:
+                    data += 64
+                else:
+                    data += 8
+            elif facing == 'east':
+                if shape in ['outer_left', 'inner_left']:
+                    data += 8
+                else:
+                    data += 16
+            elif facing == 'south':
+                if shape in ['outer_left', 'inner_left']:
+                    data += 16
+                else:
+                    data += 32
+            elif facing == 'west':
+                if shape in ['outer_left', 'inner_left']:
+                    data += 32
+                else:
+                    data += 64
+
+        elif block in ids.group_door:
             p = palette_entry['Properties']
-            if p['hinge'] == 'left': data |= 0x10
-            if p['open'] == 'true': data |= 0x04
-            if p['half'] == 'upper': data |= 0x08
-            data |= {
-                'north': 0x03,
-                'west':  0x02,
-                'south': 0x01,
-                'east':  0x00,
-               }[p['facing']]
-        elif key.endswith('_trapdoor'):
+            if p['hinge'] == 'left':
+                data |= 0x10
+            if p['open'] == 'true':
+                data |= 0x04
+            if p['half'] == 'upper':
+                data |= 0x08
+            data |= {'north': 0x03, 'west': 0x02, 'south': 0x01, 'east': 0x00}[p['facing']]
+
+        elif block in ids.group_trapdoor:
             p = palette_entry['Properties']
             data = {'south': 1, 'north': 0, 'east': 3, 'west': 2}[p['facing']]
-            if p['open'] == 'true': data |= 0x04
-            if p['half'] == 'top': data |= 0x08
-        elif key in ['minecraft:beetroots', 'minecraft:melon_stem', 'minecraft:wheat',
-                     'minecraft:pumpkin_stem', 'minecraft:potatoes', 'minecraft:carrots',
-                     'minecraft:sweet_berry_bush']:
-            data = palette_entry['Properties']['age']
-        elif key == 'minecraft:lantern':
+            if p['open'] == 'true':
+                data |= 0x04
+            if p['half'] == 'top':
+                data |= 0x08
+
+        elif block == ids.block_lantern:
             if palette_entry['Properties']['hanging'] == 'true':
                 data = 1
             else:
                 data = 0
-        elif key == "minecraft:composter":
+
+        elif block == ids.block_composter:
             data = palette_entry['Properties']['level']
-        elif key == "minecraft:barrel":
+
+        elif block == ids.block_barrel:
             facing_data = {'up': 0, 'down': 1, 'south': 2, 'east': 3, 'north': 4, 'west': 5}
-            data = (
-                (facing_data[palette_entry['Properties']['facing']] << 1) +
-                (1 if palette_entry['Properties']['open'] == 'true' else 0)
-            )
-        elif key.endswith('_bed'):
+            data = ((facing_data[palette_entry['Properties']['facing']] << 1) + (1 if palette_entry['Properties']['open'] == 'true' else 0))
+
+        elif block in ids.group_bed:
             facing = palette_entry['Properties']['facing']
             data |= {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             if palette_entry['Properties'].get('part', 'foot') == 'head':
                 data |= 8
-        elif key == 'minecraft:end_portal_frame':
+
+        elif block == ids.block_end_portal_frame:
             facing = palette_entry['Properties']['facing']
             data |= {'south': 0, 'west': 1, 'north': 2, 'east': 3}[facing]
             if palette_entry['Properties'].get('eye', 'false') == 'true':
                 data |= 4
-        elif key == 'minecraft:cauldron':
+
+        elif block == ids.block_cauldron:
             data = int(palette_entry['Properties'].get('level', '0'))
-        elif key == 'minecraft:structure_block':
+
+        elif block == ids.block_structure_block:
             block_mode = palette_entry['Properties'].get('mode', 'save')
             data = {'save': 0, 'load': 1, 'corner': 2, 'data': 3}.get(block_mode, 0)
-        elif key == 'minecraft:cake':
+
+        elif block == ids.block_cake:
             data = int(palette_entry['Properties'].get('bites', '0'))
-        elif key == 'minecraft:farmland':
+
+        elif block == ids.block_farmland:
             # A moisture level of 7 has a different texture from other farmland
             data = 1 if palette_entry['Properties'].get('moisture', '0') == '7' else 0
-        elif key in ['minecraft:grindstone', 'minecraft:lectern', 'minecraft:campfire',
-                     'minecraft:bell', 'minecraft:soul_campfire']:
+
+        elif block in ids.group_glcbs:
             p = palette_entry['Properties']
             data = {'south': 0, 'west': 1, 'north': 2, 'east': 3}[p['facing']]
-            if key == 'minecraft:grindstone':
+            if block == ids.block_grindstone:
                 data |= {'floor': 0, 'wall': 4, 'ceiling': 8}[p['face']]
-            elif key == 'minecraft:lectern':
+            elif block == ids.block_lectern:
                 if p['has_book'] == 'true':
                     data |= 4
-            elif key == 'minecraft:campfire' or key == 'minecraft:soul_campfire':
+            elif block == ids.block_campfire or block == ids.block_soul_campfire:
                 if p['lit'] == 'true':
                     data |= 4
-            elif key == 'minecraft:bell':
+            elif block == ids.block_bell:
                 data |= {'floor': 0, 'ceiling': 4, 'single_wall': 8,
                          'double_wall': 12}[p['attachment']]
+
+        elif block == ids.block_respawn_anchor:
+            data = palette_entry['Properties']['charges']
+
+        elif block == ids.block_sea_pickle:
+            if palette_entry['Properties'].get('waterlogged', False):
+                block = ids.block_air
+            else:
+                block = ids.block_water
 
         return (block, data)
 

@@ -163,7 +163,7 @@ get_lighting_color(RenderPrimitiveLighting* self, RenderState* state,
 
     /* special half-step handling, stairs handling */
     /* Anvil also needs to be here, blockid 145 */
-    if (block_class_is_subset(block, block_class_alt_height, block_class_alt_height_len) || block == block_anvil) {
+    if (block_class_is_subset(block, block_class_alt_height, block_class_alt_height_len) || (block == block_anvil || block == block_chipped_anvil || block == block_damaged_anvil )) {
         uint32_t upper_block;
 
         /* stairs and half-blocks take the skylevel from the upper block if it's transparent */
@@ -319,7 +319,7 @@ lighting_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyO
         /* leaves, ice, and pistons are transparent for occlusion calculations
          * but they need per face-shading to look as in game */
     } else if (is_transparent(state->block) &&
-               !block_class_is_subset(state->block, (mc_block_t[]){block_leaves, block_ice, block_piston, block_sticky_piston}, 4)) {
+               !block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves, block_ice, block_piston, block_sticky_piston}, 9) && !block_class_is_subset(state->block, block_class_stair, block_class_stair_len)) {
         /* transparent: do shading on whole block */
         do_shading_with_mask(self, state, x, y, z, mask_light);
     } else {
