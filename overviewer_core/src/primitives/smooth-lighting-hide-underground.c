@@ -21,6 +21,7 @@
 #include "../overviewer.h"
 #include "lighting.h"
 
+#include <stdio.h>
 
 typedef struct {
     /* inherits from lighting */
@@ -57,48 +58,33 @@ underground(void* data, RenderState* state, int32_t x, int32_t y, int32_t z) {
     bool validPlusY = true;
     bool validMinusZ = true;
     bool validPlusZ = true;
-    int32_t dy = 0;
+    int32_t dy = 0, dx = 0, dz = 0;
+    bool nextTransparent = false;
+   
+
     /* special handling for section boundaries */
     /* If the neighboring section has no block data, ignore exposure from that
-     * direction 
-     */
+     * direction */
+     
     if (x == 0 && (!(state->chunks[0][1].loaded) || state->chunks[0][1].sections[state->chunky].blocks == NULL)) {
         /* No data in -x direction */
         validMinusX = false;
         for(dy = 0; dy < 5; dy++) {
-          if(get_data(state, BLOCKS, x-1, dy, z)) {
-            validMinusX = true;
-          }  
+            if(get_data(state, BLOCKS, x-1, dy, z)) {
+              validMinusX = true;
+            }  
         }
-    }
-
-    if (x == 15 && (!(state->chunks[2][1].loaded) || state->chunks[2][1].sections[state->chunky].blocks == NULL)) {
-        /* No data in +x direction */
-        validPlusX = false;
-        for(dy = 0; dy < 5; dy++) {
-          if(get_data(state, BLOCKS, x+1, dy, z)) {
-            validPlusX = true;
-          }  
-        }
-    }
-
-    if (y == 0 && (state->chunky - 1 < 0 || state->chunks[1][1].sections[state->chunky - 1].blocks == NULL)) {
-        /* No data in -y direction */
-        validMinusY = false;
-    }
-
-    if (y == 15 && (state->chunky + 1 >= SECTIONS_PER_CHUNK || state->chunks[1][1].sections[state->chunky + 1].blocks == NULL)) {
-        /* No data in +y direction */
-        validPlusY = false;
-    }
-
-    if (z == 0 && (!(state->chunks[1][0].loaded) || state->chunks[1][0].sections[state->chunky].blocks == NULL)) {
-        /* No data in -z direction */
-        validMinusZ = false;
-        for(dy = 0; dy < 5; dy++) {
-          if(get_data(state, BLOCKS, x, dy, z-1)) {
-            validMinusZ = true;
-          }  
+        if(!validMinusX) {
+          for (dx = 0; dx < 2; dx++) {
+            for (dy = -1; dy < 2; dy++) {
+              for (dz = -1; dz < 2; dz++) {
+                nextTransparent |= is_transparent(get_data(state, BLOCKS, x + dx, y + dy, z + dz));
+              }
+            }
+          }
+          if (!nextTransparent) {
+            state->block = block_stone;
+          }
         }
     }
 
@@ -109,64 +95,23 @@ underground(void* data, RenderState* state, int32_t x, int32_t y, int32_t z) {
             validPlusZ = true;
           }  
         }
-    }
-
-    /* If any of the 6 blocks adjacent to us are transparent, we're exposed */
-    if ((validMinusX && is_transparent(get_data(state, BLOCKS, x - 1, y, z))) ||
-        (validPlusX && is_transparent(get_data(state, BLOCKS, x + 1, y, z))) ||
-        (validMinusY && is_transparent(get_data(state, BLOCKS, x, y - 1, z))) ||
-        (validPlusY && is_transparent(get_data(state, BLOCKS, x, y + 1, z))) ||
-        (validMinusZ && is_transparent(get_data(state, BLOCKS, x, y, z - 1))) ||
-        (validPlusZ && is_transparent(get_data(state, BLOCKS, x, y, z + 1)))) {
-        if (touches_light(state, SKYLIGHT, x, y, z)) {
-          blockID = getArrayShort3D(state->blocks, x, y, z);
-          if(blockID == 8 || blockID == 11) {
-             for (dy = y + 1; dy < 255; dy++) {
-              if(get_data(state, SKYLIGHT, x, dy, z)) {
-                return 0;
-              } else {
-                if(!is_transparent(get_data(state, BLOCKS, x, dy, z))) {
-                  return 1;
-                }
+        if(!validPlusZ) {
+          for (dx = -1; dx < 2; dx++) {
+            for (dy = -1; dy < 2; dy++) {
+              for (dz = -1; dz < 1; dz++) {
+                nextTransparent |= is_transparent(get_data(state, BLOCKS, x + dx, y + dy, z + dz));
               }
             }
           }
-          if(!validMinusX) {
-            if(is_transparent(get_data(state, BLOCKS, x - 1, y, z))) {
-                return 1;
-            }
+          if (!nextTransparent) {
+            state->block = block_stone;
           }
-          if(!validPlusX) {
-            if(is_transparent(get_data(state, BLOCKS, x + 1, y, z))) {
-                return 1;
-            }
-          }
-          if(!validMinusY) {
-            if(is_transparent(get_data(state, BLOCKS, x, y - 1, z))) {
-                return 1;
-            }
-          }
-          if(!validPlusY) {
-            if(is_transparent(get_data(state, BLOCKS, x, y + 1, z))) {
-                return 1;
-            }
-          }
-          if(!validMinusZ) {
-            if(is_transparent(get_data(state, BLOCKS, x, y, z - 1))) {
-                return 1;
-            }
-          }
-          if(!validPlusZ) {
-            if(is_transparent(get_data(state, BLOCKS, x, y, z + 1))) {
-                return 1;
-            }
-          }
-          return 0;
         }
-      return 1;
     }
 
-    return 1;
+
+
+    return 0;
 }
 
 
@@ -349,7 +294,7 @@ smooth_lighting_draw(void* data, RenderState* state, PyObject* src, PyObject* ma
 
     /* special case for leaves, water 8, water 9, ice 79
        -- these are also smooth-lit! */
-    if (!block_class_is_subset(state->block, (mc_block_t[]){block_leaves, block_flowing_water, block_water, block_ice}, 4) && is_transparent(state->block)) {
+    if (!block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves, block_flowing_water, block_water, block_ice}, 9) && is_transparent(state->block)) {
         /* transparent blocks are rendered as usual, with flat lighting */
         primitive_lighting.draw(data, state, src, mask, mask_light);
         return;
