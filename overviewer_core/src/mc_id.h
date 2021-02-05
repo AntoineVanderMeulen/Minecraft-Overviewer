@@ -152,6 +152,7 @@ enum mc_block_id {
     block_grass = 95,
     block_fern = 96,
     block_tall_grass = 414,
+    block_large_fern = 415,
 
     block_white_wool = 102,
     block_orange_wool = 103,

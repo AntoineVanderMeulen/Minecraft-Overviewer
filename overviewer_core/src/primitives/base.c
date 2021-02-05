@@ -101,6 +101,7 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
         (state->block == block_tall_grass) ||
         (state->block == block_grass) ||
         (state->block == block_fern) ||
+        (state->block == block_large_fern) ||
         /* pumpkin/melon stem, not fully grown. Fully grown stems
          * get constant brown color (see textures.py) */
         (((state->block == block_pumpkin_stem) || (state->block == block_melon_stem)) && (state->block_data != 7)) ||
