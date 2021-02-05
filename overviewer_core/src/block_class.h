@@ -54,4 +54,10 @@ extern const size_t block_class_nether_roof_len;
 extern const mc_block_t block_class_slab[];
 extern const size_t block_class_slab_len;
 
+extern const mc_block_t block_class_pane_and_bars[];
+extern const size_t block_class_pane_and_bars_len;
+
+extern const mc_block_t block_class_no_inner_surfaces[];
+extern const size_t block_class_no_inner_surfaces_len;
+
 #endif
