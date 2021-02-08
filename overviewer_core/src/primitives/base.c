@@ -94,43 +94,43 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
      * biome-compliant ones! The tinting is now all done here.
      */
     if (/* grass, but not snowgrass */
-        (state->block == block_grass_block && get_data(state, BLOCKS, state->x, state->y + 1, state->z) != block_snow) ||
-        block_class_is_subset(state->block, (mc_block_t[]){block_vine, block_lily_pad, block_flowing_water, block_water, block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves},
+        (state->block == block_minecraft__grass_block && get_data(state, BLOCKS, state->x, state->y + 1, state->z) != block_minecraft__snow) ||
+        block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__vine, block_minecraft__lily_pad, block_minecraft__flowing_water, block_minecraft__water, block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves},
                               10) ||
         /* tallgrass, but not dead shrubs */
-        (state->block == block_tall_grass) ||
-        (state->block == block_grass) ||
-        (state->block == block_fern) ||
-        (state->block == block_large_fern) ||
+        (state->block == block_minecraft__tall_grass) ||
+        (state->block == block_minecraft__grass) ||
+        (state->block == block_minecraft__fern) ||
+        (state->block == block_minecraft__large_fern) ||
         /* pumpkin/melon stem, not fully grown. Fully grown stems
          * get constant brown color (see textures.py) */
-        (((state->block == block_pumpkin_stem) || (state->block == block_melon_stem)) && (state->block_data != 7)) ||
+        (((state->block == block_minecraft__pumpkin_stem) || (state->block == block_minecraft__melon_stem)) && (state->block_data != 7)) ||
         /* doublePlant grass & ferns */
-        (state->block == block_double_plant && (state->block_data == 2 || state->block_data == 3)) ||
+        (state->block == block_minecraft__double_plant && (state->block_data == 2 || state->block_data == 3)) ||
         /* doublePlant grass & ferns tops */
-        (state->block == block_double_plant && below_block == block_double_plant && (below_data == 2 || below_data == 3))) {
+        (state->block == block_minecraft__double_plant && below_block == block_minecraft__double_plant && (below_data == 2 || below_data == 3))) {
         /* do the biome stuff! */
         PyObject* facemask = mask;
         uint8_t r = 255, g = 255, b = 255;
         PyObject* color_table = NULL;
         bool flip_xy = false;
 
-        if (state->block == block_grass_block) {
+        if (state->block == block_minecraft__grass_block) {
             /* grass needs a special facemask */
             facemask = self->grass_texture;
         }
 
-        if (block_class_is_subset(state->block, (mc_block_t[]){block_grass_block, block_dead_bush, block_grass, block_fern, block_pumpkin_stem, block_melon_stem, block_vine, block_lily_pad, block_double_plant, block_attached_pumpkin_stem, block_attached_melon_stem, block_tall_grass, block_large_fern}, 13)) {
+        if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__grass_block, block_minecraft__dead_bush, block_minecraft__grass, block_minecraft__fern, block_minecraft__pumpkin_stem, block_minecraft__melon_stem, block_minecraft__vine, block_minecraft__lily_pad, block_minecraft__double_plant, block_minecraft__attached_pumpkin_stem, block_minecraft__attached_melon_stem, block_minecraft__tall_grass, block_minecraft__large_fern}, 13)) {
             color_table = self->grasscolor;
-        // } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+        // } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
         //     color_table = self->watercolor;
-        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
+        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves}, 6)) {
             color_table = self->foliagecolor;
             /* birch foliage color is flipped XY-ways */
             flip_xy = state->block_data == 2;
         }
 
-        if (color_table || block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+        if (color_table || block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
             uint8_t radius_biome_blend = 7;
             uint8_t biome;
             int32_t dx, dz;
@@ -155,11 +155,11 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
                         temp += biome_table[biome].temperature;
                         rain += biome_table[biome].rainfall;
 
-                        if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+                        if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
                                 multr += biome_table[biome].wr;
                                 multg += biome_table[biome].wg;
                                 multb += biome_table[biome].wb;
-                        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
+                        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves}, 6)) {
                             multr += biome_table[biome].fr;
                             multg += biome_table[biome].fg;
                             multb += biome_table[biome].fb;                                
@@ -181,12 +181,12 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
                 temp = biome_table[DEFAULT_BIOME].temperature;
                 rain = biome_table[DEFAULT_BIOME].rainfall;
 
-                if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) {
+                if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
                     multr = biome_table[DEFAULT_BIOME].wr;
                     multg = biome_table[DEFAULT_BIOME].wg;
                     multb = biome_table[DEFAULT_BIOME].wb;
                 }
-                else if (block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves}, 6)) {
+                else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves}, 6)) {
                     multr = biome_table[DEFAULT_BIOME].fr;
                     multg = biome_table[DEFAULT_BIOME].fg;
                     multb = biome_table[DEFAULT_BIOME].fb;                                
@@ -197,7 +197,7 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
                     multb = biome_table[DEFAULT_BIOME].gb;
                 }
             }
-            if (!(block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2))) {
+            if (!(block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2))) {
                 /* second coordinate is actually scaled to fit inside the triangle
                    so store it in rain */
                 rain *= temp;

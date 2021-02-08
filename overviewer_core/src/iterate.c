@@ -253,22 +253,22 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
     int32_t x = state->x, y = state->y, z = state->z;
     uint16_t data = 0;
 
-    if (state->block == block_grass_block) { /* grass */
+    if (state->block == block_minecraft__grass_block) { /* grass */
         /* return 0x10 if grass is covered in snow */
-        if (get_data(state, BLOCKS, x, y + 1, z) == block_snow)
+        if (get_data(state, BLOCKS, x, y + 1, z) == block_minecraft__snow)
             ancilData |= 0x10;
         return ancilData;
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_flowing_water, block_water}, 2)) { /* water */
+    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) { /* water */
         data = check_adjacent_blocks(state, x, y, z, state->block) ^ 0x0f;
         /* an aditional bit for top is added to the 4 bits of check_adjacent_blocks */
         if (get_data(state, BLOCKS, x, y + 1, z) != state->block)
             data |= 0x10;
 
-        if (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z), (mc_block_t[]){block_flowing_water, block_water}, 2) || 
-        (block_class_is_subset(get_data(state, BLOCKS, x + 1, y + 1, z), (mc_block_t[]){block_flowing_water, block_water}, 2)) || 
-        (block_class_is_subset(get_data(state, BLOCKS, x - 1, y + 1, z), (mc_block_t[]){block_flowing_water, block_water}, 2)) || 
-        (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z - 1), (mc_block_t[]){block_flowing_water, block_water}, 2)) || 
-        (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z + 1), (mc_block_t[]){block_flowing_water, block_water}, 2))) {
+        if (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z), (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x + 1, y + 1, z), (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x - 1, y + 1, z), (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z - 1), (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) || 
+        (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z + 1), (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2))) {
             data |= 0x20;
         }
 
@@ -280,7 +280,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
          * Note that stained glass encodes 16 colors using 4 bits.  this pushes us over the 8-bits of an uint8_t, 
          * forcing us to use an uint16_t to hold 16 bits of pseudo ancil data
          * */
-        if (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z), block_class_no_inner_surfaces, block_class_no_inner_surfaces_len) && !(get_data(state, BLOCKS, x, y + 1, z) == block_ice)) {
+        if (block_class_is_subset(get_data(state, BLOCKS, x, y + 1, z), block_class_no_inner_surfaces, block_class_no_inner_surfaces_len) && !(get_data(state, BLOCKS, x, y + 1, z) == block_minecraft__ice)) {
             data = 0;
         } else {
             data = 16;
@@ -289,9 +289,9 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         return (data << 4) | (ancilData & 0x0f);
     } else if (block_class_is_subset(state->block, block_class_fence, block_class_fence_len)) { /* fences */
         /* check for fences AND fence gates */
-        return check_adjacent_blocks(state, x, y, z, state->block) | check_adjacent_blocks(state, x, y, z, block_oak_fence_gate) |
-               check_adjacent_blocks(state, x, y, z, block_oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_birch_fence_gate) | check_adjacent_blocks(state, x, y, z, block_jungle_fence_gate) |
-               check_adjacent_blocks(state, x, y, z, block_dark_oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_acacia_fence_gate);
+        return check_adjacent_blocks(state, x, y, z, state->block) | check_adjacent_blocks(state, x, y, z, block_minecraft__oak_fence_gate) |
+               check_adjacent_blocks(state, x, y, z, block_minecraft__oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_minecraft__birch_fence_gate) | check_adjacent_blocks(state, x, y, z, block_minecraft__jungle_fence_gate) |
+               check_adjacent_blocks(state, x, y, z, block_minecraft__dark_oak_fence_gate) | check_adjacent_blocks(state, x, y, z, block_minecraft__acacia_fence_gate);
 
     } else if (block_class_is_subset(state->block, block_class_pane_and_bars, block_class_pane_and_bars_len)) {
         /* iron bars and glass panes:
@@ -302,7 +302,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         data = (check_adjacent_blocks(state, x, y, z, 0) ^ 0x0f);
         return (data << 4) | (ancilData & 0xf);
 
-    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_nether_portal, block_nether_brick_fence}, 2)) {
+    } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__nether_portal, block_minecraft__nether_brick_fence}, 2)) {
         /* portal and nether brick fences */
         return check_adjacent_blocks(state, x, y, z, state->block);
 
@@ -338,7 +338,7 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         } else {
             return check_adjacent_blocks(state, x, y, z, state->block);
         }
-    } else if (state->block == block_lily_pad) {
+    } else if (state->block == block_minecraft__lily_pad) {
         int32_t wx, wz, wy, rotation;
         int64_t pr;
         /* calculate the global block coordinates of this position */
@@ -458,11 +458,11 @@ generate_pseudo_data(RenderState* state, uint16_t ancilData) {
         }
 
         return ancilData;
-    } else if (state->block == block_double_plant) { /* doublePlants */
+    } else if (state->block == block_minecraft__double_plant) { /* doublePlants */
         /* use bottom block data format plus one bit for top
          * block (0x8)
          */
-        if (get_data(state, BLOCKS, x, y - 1, z) == block_double_plant) {
+        if (get_data(state, BLOCKS, x, y - 1, z) == block_minecraft__double_plant) {
             data = get_data(state, DATA, x, y - 1, z) | 0x8;
         } else {
             data = ancilData;
@@ -575,7 +575,7 @@ chunk_render(PyObject* self, PyObject* args) {
                 state.imgy -= 12;
                 /* get blockid */
                 state.block = getArrayShort3D(blocks_py, state.x, state.y, state.z);
-                if (state.block == block_air || render_mode_hidden(rendermode, state.x, state.y, state.z)) {
+                if (state.block == block_minecraft__air || render_mode_hidden(rendermode, state.x, state.y, state.z)) {
                     continue;
                 }
 
@@ -628,7 +628,7 @@ chunk_render(PyObject* self, PyObject* args) {
                 /* if we found a proper texture, render it! */
                 if (t != NULL && t != Py_None) {
                     PyObject *src, *mask, *mask_light;
-                    int32_t do_rand = (state.block == block_grass || state.block == block_fern /*|| state.block == block_red_flower || state.block == block_double_plant*/);
+                    int32_t do_rand = (state.block == block_minecraft__grass || state.block == block_minecraft__fern /*|| state.block == block_minecraft__red_flower || state.block == block_minecraft__double_plant*/);
                     int32_t randx = 0, randy = 0;
                     src = PyTuple_GetItem(t, 0);
                     mask = PyTuple_GetItem(t, 0);

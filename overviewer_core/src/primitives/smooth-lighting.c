@@ -205,7 +205,7 @@ smooth_lighting_draw(void* data, RenderState* state, PyObject* src, PyObject* ma
 
     /* special case for leaves, water 8, water 9, ice 79
        -- these are also smooth-lit! */
-    if (!block_class_is_subset(state->block, (mc_block_t[]){block_oak_leaves, block_spruce_leaves, block_birch_leaves, block_jungle_leaves, block_acacia_leaves, block_dark_oak_leaves, block_flowing_water, block_water, block_ice}, 9) && is_transparent(state->block)) {
+    if (!block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves, block_minecraft__flowing_water, block_minecraft__water, block_minecraft__ice}, 9) && is_transparent(state->block)) {
         /* transparent blocks are rendered as usual, with flat lighting */
         primitive_lighting.draw(data, state, src, mask, mask_light);
         return;
@@ -214,7 +214,7 @@ smooth_lighting_draw(void* data, RenderState* state, PyObject* src, PyObject* ma
     /* non-transparent blocks get the special smooth treatment */
 
     /* special code for water */
-    if (state->block == block_water) {
+    if (state->block == block_minecraft__water) {
         if (!(state->block_pdata & (1 << 4)))
             light_top = false;
         if (!(state->block_pdata & (1 << 1)))

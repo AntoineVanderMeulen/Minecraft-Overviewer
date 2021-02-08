@@ -91,7 +91,7 @@ hide_hidden(void* data, RenderState* state, int32_t x, int32_t y, int32_t z) {
         return false;
 
     block = get_data(state, BLOCKS, x, y, z);
-    for (i = 0; self->rules[i].blockid != block_air; i++) {
+    for (i = 0; self->rules[i].blockid != block_minecraft__air; i++) {
         if (block == self->rules[i].blockid) {
             uint8_t data;
 

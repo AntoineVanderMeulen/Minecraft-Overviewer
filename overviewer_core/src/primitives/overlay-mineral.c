@@ -32,17 +32,17 @@ struct MineralColor {
 
 /* put more valuable ores first -- they take precedence */
 static struct MineralColor default_minerals[] = {
-    {block_mossy_cobblestone, 31, 153, 9},
+    {block_minecraft__mossy_cobblestone, 31, 153, 9},
 
-    {block_diamond_ore, 32, 230, 220},
+    {block_minecraft__diamond_ore, 32, 230, 220},
 
-    {block_lapis_ore, 0, 23, 176},
-    {block_gold_ore, 255, 234, 0},
+    {block_minecraft__lapis_ore, 0, 23, 176},
+    {block_minecraft__gold_ore, 255, 234, 0},
 
-    {block_iron_ore, 204, 204, 204},
-    {block_redstone_ore, 186, 0, 0},
-    // {block_lit_redstone_ore, 186, 0, 0},
-    {block_coal_ore, 54, 54, 54},
+    {block_minecraft__iron_ore, 204, 204, 204},
+    {block_minecraft__redstone_ore, 186, 0, 0},
+    // {block_minecraft__lit_redstone_ore, 186, 0, 0},
+    {block_minecraft__coal_ore, 54, 54, 54},
 
     /* end of list marker */
     {0, 0, 0, 0}};
@@ -61,7 +61,7 @@ static void get_color(void* data, RenderState* state,
         int32_t i, tmp;
         mc_block_t block = get_data(state, BLOCKS, x, y, z);
 
-        for (i = 0; (max_i == -1 || i < max_i) && minerals[i].block != block_air; i++) {
+        for (i = 0; (max_i == -1 || i < max_i) && minerals[i].block != block_minecraft__air; i++) {
             if (minerals[i].block == block) {
                 *r = minerals[i].r;
                 *g = minerals[i].g;

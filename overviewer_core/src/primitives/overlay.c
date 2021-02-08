@@ -85,43 +85,43 @@ void overlay_draw(void* data, RenderState* state, PyObject* src, PyObject* mask,
 
     // exactly analogous to edge-line code for these special blocks
     int32_t increment = 0;
-    if (state->block == block_oak_slab ||
-        state->block == block_spruce_slab ||
-        state->block == block_birch_slab ||
-        state->block == block_jungle_slab ||
-        state->block == block_acacia_slab ||
-        state->block == block_dark_oak_slab ||
-        state->block == block_petrified_oak_slab ||
-        state->block == block_stone_slab ||
-        state->block == block_sandstone_slab ||
-        state->block == block_cobblestone_slab ||
-        state->block == block_brick_slab ||
-        state->block == block_stone_brick_slab ||
-        state->block == block_nether_brick_slab ||
-        state->block == block_quartz_slab ||
-        state->block == block_red_sandstone_slab ||
-        state->block == block_purpur_slab ||
-        state->block == block_prismarine_slab ||
-        state->block == block_dark_prismarine_slab ||
-        state->block == block_prismarine_brick_slab ||
-        state->block == block_andesite_slab ||
-        state->block == block_diorite_slab ||
-        state->block == block_granite_slab ||
-        state->block == block_polished_andesite_slab ||
-        state->block == block_polished_diorite_slab ||
-        state->block == block_polished_granite_slab ||
-        state->block == block_red_nether_brick_slab ||
-        state->block == block_smooth_sandstone_slab ||
-        state->block == block_cut_sandstone_slab ||
-        state->block == block_smooth_red_sandstone_slab ||
-        state->block == block_cut_red_sandstone_slab ||
-        state->block == block_end_stone_brick_slab ||
-        state->block == block_mossy_cobblestone_slab ||
-        state->block == block_mossy_stone_brick_slab ||
-        state->block == block_smooth_quartz_slab ||
-        state->block == block_smooth_stone_slab)  // half-step
+    if (state->block == block_minecraft__oak_slab ||
+        state->block == block_minecraft__spruce_slab ||
+        state->block == block_minecraft__birch_slab ||
+        state->block == block_minecraft__jungle_slab ||
+        state->block == block_minecraft__acacia_slab ||
+        state->block == block_minecraft__dark_oak_slab ||
+        state->block == block_minecraft__petrified_oak_slab ||
+        state->block == block_minecraft__stone_slab ||
+        state->block == block_minecraft__sandstone_slab ||
+        state->block == block_minecraft__cobblestone_slab ||
+        state->block == block_minecraft__brick_slab ||
+        state->block == block_minecraft__stone_brick_slab ||
+        state->block == block_minecraft__nether_brick_slab ||
+        state->block == block_minecraft__quartz_slab ||
+        state->block == block_minecraft__red_sandstone_slab ||
+        state->block == block_minecraft__purpur_slab ||
+        state->block == block_minecraft__prismarine_slab ||
+        state->block == block_minecraft__dark_prismarine_slab ||
+        state->block == block_minecraft__prismarine_brick_slab ||
+        state->block == block_minecraft__andesite_slab ||
+        state->block == block_minecraft__diorite_slab ||
+        state->block == block_minecraft__granite_slab ||
+        state->block == block_minecraft__polished_andesite_slab ||
+        state->block == block_minecraft__polished_diorite_slab ||
+        state->block == block_minecraft__polished_granite_slab ||
+        state->block == block_minecraft__red_nether_brick_slab ||
+        state->block == block_minecraft__smooth_sandstone_slab ||
+        state->block == block_minecraft__cut_sandstone_slab ||
+        state->block == block_minecraft__smooth_red_sandstone_slab ||
+        state->block == block_minecraft__cut_red_sandstone_slab ||
+        state->block == block_minecraft__end_stone_brick_slab ||
+        state->block == block_minecraft__mossy_cobblestone_slab ||
+        state->block == block_minecraft__mossy_stone_brick_slab ||
+        state->block == block_minecraft__smooth_quartz_slab ||
+        state->block == block_minecraft__smooth_stone_slab)  // half-step
         increment = 6;
-    else if (state->block == block_snow) // snow
+    else if (state->block == block_minecraft__snow) // snow
         increment = 9;
 
     /* skip rendering the overlay if we can't see it */

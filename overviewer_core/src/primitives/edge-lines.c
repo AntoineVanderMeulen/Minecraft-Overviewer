@@ -36,7 +36,7 @@ edge_lines_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, P
     PrimitiveEdgeLines* self = (PrimitiveEdgeLines*)data;
 
     /* Draw some edge lines! */
-    if (state->block == block_snow || block_class_is_subset(state->block, block_class_slab, block_class_slab_len) || !is_transparent(state->block)) {
+    if (state->block == block_minecraft__snow || block_class_is_subset(state->block, block_class_slab, block_class_slab_len) || !is_transparent(state->block)) {
         Imaging img_i = imaging_python_to_c(state->img);
         uint8_t ink[] = {0, 0, 0, 255 * self->opacity};
         mc_block_t side_block;
@@ -45,7 +45,7 @@ edge_lines_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, P
         int32_t increment = 0;
         if (block_class_is_subset(state->block, block_class_slab, block_class_slab_len) && (state->block_data == 0)) // half-steps BUT no upsidown half-steps
             increment = 6;
-        else if (block_class_is_subset(state->block, (mc_block_t[]){block_snow, block_repeater}, 2)) // snow, redstone repeaters (on and off)
+        else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__snow, block_minecraft__repeater}, 2)) // snow, redstone repeaters (on and off)
             increment = 9;
 
         /* +X side */

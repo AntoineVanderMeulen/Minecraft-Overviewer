@@ -922,259 +922,259 @@ def billboard(blockid=[], imagename=None, **kwargs):
 
 
 # simple bloc only 1 or 2 textures
-block(blockid=ids.block_stone, top_image="assets/minecraft/textures/block/stone.png")
-block(blockid=ids.block_granite, top_image="assets/minecraft/textures/block/granite.png")
-block(blockid=ids.block_polished_granite, top_image="assets/minecraft/textures/block/polished_granite.png")
-block(blockid=ids.block_diorite, top_image="assets/minecraft/textures/block/diorite.png")
-block(blockid=ids.block_polished_diorite, top_image="assets/minecraft/textures/block/polished_diorite.png")
-block(blockid=ids.block_andesite, top_image="assets/minecraft/textures/block/andesite.png")
-block(blockid=ids.block_polished_andesite, top_image="assets/minecraft/textures/block/polished_andesite.png")
-block(blockid=ids.block_dirt, top_image="assets/minecraft/textures/block/dirt.png")
-block(blockid=ids.block_coarse_dirt, top_image="assets/minecraft/textures/block/coarse_dirt.png")
-block(blockid=ids.block_podzol, top_image="assets/minecraft/textures/block/podzol_top.png", side_image="assets/minecraft/textures/block/podzol_side.png")
-block(blockid=ids.block_cobblestone, top_image="assets/minecraft/textures/block/cobblestone.png")
-block(blockid=ids.block_oak_planks, top_image="assets/minecraft/textures/block/oak_planks.png")
-block(blockid=ids.block_spruce_planks, top_image="assets/minecraft/textures/block/spruce_planks.png")
-block(blockid=ids.block_birch_planks, top_image="assets/minecraft/textures/block/birch_planks.png")
-block(blockid=ids.block_jungle_planks, top_image="assets/minecraft/textures/block/jungle_planks.png")
-block(blockid=ids.block_acacia_planks, top_image="assets/minecraft/textures/block/acacia_planks.png")
-block(blockid=ids.block_dark_oak_planks, top_image="assets/minecraft/textures/block/dark_oak_planks.png")
-block(blockid=ids.block_crimson_planks, top_image="assets/minecraft/textures/block/crimson_planks.png")
-block(blockid=ids.block_warped_planks, top_image="assets/minecraft/textures/block/warped_planks.png")
-block(blockid=ids.block_bedrock, top_image="assets/minecraft/textures/block/bedrock.png")
-block(blockid=ids.block_sand, top_image="assets/minecraft/textures/block/sand.png")
-block(blockid=ids.block_red_sand, top_image="assets/minecraft/textures/block/red_sand.png")
-block(blockid=ids.block_gravel, top_image="assets/minecraft/textures/block/gravel.png")
-block(blockid=ids.block_gold_ore, top_image="assets/minecraft/textures/block/gold_ore.png")
-block(blockid=ids.block_iron_ore, top_image="assets/minecraft/textures/block/iron_ore.png")
-block(blockid=ids.block_coal_ore, top_image="assets/minecraft/textures/block/coal_ore.png")
-block(blockid=ids.block_sponge, top_image="assets/minecraft/textures/block/sponge.png")
-block(blockid=ids.block_wet_sponge, top_image="assets/minecraft/textures/block/sponge.png")
-block(blockid=ids.block_lapis_ore, top_image="assets/minecraft/textures/block/lapis_ore.png")
-block(blockid=ids.block_lapis_block, top_image="assets/minecraft/textures/block/lapis_block.png")
-block(blockid=ids.block_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png", side_image="assets/minecraft/textures/block/sandstone.png")
-block(blockid=ids.block_chiseled_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png", side_image="assets/minecraft/textures/block/chiseled_sandstone.png")
-block(blockid=ids.block_cut_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png", side_image="assets/minecraft/textures/block/cut_sandstone.png")
-block(blockid=ids.block_note_block, top_image="assets/minecraft/textures/block/note_block.png")
-block(blockid=ids.block_chiseled_red_sandstone, top_image="assets/minecraft/textures/block/red_sandstone_top.png", side_image="assets/minecraft/textures/block/chiseled_red_sandstone.png")
-block(blockid=ids.block_cut_red_sandstone, top_image="assets/minecraft/textures/block/red_sandstone_top.png", side_image="assets/minecraft/textures/block/cut_red_sandstone.png")
-sprite(blockid=ids.block_cobweb, imagename="assets/minecraft/textures/block/cobweb.png", nospawn=True)
-block(blockid=ids.block_white_wool, top_image="assets/minecraft/textures/block/white_wool.png")
-block(blockid=ids.block_orange_wool, top_image="assets/minecraft/textures/block/orange_wool.png")
-block(blockid=ids.block_magenta_wool, top_image="assets/minecraft/textures/block/magenta_wool.png")
-block(blockid=ids.block_light_blue_wool, top_image="assets/minecraft/textures/block/light_blue_wool.png")
-block(blockid=ids.block_yellow_wool, top_image="assets/minecraft/textures/block/yellow_wool.png")
-block(blockid=ids.block_lime_wool, top_image="assets/minecraft/textures/block/lime_wool.png")
-block(blockid=ids.block_pink_wool, top_image="assets/minecraft/textures/block/pink_wool.png")
-block(blockid=ids.block_gray_wool, top_image="assets/minecraft/textures/block/gray_wool.png")
-block(blockid=ids.block_light_gray_wool, top_image="assets/minecraft/textures/block/light_gray_wool.png")
-block(blockid=ids.block_cyan_wool, top_image="assets/minecraft/textures/block/cyan_wool.png")
-block(blockid=ids.block_purple_wool, top_image="assets/minecraft/textures/block/purple_wool.png")
-block(blockid=ids.block_blue_wool, top_image="assets/minecraft/textures/block/blue_wool.png")
-block(blockid=ids.block_brown_wool, top_image="assets/minecraft/textures/block/brown_wool.png")
-block(blockid=ids.block_green_wool, top_image="assets/minecraft/textures/block/green_wool.png")
-block(blockid=ids.block_red_wool, top_image="assets/minecraft/textures/block/red_wool.png")
-block(blockid=ids.block_black_wool, top_image="assets/minecraft/textures/block/black_wool.png")
-block(blockid=ids.block_gold_block, top_image="assets/minecraft/textures/block/gold_block.png")
-block(blockid=ids.block_iron_block, top_image="assets/minecraft/textures/block/iron_block.png")
-block(blockid=ids.block_bricks, top_image="assets/minecraft/textures/block/bricks.png")
-block(blockid=ids.block_tnt, top_image="assets/minecraft/textures/block/tnt_top.png", side_image="assets/minecraft/textures/block/tnt_side.png", nospawn=True)
-block(blockid=ids.block_bookshelf, top_image="assets/minecraft/textures/block/oak_planks.png", side_image="assets/minecraft/textures/block/bookshelf.png")
-block(blockid=ids.block_mossy_cobblestone, top_image="assets/minecraft/textures/block/mossy_cobblestone.png")
-block(blockid=ids.block_obsidian, top_image="assets/minecraft/textures/block/obsidian.png")
-block(blockid=ids.block_spawner, top_image="assets/minecraft/textures/block/spawner.png", transparent=True)
-block(blockid=ids.block_diamond_ore, top_image="assets/minecraft/textures/block/diamond_ore.png")
-block(blockid=ids.block_diamond_block, top_image="assets/minecraft/textures/block/diamond_block.png")
-block(blockid=ids.block_redstone_ore, top_image="assets/minecraft/textures/block/redstone_ore.png")
-block(blockid=ids.block_snow_block, top_image="assets/minecraft/textures/block/snow.png")
-block(blockid=ids.block_clay, top_image="assets/minecraft/textures/block/clay.png")
-block(blockid=ids.block_jukebox, top_image="assets/minecraft/textures/block/jukebox_top.png", side_image="assets/minecraft/textures/block/note_block.png")
-block(blockid=ids.block_netherrack, top_image="assets/minecraft/textures/block/netherrack.png")
-block(blockid=ids.block_soul_sand, top_image="assets/minecraft/textures/block/soul_sand.png")
-block(blockid=ids.block_glowstone, top_image="assets/minecraft/textures/block/glowstone.png")
-block(blockid=ids.block_shroomlight, top_image="assets/minecraft/textures/block/shroomlight.png")
-block(blockid=ids.block_infested_cobblestone, top_image="assets/minecraft/textures/block/cobblestone.png")
-block(blockid=ids.block_infested_stone, top_image="assets/minecraft/textures/block/stone.png")
-block(blockid=ids.block_infested_stone_bricks, top_image="assets/minecraft/textures/block/stone_bricks.png")
-block(blockid=ids.block_infested_mossy_stone_bricks, top_image="assets/minecraft/textures/block/mossy_stone_bricks.png")
-block(blockid=ids.block_infested_cracked_stone_bricks, top_image="assets/minecraft/textures/block/cracked_stone_bricks.png")
-block(blockid=ids.block_infested_chiseled_stone_bricks, top_image="assets/minecraft/textures/block/chiseled_stone_bricks.png")
-block(blockid=ids.block_stone_bricks, top_image="assets/minecraft/textures/block/stone_bricks.png")
-block(blockid=ids.block_mossy_stone_bricks, top_image="assets/minecraft/textures/block/mossy_stone_bricks.png")
-block(blockid=ids.block_cracked_stone_bricks, top_image="assets/minecraft/textures/block/cracked_stone_bricks.png")
-block(blockid=ids.block_chiseled_stone_bricks, top_image="assets/minecraft/textures/block/chiseled_stone_bricks.png")
-block(blockid=ids.block_melon, top_image="assets/minecraft/textures/block/melon_top.png", side_image="assets/minecraft/textures/block/melon_side.png", solid=True)
-block(blockid=ids.block_mycelium, top_image="assets/minecraft/textures/block/mycelium_top.png", side_image="assets/minecraft/textures/block/mycelium_side.png")
-block(blockid=ids.block_warped_nylium, top_image="assets/minecraft/textures/block/warped_nylium.png", side_image="assets/minecraft/textures/block/warped_nylium_side.png")
-block(blockid=ids.block_crimson_nylium, top_image="assets/minecraft/textures/block/crimson_nylium.png", side_image="assets/minecraft/textures/block/crimson_nylium_side.png")
-block(blockid=ids.block_soul_soil, top_image="assets/minecraft/textures/block/soul_soil.png")
-block(blockid=ids.block_nether_gold_ore, top_image="assets/minecraft/textures/block/nether_gold_ore.png")
-block(blockid=ids.block_nether_bricks, top_image="assets/minecraft/textures/block/nether_bricks.png")
-block(blockid=ids.block_end_stone, top_image="assets/minecraft/textures/block/end_stone.png")
+block(blockid=ids.block_minecraft__stone, top_image="assets/minecraft/textures/block/stone.png")
+block(blockid=ids.block_minecraft__granite, top_image="assets/minecraft/textures/block/granite.png")
+block(blockid=ids.block_minecraft__polished_granite, top_image="assets/minecraft/textures/block/polished_granite.png")
+block(blockid=ids.block_minecraft__diorite, top_image="assets/minecraft/textures/block/diorite.png")
+block(blockid=ids.block_minecraft__polished_diorite, top_image="assets/minecraft/textures/block/polished_diorite.png")
+block(blockid=ids.block_minecraft__andesite, top_image="assets/minecraft/textures/block/andesite.png")
+block(blockid=ids.block_minecraft__polished_andesite, top_image="assets/minecraft/textures/block/polished_andesite.png")
+block(blockid=ids.block_minecraft__dirt, top_image="assets/minecraft/textures/block/dirt.png")
+block(blockid=ids.block_minecraft__coarse_dirt, top_image="assets/minecraft/textures/block/coarse_dirt.png")
+block(blockid=ids.block_minecraft__podzol, top_image="assets/minecraft/textures/block/podzol_top.png", side_image="assets/minecraft/textures/block/podzol_side.png")
+block(blockid=ids.block_minecraft__cobblestone, top_image="assets/minecraft/textures/block/cobblestone.png")
+block(blockid=ids.block_minecraft__oak_planks, top_image="assets/minecraft/textures/block/oak_planks.png")
+block(blockid=ids.block_minecraft__spruce_planks, top_image="assets/minecraft/textures/block/spruce_planks.png")
+block(blockid=ids.block_minecraft__birch_planks, top_image="assets/minecraft/textures/block/birch_planks.png")
+block(blockid=ids.block_minecraft__jungle_planks, top_image="assets/minecraft/textures/block/jungle_planks.png")
+block(blockid=ids.block_minecraft__acacia_planks, top_image="assets/minecraft/textures/block/acacia_planks.png")
+block(blockid=ids.block_minecraft__dark_oak_planks, top_image="assets/minecraft/textures/block/dark_oak_planks.png")
+block(blockid=ids.block_minecraft__crimson_planks, top_image="assets/minecraft/textures/block/crimson_planks.png")
+block(blockid=ids.block_minecraft__warped_planks, top_image="assets/minecraft/textures/block/warped_planks.png")
+block(blockid=ids.block_minecraft__bedrock, top_image="assets/minecraft/textures/block/bedrock.png")
+block(blockid=ids.block_minecraft__sand, top_image="assets/minecraft/textures/block/sand.png")
+block(blockid=ids.block_minecraft__red_sand, top_image="assets/minecraft/textures/block/red_sand.png")
+block(blockid=ids.block_minecraft__gravel, top_image="assets/minecraft/textures/block/gravel.png")
+block(blockid=ids.block_minecraft__gold_ore, top_image="assets/minecraft/textures/block/gold_ore.png")
+block(blockid=ids.block_minecraft__iron_ore, top_image="assets/minecraft/textures/block/iron_ore.png")
+block(blockid=ids.block_minecraft__coal_ore, top_image="assets/minecraft/textures/block/coal_ore.png")
+block(blockid=ids.block_minecraft__sponge, top_image="assets/minecraft/textures/block/sponge.png")
+block(blockid=ids.block_minecraft__wet_sponge, top_image="assets/minecraft/textures/block/sponge.png")
+block(blockid=ids.block_minecraft__lapis_ore, top_image="assets/minecraft/textures/block/lapis_ore.png")
+block(blockid=ids.block_minecraft__lapis_block, top_image="assets/minecraft/textures/block/lapis_block.png")
+block(blockid=ids.block_minecraft__sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png", side_image="assets/minecraft/textures/block/sandstone.png")
+block(blockid=ids.block_minecraft__chiseled_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png", side_image="assets/minecraft/textures/block/chiseled_sandstone.png")
+block(blockid=ids.block_minecraft__cut_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png", side_image="assets/minecraft/textures/block/cut_sandstone.png")
+block(blockid=ids.block_minecraft__note_block, top_image="assets/minecraft/textures/block/note_block.png")
+block(blockid=ids.block_minecraft__chiseled_red_sandstone, top_image="assets/minecraft/textures/block/red_sandstone_top.png", side_image="assets/minecraft/textures/block/chiseled_red_sandstone.png")
+block(blockid=ids.block_minecraft__cut_red_sandstone, top_image="assets/minecraft/textures/block/red_sandstone_top.png", side_image="assets/minecraft/textures/block/cut_red_sandstone.png")
+sprite(blockid=ids.block_minecraft__cobweb, imagename="assets/minecraft/textures/block/cobweb.png", nospawn=True)
+block(blockid=ids.block_minecraft__white_wool, top_image="assets/minecraft/textures/block/white_wool.png")
+block(blockid=ids.block_minecraft__orange_wool, top_image="assets/minecraft/textures/block/orange_wool.png")
+block(blockid=ids.block_minecraft__magenta_wool, top_image="assets/minecraft/textures/block/magenta_wool.png")
+block(blockid=ids.block_minecraft__light_blue_wool, top_image="assets/minecraft/textures/block/light_blue_wool.png")
+block(blockid=ids.block_minecraft__yellow_wool, top_image="assets/minecraft/textures/block/yellow_wool.png")
+block(blockid=ids.block_minecraft__lime_wool, top_image="assets/minecraft/textures/block/lime_wool.png")
+block(blockid=ids.block_minecraft__pink_wool, top_image="assets/minecraft/textures/block/pink_wool.png")
+block(blockid=ids.block_minecraft__gray_wool, top_image="assets/minecraft/textures/block/gray_wool.png")
+block(blockid=ids.block_minecraft__light_gray_wool, top_image="assets/minecraft/textures/block/light_gray_wool.png")
+block(blockid=ids.block_minecraft__cyan_wool, top_image="assets/minecraft/textures/block/cyan_wool.png")
+block(blockid=ids.block_minecraft__purple_wool, top_image="assets/minecraft/textures/block/purple_wool.png")
+block(blockid=ids.block_minecraft__blue_wool, top_image="assets/minecraft/textures/block/blue_wool.png")
+block(blockid=ids.block_minecraft__brown_wool, top_image="assets/minecraft/textures/block/brown_wool.png")
+block(blockid=ids.block_minecraft__green_wool, top_image="assets/minecraft/textures/block/green_wool.png")
+block(blockid=ids.block_minecraft__red_wool, top_image="assets/minecraft/textures/block/red_wool.png")
+block(blockid=ids.block_minecraft__black_wool, top_image="assets/minecraft/textures/block/black_wool.png")
+block(blockid=ids.block_minecraft__gold_block, top_image="assets/minecraft/textures/block/gold_block.png")
+block(blockid=ids.block_minecraft__iron_block, top_image="assets/minecraft/textures/block/iron_block.png")
+block(blockid=ids.block_minecraft__bricks, top_image="assets/minecraft/textures/block/bricks.png")
+block(blockid=ids.block_minecraft__tnt, top_image="assets/minecraft/textures/block/tnt_top.png", side_image="assets/minecraft/textures/block/tnt_side.png", nospawn=True)
+block(blockid=ids.block_minecraft__bookshelf, top_image="assets/minecraft/textures/block/oak_planks.png", side_image="assets/minecraft/textures/block/bookshelf.png")
+block(blockid=ids.block_minecraft__mossy_cobblestone, top_image="assets/minecraft/textures/block/mossy_cobblestone.png")
+block(blockid=ids.block_minecraft__obsidian, top_image="assets/minecraft/textures/block/obsidian.png")
+block(blockid=ids.block_minecraft__spawner, top_image="assets/minecraft/textures/block/spawner.png", transparent=True)
+block(blockid=ids.block_minecraft__diamond_ore, top_image="assets/minecraft/textures/block/diamond_ore.png")
+block(blockid=ids.block_minecraft__diamond_block, top_image="assets/minecraft/textures/block/diamond_block.png")
+block(blockid=ids.block_minecraft__redstone_ore, top_image="assets/minecraft/textures/block/redstone_ore.png")
+block(blockid=ids.block_minecraft__snow_block, top_image="assets/minecraft/textures/block/snow.png")
+block(blockid=ids.block_minecraft__clay, top_image="assets/minecraft/textures/block/clay.png")
+block(blockid=ids.block_minecraft__jukebox, top_image="assets/minecraft/textures/block/jukebox_top.png", side_image="assets/minecraft/textures/block/note_block.png")
+block(blockid=ids.block_minecraft__netherrack, top_image="assets/minecraft/textures/block/netherrack.png")
+block(blockid=ids.block_minecraft__soul_sand, top_image="assets/minecraft/textures/block/soul_sand.png")
+block(blockid=ids.block_minecraft__glowstone, top_image="assets/minecraft/textures/block/glowstone.png")
+block(blockid=ids.block_minecraft__shroomlight, top_image="assets/minecraft/textures/block/shroomlight.png")
+block(blockid=ids.block_minecraft__infested_cobblestone, top_image="assets/minecraft/textures/block/cobblestone.png")
+block(blockid=ids.block_minecraft__infested_stone, top_image="assets/minecraft/textures/block/stone.png")
+block(blockid=ids.block_minecraft__infested_stone_bricks, top_image="assets/minecraft/textures/block/stone_bricks.png")
+block(blockid=ids.block_minecraft__infested_mossy_stone_bricks, top_image="assets/minecraft/textures/block/mossy_stone_bricks.png")
+block(blockid=ids.block_minecraft__infested_cracked_stone_bricks, top_image="assets/minecraft/textures/block/cracked_stone_bricks.png")
+block(blockid=ids.block_minecraft__infested_chiseled_stone_bricks, top_image="assets/minecraft/textures/block/chiseled_stone_bricks.png")
+block(blockid=ids.block_minecraft__stone_bricks, top_image="assets/minecraft/textures/block/stone_bricks.png")
+block(blockid=ids.block_minecraft__mossy_stone_bricks, top_image="assets/minecraft/textures/block/mossy_stone_bricks.png")
+block(blockid=ids.block_minecraft__cracked_stone_bricks, top_image="assets/minecraft/textures/block/cracked_stone_bricks.png")
+block(blockid=ids.block_minecraft__chiseled_stone_bricks, top_image="assets/minecraft/textures/block/chiseled_stone_bricks.png")
+block(blockid=ids.block_minecraft__melon, top_image="assets/minecraft/textures/block/melon_top.png", side_image="assets/minecraft/textures/block/melon_side.png", solid=True)
+block(blockid=ids.block_minecraft__mycelium, top_image="assets/minecraft/textures/block/mycelium_top.png", side_image="assets/minecraft/textures/block/mycelium_side.png")
+block(blockid=ids.block_minecraft__warped_nylium, top_image="assets/minecraft/textures/block/warped_nylium.png", side_image="assets/minecraft/textures/block/warped_nylium_side.png")
+block(blockid=ids.block_minecraft__crimson_nylium, top_image="assets/minecraft/textures/block/crimson_nylium.png", side_image="assets/minecraft/textures/block/crimson_nylium_side.png")
+block(blockid=ids.block_minecraft__soul_soil, top_image="assets/minecraft/textures/block/soul_soil.png")
+block(blockid=ids.block_minecraft__nether_gold_ore, top_image="assets/minecraft/textures/block/nether_gold_ore.png")
+block(blockid=ids.block_minecraft__nether_bricks, top_image="assets/minecraft/textures/block/nether_bricks.png")
+block(blockid=ids.block_minecraft__end_stone, top_image="assets/minecraft/textures/block/end_stone.png")
 # NOTE: dragon egg this isn't a block, but I think it's better than nothing
-block(blockid=ids.block_dragon_egg, top_image="assets/minecraft/textures/block/dragon_egg.png")
-block(blockid=ids.block_emerald_ore, top_image="assets/minecraft/textures/block/emerald_ore.png")
-block(blockid=ids.block_emerald_block, top_image="assets/minecraft/textures/block/emerald_block.png")
-block(blockid=ids.block_redstone_block, top_image="assets/minecraft/textures/block/redstone_block.png")
-block(blockid=ids.block_nether_quartz_ore, top_image="assets/minecraft/textures/block/nether_quartz_ore.png")
-block(blockid=[ids.block_quartz_block, ids.block_smooth_quartz], top_image="assets/minecraft/textures/block/quartz_block_top.png", side_image="assets/minecraft/textures/block/quartz_block_side.png")
-block(blockid=ids.block_chiseled_quartz_block, top_image="assets/minecraft/textures/block/chiseled_quartz_block_top.png", side_image="assets/minecraft/textures/block/chiseled_quartz_block.png")
-block(blockid=ids.block_slime_block, top_image="assets/minecraft/textures/block/slime_block.png")
-block(blockid=ids.block_prismarine, top_image="assets/minecraft/textures/block/prismarine.png")
-block(blockid=ids.block_prismarine_bricks, top_image="assets/minecraft/textures/block/prismarine_bricks.png")
-block(blockid=ids.block_dark_prismarine, top_image="assets/minecraft/textures/block/dark_prismarine.png")
-block(blockid=ids.block_sea_lantern, top_image="assets/minecraft/textures/block/sea_lantern.png")
-block(blockid=ids.block_terracotta, top_image="assets/minecraft/textures/block/terracotta.png")
-block(blockid=ids.block_white_terracotta, top_image="assets/minecraft/textures/block/white_terracotta.png")
-block(blockid=ids.block_orange_terracotta, top_image="assets/minecraft/textures/block/orange_terracotta.png")
-block(blockid=ids.block_magenta_terracotta, top_image="assets/minecraft/textures/block/magenta_terracotta.png")
-block(blockid=ids.block_light_blue_terracotta, top_image="assets/minecraft/textures/block/light_blue_terracotta.png")
-block(blockid=ids.block_yellow_terracotta, top_image="assets/minecraft/textures/block/yellow_terracotta.png")
-block(blockid=ids.block_lime_terracotta, top_image="assets/minecraft/textures/block/lime_terracotta.png")
-block(blockid=ids.block_pink_terracotta, top_image="assets/minecraft/textures/block/pink_terracotta.png")
-block(blockid=ids.block_gray_terracotta, top_image="assets/minecraft/textures/block/gray_terracotta.png")
-block(blockid=ids.block_light_gray_terracotta, top_image="assets/minecraft/textures/block/light_gray_terracotta.png")
-block(blockid=ids.block_cyan_terracotta, top_image="assets/minecraft/textures/block/cyan_terracotta.png")
-block(blockid=ids.block_purple_terracotta, top_image="assets/minecraft/textures/block/purple_terracotta.png")
-block(blockid=ids.block_blue_terracotta, top_image="assets/minecraft/textures/block/blue_terracotta.png")
-block(blockid=ids.block_brown_terracotta, top_image="assets/minecraft/textures/block/brown_terracotta.png")
-block(blockid=ids.block_green_terracotta, top_image="assets/minecraft/textures/block/green_terracotta.png")
-block(blockid=ids.block_red_terracotta, top_image="assets/minecraft/textures/block/red_terracotta.png")
-block(blockid=ids.block_black_terracotta, top_image="assets/minecraft/textures/block/black_terracotta.png")
-block(blockid=ids.block_coal_block, top_image="assets/minecraft/textures/block/coal_block.png")
-block(blockid=ids.block_packed_ice, top_image="assets/minecraft/textures/block/packed_ice.png")
-block(blockid=ids.block_blue_ice, top_image="assets/minecraft/textures/block/blue_ice.png")
-block(blockid=ids.block_smooth_stone, top_image="assets/minecraft/textures/block/smooth_stone.png")
-block(blockid=ids.block_smooth_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png")
-block(blockid=ids.block_smooth_red_sandstone, top_image="assets/minecraft/textures/block/red_sandstone_top.png")
-block(blockid=ids.block_brain_coral_block, top_image="assets/minecraft/textures/block/brain_coral_block.png")
-block(blockid=ids.block_bubble_coral_block, top_image="assets/minecraft/textures/block/bubble_coral_block.png")
-block(blockid=ids.block_fire_coral_block, top_image="assets/minecraft/textures/block/fire_coral_block.png")
-block(blockid=ids.block_horn_coral_block, top_image="assets/minecraft/textures/block/horn_coral_block.png")
-block(blockid=ids.block_tube_coral_block, top_image="assets/minecraft/textures/block/tube_coral_block.png")
-block(blockid=ids.block_dead_brain_coral_block, top_image="assets/minecraft/textures/block/dead_brain_coral_block.png")
-block(blockid=ids.block_dead_bubble_coral_block, top_image="assets/minecraft/textures/block/dead_bubble_coral_block.png")
-block(blockid=ids.block_dead_fire_coral_block, top_image="assets/minecraft/textures/block/dead_fire_coral_block.png")
-block(blockid=ids.block_dead_horn_coral_block, top_image="assets/minecraft/textures/block/dead_horn_coral_block.png")
-block(blockid=ids.block_dead_tube_coral_block, top_image="assets/minecraft/textures/block/dead_tube_coral_block.png")
-block(blockid=ids.block_purpur_block, top_image="assets/minecraft/textures/block/purpur_block.png")
-block(blockid=ids.block_end_stone_bricks, top_image="assets/minecraft/textures/block/end_stone_bricks.png")
-block(blockid=ids.block_magma_block, top_image="assets/minecraft/textures/block/magma.png")
-block(blockid=ids.block_nether_wart_block, top_image="assets/minecraft/textures/block/nether_wart_block.png")
-block(blockid=ids.block_warped_wart_block, top_image="assets/minecraft/textures/block/warped_wart_block.png")
-block(blockid=ids.block_red_nether_bricks, top_image="assets/minecraft/textures/block/red_nether_bricks.png")
-block(blockid=ids.block_white_concrete, top_image="assets/minecraft/textures/block/white_concrete.png")
-block(blockid=ids.block_orange_concrete, top_image="assets/minecraft/textures/block/orange_concrete.png")
-block(blockid=ids.block_magenta_concrete, top_image="assets/minecraft/textures/block/magenta_concrete.png")
-block(blockid=ids.block_light_blue_concrete, top_image="assets/minecraft/textures/block/light_blue_concrete.png")
-block(blockid=ids.block_yellow_concrete, top_image="assets/minecraft/textures/block/yellow_concrete.png")
-block(blockid=ids.block_lime_concrete, top_image="assets/minecraft/textures/block/lime_concrete.png")
-block(blockid=ids.block_pink_concrete, top_image="assets/minecraft/textures/block/pink_concrete.png")
-block(blockid=ids.block_gray_concrete, top_image="assets/minecraft/textures/block/gray_concrete.png")
-block(blockid=ids.block_light_gray_concrete, top_image="assets/minecraft/textures/block/light_gray_concrete.png")
-block(blockid=ids.block_cyan_concrete, top_image="assets/minecraft/textures/block/cyan_concrete.png")
-block(blockid=ids.block_purple_concrete, top_image="assets/minecraft/textures/block/purple_concrete.png")
-block(blockid=ids.block_blue_concrete, top_image="assets/minecraft/textures/block/blue_concrete.png")
-block(blockid=ids.block_brown_concrete, top_image="assets/minecraft/textures/block/brown_concrete.png")
-block(blockid=ids.block_green_concrete, top_image="assets/minecraft/textures/block/green_concrete.png")
-block(blockid=ids.block_red_concrete, top_image="assets/minecraft/textures/block/red_concrete.png")
-block(blockid=ids.block_black_concrete, top_image="assets/minecraft/textures/block/black_concrete.png")
-block(blockid=ids.block_white_concrete_powder, top_image="assets/minecraft/textures/block/white_concrete_powder.png")
-block(blockid=ids.block_orange_concrete_powder, top_image="assets/minecraft/textures/block/orange_concrete_powder.png")
-block(blockid=ids.block_magenta_concrete_powder, top_image="assets/minecraft/textures/block/magenta_concrete_powder.png")
-block(blockid=ids.block_light_blue_concrete_powder, top_image="assets/minecraft/textures/block/light_blue_concrete_powder.png")
-block(blockid=ids.block_yellow_concrete_powder, top_image="assets/minecraft/textures/block/yellow_concrete_powder.png")
-block(blockid=ids.block_lime_concrete_powder, top_image="assets/minecraft/textures/block/lime_concrete_powder.png")
-block(blockid=ids.block_pink_concrete_powder, top_image="assets/minecraft/textures/block/pink_concrete_powder.png")
-block(blockid=ids.block_gray_concrete_powder, top_image="assets/minecraft/textures/block/gray_concrete_powder.png")
-block(blockid=ids.block_light_gray_concrete_powder, top_image="assets/minecraft/textures/block/light_gray_concrete_powder.png")
-block(blockid=ids.block_cyan_concrete_powder, top_image="assets/minecraft/textures/block/cyan_concrete_powder.png")
-block(blockid=ids.block_purple_concrete_powder, top_image="assets/minecraft/textures/block/purple_concrete_powder.png")
-block(blockid=ids.block_blue_concrete_powder, top_image="assets/minecraft/textures/block/blue_concrete_powder.png")
-block(blockid=ids.block_brown_concrete_powder, top_image="assets/minecraft/textures/block/brown_concrete_powder.png")
-block(blockid=ids.block_green_concrete_powder, top_image="assets/minecraft/textures/block/green_concrete_powder.png")
-block(blockid=ids.block_red_concrete_powder, top_image="assets/minecraft/textures/block/red_concrete_powder.png")
-block(blockid=ids.block_black_concrete_powder, top_image="assets/minecraft/textures/block/black_concrete_powder.png")
-block(blockid=ids.block_dried_kelp_block, top_image="assets/minecraft/textures/block/dried_kelp_top.png", side_image="assets/minecraft/textures/block/dried_kelp_side.png")
-block(blockid=ids.block_scaffolding, top_image="assets/minecraft/textures/block/scaffolding_top.png", side_image="assets/minecraft/textures/block/scaffolding_side.png", solid=False, transparent=True)
-block(blockid=ids.block_honeycomb_block, top_image="assets/minecraft/textures/block/honeycomb_block.png")
-block(blockid=ids.block_honey_block, top_image="assets/minecraft/textures/block/honey_block_top.png", side_image="assets/minecraft/textures/block/honey_block_side.png")
-block(blockid=ids.block_ancient_debris, top_image="assets/minecraft/textures/block/ancient_debris_top.png", side_image="assets/minecraft/textures/block/ancient_debris_side.png")
-block(blockid=ids.block_blackstone, top_image="assets/minecraft/textures/block/blackstone_top.png", side_image="assets/minecraft/textures/block/blackstone.png")
-block(blockid=ids.block_netherite_block, top_image="assets/minecraft/textures/block/netherite_block.png")
-block(blockid=ids.block_polished_blackstone_bricks, top_image="assets/minecraft/textures/block/polished_blackstone_bricks.png")
-block(blockid=ids.block_polished_blackstone, top_image="assets/minecraft/textures/block/polished_blackstone.png")
-block(blockid=ids.block_gilded_blackstone, top_image="assets/minecraft/textures/block/gilded_blackstone.png")
-block(blockid=ids.block_lodestone, top_image="assets/minecraft/textures/block/lodestone_top.png", side_image="assets/minecraft/textures/block/lodestone_side.png")
-block(blockid=ids.block_crying_obsidian, top_image="assets/minecraft/textures/block/crying_obsidian.png")
-block(blockid=ids.block_target, top_image="assets/minecraft/textures/block/target_top.png", side_image="assets/minecraft/textures/block/target_side.png"),
-block(blockid=ids.block_cracked_polished_blackstone_bricks, top_image="assets/minecraft/textures/block/cracked_polished_blackstone_bricks.png"),
-block(blockid=ids.block_chiseled_polished_blackstone, top_image="assets/minecraft/textures/block/chiseled_polished_blackstone.png"),
-block(blockid=ids.block_chiseled_nether_bricks, top_image="assets/minecraft/textures/block/chiseled_nether_bricks.png"),
-block(blockid=ids.block_cracked_nether_bricks, top_image="assets/minecraft/textures/block/cracked_nether_bricks.png"),
-block(blockid=ids.block_quartz_bricks, top_image="assets/minecraft/textures/block/quartz_bricks.png"),
+block(blockid=ids.block_minecraft__dragon_egg, top_image="assets/minecraft/textures/block/dragon_egg.png")
+block(blockid=ids.block_minecraft__emerald_ore, top_image="assets/minecraft/textures/block/emerald_ore.png")
+block(blockid=ids.block_minecraft__emerald_block, top_image="assets/minecraft/textures/block/emerald_block.png")
+block(blockid=ids.block_minecraft__redstone_block, top_image="assets/minecraft/textures/block/redstone_block.png")
+block(blockid=ids.block_minecraft__nether_quartz_ore, top_image="assets/minecraft/textures/block/nether_quartz_ore.png")
+block(blockid=[ids.block_minecraft__quartz_block, ids.block_minecraft__smooth_quartz], top_image="assets/minecraft/textures/block/quartz_block_top.png", side_image="assets/minecraft/textures/block/quartz_block_side.png")
+block(blockid=ids.block_minecraft__chiseled_quartz_block, top_image="assets/minecraft/textures/block/chiseled_quartz_block_top.png", side_image="assets/minecraft/textures/block/chiseled_quartz_block.png")
+block(blockid=ids.block_minecraft__slime_block, top_image="assets/minecraft/textures/block/slime_block.png")
+block(blockid=ids.block_minecraft__prismarine, top_image="assets/minecraft/textures/block/prismarine.png")
+block(blockid=ids.block_minecraft__prismarine_bricks, top_image="assets/minecraft/textures/block/prismarine_bricks.png")
+block(blockid=ids.block_minecraft__dark_prismarine, top_image="assets/minecraft/textures/block/dark_prismarine.png")
+block(blockid=ids.block_minecraft__sea_lantern, top_image="assets/minecraft/textures/block/sea_lantern.png")
+block(blockid=ids.block_minecraft__terracotta, top_image="assets/minecraft/textures/block/terracotta.png")
+block(blockid=ids.block_minecraft__white_terracotta, top_image="assets/minecraft/textures/block/white_terracotta.png")
+block(blockid=ids.block_minecraft__orange_terracotta, top_image="assets/minecraft/textures/block/orange_terracotta.png")
+block(blockid=ids.block_minecraft__magenta_terracotta, top_image="assets/minecraft/textures/block/magenta_terracotta.png")
+block(blockid=ids.block_minecraft__light_blue_terracotta, top_image="assets/minecraft/textures/block/light_blue_terracotta.png")
+block(blockid=ids.block_minecraft__yellow_terracotta, top_image="assets/minecraft/textures/block/yellow_terracotta.png")
+block(blockid=ids.block_minecraft__lime_terracotta, top_image="assets/minecraft/textures/block/lime_terracotta.png")
+block(blockid=ids.block_minecraft__pink_terracotta, top_image="assets/minecraft/textures/block/pink_terracotta.png")
+block(blockid=ids.block_minecraft__gray_terracotta, top_image="assets/minecraft/textures/block/gray_terracotta.png")
+block(blockid=ids.block_minecraft__light_gray_terracotta, top_image="assets/minecraft/textures/block/light_gray_terracotta.png")
+block(blockid=ids.block_minecraft__cyan_terracotta, top_image="assets/minecraft/textures/block/cyan_terracotta.png")
+block(blockid=ids.block_minecraft__purple_terracotta, top_image="assets/minecraft/textures/block/purple_terracotta.png")
+block(blockid=ids.block_minecraft__blue_terracotta, top_image="assets/minecraft/textures/block/blue_terracotta.png")
+block(blockid=ids.block_minecraft__brown_terracotta, top_image="assets/minecraft/textures/block/brown_terracotta.png")
+block(blockid=ids.block_minecraft__green_terracotta, top_image="assets/minecraft/textures/block/green_terracotta.png")
+block(blockid=ids.block_minecraft__red_terracotta, top_image="assets/minecraft/textures/block/red_terracotta.png")
+block(blockid=ids.block_minecraft__black_terracotta, top_image="assets/minecraft/textures/block/black_terracotta.png")
+block(blockid=ids.block_minecraft__coal_block, top_image="assets/minecraft/textures/block/coal_block.png")
+block(blockid=ids.block_minecraft__packed_ice, top_image="assets/minecraft/textures/block/packed_ice.png")
+block(blockid=ids.block_minecraft__blue_ice, top_image="assets/minecraft/textures/block/blue_ice.png")
+block(blockid=ids.block_minecraft__smooth_stone, top_image="assets/minecraft/textures/block/smooth_stone.png")
+block(blockid=ids.block_minecraft__smooth_sandstone, top_image="assets/minecraft/textures/block/sandstone_top.png")
+block(blockid=ids.block_minecraft__smooth_red_sandstone, top_image="assets/minecraft/textures/block/red_sandstone_top.png")
+block(blockid=ids.block_minecraft__brain_coral_block, top_image="assets/minecraft/textures/block/brain_coral_block.png")
+block(blockid=ids.block_minecraft__bubble_coral_block, top_image="assets/minecraft/textures/block/bubble_coral_block.png")
+block(blockid=ids.block_minecraft__fire_coral_block, top_image="assets/minecraft/textures/block/fire_coral_block.png")
+block(blockid=ids.block_minecraft__horn_coral_block, top_image="assets/minecraft/textures/block/horn_coral_block.png")
+block(blockid=ids.block_minecraft__tube_coral_block, top_image="assets/minecraft/textures/block/tube_coral_block.png")
+block(blockid=ids.block_minecraft__dead_brain_coral_block, top_image="assets/minecraft/textures/block/dead_brain_coral_block.png")
+block(blockid=ids.block_minecraft__dead_bubble_coral_block, top_image="assets/minecraft/textures/block/dead_bubble_coral_block.png")
+block(blockid=ids.block_minecraft__dead_fire_coral_block, top_image="assets/minecraft/textures/block/dead_fire_coral_block.png")
+block(blockid=ids.block_minecraft__dead_horn_coral_block, top_image="assets/minecraft/textures/block/dead_horn_coral_block.png")
+block(blockid=ids.block_minecraft__dead_tube_coral_block, top_image="assets/minecraft/textures/block/dead_tube_coral_block.png")
+block(blockid=ids.block_minecraft__purpur_block, top_image="assets/minecraft/textures/block/purpur_block.png")
+block(blockid=ids.block_minecraft__end_stone_bricks, top_image="assets/minecraft/textures/block/end_stone_bricks.png")
+block(blockid=ids.block_minecraft__magma_block, top_image="assets/minecraft/textures/block/magma.png")
+block(blockid=ids.block_minecraft__nether_wart_block, top_image="assets/minecraft/textures/block/nether_wart_block.png")
+block(blockid=ids.block_minecraft__warped_wart_block, top_image="assets/minecraft/textures/block/warped_wart_block.png")
+block(blockid=ids.block_minecraft__red_nether_bricks, top_image="assets/minecraft/textures/block/red_nether_bricks.png")
+block(blockid=ids.block_minecraft__white_concrete, top_image="assets/minecraft/textures/block/white_concrete.png")
+block(blockid=ids.block_minecraft__orange_concrete, top_image="assets/minecraft/textures/block/orange_concrete.png")
+block(blockid=ids.block_minecraft__magenta_concrete, top_image="assets/minecraft/textures/block/magenta_concrete.png")
+block(blockid=ids.block_minecraft__light_blue_concrete, top_image="assets/minecraft/textures/block/light_blue_concrete.png")
+block(blockid=ids.block_minecraft__yellow_concrete, top_image="assets/minecraft/textures/block/yellow_concrete.png")
+block(blockid=ids.block_minecraft__lime_concrete, top_image="assets/minecraft/textures/block/lime_concrete.png")
+block(blockid=ids.block_minecraft__pink_concrete, top_image="assets/minecraft/textures/block/pink_concrete.png")
+block(blockid=ids.block_minecraft__gray_concrete, top_image="assets/minecraft/textures/block/gray_concrete.png")
+block(blockid=ids.block_minecraft__light_gray_concrete, top_image="assets/minecraft/textures/block/light_gray_concrete.png")
+block(blockid=ids.block_minecraft__cyan_concrete, top_image="assets/minecraft/textures/block/cyan_concrete.png")
+block(blockid=ids.block_minecraft__purple_concrete, top_image="assets/minecraft/textures/block/purple_concrete.png")
+block(blockid=ids.block_minecraft__blue_concrete, top_image="assets/minecraft/textures/block/blue_concrete.png")
+block(blockid=ids.block_minecraft__brown_concrete, top_image="assets/minecraft/textures/block/brown_concrete.png")
+block(blockid=ids.block_minecraft__green_concrete, top_image="assets/minecraft/textures/block/green_concrete.png")
+block(blockid=ids.block_minecraft__red_concrete, top_image="assets/minecraft/textures/block/red_concrete.png")
+block(blockid=ids.block_minecraft__black_concrete, top_image="assets/minecraft/textures/block/black_concrete.png")
+block(blockid=ids.block_minecraft__white_concrete_powder, top_image="assets/minecraft/textures/block/white_concrete_powder.png")
+block(blockid=ids.block_minecraft__orange_concrete_powder, top_image="assets/minecraft/textures/block/orange_concrete_powder.png")
+block(blockid=ids.block_minecraft__magenta_concrete_powder, top_image="assets/minecraft/textures/block/magenta_concrete_powder.png")
+block(blockid=ids.block_minecraft__light_blue_concrete_powder, top_image="assets/minecraft/textures/block/light_blue_concrete_powder.png")
+block(blockid=ids.block_minecraft__yellow_concrete_powder, top_image="assets/minecraft/textures/block/yellow_concrete_powder.png")
+block(blockid=ids.block_minecraft__lime_concrete_powder, top_image="assets/minecraft/textures/block/lime_concrete_powder.png")
+block(blockid=ids.block_minecraft__pink_concrete_powder, top_image="assets/minecraft/textures/block/pink_concrete_powder.png")
+block(blockid=ids.block_minecraft__gray_concrete_powder, top_image="assets/minecraft/textures/block/gray_concrete_powder.png")
+block(blockid=ids.block_minecraft__light_gray_concrete_powder, top_image="assets/minecraft/textures/block/light_gray_concrete_powder.png")
+block(blockid=ids.block_minecraft__cyan_concrete_powder, top_image="assets/minecraft/textures/block/cyan_concrete_powder.png")
+block(blockid=ids.block_minecraft__purple_concrete_powder, top_image="assets/minecraft/textures/block/purple_concrete_powder.png")
+block(blockid=ids.block_minecraft__blue_concrete_powder, top_image="assets/minecraft/textures/block/blue_concrete_powder.png")
+block(blockid=ids.block_minecraft__brown_concrete_powder, top_image="assets/minecraft/textures/block/brown_concrete_powder.png")
+block(blockid=ids.block_minecraft__green_concrete_powder, top_image="assets/minecraft/textures/block/green_concrete_powder.png")
+block(blockid=ids.block_minecraft__red_concrete_powder, top_image="assets/minecraft/textures/block/red_concrete_powder.png")
+block(blockid=ids.block_minecraft__black_concrete_powder, top_image="assets/minecraft/textures/block/black_concrete_powder.png")
+block(blockid=ids.block_minecraft__dried_kelp_block, top_image="assets/minecraft/textures/block/dried_kelp_top.png", side_image="assets/minecraft/textures/block/dried_kelp_side.png")
+block(blockid=ids.block_minecraft__scaffolding, top_image="assets/minecraft/textures/block/scaffolding_top.png", side_image="assets/minecraft/textures/block/scaffolding_side.png", solid=False, transparent=True)
+block(blockid=ids.block_minecraft__honeycomb_block, top_image="assets/minecraft/textures/block/honeycomb_block.png")
+block(blockid=ids.block_minecraft__honey_block, top_image="assets/minecraft/textures/block/honey_block_top.png", side_image="assets/minecraft/textures/block/honey_block_side.png")
+block(blockid=ids.block_minecraft__ancient_debris, top_image="assets/minecraft/textures/block/ancient_debris_top.png", side_image="assets/minecraft/textures/block/ancient_debris_side.png")
+block(blockid=ids.block_minecraft__blackstone, top_image="assets/minecraft/textures/block/blackstone_top.png", side_image="assets/minecraft/textures/block/blackstone.png")
+block(blockid=ids.block_minecraft__netherite_block, top_image="assets/minecraft/textures/block/netherite_block.png")
+block(blockid=ids.block_minecraft__polished_blackstone_bricks, top_image="assets/minecraft/textures/block/polished_blackstone_bricks.png")
+block(blockid=ids.block_minecraft__polished_blackstone, top_image="assets/minecraft/textures/block/polished_blackstone.png")
+block(blockid=ids.block_minecraft__gilded_blackstone, top_image="assets/minecraft/textures/block/gilded_blackstone.png")
+block(blockid=ids.block_minecraft__lodestone, top_image="assets/minecraft/textures/block/lodestone_top.png", side_image="assets/minecraft/textures/block/lodestone_side.png")
+block(blockid=ids.block_minecraft__crying_obsidian, top_image="assets/minecraft/textures/block/crying_obsidian.png")
+block(blockid=ids.block_minecraft__target, top_image="assets/minecraft/textures/block/target_top.png", side_image="assets/minecraft/textures/block/target_side.png"),
+block(blockid=ids.block_minecraft__cracked_polished_blackstone_bricks, top_image="assets/minecraft/textures/block/cracked_polished_blackstone_bricks.png"),
+block(blockid=ids.block_minecraft__chiseled_polished_blackstone, top_image="assets/minecraft/textures/block/chiseled_polished_blackstone.png"),
+block(blockid=ids.block_minecraft__chiseled_nether_bricks, top_image="assets/minecraft/textures/block/chiseled_nether_bricks.png"),
+block(blockid=ids.block_minecraft__cracked_nether_bricks, top_image="assets/minecraft/textures/block/cracked_nether_bricks.png"),
+block(blockid=ids.block_minecraft__quartz_bricks, top_image="assets/minecraft/textures/block/quartz_bricks.png"),
 
 # simple sprite
-sprite(blockid=ids.block_oak_sapling, imagename="assets/minecraft/textures/block/oak_sapling.png")
-sprite(blockid=ids.block_spruce_sapling, imagename="assets/minecraft/textures/block/spruce_sapling.png")
-sprite(blockid=ids.block_birch_sapling, imagename="assets/minecraft/textures/block/birch_sapling.png")
-sprite(blockid=ids.block_jungle_sapling, imagename="assets/minecraft/textures/block/jungle_sapling.png")
-sprite(blockid=ids.block_acacia_sapling, imagename="assets/minecraft/textures/block/acacia_sapling.png")
-sprite(blockid=ids.block_dark_oak_sapling, imagename="assets/minecraft/textures/block/dark_oak_sapling.png")
-sprite(blockid=ids.block_bamboo_sapling, imagename="assets/minecraft/textures/block/bamboo_stage0.png")
-sprite(blockid=ids.block_fern, imagename="assets/minecraft/textures/block/fern.png")
-sprite(blockid=ids.block_dead_bush, imagename="assets/minecraft/textures/block/dead_bush.png")
-sprite(blockid=ids.block_grass, imagename="assets/minecraft/textures/block/grass.png")
-sprite(blockid=ids.block_poppy, imagename="assets/minecraft/textures/block/poppy.png")
-sprite(blockid=ids.block_blue_orchid, imagename="assets/minecraft/textures/block/blue_orchid.png")
-sprite(blockid=ids.block_allium, imagename="assets/minecraft/textures/block/allium.png")
-sprite(blockid=ids.block_azure_bluet, imagename="assets/minecraft/textures/block/azure_bluet.png")
-sprite(blockid=ids.block_red_tulip, imagename="assets/minecraft/textures/block/red_tulip.png")
-sprite(blockid=ids.block_orange_tulip, imagename="assets/minecraft/textures/block/orange_tulip.png")
-sprite(blockid=ids.block_white_tulip, imagename="assets/minecraft/textures/block/white_tulip.png")
-sprite(blockid=ids.block_pink_tulip, imagename="assets/minecraft/textures/block/pink_tulip.png")
-sprite(blockid=ids.block_oxeye_daisy, imagename="assets/minecraft/textures/block/oxeye_daisy.png")
-sprite(blockid=ids.block_dandelion, imagename="assets/minecraft/textures/block/dandelion.png")
-sprite(blockid=ids.block_wither_rose, imagename="assets/minecraft/textures/block/wither_rose.png")
-sprite(blockid=ids.block_cornflower, imagename="assets/minecraft/textures/block/cornflower.png")
-sprite(blockid=ids.block_lily_of_the_valley, imagename="assets/minecraft/textures/block/lily_of_the_valley.png")
-sprite(blockid=ids.block_brown_mushroom, imagename="assets/minecraft/textures/block/brown_mushroom.png")
-sprite(blockid=ids.block_red_mushroom, imagename="assets/minecraft/textures/block/red_mushroom.png")
-sprite(blockid=ids.block_warped_fungus, imagename="assets/minecraft/textures/block/warped_fungus.png")
-sprite(blockid=ids.block_crimson_fungus, imagename="assets/minecraft/textures/block/crimson_fungus.png")
-sprite(blockid=ids.block_warped_roots, imagename="assets/minecraft/textures/block/warped_roots.png")
-sprite(blockid=ids.block_crimson_roots, imagename="assets/minecraft/textures/block/crimson_roots.png")
-sprite(blockid=ids.block_sugar_cane, imagename="assets/minecraft/textures/block/sugar_cane.png")
-sprite(blockid=ids.block_nether_sprouts, imagename="assets/minecraft/textures/block/nether_sprouts.png")
-sprite(blockid=ids.block_dead_brain_coral, imagename="assets/minecraft/textures/block/dead_brain_coral.png")
-sprite(blockid=ids.block_dead_bubble_coral, imagename="assets/minecraft/textures/block/dead_bubble_coral.png")
-sprite(blockid=ids.block_dead_fire_coral, imagename="assets/minecraft/textures/block/dead_fire_coral.png")
-sprite(blockid=ids.block_dead_horn_coral, imagename="assets/minecraft/textures/block/dead_horn_coral.png")
-sprite(blockid=ids.block_dead_tube_coral, imagename="assets/minecraft/textures/block/dead_tube_coral.png")
-sprite(blockid=ids.block_dead_tube_coral_fan, imagename="assets/minecraft/textures/block/dead_tube_coral_fan.png")
-sprite(blockid=ids.block_dead_brain_coral_fan, imagename="assets/minecraft/textures/block/dead_brain_coral_fan.png")
-sprite(blockid=ids.block_dead_bubble_coral_fan, imagename="assets/minecraft/textures/block/dead_bubble_coral_fan.png")
-sprite(blockid=ids.block_dead_fire_coral_fan, imagename="assets/minecraft/textures/block/dead_fire_coral_fan.png")
-sprite(blockid=ids.block_dead_horn_coral_fan, imagename="assets/minecraft/textures/block/dead_horn_coral_fan.png")
-sprite(blockid=ids.block_tube_coral, imagename="assets/minecraft/textures/block/tube_coral.png")
-sprite(blockid=ids.block_brain_coral, imagename="assets/minecraft/textures/block/brain_coral.png")
-sprite(blockid=ids.block_bubble_coral, imagename="assets/minecraft/textures/block/bubble_coral.png")
-sprite(blockid=ids.block_fire_coral, imagename="assets/minecraft/textures/block/fire_coral.png")
-sprite(blockid=ids.block_horn_coral, imagename="assets/minecraft/textures/block/horn_coral.png")
-sprite(blockid=ids.block_tube_coral_fan, imagename="assets/minecraft/textures/block/tube_coral_fan.png")
-sprite(blockid=ids.block_brain_coral_fan, imagename="assets/minecraft/textures/block/brain_coral_fan.png")
-sprite(blockid=ids.block_bubble_coral_fan, imagename="assets/minecraft/textures/block/bubble_coral_fan.png")
-sprite(blockid=ids.block_fire_coral_fan, imagename="assets/minecraft/textures/block/fire_coral_fan.png")
-sprite(blockid=ids.block_horn_coral_fan, imagename="assets/minecraft/textures/block/horn_coral_fan.png")
+sprite(blockid=ids.block_minecraft__oak_sapling, imagename="assets/minecraft/textures/block/oak_sapling.png")
+sprite(blockid=ids.block_minecraft__spruce_sapling, imagename="assets/minecraft/textures/block/spruce_sapling.png")
+sprite(blockid=ids.block_minecraft__birch_sapling, imagename="assets/minecraft/textures/block/birch_sapling.png")
+sprite(blockid=ids.block_minecraft__jungle_sapling, imagename="assets/minecraft/textures/block/jungle_sapling.png")
+sprite(blockid=ids.block_minecraft__acacia_sapling, imagename="assets/minecraft/textures/block/acacia_sapling.png")
+sprite(blockid=ids.block_minecraft__dark_oak_sapling, imagename="assets/minecraft/textures/block/dark_oak_sapling.png")
+sprite(blockid=ids.block_minecraft__bamboo_sapling, imagename="assets/minecraft/textures/block/bamboo_stage0.png")
+sprite(blockid=ids.block_minecraft__fern, imagename="assets/minecraft/textures/block/fern.png")
+sprite(blockid=ids.block_minecraft__dead_bush, imagename="assets/minecraft/textures/block/dead_bush.png")
+sprite(blockid=ids.block_minecraft__grass, imagename="assets/minecraft/textures/block/grass.png")
+sprite(blockid=ids.block_minecraft__poppy, imagename="assets/minecraft/textures/block/poppy.png")
+sprite(blockid=ids.block_minecraft__blue_orchid, imagename="assets/minecraft/textures/block/blue_orchid.png")
+sprite(blockid=ids.block_minecraft__allium, imagename="assets/minecraft/textures/block/allium.png")
+sprite(blockid=ids.block_minecraft__azure_bluet, imagename="assets/minecraft/textures/block/azure_bluet.png")
+sprite(blockid=ids.block_minecraft__red_tulip, imagename="assets/minecraft/textures/block/red_tulip.png")
+sprite(blockid=ids.block_minecraft__orange_tulip, imagename="assets/minecraft/textures/block/orange_tulip.png")
+sprite(blockid=ids.block_minecraft__white_tulip, imagename="assets/minecraft/textures/block/white_tulip.png")
+sprite(blockid=ids.block_minecraft__pink_tulip, imagename="assets/minecraft/textures/block/pink_tulip.png")
+sprite(blockid=ids.block_minecraft__oxeye_daisy, imagename="assets/minecraft/textures/block/oxeye_daisy.png")
+sprite(blockid=ids.block_minecraft__dandelion, imagename="assets/minecraft/textures/block/dandelion.png")
+sprite(blockid=ids.block_minecraft__wither_rose, imagename="assets/minecraft/textures/block/wither_rose.png")
+sprite(blockid=ids.block_minecraft__cornflower, imagename="assets/minecraft/textures/block/cornflower.png")
+sprite(blockid=ids.block_minecraft__lily_of_the_valley, imagename="assets/minecraft/textures/block/lily_of_the_valley.png")
+sprite(blockid=ids.block_minecraft__brown_mushroom, imagename="assets/minecraft/textures/block/brown_mushroom.png")
+sprite(blockid=ids.block_minecraft__red_mushroom, imagename="assets/minecraft/textures/block/red_mushroom.png")
+sprite(blockid=ids.block_minecraft__warped_fungus, imagename="assets/minecraft/textures/block/warped_fungus.png")
+sprite(blockid=ids.block_minecraft__crimson_fungus, imagename="assets/minecraft/textures/block/crimson_fungus.png")
+sprite(blockid=ids.block_minecraft__warped_roots, imagename="assets/minecraft/textures/block/warped_roots.png")
+sprite(blockid=ids.block_minecraft__crimson_roots, imagename="assets/minecraft/textures/block/crimson_roots.png")
+sprite(blockid=ids.block_minecraft__sugar_cane, imagename="assets/minecraft/textures/block/sugar_cane.png")
+sprite(blockid=ids.block_minecraft__nether_sprouts, imagename="assets/minecraft/textures/block/nether_sprouts.png")
+sprite(blockid=ids.block_minecraft__dead_brain_coral, imagename="assets/minecraft/textures/block/dead_brain_coral.png")
+sprite(blockid=ids.block_minecraft__dead_bubble_coral, imagename="assets/minecraft/textures/block/dead_bubble_coral.png")
+sprite(blockid=ids.block_minecraft__dead_fire_coral, imagename="assets/minecraft/textures/block/dead_fire_coral.png")
+sprite(blockid=ids.block_minecraft__dead_horn_coral, imagename="assets/minecraft/textures/block/dead_horn_coral.png")
+sprite(blockid=ids.block_minecraft__dead_tube_coral, imagename="assets/minecraft/textures/block/dead_tube_coral.png")
+sprite(blockid=ids.block_minecraft__dead_tube_coral_fan, imagename="assets/minecraft/textures/block/dead_tube_coral_fan.png")
+sprite(blockid=ids.block_minecraft__dead_brain_coral_fan, imagename="assets/minecraft/textures/block/dead_brain_coral_fan.png")
+sprite(blockid=ids.block_minecraft__dead_bubble_coral_fan, imagename="assets/minecraft/textures/block/dead_bubble_coral_fan.png")
+sprite(blockid=ids.block_minecraft__dead_fire_coral_fan, imagename="assets/minecraft/textures/block/dead_fire_coral_fan.png")
+sprite(blockid=ids.block_minecraft__dead_horn_coral_fan, imagename="assets/minecraft/textures/block/dead_horn_coral_fan.png")
+sprite(blockid=ids.block_minecraft__tube_coral, imagename="assets/minecraft/textures/block/tube_coral.png")
+sprite(blockid=ids.block_minecraft__brain_coral, imagename="assets/minecraft/textures/block/brain_coral.png")
+sprite(blockid=ids.block_minecraft__bubble_coral, imagename="assets/minecraft/textures/block/bubble_coral.png")
+sprite(blockid=ids.block_minecraft__fire_coral, imagename="assets/minecraft/textures/block/fire_coral.png")
+sprite(blockid=ids.block_minecraft__horn_coral, imagename="assets/minecraft/textures/block/horn_coral.png")
+sprite(blockid=ids.block_minecraft__tube_coral_fan, imagename="assets/minecraft/textures/block/tube_coral_fan.png")
+sprite(blockid=ids.block_minecraft__brain_coral_fan, imagename="assets/minecraft/textures/block/brain_coral_fan.png")
+sprite(blockid=ids.block_minecraft__bubble_coral_fan, imagename="assets/minecraft/textures/block/bubble_coral_fan.png")
+sprite(blockid=ids.block_minecraft__fire_coral_fan, imagename="assets/minecraft/textures/block/fire_coral_fan.png")
+sprite(blockid=ids.block_minecraft__horn_coral_fan, imagename="assets/minecraft/textures/block/horn_coral_fan.png")
 
 # simple billboard
-billboard(blockid=ids.block_weeping_vines, imagename="assets/minecraft/textures/block/twisting_vines.png")
-billboard(blockid=ids.block_weeping_vines_plant, imagename="assets/minecraft/textures/block/twisting_vines_plant.png")
-billboard(blockid=ids.block_twisting_vines, imagename="assets/minecraft/textures/block/weeping_vines.png")
-billboard(blockid=ids.block_twisting_vines_plant, imagename="assets/minecraft/textures/block/weeping_vines_plant.png")
+billboard(blockid=ids.block_minecraft__weeping_vines, imagename="assets/minecraft/textures/block/twisting_vines.png")
+billboard(blockid=ids.block_minecraft__weeping_vines_plant, imagename="assets/minecraft/textures/block/twisting_vines_plant.png")
+billboard(blockid=ids.block_minecraft__twisting_vines, imagename="assets/minecraft/textures/block/weeping_vines.png")
+billboard(blockid=ids.block_minecraft__twisting_vines_plant, imagename="assets/minecraft/textures/block/weeping_vines_plant.png")
 
 
-@material(blockid=ids.block_grass_block, data=list(range(11)) + [0x10], solid=True)
+@material(blockid=ids.block_minecraft__grass_block, data=list(range(11)) + [0x10], solid=True)
 def grass(self, blockid, data):
     # 0x10 bit means SNOW
     side_img = self.load_image_texture("assets/minecraft/textures/block/grass_block_side.png")
@@ -1243,41 +1243,41 @@ def water(self, blockid, data):
 # uses pseudo-ancildata found in iterate.c
 @material(blockid=ids.group_no_inner_surfaces, data=list(range(512)), transparent=True, nospawn=True, solid=ids.group_no_inner_surfaces)
 def no_inner_surfaces(self, blockid, data):
-    if blockid == ids.block_glass:
+    if blockid == ids.block_minecraft__glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/glass.png")
-    elif blockid == ids.block_white_stained_glass:
+    elif blockid == ids.block_minecraft__white_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/white_stained_glass.png")
-    elif blockid == ids.block_orange_stained_glass:
+    elif blockid == ids.block_minecraft__orange_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/orange_stained_glass.png")
-    elif blockid == ids.block_magenta_stained_glass:
+    elif blockid == ids.block_minecraft__magenta_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/magenta_stained_glass.png")
-    elif blockid == ids.block_light_blue_stained_glass:
+    elif blockid == ids.block_minecraft__light_blue_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/light_blue_stained_glass.png")
-    elif blockid == ids.block_yellow_stained_glass:
+    elif blockid == ids.block_minecraft__yellow_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/yellow_stained_glass.png")
-    elif blockid == ids.block_lime_stained_glass:
+    elif blockid == ids.block_minecraft__lime_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/lime_stained_glass.png")
-    elif blockid == ids.block_pink_stained_glass:
+    elif blockid == ids.block_minecraft__pink_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/pink_stained_glass.png")
-    elif blockid == ids.block_gray_stained_glass:
+    elif blockid == ids.block_minecraft__gray_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/gray_stained_glass.png")
-    elif blockid == ids.block_light_gray_stained_glass:
+    elif blockid == ids.block_minecraft__light_gray_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/light_gray_stained_glass.png")
-    elif blockid == ids.block_cyan_stained_glass:
+    elif blockid == ids.block_minecraft__cyan_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/cyan_stained_glass.png")
-    elif blockid == ids.block_purple_stained_glass:
+    elif blockid == ids.block_minecraft__purple_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/purple_stained_glass.png")
-    elif blockid == ids.block_blue_stained_glass:
+    elif blockid == ids.block_minecraft__blue_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/blue_stained_glass.png")
-    elif blockid == ids.block_brown_stained_glass:
+    elif blockid == ids.block_minecraft__brown_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/brown_stained_glass.png")
-    elif blockid == ids.block_green_stained_glass:
+    elif blockid == ids.block_minecraft__green_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/green_stained_glass.png")
-    elif blockid == ids.block_red_stained_glass:
+    elif blockid == ids.block_minecraft__red_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/red_stained_glass.png")
-    elif blockid == ids.block_black_stained_glass:
+    elif blockid == ids.block_minecraft__black_stained_glass:
         texture = self.load_image_texture("assets/minecraft/textures/block/black_stained_glass.png")
-    elif blockid == ids.block_ice:
+    elif blockid == ids.block_minecraft__ice:
         texture = self.load_image_texture("assets/minecraft/textures/block/ice.png")
 
     # now that we've used the lower 4 bits to get color, shift down to get the 5 bits that encode face hiding
@@ -1316,7 +1316,7 @@ def no_inner_surfaces(self, blockid, data):
     return img
 
 
-@material(blockid=ids.block_lava, data=list(range(16)), fluid=True, transparent=False, nospawn=True)
+@material(blockid=ids.block_minecraft__lava, data=list(range(16)), fluid=True, transparent=False, nospawn=True)
 def lava(self, blockid, data):
     lavatex = self.load_lava()
     return self.build_block(lavatex, lavatex)
@@ -1339,39 +1339,39 @@ def wood_and_bone(self, blockid, data):
             wood_orientation = 4
 
     wood_tex = {
-        ids.block_oak_log: ("assets/minecraft/textures/block/oak_log_top.png", "assets/minecraft/textures/block/oak_log.png"),
-        ids.block_spruce_log: ("assets/minecraft/textures/block/spruce_log_top.png", "assets/minecraft/textures/block/spruce_log.png"),
-        ids.block_birch_log: ("assets/minecraft/textures/block/birch_log_top.png", "assets/minecraft/textures/block/birch_log.png"),
-        ids.block_jungle_log: ("assets/minecraft/textures/block/jungle_log_top.png", "assets/minecraft/textures/block/jungle_log.png"),
-        ids.block_acacia_log: ("assets/minecraft/textures/block/acacia_log_top.png", "assets/minecraft/textures/block/acacia_log.png"),
-        ids.block_dark_oak_log: ("assets/minecraft/textures/block/dark_oak_log_top.png", "assets/minecraft/textures/block/dark_oak_log.png"),
-        ids.block_stripped_oak_log: ("assets/minecraft/textures/block/stripped_oak_log_top.png", "assets/minecraft/textures/block/stripped_oak_log.png"),
-        ids.block_stripped_spruce_log: ("assets/minecraft/textures/block/stripped_spruce_log_top.png", "assets/minecraft/textures/block/stripped_spruce_log.png"),
-        ids.block_stripped_birch_log: ("assets/minecraft/textures/block/stripped_birch_log_top.png", "assets/minecraft/textures/block/stripped_birch_log.png"),
-        ids.block_stripped_jungle_log: ("assets/minecraft/textures/block/stripped_jungle_log_top.png", "assets/minecraft/textures/block/stripped_jungle_log.png"),
-        ids.block_stripped_acacia_log: ("assets/minecraft/textures/block/stripped_acacia_log_top.png", "assets/minecraft/textures/block/stripped_acacia_log.png"),
-        ids.block_stripped_dark_oak_log: ("assets/minecraft/textures/block/stripped_dark_oak_log_top.png", "assets/minecraft/textures/block/stripped_dark_oak_log.png"),
-        ids.block_oak_wood: ("assets/minecraft/textures/block/oak_log.png", "assets/minecraft/textures/block/oak_log.png"),
-        ids.block_spruce_wood: ("assets/minecraft/textures/block/spruce_log.png", "assets/minecraft/textures/block/spruce_log.png"),
-        ids.block_birch_wood: ("assets/minecraft/textures/block/birch_log.png", "assets/minecraft/textures/block/birch_log.png"),
-        ids.block_jungle_wood: ("assets/minecraft/textures/block/jungle_log.png", "assets/minecraft/textures/block/jungle_log.png"),
-        ids.block_acacia_wood: ("assets/minecraft/textures/block/acacia_log.png", "assets/minecraft/textures/block/acacia_log.png"),
-        ids.block_dark_oak_wood: ("assets/minecraft/textures/block/dark_oak_log.png", "assets/minecraft/textures/block/dark_oak_log.png"),
-        ids.block_stripped_oak_wood: ("assets/minecraft/textures/block/stripped_oak_log.png", "assets/minecraft/textures/block/stripped_oak_log.png"),
-        ids.block_stripped_spruce_wood: ("assets/minecraft/textures/block/stripped_spruce_log.png", "assets/minecraft/textures/block/stripped_spruce_log.png"),
-        ids.block_stripped_birch_wood: ("assets/minecraft/textures/block/stripped_birch_log.png", "assets/minecraft/textures/block/stripped_birch_log.png"),
-        ids.block_stripped_jungle_wood: ("assets/minecraft/textures/block/stripped_jungle_log.png", "assets/minecraft/textures/block/stripped_jungle_log.png"),
-        ids.block_stripped_acacia_wood: ("assets/minecraft/textures/block/stripped_acacia_log.png", "assets/minecraft/textures/block/stripped_acacia_log.png"),
-        ids.block_stripped_dark_oak_wood: ("assets/minecraft/textures/block/stripped_dark_oak_log.png", "assets/minecraft/textures/block/stripped_dark_oak_log.png"),
-        ids.block_warped_stem: ("assets/minecraft/textures/block/warped_stem_top.png", "assets/minecraft/textures/block/warped_stem.png"),
-        ids.block_stripped_warped_stem: ("assets/minecraft/textures/block/warped_stem_top.png", "assets/minecraft/textures/block/stripped_warped_stem.png"),
-        ids.block_crimson_stem: ("assets/minecraft/textures/block/crimson_stem_top.png", "assets/minecraft/textures/block/crimson_stem.png"),
-        ids.block_stripped_crimson_stem: ("assets/minecraft/textures/block/crimson_stem_top.png", "assets/minecraft/textures/block/stripped_crimson_stem.png"),
-        ids.block_warped_hyphae: ("assets/minecraft/textures/block/warped_stem.png", "assets/minecraft/textures/block/warped_stem.png"),
-        ids.block_stripped_warped_hyphae: ("assets/minecraft/textures/block/stripped_warped_stem.png", "assets/minecraft/textures/block/stripped_warped_stem.png"),
-        ids.block_crimson_hyphae: ("assets/minecraft/textures/block/crimson_stem.png", "assets/minecraft/textures/block/crimson_stem.png"),
-        ids.block_stripped_crimson_hyphae: ("assets/minecraft/textures/block/stripped_crimson_stem.png", "assets/minecraft/textures/block/stripped_crimson_stem.png"),
-        ids.block_bone_block: ("assets/minecraft/textures/block/bone_block_top.png", "assets/minecraft/textures/block/bone_block_side.png"),
+        ids.block_minecraft__oak_log: ("assets/minecraft/textures/block/oak_log_top.png", "assets/minecraft/textures/block/oak_log.png"),
+        ids.block_minecraft__spruce_log: ("assets/minecraft/textures/block/spruce_log_top.png", "assets/minecraft/textures/block/spruce_log.png"),
+        ids.block_minecraft__birch_log: ("assets/minecraft/textures/block/birch_log_top.png", "assets/minecraft/textures/block/birch_log.png"),
+        ids.block_minecraft__jungle_log: ("assets/minecraft/textures/block/jungle_log_top.png", "assets/minecraft/textures/block/jungle_log.png"),
+        ids.block_minecraft__acacia_log: ("assets/minecraft/textures/block/acacia_log_top.png", "assets/minecraft/textures/block/acacia_log.png"),
+        ids.block_minecraft__dark_oak_log: ("assets/minecraft/textures/block/dark_oak_log_top.png", "assets/minecraft/textures/block/dark_oak_log.png"),
+        ids.block_minecraft__stripped_oak_log: ("assets/minecraft/textures/block/stripped_oak_log_top.png", "assets/minecraft/textures/block/stripped_oak_log.png"),
+        ids.block_minecraft__stripped_spruce_log: ("assets/minecraft/textures/block/stripped_spruce_log_top.png", "assets/minecraft/textures/block/stripped_spruce_log.png"),
+        ids.block_minecraft__stripped_birch_log: ("assets/minecraft/textures/block/stripped_birch_log_top.png", "assets/minecraft/textures/block/stripped_birch_log.png"),
+        ids.block_minecraft__stripped_jungle_log: ("assets/minecraft/textures/block/stripped_jungle_log_top.png", "assets/minecraft/textures/block/stripped_jungle_log.png"),
+        ids.block_minecraft__stripped_acacia_log: ("assets/minecraft/textures/block/stripped_acacia_log_top.png", "assets/minecraft/textures/block/stripped_acacia_log.png"),
+        ids.block_minecraft__stripped_dark_oak_log: ("assets/minecraft/textures/block/stripped_dark_oak_log_top.png", "assets/minecraft/textures/block/stripped_dark_oak_log.png"),
+        ids.block_minecraft__oak_wood: ("assets/minecraft/textures/block/oak_log.png", "assets/minecraft/textures/block/oak_log.png"),
+        ids.block_minecraft__spruce_wood: ("assets/minecraft/textures/block/spruce_log.png", "assets/minecraft/textures/block/spruce_log.png"),
+        ids.block_minecraft__birch_wood: ("assets/minecraft/textures/block/birch_log.png", "assets/minecraft/textures/block/birch_log.png"),
+        ids.block_minecraft__jungle_wood: ("assets/minecraft/textures/block/jungle_log.png", "assets/minecraft/textures/block/jungle_log.png"),
+        ids.block_minecraft__acacia_wood: ("assets/minecraft/textures/block/acacia_log.png", "assets/minecraft/textures/block/acacia_log.png"),
+        ids.block_minecraft__dark_oak_wood: ("assets/minecraft/textures/block/dark_oak_log.png", "assets/minecraft/textures/block/dark_oak_log.png"),
+        ids.block_minecraft__stripped_oak_wood: ("assets/minecraft/textures/block/stripped_oak_log.png", "assets/minecraft/textures/block/stripped_oak_log.png"),
+        ids.block_minecraft__stripped_spruce_wood: ("assets/minecraft/textures/block/stripped_spruce_log.png", "assets/minecraft/textures/block/stripped_spruce_log.png"),
+        ids.block_minecraft__stripped_birch_wood: ("assets/minecraft/textures/block/stripped_birch_log.png", "assets/minecraft/textures/block/stripped_birch_log.png"),
+        ids.block_minecraft__stripped_jungle_wood: ("assets/minecraft/textures/block/stripped_jungle_log.png", "assets/minecraft/textures/block/stripped_jungle_log.png"),
+        ids.block_minecraft__stripped_acacia_wood: ("assets/minecraft/textures/block/stripped_acacia_log.png", "assets/minecraft/textures/block/stripped_acacia_log.png"),
+        ids.block_minecraft__stripped_dark_oak_wood: ("assets/minecraft/textures/block/stripped_dark_oak_log.png", "assets/minecraft/textures/block/stripped_dark_oak_log.png"),
+        ids.block_minecraft__warped_stem: ("assets/minecraft/textures/block/warped_stem_top.png", "assets/minecraft/textures/block/warped_stem.png"),
+        ids.block_minecraft__stripped_warped_stem: ("assets/minecraft/textures/block/warped_stem_top.png", "assets/minecraft/textures/block/stripped_warped_stem.png"),
+        ids.block_minecraft__crimson_stem: ("assets/minecraft/textures/block/crimson_stem_top.png", "assets/minecraft/textures/block/crimson_stem.png"),
+        ids.block_minecraft__stripped_crimson_stem: ("assets/minecraft/textures/block/crimson_stem_top.png", "assets/minecraft/textures/block/stripped_crimson_stem.png"),
+        ids.block_minecraft__warped_hyphae: ("assets/minecraft/textures/block/warped_stem.png", "assets/minecraft/textures/block/warped_stem.png"),
+        ids.block_minecraft__stripped_warped_hyphae: ("assets/minecraft/textures/block/stripped_warped_stem.png", "assets/minecraft/textures/block/stripped_warped_stem.png"),
+        ids.block_minecraft__crimson_hyphae: ("assets/minecraft/textures/block/crimson_stem.png", "assets/minecraft/textures/block/crimson_stem.png"),
+        ids.block_minecraft__stripped_crimson_hyphae: ("assets/minecraft/textures/block/stripped_crimson_stem.png", "assets/minecraft/textures/block/stripped_crimson_stem.png"),
+        ids.block_minecraft__bone_block: ("assets/minecraft/textures/block/bone_block_top.png", "assets/minecraft/textures/block/bone_block_side.png"),
     }
 
     # top_f, side_f = wood_tex[blockid].get(wood_type, wood_tex[blockid][0])
@@ -1396,12 +1396,12 @@ def leaves(self, blockid, data):
     data = data & 0x7
 
     leaves_tex = {
-        ids.block_oak_leaves: "assets/minecraft/textures/block/oak_leaves.png",
-        ids.block_spruce_leaves: "assets/minecraft/textures/block/spruce_leaves.png",
-        ids.block_birch_leaves: "assets/minecraft/textures/block/birch_leaves.png",
-        ids.block_jungle_leaves: "assets/minecraft/textures/block/jungle_leaves.png",
-        ids.block_acacia_leaves: "assets/minecraft/textures/block/acacia_leaves.png",
-        ids.block_dark_oak_leaves: "assets/minecraft/textures/block/dark_oak_leaves.png",
+        ids.block_minecraft__oak_leaves: "assets/minecraft/textures/block/oak_leaves.png",
+        ids.block_minecraft__spruce_leaves: "assets/minecraft/textures/block/spruce_leaves.png",
+        ids.block_minecraft__birch_leaves: "assets/minecraft/textures/block/birch_leaves.png",
+        ids.block_minecraft__jungle_leaves: "assets/minecraft/textures/block/jungle_leaves.png",
+        ids.block_minecraft__acacia_leaves: "assets/minecraft/textures/block/acacia_leaves.png",
+        ids.block_minecraft__dark_oak_leaves: "assets/minecraft/textures/block/dark_oak_leaves.png",
     }
 
     t = self.load_image_texture(leaves_tex[blockid])
@@ -1409,7 +1409,7 @@ def leaves(self, blockid, data):
 
 
 # dispenser, dropper, furnace, blast furnace, and smoker
-@material(blockid=[ids.block_dispenser, ids.block_furnace, ids.block_dropper, ids.block_blast_furnace, ids.block_smoker], data=list(range(14)), solid=True)
+@material(blockid=[ids.block_minecraft__dispenser, ids.block_minecraft__furnace, ids.block_minecraft__dropper, ids.block_minecraft__blast_furnace, ids.block_minecraft__smoker], data=list(range(14)), solid=True)
 def furnaces(self, blockid, data):
     # first, do the rotation if needed
     # Masked as bit 4 indicates whether the block is lit/triggered or not
@@ -1423,19 +1423,19 @@ def furnaces(self, blockid, data):
     top_rotation_map = [0, 0, 180, 0, 270, 90, 0, 0]
 
                    # Dispenser
-    texture_map = {ids.block_dispenser: {'top': 'furnace_top', 'side': 'furnace_side',
+    texture_map = {ids.block_minecraft__dispenser: {'top': 'furnace_top', 'side': 'furnace_side',
                            'front': 'dispenser_front', 'top_vert': 'dispenser_front_vertical'},
                    # Furnace
-                   ids.block_furnace:    {'top': 'furnace_top', 'side': 'furnace_side',
+                   ids.block_minecraft__furnace:    {'top': 'furnace_top', 'side': 'furnace_side',
                            'front': 'furnace_front', 'front_on': 'furnace_front_on'},
                    # Dropper
-                   ids.block_dropper:   {'top': 'furnace_top', 'side': 'furnace_side',
+                   ids.block_minecraft__dropper:   {'top': 'furnace_top', 'side': 'furnace_side',
                            'front': 'dropper_front', 'top_vert': 'dropper_front_vertical'},
                    # Blast furance
-                   ids.block_blast_furnace: {'top': 'blast_furnace_top', 'side': 'blast_furnace_side',
+                   ids.block_minecraft__blast_furnace: {'top': 'blast_furnace_top', 'side': 'blast_furnace_side',
                            'front': 'blast_furnace_front', 'front_on': 'blast_furnace_front_on'},
                    # Smoker
-                   ids.block_smoker: {'top': 'smoker_top', 'side': 'smoker_side',
+                   ids.block_minecraft__smoker: {'top': 'smoker_top', 'side': 'smoker_side',
                            'front': 'smoker_front', 'front_on': 'smoker_front_on'}}
 
     if data & 0b111 in [0, 1] and 'top_vert' in texture_map[blockid]:
@@ -1472,7 +1472,7 @@ def furnaces(self, blockid, data):
         return self.build_full_block(top, None, None, side, side)
 
 # red sandstone
-@material(blockid=ids.block_red_sandstone, data=0, solid=True)
+@material(blockid=ids.block_minecraft__red_sandstone, data=0, solid=True)
 def sandstone(self, blockid, data):
     top = self.load_image_texture("assets/minecraft/textures/block/sandstone_top.png")
     side = self.load_image_texture("assets/minecraft/textures/block/red_sandstone.png")
@@ -1490,37 +1490,37 @@ def bed(self, blockid, data):
     # Masked to not clobber block head/foot & color info
     data = data & 0b11111100 | ((self.rotation + (data & 0b11)) % 4)
 
-    if blockid == ids.block_white_bed:
+    if blockid == ids.block_minecraft__white_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/white.png"
-    elif blockid == ids.block_orange_bed:
+    elif blockid == ids.block_minecraft__orange_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/orange.png"
-    elif blockid == ids.block_magenta_bed:
+    elif blockid == ids.block_minecraft__magenta_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/magenta.png"
-    elif blockid == ids.block_light_blue_bed:
+    elif blockid == ids.block_minecraft__light_blue_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/light_blue.png"
-    elif blockid == ids.block_yellow_bed:
+    elif blockid == ids.block_minecraft__yellow_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/yellow.png"
-    elif blockid == ids.block_lime_bed:
+    elif blockid == ids.block_minecraft__lime_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/lime.png"
-    elif blockid == ids.block_pink_bed:
+    elif blockid == ids.block_minecraft__pink_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/pink.png"
-    elif blockid == ids.block_gray_bed:
+    elif blockid == ids.block_minecraft__gray_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/gray.png"
-    elif blockid == ids.block_light_gray_bed:
+    elif blockid == ids.block_minecraft__light_gray_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/light_gray.png"
-    elif blockid == ids.block_cyan_bed:
+    elif blockid == ids.block_minecraft__cyan_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/cyan.png"
-    elif blockid == ids.block_purple_bed:
+    elif blockid == ids.block_minecraft__purple_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/purple.png"
-    elif blockid == ids.block_blue_bed:
+    elif blockid == ids.block_minecraft__blue_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/blue.png"
-    elif blockid == ids.block_brown_bed:
+    elif blockid == ids.block_minecraft__brown_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/brown.png"
-    elif blockid == ids.block_green_bed:
+    elif blockid == ids.block_minecraft__green_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/green.png"
-    elif blockid == ids.block_red_bed:
+    elif blockid == ids.block_minecraft__red_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/red.png"
-    elif blockid == ids.block_black_bed:
+    elif blockid == ids.block_minecraft__black_bed:
         bed_tex = "assets/minecraft/textures/entity/bed/black.png"
     else:
         bed_tex = "assets/minecraft/textures/entity/bed/red.png"
@@ -1656,7 +1656,7 @@ def rails(self, blockid, data):
     #         elif data == 9: data = 7
     img = Image.new("RGBA", (24, 24), self.bgcolor)
 
-    if blockid == ids.block_powered_rail:  # powered rail
+    if blockid == ids.block_minecraft__powered_rail:  # powered rail
         if data & 0x8 == 0:  # unpowered
             raw_straight = self.load_image_texture("assets/minecraft/textures/block/powered_rail.png")
             raw_corner = self.load_image_texture("assets/minecraft/textures/block/rail_corner.png")    # they don't exist but make the code
@@ -1667,7 +1667,7 @@ def rails(self, blockid, data):
         # filter the 'powered' bit
         data = data & 0x7
 
-    elif blockid == ids.block_detector_rail:  # detector rail
+    elif blockid == ids.block_minecraft__detector_rail:  # detector rail
         if data & 0x8 == 0:  # unpowered
             raw_straight = self.load_image_texture("assets/minecraft/textures/block/detector_rail.png")
             raw_corner = self.load_image_texture("assets/minecraft/textures/block/rail_corner.png")    # leave corners for code simplicity
@@ -1677,11 +1677,11 @@ def rails(self, blockid, data):
         # filter the 'powered' bit
         data = data & 0x7
 
-    elif blockid == ids.block_rail:  # normal rail
+    elif blockid == ids.block_minecraft__rail:  # normal rail
         raw_straight = self.load_image_texture("assets/minecraft/textures/block/rail.png")
         raw_corner = self.load_image_texture("assets/minecraft/textures/block/rail_corner.png")
 
-    elif blockid == ids.block_activator_rail:  # activator rail
+    elif blockid == ids.block_minecraft__activator_rail:  # activator rail
         if data & 0x8 == 0:  # unpowered
             raw_straight = self.load_image_texture("assets/minecraft/textures/block/activator_rail.png")
             raw_corner = self.load_image_texture("assets/minecraft/textures/block/rail_corner.png")    # they don't exist but make the code
@@ -1738,7 +1738,7 @@ def rails(self, blockid, data):
 
 
 # sticky and normal piston body
-@material(blockid=[ids.block_sticky_piston, ids.block_piston], data=[0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13],
+@material(blockid=[ids.block_minecraft__sticky_piston, ids.block_minecraft__piston], data=[0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13],
           transparent=True, solid=True, nospawn=True)
 def piston(self, blockid, data):
     # first, rotation
@@ -1749,7 +1749,7 @@ def piston(self, blockid, data):
                         3: {2: 4, 3: 5, 4: 3, 5: 2}}
         data = (data & 0b1000) | rotation_map[self.rotation][data & 0b111]
 
-    if blockid == ids.block_sticky_piston:  # sticky
+    if blockid == ids.block_minecraft__sticky_piston:  # sticky
         piston_t = self.load_image_texture("assets/minecraft/textures/block/piston_top_sticky.png").copy()
     else:  # normal
         piston_t = self.load_image_texture("assets/minecraft/textures/block/piston_top.png").copy()
@@ -1801,7 +1801,7 @@ def piston(self, blockid, data):
 
 
 # sticky and normal piston shaft
-@material(blockid=ids.block_piston_head, data=[0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13], transparent=True, nospawn=True)
+@material(blockid=ids.block_minecraft__piston_head, data=[0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13], transparent=True, nospawn=True)
 def piston_extension(self, blockid, data):
     # first, rotation
     # Masked to not clobber block head/foot info
@@ -1889,87 +1889,87 @@ def slabs(self, blockid, data):
     #     texture = data & 7
     # else: # data > 8 are special double slabs
     #     texture = data
-    if blockid == ids.block_oak_slab or blockid == ids.block_petrified_oak_slab:  # oak
+    if blockid == ids.block_minecraft__oak_slab or blockid == ids.block_minecraft__petrified_oak_slab:  # oak
         top = side = self.load_image_texture("assets/minecraft/textures/block/oak_planks.png")
-    elif blockid == ids.block_spruce_slab:  # spruce
+    elif blockid == ids.block_minecraft__spruce_slab:  # spruce
         top = side = self.load_image_texture("assets/minecraft/textures/block/spruce_planks.png")
-    elif blockid == ids.block_birch_slab:  # birch
+    elif blockid == ids.block_minecraft__birch_slab:  # birch
         top = side = self.load_image_texture("assets/minecraft/textures/block/birch_planks.png")
-    elif blockid == ids.block_jungle_slab:  # jungle
+    elif blockid == ids.block_minecraft__jungle_slab:  # jungle
         top = side = self.load_image_texture("assets/minecraft/textures/block/jungle_planks.png")
-    elif blockid == ids.block_acacia_slab:  # acacia
+    elif blockid == ids.block_minecraft__acacia_slab:  # acacia
         top = side = self.load_image_texture("assets/minecraft/textures/block/acacia_planks.png")
-    elif blockid == ids.block_dark_oak_slab:  # dark wood
+    elif blockid == ids.block_minecraft__dark_oak_slab:  # dark wood
         top = side = self.load_image_texture("assets/minecraft/textures/block/dark_oak_planks.png")
-    elif blockid == ids.block_crimson_slab:
+    elif blockid == ids.block_minecraft__crimson_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png")
-    elif blockid == ids.block_warped_slab:
+    elif blockid == ids.block_minecraft__warped_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png")
-    elif blockid == ids.block_stone_slab:
+    elif blockid == ids.block_minecraft__stone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/stone.png")
-    elif blockid == ids.block_sandstone_slab:
+    elif blockid == ids.block_minecraft__sandstone_slab:
         top = self.load_image_texture("assets/minecraft/textures/block/sandstone_top.png")
         side = self.load_image_texture("assets/minecraft/textures/block/sandstone.png")
-    elif blockid == ids.block_cobblestone_slab:
+    elif blockid == ids.block_minecraft__cobblestone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/cobblestone.png")
-    elif blockid == ids.block_brick_slab:
+    elif blockid == ids.block_minecraft__brick_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/bricks.png")
-    elif blockid == ids.block_stone_brick_slab:
+    elif blockid == ids.block_minecraft__stone_brick_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/stone_bricks.png")
-    elif blockid == ids.block_nether_brick_slab:
+    elif blockid == ids.block_minecraft__nether_brick_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/nether_bricks.png")
-    elif blockid == ids.block_quartz_slab:
+    elif blockid == ids.block_minecraft__quartz_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/quartz_block_side.png")
-    elif blockid == ids.block_red_sandstone_slab:
+    elif blockid == ids.block_minecraft__red_sandstone_slab:
         top = self.load_image_texture("assets/minecraft/textures/block/red_sandstone_top.png")
         side = self.load_image_texture("assets/minecraft/textures/block/red_sandstone.png")
-    elif blockid == ids.block_purpur_slab:
+    elif blockid == ids.block_minecraft__purpur_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/purpur_block.png")
-    elif blockid == ids.block_prismarine_slab:
+    elif blockid == ids.block_minecraft__prismarine_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/prismarine.png")
-    elif blockid == ids.block_dark_prismarine_slab:
+    elif blockid == ids.block_minecraft__dark_prismarine_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/dark_prismarine.png")
-    elif blockid == ids.block_prismarine_brick_slab:
+    elif blockid == ids.block_minecraft__prismarine_brick_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/prismarine_bricks.png")
-    elif blockid == ids.block_andesite_slab:
+    elif blockid == ids.block_minecraft__andesite_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/andesite.png")
-    elif blockid == ids.block_diorite_slab:
+    elif blockid == ids.block_minecraft__diorite_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/diorite.png")
-    elif blockid == ids.block_granite_slab:
+    elif blockid == ids.block_minecraft__granite_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/granite.png")
-    elif blockid == ids.block_polished_andesite_slab:
+    elif blockid == ids.block_minecraft__polished_andesite_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/polished_andesite.png")
-    elif blockid == ids.block_polished_diorite_slab:
+    elif blockid == ids.block_minecraft__polished_diorite_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/polished_diorite.png")
-    elif blockid == ids.block_polished_granite_slab:
+    elif blockid == ids.block_minecraft__polished_granite_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/polished_granite.png")
-    elif blockid == ids.block_red_nether_brick_slab:
+    elif blockid == ids.block_minecraft__red_nether_brick_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/red_nether_bricks.png")
-    elif blockid == ids.block_smooth_sandstone_slab:
+    elif blockid == ids.block_minecraft__smooth_sandstone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/sandstone_top.png")
-    elif blockid == ids.block_cut_sandstone_slab:
+    elif blockid == ids.block_minecraft__cut_sandstone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/cut_sandstone.png")
-    elif blockid == ids.block_smooth_red_sandstone_slab:
+    elif blockid == ids.block_minecraft__smooth_red_sandstone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/red_sandstone_top.png")
-    elif blockid == ids.block_cut_red_sandstone_slab:
+    elif blockid == ids.block_minecraft__cut_red_sandstone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/cut_red_sandstone.png")
-    elif blockid == ids.block_end_stone_brick_slab:
+    elif blockid == ids.block_minecraft__end_stone_brick_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/end_stone_bricks.png")
-    elif blockid == ids.block_mossy_cobblestone_slab:
+    elif blockid == ids.block_minecraft__mossy_cobblestone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/mossy_cobblestone.png")
-    elif blockid == ids.block_mossy_stone_brick_slab:
+    elif blockid == ids.block_minecraft__mossy_stone_brick_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/mossy_stone_bricks.png")
-    elif blockid == ids.block_smooth_quartz_slab:
+    elif blockid == ids.block_minecraft__smooth_quartz_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/quartz_block_bottom.png")
-    elif blockid == ids.block_smooth_stone_slab:
+    elif blockid == ids.block_minecraft__smooth_stone_slab:
         top = self.load_image_texture("assets/minecraft/textures/block/smooth_stone.png")
         side = self.load_image_texture("assets/minecraft/textures/block/smooth_stone_slab_side.png")
-    elif blockid == ids.block_polished_blackstone_brick_slab:
+    elif blockid == ids.block_minecraft__polished_blackstone_brick_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/polished_blackstone_bricks.png")
-    elif blockid == ids.block_blackstone_slab:
+    elif blockid == ids.block_minecraft__blackstone_slab:
         top = self.load_image_texture("assets/minecraft/textures/block/blackstone_top.png")
         side = self.load_image_texture("assets/minecraft/textures/block/blackstone.png")
-    elif blockid == ids.block_polished_blackstone_slab:
+    elif blockid == ids.block_minecraft__polished_blackstone_slab:
         top = side = self.load_image_texture("assets/minecraft/textures/block/polished_blackstone.png")
 
     # if blockid == 43 or blockid == 181 or blockid == 204: # double slab
@@ -2014,23 +2014,23 @@ def torches(self, blockid, data):
             data = 2
 
     # # choose the proper texture
-    # if blockid == ids.block_torch or blockid == ids.block_wall_torch:  # torch
+    # if blockid == ids.block_minecraft__torch or blockid == ids.block_minecraft__wall_torch:  # torch
     #     small = self.load_image_texture("assets/minecraft/textures/block/torch.png")
-    # elif blockid == ids.block_redstone_wall_torch or blockid == ids.block_redstone_torch:  # off redstone torch
+    # elif blockid == ids.block_minecraft__redstone_wall_torch or blockid == ids.block_minecraft__redstone_torch:  # off redstone torch
     #     small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch_off.png")
     # else:  # on redstone torch
     #     small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch.png")
 
-    if blockid == ids.block_redstone_torch or blockid == ids.block_redstone_wall_torch:
+    if blockid == ids.block_minecraft__redstone_torch or blockid == ids.block_minecraft__redstone_wall_torch:
         if on:
             small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch.png")
         else:
             small = self.load_image_texture("assets/minecraft/textures/block/redstone_torch_off.png")
 
-    elif blockid == ids.block_torch or blockid == ids.block_wall_torch:
+    elif blockid == ids.block_minecraft__torch or blockid == ids.block_minecraft__wall_torch:
         small = self.load_image_texture("assets/minecraft/textures/block/torch.png")
 
-    elif blockid == ids.block_soul_torch or blockid == ids.block_soul_wall_torch:   
+    elif blockid == ids.block_minecraft__soul_torch or blockid == ids.block_minecraft__soul_wall_torch:   
         small = self.load_image_texture("assets/minecraft/textures/block/soul_torch.png")
 
     # compose a torch bigger than the normal
@@ -2059,7 +2059,7 @@ def torches(self, blockid, data):
         torch = torch.rotate(-rotation, Image.NEAREST)
         img = self.build_full_block(None, None, None, None, torch, None)
 
-    if blockid == ids.block_torch or blockid == ids.block_redstone_torch or img is None:  # standing on the floor
+    if blockid == ids.block_minecraft__torch or blockid == ids.block_minecraft__redstone_torch or img is None:  # standing on the floor
         # compose a "3d torch".
         img = Image.new("RGBA", (24, 24), self.bgcolor)
 
@@ -2077,7 +2077,7 @@ def torches(self, blockid, data):
 
 
 # lantern
-@material(blockid=ids.block_lantern, data=[0, 1], transparent=True)
+@material(blockid=ids.block_minecraft__lantern, data=[0, 1], transparent=True)
 def lantern(self, blockid, data):
     # get the  multipart texture of the lantern
     inputtexture = self.load_image_texture("assets/minecraft/textures/block/lantern.png")
@@ -2133,7 +2133,7 @@ def lantern(self, blockid, data):
     return img
 
 # bamboo
-@material(blockid=ids.block_bamboo, transparent=True)
+@material(blockid=ids.block_minecraft__bamboo, transparent=True)
 def bamboo(self, blockid, data):
     # get the  multipart texture of the lantern
     inputtexture = self.load_image_texture("assets/minecraft/textures/block/bamboo_stalk.png")
@@ -2192,7 +2192,7 @@ def bamboo(self, blockid, data):
     return img
 
 # composter
-@material(blockid=ids.block_composter, data=list(range(9)), transparent=True)
+@material(blockid=ids.block_minecraft__composter, data=list(range(9)), transparent=True)
 def composter(self, blockid, data):
     side = self.load_image_texture("assets/minecraft/textures/block/composter_side.png")
     top = self.load_image_texture("assets/minecraft/textures/block/composter_top.png")
@@ -2217,7 +2217,7 @@ def composter(self, blockid, data):
     return img
 
 # fire
-@material(blockid=ids.block_fire, data=list(range(16)), transparent=True)
+@material(blockid=ids.block_minecraft__fire, data=list(range(16)), transparent=True)
 def fire(self, blockid, data):
     firetextures = self.load_fire()
     side1 = self.transform_image_side(firetextures[0])
@@ -2268,50 +2268,50 @@ def stairs(self, blockid, data):
         data = (((dirData >> 1) + ((dirData & 0b1) << 3)) << 3) + (data & 7)
 
     stair_id_to_tex = {
-        ids.block_oak_stairs: "assets/minecraft/textures/block/oak_planks.png",
-        ids.block_cobblestone_stairs: "assets/minecraft/textures/block/cobblestone.png",
-        ids.block_brick_stairs: "assets/minecraft/textures/block/bricks.png",
-        ids.block_stone_brick_stairs: "assets/minecraft/textures/block/stone_bricks.png",
-        ids.block_nether_brick_stairs: "assets/minecraft/textures/block/nether_bricks.png",
-        ids.block_sandstone_stairs: "assets/minecraft/textures/block/sandstone.png",
-        ids.block_spruce_stairs: "assets/minecraft/textures/block/spruce_planks.png",
-        ids.block_birch_stairs: "assets/minecraft/textures/block/birch_planks.png",
-        ids.block_jungle_stairs: "assets/minecraft/textures/block/jungle_planks.png",
-        ids.block_quartz_stairs: "assets/minecraft/textures/block/quartz_block_side.png",
-        ids.block_acacia_stairs: "assets/minecraft/textures/block/acacia_planks.png",
-        ids.block_dark_oak_stairs: "assets/minecraft/textures/block/dark_oak_planks.png",
-        ids.block_red_sandstone_stairs: "assets/minecraft/textures/block/red_sandstone.png",
-        ids.block_purpur_stairs: "assets/minecraft/textures/block/purpur_block.png",
-        ids.block_prismarine_stairs: "assets/minecraft/textures/block/prismarine.png",
-        ids.block_dark_prismarine_stairs: "assets/minecraft/textures/block/dark_prismarine.png",
-        ids.block_prismarine_brick_stairs: "assets/minecraft/textures/block/prismarine_bricks.png",
-        ids.block_mossy_stone_brick_stairs: "assets/minecraft/textures/block/mossy_stone_bricks.png",
-        ids.block_mossy_cobblestone_stairs: "assets/minecraft/textures/block/mossy_cobblestone.png",
-        ids.block_smooth_sandstone_stairs: "assets/minecraft/textures/block/sandstone_top.png",
-        ids.block_smooth_quartz_stairs: "assets/minecraft/textures/block/quartz_block_side.png",
-        ids.block_polished_granite_stairs: "assets/minecraft/textures/block/polished_granite.png",
-        ids.block_polished_diorite_stairs: "assets/minecraft/textures/block/polished_diorite.png",
-        ids.block_polished_andesite_stairs: "assets/minecraft/textures/block/polished_andesite.png",
-        ids.block_stone_stairs: "assets/minecraft/textures/block/stone.png",
-        ids.block_granite_stairs: "assets/minecraft/textures/block/granite.png",
-        ids.block_diorite_stairs: "assets/minecraft/textures/block/diorite.png",
-        ids.block_andesite_stairs: "assets/minecraft/textures/block/andesite.png",
-        ids.block_end_stone_brick_stairs: "assets/minecraft/textures/block/end_stone_bricks.png",
-        ids.block_red_nether_brick_stairs: "assets/minecraft/textures/block/red_nether_bricks.png",
-        ids.block_smooth_red_sandstone_stairs: "assets/minecraft/textures/block/red_sandstone_top.png",
-        ids.block_crimson_stairs: "assets/minecraft/textures/block/crimson_planks.png",
-        ids.block_warped_stairs: "assets/minecraft/textures/block/warped_planks.png",
-        ids.block_blackstone_stairs: "assets/minecraft/textures/block/blackstone.png",
-        ids.block_polished_blackstone_brick_stairs: "assets/minecraft/textures/block/polished_blackstone_bricks.png",
-        ids.block_polished_blackstone_stairs: "assets/minecraft/textures/block/polished_blackstone.png",
+        ids.block_minecraft__oak_stairs: "assets/minecraft/textures/block/oak_planks.png",
+        ids.block_minecraft__cobblestone_stairs: "assets/minecraft/textures/block/cobblestone.png",
+        ids.block_minecraft__brick_stairs: "assets/minecraft/textures/block/bricks.png",
+        ids.block_minecraft__stone_brick_stairs: "assets/minecraft/textures/block/stone_bricks.png",
+        ids.block_minecraft__nether_brick_stairs: "assets/minecraft/textures/block/nether_bricks.png",
+        ids.block_minecraft__sandstone_stairs: "assets/minecraft/textures/block/sandstone.png",
+        ids.block_minecraft__spruce_stairs: "assets/minecraft/textures/block/spruce_planks.png",
+        ids.block_minecraft__birch_stairs: "assets/minecraft/textures/block/birch_planks.png",
+        ids.block_minecraft__jungle_stairs: "assets/minecraft/textures/block/jungle_planks.png",
+        ids.block_minecraft__quartz_stairs: "assets/minecraft/textures/block/quartz_block_side.png",
+        ids.block_minecraft__acacia_stairs: "assets/minecraft/textures/block/acacia_planks.png",
+        ids.block_minecraft__dark_oak_stairs: "assets/minecraft/textures/block/dark_oak_planks.png",
+        ids.block_minecraft__red_sandstone_stairs: "assets/minecraft/textures/block/red_sandstone.png",
+        ids.block_minecraft__purpur_stairs: "assets/minecraft/textures/block/purpur_block.png",
+        ids.block_minecraft__prismarine_stairs: "assets/minecraft/textures/block/prismarine.png",
+        ids.block_minecraft__dark_prismarine_stairs: "assets/minecraft/textures/block/dark_prismarine.png",
+        ids.block_minecraft__prismarine_brick_stairs: "assets/minecraft/textures/block/prismarine_bricks.png",
+        ids.block_minecraft__mossy_stone_brick_stairs: "assets/minecraft/textures/block/mossy_stone_bricks.png",
+        ids.block_minecraft__mossy_cobblestone_stairs: "assets/minecraft/textures/block/mossy_cobblestone.png",
+        ids.block_minecraft__smooth_sandstone_stairs: "assets/minecraft/textures/block/sandstone_top.png",
+        ids.block_minecraft__smooth_quartz_stairs: "assets/minecraft/textures/block/quartz_block_side.png",
+        ids.block_minecraft__polished_granite_stairs: "assets/minecraft/textures/block/polished_granite.png",
+        ids.block_minecraft__polished_diorite_stairs: "assets/minecraft/textures/block/polished_diorite.png",
+        ids.block_minecraft__polished_andesite_stairs: "assets/minecraft/textures/block/polished_andesite.png",
+        ids.block_minecraft__stone_stairs: "assets/minecraft/textures/block/stone.png",
+        ids.block_minecraft__granite_stairs: "assets/minecraft/textures/block/granite.png",
+        ids.block_minecraft__diorite_stairs: "assets/minecraft/textures/block/diorite.png",
+        ids.block_minecraft__andesite_stairs: "assets/minecraft/textures/block/andesite.png",
+        ids.block_minecraft__end_stone_brick_stairs: "assets/minecraft/textures/block/end_stone_bricks.png",
+        ids.block_minecraft__red_nether_brick_stairs: "assets/minecraft/textures/block/red_nether_bricks.png",
+        ids.block_minecraft__smooth_red_sandstone_stairs: "assets/minecraft/textures/block/red_sandstone_top.png",
+        ids.block_minecraft__crimson_stairs: "assets/minecraft/textures/block/crimson_planks.png",
+        ids.block_minecraft__warped_stairs: "assets/minecraft/textures/block/warped_planks.png",
+        ids.block_minecraft__blackstone_stairs: "assets/minecraft/textures/block/blackstone.png",
+        ids.block_minecraft__polished_blackstone_brick_stairs: "assets/minecraft/textures/block/polished_blackstone_bricks.png",
+        ids.block_minecraft__polished_blackstone_stairs: "assets/minecraft/textures/block/polished_blackstone.png",
     }
 
     # sandstone, red sandstone, and quartz stairs have special top texture
     special_tops = {
-        ids.block_sandstone_stairs: "assets/minecraft/textures/block/sandstone_top.png",
-        ids.block_quartz_stairs: "assets/minecraft/textures/block/quartz_block_top.png",
-        ids.block_red_sandstone_stairs: "assets/minecraft/textures/block/red_sandstone_top.png",
-        ids.block_smooth_quartz_stairs: "assets/minecraft/textures/block/quartz_block_top.png",
+        ids.block_minecraft__sandstone_stairs: "assets/minecraft/textures/block/sandstone_top.png",
+        ids.block_minecraft__quartz_stairs: "assets/minecraft/textures/block/quartz_block_top.png",
+        ids.block_minecraft__red_sandstone_stairs: "assets/minecraft/textures/block/red_sandstone_top.png",
+        ids.block_minecraft__smooth_quartz_stairs: "assets/minecraft/textures/block/quartz_block_top.png",
     }
 
     # Texture: 12
@@ -2857,7 +2857,7 @@ def chests(self, blockid, data):
 
 # redstone wire
 # uses pseudo-ancildata found in iterate.c
-@material(blockid=ids.block_redstone_wire, data=[0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 21, 32, 33, 34, 35, 36, 37, 40, 41, 42, 43, 44, 45, 48, 49, 50, 51, 52, 53, 64, 65, 66, 67, 68, 69, 72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 84, 85, 128, 129, 130, 131, 132, 133, 136, 137, 138, 139, 140, 141, 144, 145, 146, 147, 148, 149, 160, 161, 162, 163, 164, 165, 168, 169, 170, 171, 172, 173, 176, 177, 178, 179, 180, 181, 192, 193, 194, 195, 196, 197, 200, 201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 256, 257, 258, 259, 260, 261, 264, 265, 266, 267, 268, 269, 272, 273, 274, 275, 276, 277, 288, 289, 290, 291, 292, 293, 296, 297, 298, 299, 300, 301, 304, 305, 306, 307, 308, 309, 320, 321, 322, 323, 324, 325, 328, 329, 330, 331, 332, 333, 336, 337, 338, 339, 340, 341], transparent=True)
+@material(blockid=ids.block_minecraft__redstone_wire, data=[0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, 21, 32, 33, 34, 35, 36, 37, 40, 41, 42, 43, 44, 45, 48, 49, 50, 51, 52, 53, 64, 65, 66, 67, 68, 69, 72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 84, 85, 128, 129, 130, 131, 132, 133, 136, 137, 138, 139, 140, 141, 144, 145, 146, 147, 148, 149, 160, 161, 162, 163, 164, 165, 168, 169, 170, 171, 172, 173, 176, 177, 178, 179, 180, 181, 192, 193, 194, 195, 196, 197, 200, 201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 256, 257, 258, 259, 260, 261, 264, 265, 266, 267, 268, 269, 272, 273, 274, 275, 276, 277, 288, 289, 290, 291, 292, 293, 296, 297, 298, 299, 300, 301, 304, 305, 306, 307, 308, 309, 320, 321, 322, 323, 324, 325, 328, 329, 330, 331, 332, 333, 336, 337, 338, 339, 340, 341], transparent=True)
 def wire(self, blockid, data):
 
     redstone_cross_t = None
@@ -2956,20 +2956,20 @@ def wire(self, blockid, data):
 # Includes: Crafting table, fletching table, cartography table, smithing table
 @material(blockid=ids.group_table, solid=True, nodata=True)
 def block_table(self, blockid, data):
-    block_name = {ids.block_crafting_table: "crafting_table",
-                  ids.block_fletching_table: "fletching_table",
-                  ids.block_cartography_table: "cartography_table",
-                  ids.block_smithing_table: "smithing_table"}[blockid]
+    block_name = {ids.block_minecraft__crafting_table: "crafting_table",
+                  ids.block_minecraft__fletching_table: "fletching_table",
+                  ids.block_minecraft__cartography_table: "cartography_table",
+                  ids.block_minecraft__smithing_table: "smithing_table"}[blockid]
 
     # Top texture doesn't vary with self.rotation, but texture rotation does
     top_tex = block_name + "_top"
     top_rot = [0, 270, 180, 90][self.rotation]
 
     # List of side textures from side 1 to 4 for each blockid
-    side_tex_map = {ids.block_crafting_table: ["front", "side", "front", "side"],
-                    ids.block_fletching_table: ["front", "side", "side", "front"],
-                    ids.block_cartography_table: ["side3", "side3", "side2", "side1"],
-                    ids.block_smithing_table: ["front", "side", "side", "front"]}[blockid]
+    side_tex_map = {ids.block_minecraft__crafting_table: ["front", "side", "front", "side"],
+                    ids.block_minecraft__fletching_table: ["front", "side", "side", "front"],
+                    ids.block_minecraft__cartography_table: ["side3", "side3", "side2", "side1"],
+                    ids.block_minecraft__smithing_table: ["front", "side", "side", "front"]}[blockid]
     # Determine which side textures to use
     side3_id = [2, 3, 1, 0][self.rotation]
     side4_id = [3, 1, 0, 2][self.rotation]
@@ -2986,7 +2986,7 @@ def block_table(self, blockid, data):
     return self.build_full_block(top, None, None, side3, side4, None)
 
 
-@material(blockid=ids.block_lectern, data=list(range(8)), transparent=True, solid=True, nospawn=True)
+@material(blockid=ids.block_minecraft__lectern, data=list(range(8)), transparent=True, solid=True, nospawn=True)
 def lectern(self, blockid, data):
     # Do rotation, mask to not clobber book data
     data = data & 0b100 | ((self.rotation + (data & 0b11)) % 4)
@@ -3123,7 +3123,7 @@ def lectern(self, blockid, data):
     return img
 
 
-@material(blockid=ids.block_loom, data=list(range(4)), solid=True)
+@material(blockid=ids.block_minecraft__loom, data=list(range(4)), solid=True)
 def loom(self, blockid, data):
     # Do rotation
     data = (self.rotation + data) % 4
@@ -3142,7 +3142,7 @@ def loom(self, blockid, data):
     return self.build_full_block(top, None, None, side3, side4, None)
 
 
-@material(blockid=ids.block_stonecutter, data=list(range(4)), transparent=True, solid=True, nospawn=True)
+@material(blockid=ids.block_minecraft__stonecutter, data=list(range(4)), transparent=True, solid=True, nospawn=True)
 def stonecutter(self, blockid, data):
     # Do rotation
     data = (self.rotation + data) % 4
@@ -3167,7 +3167,7 @@ def stonecutter(self, blockid, data):
     return img
 
 
-@material(blockid=ids.block_grindstone, data=list(range(12)), transparent=True, solid=True, nospawn=True)
+@material(blockid=ids.block_minecraft__grindstone, data=list(range(12)), transparent=True, solid=True, nospawn=True)
 def grindstone(self, blockid, data):
     # Do rotation, mask to not clobber mounting info
     data = data & 0b1100 | ((self.rotation + (data & 0b11)) % 4)
@@ -3269,11 +3269,11 @@ def grindstone(self, blockid, data):
 @material(blockid=ids.group_age_8, data=list(range(8)), transparent=True, nospawn=True)
 def crops8(self, blockid, data):
 
-    if blockid == ids.block_wheat:
+    if blockid == ids.block_minecraft__wheat:
         raw_tex = "assets/minecraft/textures/block/wheat_stage%d.png" % data
     else:
         stage = {0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 2, 6: 2, 7: 3}[data]
-        if blockid == ids.block_carrots:  # carrots
+        if blockid == ids.block_minecraft__carrots:  # carrots
             raw_tex = "assets/minecraft/textures/block/carrots_stage%d.png" % stage
         else:  # potatoes
             raw_tex = "assets/minecraft/textures/block/potatoes_stage%d.png" % stage
@@ -3292,9 +3292,9 @@ def crops8(self, blockid, data):
 
 
 # farmland and grass path (15/16 blocks)
-@material(blockid=[ids.block_farmland, ids.block_grass_path], data=list(range(2)), solid=True, transparent=True, nospawn=True)
+@material(blockid=[ids.block_minecraft__farmland, ids.block_minecraft__grass_path], data=list(range(2)), solid=True, transparent=True, nospawn=True)
 def farmland(self, blockid, data):
-    if blockid == ids.block_farmland:
+    if blockid == ids.block_minecraft__farmland:
         side = self.load_image_texture("assets/minecraft/textures/block/dirt.png").copy()
         if data == 0:
             top = self.load_image_texture("assets/minecraft/textures/block/farmland.png")
@@ -3325,14 +3325,14 @@ def signpost(self, blockid, data):
 
     sign_texture = {
         # (texture on sign, texture on stick)
-        ids.block_oak_sign: ("oak_planks.png", "oak_log.png"),
-        ids.block_spruce_sign: ("spruce_planks.png", "spruce_log.png"),
-        ids.block_birch_sign: ("birch_planks.png", "birch_log.png"),
-        ids.block_acacia_sign: ("jungle_planks.png", "jungle_log.png"),
-        ids.block_jungle_sign: ("acacia_planks.png", "acacia_log.png"),
-        ids.block_dark_oak_sign: ("dark_oak_planks.png", "dark_oak_log.png"),
-        ids.block_crimson_sign: ("crimson_planks.png", "crimson_stem.png"),
-        ids.block_warped_sign: ("warped_planks.png", "warped_stem.png"),
+        ids.block_minecraft__oak_sign: ("oak_planks.png", "oak_log.png"),
+        ids.block_minecraft__spruce_sign: ("spruce_planks.png", "spruce_log.png"),
+        ids.block_minecraft__birch_sign: ("birch_planks.png", "birch_log.png"),
+        ids.block_minecraft__acacia_sign: ("jungle_planks.png", "jungle_log.png"),
+        ids.block_minecraft__jungle_sign: ("acacia_planks.png", "acacia_log.png"),
+        ids.block_minecraft__dark_oak_sign: ("dark_oak_planks.png", "dark_oak_log.png"),
+        ids.block_minecraft__crimson_sign: ("crimson_planks.png", "crimson_stem.png"),
+        ids.block_minecraft__warped_sign: ("warped_planks.png", "warped_stem.png"),
     }
     texture_path, texture_stick_path = ["assets/minecraft/textures/block/" + x for x in sign_texture[blockid]]
 
@@ -3400,42 +3400,42 @@ def door(self, blockid, data):
         elif (data & 0b00011) == 3: data = data & 0b11100 | 2
 
     if data & 0x8 == 0x8:  # top of the door
-        if blockid == ids.block_oak_door:
+        if blockid == ids.block_minecraft__oak_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/oak_door_top.png")
-        elif blockid == ids.block_iron_door:
+        elif blockid == ids.block_minecraft__iron_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/iron_door_top.png")
-        elif blockid == ids.block_spruce_door:
+        elif blockid == ids.block_minecraft__spruce_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/spruce_door_top.png")
-        elif blockid == ids.block_birch_door:
+        elif blockid == ids.block_minecraft__birch_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/birch_door_top.png")
-        elif blockid == ids.block_jungle_door:
+        elif blockid == ids.block_minecraft__jungle_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/jungle_door_top.png")
-        elif blockid == ids.block_acacia_door:
+        elif blockid == ids.block_minecraft__acacia_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/acacia_door_top.png")
-        elif blockid == ids.block_dark_oak_door:
+        elif blockid == ids.block_minecraft__dark_oak_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/dark_oak_door_top.png")
-        elif blockid == ids.block_crimson_door:
+        elif blockid == ids.block_minecraft__crimson_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/crimson_door_top.png")
-        elif blockid == ids.block_warped_door:
+        elif blockid == ids.block_minecraft__warped_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/warped_door_top.png")
     else:  # bottom of the door
-        if blockid == ids.block_oak_door:
+        if blockid == ids.block_minecraft__oak_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/oak_door_bottom.png")
-        elif blockid == ids.block_iron_door:
+        elif blockid == ids.block_minecraft__iron_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/iron_door_bottom.png")
-        elif blockid == ids.block_spruce_door:
+        elif blockid == ids.block_minecraft__spruce_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/spruce_door_bottom.png")
-        elif blockid == ids.block_birch_door:
+        elif blockid == ids.block_minecraft__birch_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/birch_door_bottom.png")
-        elif blockid == ids.block_jungle_door:
+        elif blockid == ids.block_minecraft__jungle_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/jungle_door_bottom.png")
-        elif blockid == ids.block_acacia_door:
+        elif blockid == ids.block_minecraft__acacia_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/acacia_door_bottom.png")
-        elif blockid == ids.block_dark_oak_door:
+        elif blockid == ids.block_minecraft__dark_oak_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/dark_oak_door_bottom.png")
-        elif blockid == ids.block_crimson_door:
+        elif blockid == ids.block_minecraft__crimson_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/crimson_door_bottom.png")
-        elif blockid == ids.block_warped_door:
+        elif blockid == ids.block_minecraft__warped_door:
             raw_door = self.load_image_texture("assets/minecraft/textures/block/warped_door_bottom.png")
     
     # if you want to render all doors as closed, then force
@@ -3535,7 +3535,7 @@ def door(self, blockid, data):
     return img
 
 # ladder
-@material(blockid=ids.block_ladder, data=[2, 3, 4, 5], transparent=True)
+@material(blockid=ids.block_minecraft__ladder, data=[2, 3, 4, 5], transparent=True)
 def ladder(self, blockid, data):
 
     # first rotations
@@ -3600,14 +3600,14 @@ def wall_sign(self, blockid, data): # wall sign
         elif data == 5: data = 2
     
     sign_texture = {
-        ids.block_oak_wall_sign: "oak_planks.png",
-        ids.block_spruce_wall_sign: "spruce_planks.png",
-        ids.block_birch_wall_sign: "birch_planks.png",
-        ids.block_acacia_wall_sign: "jungle_planks.png",
-        ids.block_jungle_wall_sign: "acacia_planks.png",
-        ids.block_dark_oak_wall_sign: "dark_oak_planks.png",
-        ids.block_warped_wall_sign: "warped_planks.png",
-        ids.block_crimson_wall_sign: "crimson_planks.png",
+        ids.block_minecraft__oak_wall_sign: "oak_planks.png",
+        ids.block_minecraft__spruce_wall_sign: "spruce_planks.png",
+        ids.block_minecraft__birch_wall_sign: "birch_planks.png",
+        ids.block_minecraft__acacia_wall_sign: "jungle_planks.png",
+        ids.block_minecraft__jungle_wall_sign: "acacia_planks.png",
+        ids.block_minecraft__dark_oak_wall_sign: "dark_oak_planks.png",
+        ids.block_minecraft__warped_wall_sign: "warped_planks.png",
+        ids.block_minecraft__crimson_wall_sign: "crimson_planks.png",
     }
     texture_path = "assets/minecraft/textures/block/" + sign_texture[blockid]
     texture = self.load_image_texture(texture_path).copy()
@@ -3647,7 +3647,7 @@ def wall_sign(self, blockid, data): # wall sign
     return img
 
 # levers
-@material(blockid=ids.block_lever, data=list(range(16)), transparent=True)
+@material(blockid=ids.block_minecraft__lever, data=list(range(16)), transparent=True)
 def levers(self, blockid, data):
     if data & 8 == 8: powered = True
     else: powered = False
@@ -3793,18 +3793,18 @@ def levers(self, blockid, data):
 # wooden and stone pressure plates, and weighted pressure plates
 @material(blockid=ids.group_pressure_plate, data=[0, 1], transparent=True)
 def pressure_plate(self, blockid, data):
-    texture_name = {ids.block_stone_pressure_plate: "assets/minecraft/textures/block/stone.png",  # stone
-                    ids.block_oak_pressure_plate: "assets/minecraft/textures/block/oak_planks.png",  # oak
-                    ids.block_spruce_pressure_plate: "assets/minecraft/textures/block/spruce_planks.png",  # spruce
-                    ids.block_birch_pressure_plate: "assets/minecraft/textures/block/birch_planks.png",  # birch
-                    ids.block_jungle_pressure_plate: "assets/minecraft/textures/block/jungle_planks.png",  # jungle
-                    ids.block_acacia_pressure_plate: "assets/minecraft/textures/block/acacia_planks.png",  # acacia
-                    ids.block_dark_oak_pressure_plate: "assets/minecraft/textures/block/dark_oak_planks.png",  # dark oak
-                    ids.block_light_weighted_pressure_plate: "assets/minecraft/textures/block/gold_block.png",  # light golden
-                    ids.block_heavy_weighted_pressure_plate: "assets/minecraft/textures/block/iron_block.png",  # heavy iron
-                    ids.block_crimson_pressure_plate: "assets/minecraft/textures/block/crimson_planks.png",
-                    ids.block_warped_pressure_plate: "assets/minecraft/textures/block/warped_planks.png",
-                    ids.block_polished_blackstone_pressure_plate: "assets/minecraft/textures/block/polished_blackstone.png",
+    texture_name = {ids.block_minecraft__stone_pressure_plate: "assets/minecraft/textures/block/stone.png",  # stone
+                    ids.block_minecraft__oak_pressure_plate: "assets/minecraft/textures/block/oak_planks.png",  # oak
+                    ids.block_minecraft__spruce_pressure_plate: "assets/minecraft/textures/block/spruce_planks.png",  # spruce
+                    ids.block_minecraft__birch_pressure_plate: "assets/minecraft/textures/block/birch_planks.png",  # birch
+                    ids.block_minecraft__jungle_pressure_plate: "assets/minecraft/textures/block/jungle_planks.png",  # jungle
+                    ids.block_minecraft__acacia_pressure_plate: "assets/minecraft/textures/block/acacia_planks.png",  # acacia
+                    ids.block_minecraft__dark_oak_pressure_plate: "assets/minecraft/textures/block/dark_oak_planks.png",  # dark oak
+                    ids.block_minecraft__light_weighted_pressure_plate: "assets/minecraft/textures/block/gold_block.png",  # light golden
+                    ids.block_minecraft__heavy_weighted_pressure_plate: "assets/minecraft/textures/block/iron_block.png",  # heavy iron
+                    ids.block_minecraft__crimson_pressure_plate: "assets/minecraft/textures/block/crimson_planks.png",
+                    ids.block_minecraft__warped_pressure_plate: "assets/minecraft/textures/block/warped_planks.png",
+                    ids.block_minecraft__polished_blackstone_pressure_plate: "assets/minecraft/textures/block/polished_blackstone.png",
                    }[blockid]
     t = self.load_image_texture(texture_name).copy()
     
@@ -3860,16 +3860,16 @@ def buttons(self, blockid, data):
         elif data == 6: data = 5
 
     texturepath = {
-        ids.block_stone_button: "assets/minecraft/textures/block/stone.png",
-        ids.block_oak_button: "assets/minecraft/textures/block/oak_planks.png",
-        ids.block_spruce_button: "assets/minecraft/textures/block/spruce_planks.png",
-        ids.block_birch_button: "assets/minecraft/textures/block/birch_planks.png",
-        ids.block_jungle_button: "assets/minecraft/textures/block/jungle_planks.png",
-        ids.block_acacia_button: "assets/minecraft/textures/block/acacia_planks.png",
-        ids.block_dark_oak_button: "assets/minecraft/textures/block/dark_oak_planks.png",
-        ids.block_crimson_button: "assets/minecraft/textures/block/crimson_planks.png",
-        ids.block_warped_button: "assets/minecraft/textures/block/warped_planks.png",
-        ids.block_polished_blackstone_button: "assets/minecraft/textures/block/polished_blackstone.png",
+        ids.block_minecraft__stone_button: "assets/minecraft/textures/block/stone.png",
+        ids.block_minecraft__oak_button: "assets/minecraft/textures/block/oak_planks.png",
+        ids.block_minecraft__spruce_button: "assets/minecraft/textures/block/spruce_planks.png",
+        ids.block_minecraft__birch_button: "assets/minecraft/textures/block/birch_planks.png",
+        ids.block_minecraft__jungle_button: "assets/minecraft/textures/block/jungle_planks.png",
+        ids.block_minecraft__acacia_button: "assets/minecraft/textures/block/acacia_planks.png",
+        ids.block_minecraft__dark_oak_button: "assets/minecraft/textures/block/dark_oak_planks.png",
+        ids.block_minecraft__crimson_button: "assets/minecraft/textures/block/crimson_planks.png",
+        ids.block_minecraft__warped_button: "assets/minecraft/textures/block/warped_planks.png",
+        ids.block_minecraft__polished_blackstone_button: "assets/minecraft/textures/block/polished_blackstone.png",
     }[blockid]
     t = self.load_image_texture(texturepath).copy()
 
@@ -3933,7 +3933,7 @@ def buttons(self, blockid, data):
     return img
 
 # snow
-@material(blockid=ids.block_snow, data=list(range(16)), transparent=True, solid=True)
+@material(blockid=ids.block_minecraft__snow, data=list(range(16)), transparent=True, solid=True)
 def snow(self, blockid, data):
     # still not rendered correctly: data other than 0
     
@@ -3958,7 +3958,7 @@ def snow(self, blockid, data):
 
 
 # cactus
-@material(blockid=ids.block_cactus, data=0, transparent=False, solid=True, nospawn=True)
+@material(blockid=ids.block_minecraft__cactus, data=0, transparent=False, solid=True, nospawn=True)
 def cactus(self, blockid, data):
     top = self.load_image_texture("assets/minecraft/textures/block/cactus_top.png")
     side = self.load_image_texture("assets/minecraft/textures/block/cactus_side.png")
@@ -3989,39 +3989,39 @@ def cactus(self, blockid, data):
 def fence(self, blockid, data):
     # no need for rotations, it uses pseudo data.
     # create needed images for Big stick fence
-    if blockid == ids.block_oak_fence:  # normal fence
+    if blockid == ids.block_minecraft__oak_fence:  # normal fence
         fence_top = self.load_image_texture("assets/minecraft/textures/block/oak_planks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/oak_planks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/oak_planks.png").copy()
-    elif blockid == ids.block_nether_brick_fence:  # spruce fence
+    elif blockid == ids.block_minecraft__nether_brick_fence:  # spruce fence
         fence_top = self.load_image_texture("assets/minecraft/textures/block/spruce_planks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/spruce_planks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/spruce_planks.png").copy()
-    elif blockid == ids.block_spruce_fence:  # birch fence
+    elif blockid == ids.block_minecraft__spruce_fence:  # birch fence
         fence_top = self.load_image_texture("assets/minecraft/textures/block/birch_planks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/birch_planks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/birch_planks.png").copy()
-    elif blockid == ids.block_birch_fence:  # jungle fence
+    elif blockid == ids.block_minecraft__birch_fence:  # jungle fence
         fence_top = self.load_image_texture("assets/minecraft/textures/block/jungle_planks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/jungle_planks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/jungle_planks.png").copy()
-    elif blockid == ids.block_jungle_fence:  # big/dark oak fence
+    elif blockid == ids.block_minecraft__jungle_fence:  # big/dark oak fence
         fence_top = self.load_image_texture("assets/minecraft/textures/block/dark_oak_planks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/dark_oak_planks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/dark_oak_planks.png").copy()
-    elif blockid == ids.block_acacia_fence:  # acacia oak fence
+    elif blockid == ids.block_minecraft__acacia_fence:  # acacia oak fence
         fence_top = self.load_image_texture("assets/minecraft/textures/block/acacia_planks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/acacia_planks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/acacia_planks.png").copy()
-    elif blockid == ids.block_dark_oak_fence:  # netherbrick fence
+    elif blockid == ids.block_minecraft__dark_oak_fence:  # netherbrick fence
         fence_top = self.load_image_texture("assets/minecraft/textures/block/nether_bricks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/nether_bricks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/nether_bricks.png").copy()
-    elif blockid == ids.block_crimson_fence:
+    elif blockid == ids.block_minecraft__crimson_fence:
         fence_top = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png").copy()
-    elif blockid == ids.block_warped_fence:
+    elif blockid == ids.block_minecraft__warped_fence:
         fence_top = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png").copy()
         fence_side = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png").copy()
         fence_small_side = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png").copy()
@@ -4130,9 +4130,9 @@ def pumpkin(self, blockid, data): # pumpkins, jack-o-lantern
     
     # texture generation
     top = self.load_image_texture("assets/minecraft/textures/block/pumpkin_top.png")
-    frontName = {ids.block_pumpkin: "assets/minecraft/textures/block/pumpkin_side.png",
-                 ids.block_jack_o_lantern: "assets/minecraft/textures/block/jack_o_lantern.png",
-                 ids.block_carved_pumpkin: "assets/minecraft/textures/block/carved_pumpkin.png"
+    frontName = {ids.block_minecraft__pumpkin: "assets/minecraft/textures/block/pumpkin_side.png",
+                 ids.block_minecraft__jack_o_lantern: "assets/minecraft/textures/block/jack_o_lantern.png",
+                 ids.block_minecraft__carved_pumpkin: "assets/minecraft/textures/block/carved_pumpkin.png"
                 }[blockid]
     front = self.load_image_texture(frontName)
     side = self.load_image_texture("assets/minecraft/textures/block/pumpkin_side.png")
@@ -4151,7 +4151,7 @@ def pumpkin(self, blockid, data): # pumpkins, jack-o-lantern
 
 
 # portal
-@material(blockid=ids.block_nether_portal, data=[1, 2, 4, 5, 8, 10], transparent=True)
+@material(blockid=ids.block_minecraft__nether_portal, data=[1, 2, 4, 5, 8, 10], transparent=True)
 def portal(self, blockid, data):
     # no rotations, uses pseudo data
     portaltexture = self.load_portal()
@@ -4170,7 +4170,7 @@ def portal(self, blockid, data):
 
 
 # cake!
-@material(blockid=ids.block_cake, data=list(range(7)), transparent=True, nospawn=True)
+@material(blockid=ids.block_minecraft__cake, data=list(range(7)), transparent=True, nospawn=True)
 def cake(self, blockid, data):
     # cake textures
     top = self.load_image_texture("assets/minecraft/textures/block/cake_top.png").copy()
@@ -4300,7 +4300,7 @@ def cake(self, blockid, data):
 
 
 # redstone repeaters ON and OFF
-@material(blockid=ids.block_repeater, data=list(range(16)), transparent=True, nospawn=True)
+@material(blockid=ids.block_minecraft__repeater, data=list(range(16)), transparent=True, nospawn=True)
 def repeater(self, blockid, data):
     # rotation
     # Masked to not clobber delay info
@@ -4445,7 +4445,7 @@ def repeater(self, blockid, data):
     return img
 
 # redstone comparator (149 is inactive, 150 is active)
-@material(blockid=[ids.block_comparator], data=list(range(16)), transparent=True, nospawn=True)
+@material(blockid=[ids.block_minecraft__comparator], data=list(range(16)), transparent=True, nospawn=True)
 def comparator(self, blockid, data):
 
     # rotation
@@ -4453,7 +4453,7 @@ def comparator(self, blockid, data):
     data = data & 0b1100 | (((data & 0b11) + self.rotation) % 4)
 
 
-    top = self.load_image_texture("assets/minecraft/textures/block/comparator.png") if blockid == ids.block_comparator else self.load_image_texture("assets/minecraft/textures/block/comparator_on.png")
+    top = self.load_image_texture("assets/minecraft/textures/block/comparator.png") if blockid == ids.block_minecraft__comparator else self.load_image_texture("assets/minecraft/textures/block/comparator_on.png")
     side = self.load_image_texture("assets/minecraft/textures/block/smooth_stone_slab_side.png")
     increment = 13
 
@@ -4532,15 +4532,15 @@ def trapdoor(self, blockid, data):
         elif (data & 0b0011) == 3: data = data & 0b1100 | 0
 
     # texture generation
-    texturepath = {ids.block_oak_trapdoor: "assets/minecraft/textures/block/oak_trapdoor.png",
-                   ids.block_iron_trapdoor: "assets/minecraft/textures/block/iron_trapdoor.png",
-                   ids.block_spruce_trapdoor: "assets/minecraft/textures/block/spruce_trapdoor.png",
-                   ids.block_birch_trapdoor: "assets/minecraft/textures/block/birch_trapdoor.png",
-                   ids.block_jungle_trapdoor: "assets/minecraft/textures/block/jungle_trapdoor.png",
-                   ids.block_acacia_trapdoor: "assets/minecraft/textures/block/acacia_trapdoor.png",
-                   ids.block_dark_oak_trapdoor: "assets/minecraft/textures/block/dark_oak_trapdoor.png",
-                    ids.block_crimson_trapdoor: "assets/minecraft/textures/block/crimson_trapdoor.png",
-                    ids.block_warped_trapdoor: "assets/minecraft/textures/block/warped_trapdoor.png",
+    texturepath = {ids.block_minecraft__oak_trapdoor: "assets/minecraft/textures/block/oak_trapdoor.png",
+                   ids.block_minecraft__iron_trapdoor: "assets/minecraft/textures/block/iron_trapdoor.png",
+                   ids.block_minecraft__spruce_trapdoor: "assets/minecraft/textures/block/spruce_trapdoor.png",
+                   ids.block_minecraft__birch_trapdoor: "assets/minecraft/textures/block/birch_trapdoor.png",
+                   ids.block_minecraft__jungle_trapdoor: "assets/minecraft/textures/block/jungle_trapdoor.png",
+                   ids.block_minecraft__acacia_trapdoor: "assets/minecraft/textures/block/acacia_trapdoor.png",
+                   ids.block_minecraft__dark_oak_trapdoor: "assets/minecraft/textures/block/dark_oak_trapdoor.png",
+                    ids.block_minecraft__crimson_trapdoor: "assets/minecraft/textures/block/crimson_trapdoor.png",
+                    ids.block_minecraft__warped_trapdoor: "assets/minecraft/textures/block/warped_trapdoor.png",
 
                   }[blockid]
 
@@ -4593,9 +4593,9 @@ def huge_mushroom(self, blockid, data):
         data = new_data
 
     # texture generation
-    texture_map = {ids.block_brown_mushroom_block: "brown_mushroom_block",
-                   ids.block_red_mushroom_block: "red_mushroom_block",
-                   ids.block_mushroom_stem: "mushroom_stem"}
+    texture_map = {ids.block_minecraft__brown_mushroom_block: "brown_mushroom_block",
+                   ids.block_minecraft__red_mushroom_block: "red_mushroom_block",
+                   ids.block_minecraft__mushroom_stem: "mushroom_stem"}
     cap =  self.load_image_texture("assets/minecraft/textures/block/%s.png" % texture_map[blockid])
     porous = self.load_image_texture("assets/minecraft/textures/block/mushroom_block_inside.png")
 
@@ -4615,41 +4615,41 @@ def huge_mushroom(self, blockid, data):
 def panes(self, blockid, data):
     # no rotation, uses pseudo data
 
-    if blockid == ids.block_iron_bars:
+    if blockid == ids.block_minecraft__iron_bars:
         t = self.load_image_texture("assets/minecraft/textures/block/iron_bars.png")
-    elif blockid == ids.block_glass_pane:
+    elif blockid == ids.block_minecraft__glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/glass.png")
-    elif blockid == ids.block_white_stained_glass_pane:
+    elif blockid == ids.block_minecraft__white_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/white_stained_glass.png")
-    elif blockid == ids.block_orange_stained_glass_pane:
+    elif blockid == ids.block_minecraft__orange_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/orange_stained_glass.png")
-    elif blockid == ids.block_magenta_stained_glass_pane:
+    elif blockid == ids.block_minecraft__magenta_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/magenta_stained_glass.png")
-    elif blockid == ids.block_light_blue_stained_glass_pane:
+    elif blockid == ids.block_minecraft__light_blue_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/light_blue_stained_glass.png")
-    elif blockid == ids.block_yellow_stained_glass_pane:
+    elif blockid == ids.block_minecraft__yellow_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/yellow_stained_glass.png")
-    elif blockid == ids.block_lime_stained_glass_pane:
+    elif blockid == ids.block_minecraft__lime_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/lime_stained_glass.png")
-    elif blockid == ids.block_pink_stained_glass_pane:
+    elif blockid == ids.block_minecraft__pink_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/pink_stained_glass.png")
-    elif blockid == ids.block_gray_stained_glass_pane:
+    elif blockid == ids.block_minecraft__gray_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/gray_stained_glass.png")
-    elif blockid == ids.block_light_gray_stained_glass_pane:
+    elif blockid == ids.block_minecraft__light_gray_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/light_gray_stained_glass.png")
-    elif blockid == ids.block_cyan_stained_glass_pane:
+    elif blockid == ids.block_minecraft__cyan_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/cyan_stained_glass.png")
-    elif blockid == ids.block_purple_stained_glass_pane:
+    elif blockid == ids.block_minecraft__purple_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/purple_stained_glass.png")
-    elif blockid == ids.block_blue_stained_glass_pane:
+    elif blockid == ids.block_minecraft__blue_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/blue_stained_glass.png")
-    elif blockid == ids.block_brown_stained_glass_pane:
+    elif blockid == ids.block_minecraft__brown_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/brown_stained_glass.png")
-    elif blockid == ids.block_green_stained_glass_pane:
+    elif blockid == ids.block_minecraft__green_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/green_stained_glass.png")
-    elif blockid == ids.block_red_stained_glass_pane:
+    elif blockid == ids.block_minecraft__red_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/red_stained_glass.png")
-    elif blockid == ids.block_black_stained_glass_pane:
+    elif blockid == ids.block_minecraft__black_stained_glass_pane:
         t = self.load_image_texture("assets/minecraft/textures/block/black_stained_glass.png")
 
     left = t.copy()
@@ -4711,7 +4711,7 @@ def stem(self, blockid, data):
 
 
 # vines
-@material(blockid=ids.block_vine, data=list(range(32)), transparent=True, solid=False, nospawn=True)
+@material(blockid=ids.block_minecraft__vine, data=list(range(32)), transparent=True, solid=False, nospawn=True)
 def vines(self, blockid, data):
     # Re-arrange the bits in data based on self.rotation
     # rotation  bit: 54321
@@ -4772,21 +4772,21 @@ def fence_gate(self, blockid, data):
         data = data | 0x4
 
     # create the closed gate side
-    if blockid == ids.block_oak_fence_gate: # Oak
+    if blockid == ids.block_minecraft__oak_fence_gate: # Oak
         gate_side = self.load_image_texture("assets/minecraft/textures/block/oak_planks.png").copy()
-    elif blockid == ids.block_spruce_fence_gate: # Spruce
+    elif blockid == ids.block_minecraft__spruce_fence_gate: # Spruce
         gate_side = self.load_image_texture("assets/minecraft/textures/block/spruce_planks.png").copy()
-    elif blockid == ids.block_birch_fence_gate: # Birch
+    elif blockid == ids.block_minecraft__birch_fence_gate: # Birch
         gate_side = self.load_image_texture("assets/minecraft/textures/block/birch_planks.png").copy()
-    elif blockid == ids.block_jungle_fence_gate: # Jungle
+    elif blockid == ids.block_minecraft__jungle_fence_gate: # Jungle
         gate_side = self.load_image_texture("assets/minecraft/textures/block/jungle_planks.png").copy()
-    elif blockid == ids.block_dark_oak_fence_gate: # Dark Oak
+    elif blockid == ids.block_minecraft__dark_oak_fence_gate: # Dark Oak
         gate_side = self.load_image_texture("assets/minecraft/textures/block/dark_oak_planks.png").copy()
-    elif blockid == ids.block_acacia_fence_gate: # Acacia
+    elif blockid == ids.block_minecraft__acacia_fence_gate: # Acacia
         gate_side = self.load_image_texture("assets/minecraft/textures/block/acacia_planks.png").copy()
-    elif blockid == ids.block_crimson_fence_gate: # Acacia
+    elif blockid == ids.block_minecraft__crimson_fence_gate: # Acacia
         gate_side = self.load_image_texture("assets/minecraft/textures/block/crimson_planks.png").copy()
-    elif blockid == ids.block_warped_fence_gate: # Acacia
+    elif blockid == ids.block_minecraft__warped_fence_gate: # Acacia
         gate_side = self.load_image_texture("assets/minecraft/textures/block/warped_planks.png").copy()
 
 
@@ -4853,7 +4853,7 @@ def fence_gate(self, blockid, data):
 # At the moment of writing this lilypads has no ancil data and their
 # orientation depends on their position on the map. So it uses pseudo
 # ancildata.
-@material(blockid=ids.block_lily_pad, data=list(range(4)), transparent=True)
+@material(blockid=ids.block_minecraft__lily_pad, data=list(range(4)), transparent=True)
 def lilypad(self, blockid, data):
     t = self.load_image_texture("assets/minecraft/textures/block/lily_pad.png").copy()
     if data == 0:
@@ -4870,7 +4870,7 @@ def lilypad(self, blockid, data):
 
 # enchantment table
 # TODO there's no book at the moment
-@material(blockid=ids.block_enchanting_table, transparent=True, nodata=True)
+@material(blockid=ids.block_minecraft__enchanting_table, transparent=True, nodata=True)
 def enchantment_table(self, blockid, data):
     # no book at the moment
     top = self.load_image_texture("assets/minecraft/textures/block/enchanting_table_top.png")
@@ -4881,7 +4881,7 @@ def enchantment_table(self, blockid, data):
 
 # brewing stand
 # TODO this is a place holder, is a 2d image pasted
-@material(blockid=ids.block_brewing_stand, data=list(range(5)), transparent=True)
+@material(blockid=ids.block_minecraft__brewing_stand, data=list(range(5)), transparent=True)
 def brewing_stand(self, blockid, data):
     base = self.load_image_texture("assets/minecraft/textures/block/brewing_stand_base.png")
     img = self.build_full_block(None, None, None, None, None, base)
@@ -4892,7 +4892,7 @@ def brewing_stand(self, blockid, data):
 
 
 # cauldron
-@material(blockid=ids.block_cauldron, data=list(range(4)), transparent=True, solid=True, nospawn=True)
+@material(blockid=ids.block_minecraft__cauldron, data=list(range(4)), transparent=True, solid=True, nospawn=True)
 def cauldron(self, blockid, data):
     side = self.load_image_texture("assets/minecraft/textures/block/cauldron_side.png").copy()
     top = self.load_image_texture("assets/minecraft/textures/block/cauldron_top.png")
@@ -4934,7 +4934,7 @@ def end_portal(self, blockid, data):
 
 
 # end portal frame (data range 8 to get all orientations of filled)
-@material(blockid=ids.block_end_portal_frame, data=list(range(8)), transparent=True, solid=True, nospawn=True)
+@material(blockid=ids.block_minecraft__end_portal_frame, data=list(range(8)), transparent=True, solid=True, nospawn=True)
 def end_portal_frame(self, blockid, data):
     # Do rotation, only seems to affect ender eye & top of frame
     data = data & 0b100 | ((self.rotation + (data & 0b11)) % 4)
@@ -4964,7 +4964,7 @@ def end_portal_frame(self, blockid, data):
 
 
 # inactive redstone lamp active redstone lamp
-@material(blockid=ids.block_redstone_lamp, data=[0, 1], solid=True)
+@material(blockid=ids.block_minecraft__redstone_lamp, data=[0, 1], solid=True)
 def redstone_lamp(self, blockid, data):
     if data == 0:
         tex = self.load_image_texture("assets/minecraft/textures/block/redstone_lamp.png")
@@ -4973,9 +4973,9 @@ def redstone_lamp(self, blockid, data):
     return self.build_block(tex, tex)
 
 # daylight sensor.  
-@material(blockid=[ids.block_daylight_detector], transparent=True)
+@material(blockid=[ids.block_minecraft__daylight_detector], transparent=True)
 def daylight_sensor(self, blockid, data):
-    if blockid == ids.block_daylight_detector: # daylight sensor
+    if blockid == ids.block_minecraft__daylight_detector: # daylight sensor
         top = self.load_image_texture("assets/minecraft/textures/block/daylight_detector_top.png")
     else: # inverted daylight sensor
         top = self.load_image_texture("assets/minecraft/textures/block/daylight_detector_inverted_top.png")
@@ -5007,7 +5007,7 @@ def daylight_sensor(self, blockid, data):
 
 
 # cocoa plant
-@material(blockid=ids.block_cocoa, data=list(range(12)), transparent=True)
+@material(blockid=ids.block_minecraft__cocoa, data=list(range(12)), transparent=True)
 def cocoa_plant(self, blockid, data):
     orientation = data & 3
     # rotation
@@ -5090,11 +5090,11 @@ def cocoa_plant(self, blockid, data):
 # command block
 @material(blockid=ids.group_command_block, solid=True, nodata=True)
 def command_block(self, blockid, data):
-    if blockid == ids.block_repeating_command_block:
+    if blockid == ids.block_minecraft__repeating_command_block:
         front = self.load_image_texture("assets/minecraft/textures/block/repeating_command_block_front.png")
         side = self.load_image_texture("assets/minecraft/textures/block/repeating_command_block_side.png")
         back = self.load_image_texture("assets/minecraft/textures/block/repeating_command_block_back.png")
-    elif blockid == ids.block_chain_command_block:
+    elif blockid == ids.block_minecraft__chain_command_block:
         front = self.load_image_texture("assets/minecraft/textures/block/chain_command_block_front.png")
         side = self.load_image_texture("assets/minecraft/textures/block/chain_command_block_side.png")
         back = self.load_image_texture("assets/minecraft/textures/block/chain_command_block_back.png")
@@ -5107,7 +5107,7 @@ def command_block(self, blockid, data):
 # beacon block
 # at the moment of writing this, it seems the beacon block doens't use
 # the data values
-@material(blockid=ids.block_beacon, transparent=True, nodata = True)
+@material(blockid=ids.block_minecraft__beacon, transparent=True, nodata = True)
 def beacon(self, blockid, data):
     # generate the three pieces of the block
     t = self.load_image_texture("assets/minecraft/textures/block/glass.png")
@@ -5132,24 +5132,24 @@ def beacon(self, blockid, data):
 @material(blockid=ids.group_wall_chorus, data=list(range(32)), transparent=True, nospawn=True)
 def cobblestone_wall(self, blockid, data):
     walls_id_to_tex = {
-          ids.block_chorus_plant: "assets/minecraft/textures/block/chorus_plant.png", # chorus plants
-        ids.block_andesite_wall: "assets/minecraft/textures/block/andesite.png",
-        ids.block_brick_wall: "assets/minecraft/textures/block/bricks.png",
-        ids.block_cobblestone_wall: "assets/minecraft/textures/block/cobblestone.png",
-        ids.block_diorite_wall: "assets/minecraft/textures/block/diorite.png",
-        ids.block_end_stone_brick_wall: "assets/minecraft/textures/block/end_stone_bricks.png",
-        ids.block_granite_wall: "assets/minecraft/textures/block/granite.png",
-        ids.block_mossy_cobblestone_wall: "assets/minecraft/textures/block/mossy_cobblestone.png",
-        ids.block_mossy_stone_brick_wall: "assets/minecraft/textures/block/mossy_stone_bricks.png",
-        ids.block_nether_brick_wall: "assets/minecraft/textures/block/nether_bricks.png",
-        ids.block_prismarine_wall: "assets/minecraft/textures/block/prismarine.png",
-        ids.block_red_nether_brick_wall: "assets/minecraft/textures/block/red_nether_bricks.png",
-        ids.block_red_sandstone_wall: "assets/minecraft/textures/block/red_sandstone.png",
-        ids.block_sandstone_wall: "assets/minecraft/textures/block/sandstone.png",
-        ids.block_stone_brick_wall: "assets/minecraft/textures/block/stone_bricks.png",
-        ids.block_polished_blackstone_brick_wall: "assets/minecraft/textures/block/polished_blackstone_bricks.png",
-        ids.block_polished_blackstone_wall: "assets/minecraft/textures/block/polished_blackstone.png",
-        ids.block_blackstone_wall: "assets/minecraft/textures/block/blackstone.png",
+          ids.block_minecraft__chorus_plant: "assets/minecraft/textures/block/chorus_plant.png", # chorus plants
+        ids.block_minecraft__andesite_wall: "assets/minecraft/textures/block/andesite.png",
+        ids.block_minecraft__brick_wall: "assets/minecraft/textures/block/bricks.png",
+        ids.block_minecraft__cobblestone_wall: "assets/minecraft/textures/block/cobblestone.png",
+        ids.block_minecraft__diorite_wall: "assets/minecraft/textures/block/diorite.png",
+        ids.block_minecraft__end_stone_brick_wall: "assets/minecraft/textures/block/end_stone_bricks.png",
+        ids.block_minecraft__granite_wall: "assets/minecraft/textures/block/granite.png",
+        ids.block_minecraft__mossy_cobblestone_wall: "assets/minecraft/textures/block/mossy_cobblestone.png",
+        ids.block_minecraft__mossy_stone_brick_wall: "assets/minecraft/textures/block/mossy_stone_bricks.png",
+        ids.block_minecraft__nether_brick_wall: "assets/minecraft/textures/block/nether_bricks.png",
+        ids.block_minecraft__prismarine_wall: "assets/minecraft/textures/block/prismarine.png",
+        ids.block_minecraft__red_nether_brick_wall: "assets/minecraft/textures/block/red_nether_bricks.png",
+        ids.block_minecraft__red_sandstone_wall: "assets/minecraft/textures/block/red_sandstone.png",
+        ids.block_minecraft__sandstone_wall: "assets/minecraft/textures/block/sandstone.png",
+        ids.block_minecraft__stone_brick_wall: "assets/minecraft/textures/block/stone_bricks.png",
+        ids.block_minecraft__polished_blackstone_brick_wall: "assets/minecraft/textures/block/polished_blackstone_bricks.png",
+        ids.block_minecraft__polished_blackstone_wall: "assets/minecraft/textures/block/polished_blackstone.png",
+        ids.block_minecraft__blackstone_wall: "assets/minecraft/textures/block/blackstone.png",
     }
     t = self.load_image_texture(walls_id_to_tex[blockid]).copy()
 
@@ -5283,11 +5283,11 @@ def anvil(self, blockid, data):
 
     # get the correct textures
     # the bits 0x4 and 0x8 determine how damaged is the anvil
-    if blockid == ids.block_anvil:  # non damaged anvil
+    if blockid == ids.block_minecraft__anvil:  # non damaged anvil
         top = self.load_image_texture("assets/minecraft/textures/block/anvil_top.png")
-    elif blockid == ids.block_chipped_anvil:  # slightly damaged
+    elif blockid == ids.block_minecraft__chipped_anvil:  # slightly damaged
         top = self.load_image_texture("assets/minecraft/textures/block/chipped_anvil_top.png")
-    elif blockid == ids.block_damaged_anvil:  # very damaged
+    elif blockid == ids.block_minecraft__damaged_anvil:  # very damaged
         top = self.load_image_texture("assets/minecraft/textures/block/damaged_anvil_top.png")
     # everything else use this texture
     big_side = self.load_image_texture("assets/minecraft/textures/block/anvil.png").copy()
@@ -5357,7 +5357,7 @@ def anvil(self, blockid, data):
 
 
 # block of quartz
-@material(blockid=[ids.block_quartz_pillar], data=list(range(5)), solid=True)
+@material(blockid=[ids.block_minecraft__quartz_pillar], data=list(range(5)), solid=True)
 def quartz_block(self, blockid, data):
     # pillar quartz block with orientation
     top = self.load_image_texture("assets/minecraft/textures/block/quartz_pillar_top.png")
@@ -5375,7 +5375,7 @@ def quartz_block(self, blockid, data):
         return self.build_full_block(side.rotate(90), None, None, top, side.rotate(90))
     
 # hopper
-@material(blockid=ids.block_hopper, data=list(range(4)), transparent=True)
+@material(blockid=ids.block_minecraft__hopper, data=list(range(4)), transparent=True)
 def hopper(self, blockid, data):
     #build the top
     side = self.load_image_texture("assets/minecraft/textures/block/hopper_outside.png")
@@ -5400,7 +5400,7 @@ def hopper(self, blockid, data):
 
 
 # hay block
-@material(blockid=ids.block_hay_block, data=list(range(9)), solid=True)
+@material(blockid=ids.block_minecraft__hay_block, data=list(range(9)), solid=True)
 def hayblock(self, blockid, data):
     top = self.load_image_texture("assets/minecraft/textures/block/hay_block_top.png")
     side = self.load_image_texture("assets/minecraft/textures/block/hay_block_side.png")
@@ -5424,37 +5424,37 @@ def hayblock(self, blockid, data):
 @material(blockid=ids.group_carpet, data=list(range(16)), transparent=True)
 def carpet(self, blockid, data):
 
-    if blockid == ids.block_white_carpet:
+    if blockid == ids.block_minecraft__white_carpet:
         tex = "assets/minecraft/textures/block/white_wool.png"
-    elif blockid == ids.block_orange_carpet:
+    elif blockid == ids.block_minecraft__orange_carpet:
         tex = "assets/minecraft/textures/block/orange_wool.png"
-    elif blockid == ids.block_magenta_carpet:
+    elif blockid == ids.block_minecraft__magenta_carpet:
         tex = "assets/minecraft/textures/block/magenta_wool.png"
-    elif blockid == ids.block_light_blue_carpet:
+    elif blockid == ids.block_minecraft__light_blue_carpet:
         tex = "assets/minecraft/textures/block/light_blue_wool.png"
-    elif blockid == ids.block_yellow_carpet:
+    elif blockid == ids.block_minecraft__yellow_carpet:
         tex = "assets/minecraft/textures/block/yellow_wool.png"
-    elif blockid == ids.block_lime_carpet:
+    elif blockid == ids.block_minecraft__lime_carpet:
         tex = "assets/minecraft/textures/block/lime_wool.png"
-    elif blockid == ids.block_pink_carpet:
+    elif blockid == ids.block_minecraft__pink_carpet:
         tex = "assets/minecraft/textures/block/pink_wool.png"
-    elif blockid == ids.block_gray_carpet:
+    elif blockid == ids.block_minecraft__gray_carpet:
         tex = "assets/minecraft/textures/block/gray_wool.png"
-    elif blockid == ids.block_light_gray_carpet:
+    elif blockid == ids.block_minecraft__light_gray_carpet:
         tex = "assets/minecraft/textures/block/light_gray_wool.png"
-    elif blockid == ids.block_cyan_carpet:
+    elif blockid == ids.block_minecraft__cyan_carpet:
         tex = "assets/minecraft/textures/block/cyan_wool.png"
-    elif blockid == ids.block_purple_carpet:
+    elif blockid == ids.block_minecraft__purple_carpet:
         tex = "assets/minecraft/textures/block/purple_wool.png"
-    elif blockid == ids.block_blue_carpet:
+    elif blockid == ids.block_minecraft__blue_carpet:
         tex = "assets/minecraft/textures/block/blue_wool.png"
-    elif blockid == ids.block_brown_carpet:
+    elif blockid == ids.block_minecraft__brown_carpet:
         tex = "assets/minecraft/textures/block/brown_wool.png"
-    elif blockid == ids.block_green_carpet:
+    elif blockid == ids.block_minecraft__green_carpet:
         tex = "assets/minecraft/textures/block/green_wool.png"
-    elif blockid == ids.block_red_carpet:
+    elif blockid == ids.block_minecraft__red_carpet:
         tex = "assets/minecraft/textures/block/red_wool.png"
-    elif blockid == ids.block_black_carpet:
+    elif blockid == ids.block_minecraft__black_carpet:
         tex = "assets/minecraft/textures/block/black_wool.png"
 
     texture = self.load_image_texture(tex)
@@ -5467,17 +5467,17 @@ def flower(self, blockid, data):
     # double_plant_map = ["sunflower", "lilac", "tall_grass", "large_fern", "rose_bush", "peony", "peony", "peony"]
     # plant = double_plant_map[data & 0x7]
 
-    if blockid == ids.block_sunflower:
+    if blockid == ids.block_minecraft__sunflower:
         plant = "sunflower"
-    elif blockid == ids.block_lilac:
+    elif blockid == ids.block_minecraft__lilac:
         plant = "lilac"
-    elif blockid == ids.block_tall_grass:
+    elif blockid == ids.block_minecraft__tall_grass:
         plant = "tall_grass"
-    elif blockid == ids.block_large_fern:
+    elif blockid == ids.block_minecraft__large_fern:
         plant = "large_fern"
-    elif blockid == ids.block_rose_bush:
+    elif blockid == ids.block_minecraft__rose_bush:
         plant = "rose_bush"
-    elif blockid == ids.block_peony:
+    elif blockid == ids.block_minecraft__peony:
         plant = "peony"
 
     if data == 1:
@@ -5497,7 +5497,7 @@ def flower(self, blockid, data):
     return img
 
 # chorus flower
-@material(blockid=ids.block_chorus_flower, data=list(range(6)), solid=True)
+@material(blockid=ids.block_minecraft__chorus_flower, data=list(range(6)), solid=True)
 def chorus_flower(self, blockid, data):
     # aged 5, dead
     if data == 5:
@@ -5508,7 +5508,7 @@ def chorus_flower(self, blockid, data):
     return self.build_block(texture,texture)
 
 # purpur pilar
-@material(blockid=ids.block_purpur_pillar, data=list(range(12)) , solid=True)
+@material(blockid=ids.block_minecraft__purpur_pillar, data=list(range(12)) , solid=True)
 def purpur_pillar(self, blockid, data):
     pillar_orientation = data & 12
     top=self.load_image_texture("assets/minecraft/textures/block/purpur_pillar_top.png")
@@ -5521,13 +5521,13 @@ def purpur_pillar(self, blockid, data):
         return self.build_full_block(side, None, None, side.rotate(270), top)
 
 # frosted ice
-@material(blockid=ids.block_frosted_ice, data=list(range(4)), solid=True)
+@material(blockid=ids.block_minecraft__frosted_ice, data=list(range(4)), solid=True)
 def frosted_ice(self, blockid, data):
     img = self.load_image_texture("assets/minecraft/textures/block/frosted_ice_%d.png" % data)
     return self.build_block(img, img)
 
 
-@material(blockid=ids.block_bone_block, data=list(range(12)), solid=True)
+@material(blockid=ids.block_minecraft__bone_block, data=list(range(12)), solid=True)
 def boneblock(self, blockid, data):
     # extract orientation
     boneblock_orientation = data & 12
@@ -5551,7 +5551,7 @@ def boneblock(self, blockid, data):
 
 
 # observer
-@material(blockid=ids.block_observer, data=[0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13], solid=True, nospawn=True)
+@material(blockid=ids.block_minecraft__observer, data=[0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13], solid=True, nospawn=True)
 def observer(self, blockid, data):
     # Do rotation
     if self.rotation in [1, 2, 3] and (data & 0b111) in [2, 3, 4, 5]:
@@ -5592,40 +5592,40 @@ def shulker_box(self, blockid, data):
                         3: {2: 4, 3: 5, 4: 3, 5: 2}}
         data = rotation_map[self.rotation][data]
 
-    if blockid == ids.block_shulker_box:
+    if blockid == ids.block_minecraft__shulker_box:
         # Uncolored shulker box
         file_name = "shulker.png"
-    elif blockid == ids.block_white_shulker_box:
+    elif blockid == ids.block_minecraft__white_shulker_box:
         file_name = "shulker_white.png"
-    elif blockid == ids.block_orange_shulker_box:
+    elif blockid == ids.block_minecraft__orange_shulker_box:
         file_name = "shulker_orange.png"
-    elif blockid == ids.block_magenta_shulker_box:
+    elif blockid == ids.block_minecraft__magenta_shulker_box:
         file_name = "shulker_magenta.png"
-    elif blockid == ids.block_light_blue_shulker_box:
+    elif blockid == ids.block_minecraft__light_blue_shulker_box:
         file_name = "shulker_light_blue.png"
-    elif blockid == ids.block_yellow_shulker_box:
+    elif blockid == ids.block_minecraft__yellow_shulker_box:
         file_name = "shulker_yellow.png"
-    elif blockid == ids.block_lime_shulker_box:
+    elif blockid == ids.block_minecraft__lime_shulker_box:
         file_name = "shulker_lime.png"
-    elif blockid == ids.block_pink_shulker_box:
+    elif blockid == ids.block_minecraft__pink_shulker_box:
         file_name = "shulker_pink.png"
-    elif blockid == ids.block_gray_shulker_box:
+    elif blockid == ids.block_minecraft__gray_shulker_box:
         file_name = "shulker_gray.png"
-    elif blockid == ids.block_light_gray_shulker_box:
+    elif blockid == ids.block_minecraft__light_gray_shulker_box:
         file_name = "shulker_light_gray.png"
-    elif blockid == ids.block_cyan_shulker_box:
+    elif blockid == ids.block_minecraft__cyan_shulker_box:
         file_name = "shulker_cyan.png"
-    elif blockid == ids.block_purple_shulker_box:
+    elif blockid == ids.block_minecraft__purple_shulker_box:
         file_name = "shulker_purple.png"
-    elif blockid == ids.block_blue_shulker_box:
+    elif blockid == ids.block_minecraft__blue_shulker_box:
         file_name = "shulker_blue.png"
-    elif blockid == ids.block_brown_shulker_box:
+    elif blockid == ids.block_minecraft__brown_shulker_box:
         file_name = "shulker_brown.png"
-    elif blockid == ids.block_green_shulker_box:
+    elif blockid == ids.block_minecraft__green_shulker_box:
         file_name = "shulker_green.png"
-    elif blockid == ids.block_red_shulker_box:
+    elif blockid == ids.block_minecraft__red_shulker_box:
         file_name = "shulker_red.png"
-    elif blockid == ids.block_black_shulker_box:
+    elif blockid == ids.block_minecraft__black_shulker_box:
         file_name = "shulker_black.png"
 
     shulker_t = self.load_image("assets/minecraft/textures/entity/shulker/%s" % file_name).copy()
@@ -5658,7 +5658,7 @@ def shulker_box(self, blockid, data):
 
 
 # structure block
-@material(blockid=ids.block_structure_block, data=list(range(4)), solid=True)
+@material(blockid=ids.block_minecraft__structure_block, data=list(range(4)), solid=True)
 def structure_block(self, blockid, data):
     if data == 0:
         img = self.load_image_texture("assets/minecraft/textures/block/structure_block_save.png")
@@ -5672,7 +5672,7 @@ def structure_block(self, blockid, data):
 
 
 # Jigsaw block
-@material(blockid=ids.block_jigsaw, data=list(range(6)), solid=True)
+@material(blockid=ids.block_minecraft__jigsaw, data=list(range(6)), solid=True)
 def jigsaw_block(self, blockid, data):
     # Do rotation
     if self.rotation in [1, 2, 3] and data in [2, 3, 4, 5]:
@@ -5706,11 +5706,11 @@ def jigsaw_block(self, blockid, data):
 @material(blockid=ids.group_age_4, data=list(range(4)), transparent=True, nospawn=True)
 def crops(self, blockid, data):
     crops_id_to_tex = {
-        ids.block_beetroots: "assets/minecraft/textures/block/beetroots_stage%d.png",
-      ids.block_sweet_berry_bush: "assets/minecraft/textures/block/sweet_berry_bush_stage%d.png",
-      ids.block_nether_wart: "assets/minecraft/textures/block/nether_wart_stage%d.png",
+        ids.block_minecraft__beetroots: "assets/minecraft/textures/block/beetroots_stage%d.png",
+      ids.block_minecraft__sweet_berry_bush: "assets/minecraft/textures/block/sweet_berry_bush_stage%d.png",
+      ids.block_minecraft__nether_wart: "assets/minecraft/textures/block/nether_wart_stage%d.png",
     }
-    if blockid == ids.block_nether_wart:
+    if blockid == ids.block_minecraft__nether_wart:
         raw_tex = crops_id_to_tex[blockid] % {0: 0, 1: 1, 2: 1, 3: 2}[data]
     else:
         raw_tex = crops_id_to_tex[blockid] % data
@@ -5733,37 +5733,37 @@ def glazed_terracotta(self, blockid, data):
     # Do rotation
     data = (self.rotation + data) % 4
 
-    if blockid == ids.block_white_glazed_terracotta:
+    if blockid == ids.block_minecraft__white_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/white_glazed_terracotta.png")
-    elif blockid == ids.block_orange_glazed_terracotta:
+    elif blockid == ids.block_minecraft__orange_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/orange_glazed_terracotta.png")
-    elif blockid == ids.block_magenta_glazed_terracotta:
+    elif blockid == ids.block_minecraft__magenta_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/magenta_glazed_terracotta.png")
-    elif blockid == ids.block_light_blue_glazed_terracotta:
+    elif blockid == ids.block_minecraft__light_blue_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/light_blue_glazed_terracotta.png")
-    elif blockid == ids.block_yellow_glazed_terracotta:
+    elif blockid == ids.block_minecraft__yellow_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/yellow_glazed_terracotta.png")
-    elif blockid == ids.block_lime_glazed_terracotta:
+    elif blockid == ids.block_minecraft__lime_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/lime_glazed_terracotta.png")
-    elif blockid == ids.block_pink_glazed_terracotta:
+    elif blockid == ids.block_minecraft__pink_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/pink_glazed_terracotta.png")
-    elif blockid == ids.block_gray_glazed_terracotta:
+    elif blockid == ids.block_minecraft__gray_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/gray_glazed_terracotta.png")
-    elif blockid == ids.block_light_gray_glazed_terracotta:
+    elif blockid == ids.block_minecraft__light_gray_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/light_gray_glazed_terracotta.png")
-    elif blockid == ids.block_cyan_glazed_terracotta:
+    elif blockid == ids.block_minecraft__cyan_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/cyan_glazed_terracotta.png")
-    elif blockid == ids.block_purple_glazed_terracotta:
+    elif blockid == ids.block_minecraft__purple_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/purple_glazed_terracotta.png")
-    elif blockid == ids.block_blue_glazed_terracotta:
+    elif blockid == ids.block_minecraft__blue_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/blue_glazed_terracotta.png")
-    elif blockid == ids.block_brown_glazed_terracotta:
+    elif blockid == ids.block_minecraft__brown_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/brown_glazed_terracotta.png")
-    elif blockid == ids.block_green_glazed_terracotta:
+    elif blockid == ids.block_minecraft__green_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/green_glazed_terracotta.png")
-    elif blockid == ids.block_red_glazed_terracotta:
+    elif blockid == ids.block_minecraft__red_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/red_glazed_terracotta.png")
-    elif blockid == ids.block_black_glazed_terracotta:
+    elif blockid == ids.block_minecraft__black_glazed_terracotta:
         texture = self.load_image_texture("assets/minecraft/textures/block/black_glazed_terracotta.png")
 
     texture_side4 = texture.transpose(Image.FLIP_LEFT_RIGHT)
@@ -5784,12 +5784,12 @@ def glazed_terracotta(self, blockid, data):
 # beehive and bee_nest
 @material(blockid=ids.group_bee, data=list(range(8)), solid=True)
 def beehivenest(self, blockid, data):    
-    if blockid == ids.block_beehive: #beehive
+    if blockid == ids.block_minecraft__beehive: #beehive
         t_top = self.load_image("assets/minecraft/textures/block/beehive_end.png")
         t_side = self.load_image("assets/minecraft/textures/block/beehive_side.png")
         t_front = self.load_image("assets/minecraft/textures/block/beehive_front.png")
         t_front_honey = self.load_image("assets/minecraft/textures/block/beehive_front_honey.png")
-    elif blockid == ids.block_bee_nest: #bee_nest
+    elif blockid == ids.block_minecraft__bee_nest: #bee_nest
         t_top = self.load_image("assets/minecraft/textures/block/bee_nest_top.png")
         t_side = self.load_image("assets/minecraft/textures/block/bee_nest_side.png")
         t_front = self.load_image("assets/minecraft/textures/block/bee_nest_front.png")
@@ -5842,7 +5842,7 @@ def beehivenest(self, blockid, data):
 
 
 # Barrel
-@material(blockid=ids.block_barrel, data=list(range(12)), solid=True)
+@material(blockid=ids.block_minecraft__barrel, data=list(range(12)), solid=True)
 def barrel(self, blockid, data):
     t_bottom = self.load_image("assets/minecraft/textures/block/barrel_bottom.png")
     t_side = self.load_image("assets/minecraft/textures/block/barrel_side.png")
@@ -5963,7 +5963,7 @@ def campfire(self, blockid, data):
 
 
 # Bell
-@material(blockid=ids.block_bell, data=list(range(16)), solid=True, transparent=True, nospawn=True)
+@material(blockid=ids.block_minecraft__bell, data=list(range(16)), solid=True, transparent=True, nospawn=True)
 def bell(self, blockid, data):
     # Do rotation, mask to not clobber attachment data
     data = data & 0b1100 | ((self.rotation + (data & 0b11)) % 4)
@@ -6096,7 +6096,7 @@ def bell(self, blockid, data):
 
 
 # Basalt
-@material(blockid=[ids.block_basalt, ids.block_polished_basalt], data=list(range(3)), solid=True)
+@material(blockid=[ids.block_minecraft__basalt, ids.block_minecraft__polished_basalt], data=list(range(3)), solid=True)
 def basalt(self, blockid, data):
     block_name = "polished_basalt" if blockid == 1002 else "basalt"
     top = self.load_image_texture("assets/minecraft/textures/block/" + block_name + "_top.png")
@@ -6110,7 +6110,7 @@ def basalt(self, blockid, data):
 
 
 # respawn anchor
-@material(blockid=ids.block_respawn_anchor, data=list(range(0, 5)), solid=True)
+@material(blockid=ids.block_minecraft__respawn_anchor, data=list(range(0, 5)), solid=True)
 def respawn_anchor(self, blockid, data):
     side = self.load_image_texture("assets/minecraft/textures/block/respawn_anchor_side%s.png" % data)
 

@@ -28,10 +28,10 @@ walk_chunk(RenderState* state, RenderPrimitiveNether* data) {
     for (x = -1; x < WIDTH + 1; x++) {
         for (z = -1; z < DEPTH + 1; z++) {
             blockid = get_data(state, BLOCKS, x, NETHER_ROOF - (state->chunky * 16), z);
-            if (blockid == block_bedrock) {
+            if (blockid == block_minecraft__bedrock) {
                 data->remove_block[x + 1][NETHER_ROOF][z + 1] = true;
                 blockid = get_data(state, BLOCKS, x, (NETHER_ROOF + 1) - (state->chunky * 16), z);
-                if (blockid == block_brown_mushroom || blockid == block_red_mushroom)
+                if (blockid == block_minecraft__brown_mushroom || blockid == block_minecraft__red_mushroom)
                     data->remove_block[x + 1][NETHER_ROOF + 1][z + 1] = true;
             }
 
