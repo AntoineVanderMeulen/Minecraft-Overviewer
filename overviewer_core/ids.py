@@ -1,4 +1,4 @@
-""" FLAG IDS """
+# FLAG IDS #
 block_byg__allium_flower_bush = 1581
 block_byg__alpine_bellflower = 1582
 block_byg__amaranth = 1583
@@ -1767,7 +1767,7 @@ block_minecraft__yellow_wall_banner = 436
 block_minecraft__yellow_wool = 106
 block_minecraft__zombie_head = 318
 block_minecraft__zombie_wall_head = 319
-""" END FLAG IDS """
+# END FLAG IDS #
 # Group #
 
 group_end_portal = [
@@ -2148,6 +2148,8 @@ group_cube_column = [
     block_minecraft__basalt,
     block_minecraft__polished_basalt,
     block_minecraft__purpur_pillar,
+    # FLAG CUBE_COLUMN ID #
+    # END FLAG CUBE_COLUMN ID #
 ]
 
 group_wall_torch = [

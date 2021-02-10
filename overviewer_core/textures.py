@@ -1322,7 +1322,7 @@ def lava(self, blockid, data):
 
 
 @material(blockid=ids.group_cube_column, data=[0, 4, 8], solid=True)
-def wood_and_bone(self, blockid, data):
+def cube_column(self, blockid, data):
     # extract orientation and wood type frorm data bits
     if self.rotation == 1:
         if data == 4:
@@ -1374,6 +1374,8 @@ def wood_and_bone(self, blockid, data):
         ids.block_minecraft__basalt: ("assets/minecraft/textures/block/basalt_top.png", "assets/minecraft/textures/block/basalt_side.png"),
         ids.block_minecraft__polished_basalt: ("assets/minecraft/textures/block/polished_basalt_top.png", "assets/minecraft/textures/block/polished_basalt_side.png"),
         ids.block_minecraft__purpur_pillar: ("assets/minecraft/textures/block/purpur_pillar_top.png", "assets/minecraft/textures/block/purpur_pillar.png"),
+        # FLAG CUBE_COLUMN TEX_DICT #
+        # END FLAG CUBE_COLUMN TEX_DICT #
     }
 
     top_f, side_f = cube_column_tex[blockid]
