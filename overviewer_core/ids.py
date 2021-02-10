@@ -1873,15 +1873,6 @@ group_table = [
     block_minecraft__smithing_table,
 ]
 
-group_leaves = [
-    block_minecraft__oak_leaves,
-    block_minecraft__spruce_leaves,
-    block_minecraft__birch_leaves,
-    block_minecraft__jungle_leaves,
-    block_minecraft__acacia_leaves,
-    block_minecraft__dark_oak_leaves,
-]
-
 group_stained_glass = [
     block_minecraft__white_stained_glass,
     block_minecraft__orange_stained_glass,

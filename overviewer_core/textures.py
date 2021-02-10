@@ -940,6 +940,12 @@ block(blockid=ids.block_minecraft__acacia_planks, top_image="assets/minecraft/te
 block(blockid=ids.block_minecraft__dark_oak_planks, top_image="assets/minecraft/textures/block/dark_oak_planks.png")
 block(blockid=ids.block_minecraft__crimson_planks, top_image="assets/minecraft/textures/block/crimson_planks.png")
 block(blockid=ids.block_minecraft__warped_planks, top_image="assets/minecraft/textures/block/warped_planks.png")
+block(blockid=ids.block_minecraft__oak_leaves, top_image="assets/minecraft/textures/block/oak_leaves.png", transparent=True, solid=True)
+block(blockid=ids.block_minecraft__spruce_leaves, top_image="assets/minecraft/textures/block/spruce_leaves.png", transparent=True, solid=True)
+block(blockid=ids.block_minecraft__birch_leaves, top_image="assets/minecraft/textures/block/birch_leaves.png", transparent=True, solid=True)
+block(blockid=ids.block_minecraft__jungle_leaves, top_image="assets/minecraft/textures/block/jungle_leaves.png", transparent=True, solid=True)
+block(blockid=ids.block_minecraft__acacia_leaves, top_image="assets/minecraft/textures/block/acacia_leaves.png", transparent=True, solid=True)
+block(blockid=ids.block_minecraft__dark_oak_leaves, top_image="assets/minecraft/textures/block/dark_oak_leaves.png", transparent=True, solid=True)
 block(blockid=ids.block_minecraft__bedrock, top_image="assets/minecraft/textures/block/bedrock.png")
 block(blockid=ids.block_minecraft__sand, top_image="assets/minecraft/textures/block/sand.png")
 block(blockid=ids.block_minecraft__red_sand, top_image="assets/minecraft/textures/block/red_sand.png")
@@ -1391,25 +1397,6 @@ def cube_column(self, blockid, data):
         return self.build_full_block(side.rotate(90), None, None, top, side.rotate(90))
     elif data == 8:  # north-south orientation
         return self.build_full_block(side, None, None, side.rotate(270), top)
-
-
-@material(blockid=ids.group_leaves, data=list(range(16)), transparent=True, solid=True)
-def leaves(self, blockid, data):
-    # mask out the bits 4 and 8
-    # they are used for player placed and check-for-decay blocks
-    data = data & 0x7
-
-    leaves_tex = {
-        ids.block_minecraft__oak_leaves: "assets/minecraft/textures/block/oak_leaves.png",
-        ids.block_minecraft__spruce_leaves: "assets/minecraft/textures/block/spruce_leaves.png",
-        ids.block_minecraft__birch_leaves: "assets/minecraft/textures/block/birch_leaves.png",
-        ids.block_minecraft__jungle_leaves: "assets/minecraft/textures/block/jungle_leaves.png",
-        ids.block_minecraft__acacia_leaves: "assets/minecraft/textures/block/acacia_leaves.png",
-        ids.block_minecraft__dark_oak_leaves: "assets/minecraft/textures/block/dark_oak_leaves.png",
-    }
-
-    t = self.load_image_texture(leaves_tex[blockid])
-    return self.build_block(t, t)
 
 
 # dispenser, dropper, furnace, blast furnace, and smoker
