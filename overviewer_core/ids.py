@@ -2111,7 +2111,7 @@ group_oddj = [
     block_minecraft__jigsaw,
 ]
 
-group_log_wood_bone = [
+group_cube_column = [
     block_minecraft__oak_log,
     block_minecraft__spruce_log,
     block_minecraft__birch_log,
@@ -2143,11 +2143,11 @@ group_log_wood_bone = [
     block_minecraft__stripped_crimson_stem,
     block_minecraft__stripped_warped_hyphae,
     block_minecraft__stripped_crimson_hyphae,
-]
-
-group_basalt = [
+    block_minecraft__quartz_pillar,
+    block_minecraft__hay_block,
     block_minecraft__basalt,
     block_minecraft__polished_basalt,
+    block_minecraft__purpur_pillar,
 ]
 
 group_wall_torch = [

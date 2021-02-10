@@ -874,7 +874,6 @@ def material(blockid=[], data=[0], **kwargs):
         return func_wrapper
     return inner_material
 
-
 # shortcut function for pure blocks, default to solid, nodata
 def block(blockid=[], top_image=None, side_image=None, **kwargs):
     new_kwargs = {'solid': True, 'nodata': True}
@@ -1109,10 +1108,10 @@ block(blockid=ids.block_minecraft__lodestone, top_image="assets/minecraft/textur
 block(blockid=ids.block_minecraft__crying_obsidian, top_image="assets/minecraft/textures/block/crying_obsidian.png")
 block(blockid=ids.block_minecraft__target, top_image="assets/minecraft/textures/block/target_top.png", side_image="assets/minecraft/textures/block/target_side.png"),
 block(blockid=ids.block_minecraft__cracked_polished_blackstone_bricks, top_image="assets/minecraft/textures/block/cracked_polished_blackstone_bricks.png"),
-block(blockid=ids.block_minecraft__chiseled_polished_blackstone, top_image="assets/minecraft/textures/block/chiseled_polished_blackstone.png"),
-block(blockid=ids.block_minecraft__chiseled_nether_bricks, top_image="assets/minecraft/textures/block/chiseled_nether_bricks.png"),
-block(blockid=ids.block_minecraft__cracked_nether_bricks, top_image="assets/minecraft/textures/block/cracked_nether_bricks.png"),
-block(blockid=ids.block_minecraft__quartz_bricks, top_image="assets/minecraft/textures/block/quartz_bricks.png"),
+block(blockid=ids.block_minecraft__chiseled_polished_blackstone, top_image="assets/minecraft/textures/block/chiseled_polished_blackstone.png")
+block(blockid=ids.block_minecraft__chiseled_nether_bricks, top_image="assets/minecraft/textures/block/chiseled_nether_bricks.png")
+block(blockid=ids.block_minecraft__cracked_nether_bricks, top_image="assets/minecraft/textures/block/cracked_nether_bricks.png")
+block(blockid=ids.block_minecraft__quartz_bricks, top_image="assets/minecraft/textures/block/quartz_bricks.png")
 
 # simple sprite
 sprite(blockid=ids.block_minecraft__oak_sapling, imagename="assets/minecraft/textures/block/oak_sapling.png")
@@ -1322,23 +1321,21 @@ def lava(self, blockid, data):
     return self.build_block(lavatex, lavatex)
 
 
-@material(blockid=ids.group_log_wood_bone, data=list(range(12)), solid=True)
+@material(blockid=ids.group_cube_column, data=[0, 4, 8], solid=True)
 def wood_and_bone(self, blockid, data):
     # extract orientation and wood type frorm data bits
-    wood_type = data & 3
-    wood_orientation = data & 12
     if self.rotation == 1:
-        if wood_orientation == 4:
-            wood_orientation = 8
-        elif wood_orientation == 8:
-            wood_orientation = 4
+        if data == 4:
+            data = 8
+        elif data == 8:
+            data = 4
     elif self.rotation == 3:
-        if wood_orientation == 4:
-            wood_orientation = 8
-        elif wood_orientation == 8:
-            wood_orientation = 4
+        if data == 4:
+            data = 8
+        elif data == 8:
+            data = 4
 
-    wood_tex = {
+    cube_column_tex = {
         ids.block_minecraft__oak_log: ("assets/minecraft/textures/block/oak_log_top.png", "assets/minecraft/textures/block/oak_log.png"),
         ids.block_minecraft__spruce_log: ("assets/minecraft/textures/block/spruce_log_top.png", "assets/minecraft/textures/block/spruce_log.png"),
         ids.block_minecraft__birch_log: ("assets/minecraft/textures/block/birch_log_top.png", "assets/minecraft/textures/block/birch_log.png"),
@@ -1372,22 +1369,27 @@ def wood_and_bone(self, blockid, data):
         ids.block_minecraft__crimson_hyphae: ("assets/minecraft/textures/block/crimson_stem.png", "assets/minecraft/textures/block/crimson_stem.png"),
         ids.block_minecraft__stripped_crimson_hyphae: ("assets/minecraft/textures/block/stripped_crimson_stem.png", "assets/minecraft/textures/block/stripped_crimson_stem.png"),
         ids.block_minecraft__bone_block: ("assets/minecraft/textures/block/bone_block_top.png", "assets/minecraft/textures/block/bone_block_side.png"),
+        ids.block_minecraft__quartz_pillar: ("assets/minecraft/textures/block/quartz_pillar_top.png", "assets/minecraft/textures/block/quartz_pillar.png"),
+        ids.block_minecraft__hay_block: ("assets/minecraft/textures/block/hay_block_top.png", "assets/minecraft/textures/block/hay_block_side.png"),
+        ids.block_minecraft__basalt: ("assets/minecraft/textures/block/basalt_top.png", "assets/minecraft/textures/block/basalt_side.png"),
+        ids.block_minecraft__polished_basalt: ("assets/minecraft/textures/block/polished_basalt_top.png", "assets/minecraft/textures/block/polished_basalt_side.png"),
+        ids.block_minecraft__purpur_pillar: ("assets/minecraft/textures/block/purpur_pillar_top.png", "assets/minecraft/textures/block/purpur_pillar.png"),
     }
 
-    # top_f, side_f = wood_tex[blockid].get(wood_type, wood_tex[blockid][0])
-    top_f, side_f = wood_tex[blockid]
+    top_f, side_f = cube_column_tex[blockid]
     if not side_f:
         side_f = top_f
     top = self.load_image_texture(top_f)
     side = self.load_image_texture(side_f)
 
     # choose orientation and paste textures
-    if wood_orientation == 0:
+    if data == 0:
         return self.build_block(top, side)
-    elif wood_orientation == 4:  # east-west orientation
+    elif data == 4:  # east-west orientation
         return self.build_full_block(side.rotate(90), None, None, top, side.rotate(90))
-    elif wood_orientation == 8:  # north-south orientation
+    elif data == 8:  # north-south orientation
         return self.build_full_block(side, None, None, side.rotate(270), top)
+
 
 @material(blockid=ids.group_leaves, data=list(range(16)), transparent=True, solid=True)
 def leaves(self, blockid, data):
@@ -5355,24 +5357,6 @@ def anvil(self, blockid, data):
 
     return img
 
-
-# block of quartz
-@material(blockid=[ids.block_minecraft__quartz_pillar], data=list(range(5)), solid=True)
-def quartz_block(self, blockid, data):
-    # pillar quartz block with orientation
-    top = self.load_image_texture("assets/minecraft/textures/block/quartz_pillar_top.png")
-    side = self.load_image_texture("assets/minecraft/textures/block/quartz_pillar.png").copy()
-    if data == 2: # vertical
-        return self.build_block(top, side)
-    elif data == 3: # north-south oriented
-        if self.rotation in (0,2):
-            return self.build_full_block(side.rotate(90), None, None, top, side.rotate(90))
-        return self.build_full_block(side, None, None, side.rotate(90), top)
-        
-    elif data == 4: # east-west oriented
-        if self.rotation in (0,2):
-            return self.build_full_block(side, None, None, side.rotate(90), top)
-        return self.build_full_block(side.rotate(90), None, None, top, side.rotate(90))
     
 # hopper
 @material(blockid=ids.block_minecraft__hopper, data=list(range(4)), transparent=True)
@@ -5398,27 +5382,6 @@ def hopper(self, blockid, data):
 
     return img
 
-
-# hay block
-@material(blockid=ids.block_minecraft__hay_block, data=list(range(9)), solid=True)
-def hayblock(self, blockid, data):
-    top = self.load_image_texture("assets/minecraft/textures/block/hay_block_top.png")
-    side = self.load_image_texture("assets/minecraft/textures/block/hay_block_side.png")
-
-    if self.rotation == 1:
-        if data == 4: data = 8
-        elif data == 8: data = 4
-    elif self.rotation == 3:
-        if data == 4: data = 8
-        elif data == 8: data = 4
-
-    # choose orientation and paste textures
-    if data == 4: # east-west orientation
-        return self.build_full_block(side.rotate(90), None, None, top, side.rotate(90))
-    elif data == 8: # north-south orientation
-        return self.build_full_block(side, None, None, side.rotate(90), top)
-    else:
-        return self.build_block(top, side)
 
 # carpet - wool block that's small?
 @material(blockid=ids.group_carpet, data=list(range(16)), transparent=True)
@@ -5507,47 +5470,12 @@ def chorus_flower(self, blockid, data):
 
     return self.build_block(texture,texture)
 
-# purpur pilar
-@material(blockid=ids.block_minecraft__purpur_pillar, data=list(range(12)) , solid=True)
-def purpur_pillar(self, blockid, data):
-    pillar_orientation = data & 12
-    top=self.load_image_texture("assets/minecraft/textures/block/purpur_pillar_top.png")
-    side=self.load_image_texture("assets/minecraft/textures/block/purpur_pillar.png")
-    if pillar_orientation == 0: # east-west orientation
-        return self.build_block(top, side)
-    elif pillar_orientation == 4: # east-west orientation
-        return self.build_full_block(side.rotate(90), None, None, top, side.rotate(90))
-    elif pillar_orientation == 8: # north-south orientation
-        return self.build_full_block(side, None, None, side.rotate(270), top)
 
 # frosted ice
 @material(blockid=ids.block_minecraft__frosted_ice, data=list(range(4)), solid=True)
 def frosted_ice(self, blockid, data):
     img = self.load_image_texture("assets/minecraft/textures/block/frosted_ice_%d.png" % data)
     return self.build_block(img, img)
-
-
-@material(blockid=ids.block_minecraft__bone_block, data=list(range(12)), solid=True)
-def boneblock(self, blockid, data):
-    # extract orientation
-    boneblock_orientation = data & 12
-    if self.rotation == 1:
-        if boneblock_orientation == 4: boneblock_orientation = 8
-        elif boneblock_orientation == 8: boneblock_orientation = 4
-    elif self.rotation == 3:
-        if boneblock_orientation == 4: boneblock_orientation = 8
-        elif boneblock_orientation == 8: boneblock_orientation = 4
-
-    top = self.load_image_texture("assets/minecraft/textures/block/bone_block_top.png")
-    side = self.load_image_texture("assets/minecraft/textures/block/bone_block_side.png")
-
-    # choose orientation and paste textures
-    if boneblock_orientation == 0:
-        return self.build_block(top, side)
-    elif boneblock_orientation == 4: # east-west orientation
-        return self.build_full_block(side.rotate(90), None, None, top, side.rotate(90))
-    elif boneblock_orientation == 8: # north-south orientation
-        return self.build_full_block(side, None, None, side.rotate(270), top)
 
 
 # observer
@@ -6093,20 +6021,6 @@ def bell(self, blockid, data):
         alpha_over(img, post_front_t, (0, 0), post_front_t)
 
     return img
-
-
-# Basalt
-@material(blockid=[ids.block_minecraft__basalt, ids.block_minecraft__polished_basalt], data=list(range(3)), solid=True)
-def basalt(self, blockid, data):
-    block_name = "polished_basalt" if blockid == 1002 else "basalt"
-    top = self.load_image_texture("assets/minecraft/textures/block/" + block_name + "_top.png")
-    side = self.load_image_texture("assets/minecraft/textures/block/" + block_name + "_side.png")
-    if data == 0:
-        return self.build_block(top, side)
-    elif data == 1: # east-west orientation
-        return self.build_full_block(side.rotate(90), None, None, top, side.rotate(90))
-    elif data == 2: # north-south orientation
-        return self.build_full_block(side, None, None, side.rotate(270), top)
 
 
 # respawn anchor

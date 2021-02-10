@@ -1356,23 +1356,12 @@ class RegionSet(object):
             if ((block in ids.group_piston and p.get('extended', 'false') == 'true') or (block == ids.block_minecraft__piston_head and p.get('type', 'normal') == 'sticky') or (block == ids.block_minecraft__observer and p.get('powered', 'false') == 'true')):
                 data |= 0x08
 
-        elif block in ids.group_log_wood_bone:
+        elif block in ids.group_cube_column:
             axis = palette_entry['Properties']['axis']
             if axis == 'x':
                 data |= 4
             elif axis == 'z':
                 data |= 8
-
-        elif block == ids.block_minecraft__quartz_pillar:
-            axis = palette_entry['Properties']['axis']
-            if axis == 'x':
-                data = 3
-            if axis == 'z':
-                data = 4
-
-        elif block in ids.group_basalt:
-            axis = palette_entry['Properties']['axis']
-            data = {'y': 0, 'x': 1, 'z': 2}[axis]
 
         elif block in ids.group_torch:
             if block in ids.group_lit_torch and palette_entry['Properties']['lit'] == 'true':
