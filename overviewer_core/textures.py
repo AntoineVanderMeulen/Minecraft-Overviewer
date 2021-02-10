@@ -946,6 +946,7 @@ block(blockid=ids.block_minecraft__birch_leaves, top_image="assets/minecraft/tex
 block(blockid=ids.block_minecraft__jungle_leaves, top_image="assets/minecraft/textures/block/jungle_leaves.png", transparent=True, solid=True)
 block(blockid=ids.block_minecraft__acacia_leaves, top_image="assets/minecraft/textures/block/acacia_leaves.png", transparent=True, solid=True)
 block(blockid=ids.block_minecraft__dark_oak_leaves, top_image="assets/minecraft/textures/block/dark_oak_leaves.png", transparent=True, solid=True)
+block(blockid=ids.block_minecraft__red_sandstone, top_image="assets/minecraft/textures/block/red_sandstone_top.png", side_image="assets/minecraft/textures/block/red_sandstone.png", solid=True)
 block(blockid=ids.block_minecraft__bedrock, top_image="assets/minecraft/textures/block/bedrock.png")
 block(blockid=ids.block_minecraft__sand, top_image="assets/minecraft/textures/block/sand.png")
 block(blockid=ids.block_minecraft__red_sand, top_image="assets/minecraft/textures/block/red_sand.png")
@@ -1462,12 +1463,6 @@ def furnaces(self, blockid, data):
     else:  # in any other direction the front can't be seen
         return self.build_full_block(top, None, None, side, side)
 
-# red sandstone
-@material(blockid=ids.block_minecraft__red_sandstone, data=0, solid=True)
-def sandstone(self, blockid, data):
-    top = self.load_image_texture("assets/minecraft/textures/block/sandstone_top.png")
-    side = self.load_image_texture("assets/minecraft/textures/block/red_sandstone.png")
-    return self.build_full_block(top, None, None, side, side, self.load_image_texture("assets/minecraft/textures/block/red_sandstone_bottom.png"))
 
 # Bed
 @material(blockid=ids.group_bed, data=list(range(256)), transparent=True, nospawn=True)
