@@ -19,6 +19,7 @@
 #include "../mc_id.h"
 #include "../overviewer.h"
 #include "biomes.h"
+#include <stdio.h>
 
 typedef struct {
     int32_t use_biomes;
@@ -72,6 +73,52 @@ base_occluded(void* data, RenderState* state, int32_t x, int32_t y, int32_t z) {
 }
 
 static void
+simple_rgb(RenderState* state, int32_t dx, int32_t dz, uint32_t* r, uint32_t* g, uint32_t* b, float temp, float rain, bool flip_xy, PyObject* color, PyObject* color_table) {
+    uint8_t biome;
+    uint8_t tablex, tabley;
+
+    biome = get_data(state, BIOMES, state->x + dx, state->y, state->z + dz);
+
+    if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
+        *r += biome_table[biome].wr;
+        *g += biome_table[biome].wg;
+        *b += biome_table[biome].wb;
+    } else if (block_class_is_subset(state->block, block_class_leave, block_class_leave_len)) {
+        *r += biome_table[biome].fr;
+        *g += biome_table[biome].fg;
+        *b += biome_table[biome].fb;
+
+    } else {
+        *r += biome_table[biome].gr;
+        *g += biome_table[biome].gg;
+        *b += biome_table[biome].gb;
+    }
+    if(*r == biome_table[biome].gr && *g == biome_table[biome].gg && *b == biome_table[biome].gb) {
+        rain *= temp;
+
+        /* make sure they're sane */
+        temp = OV_CLAMP(temp, 0.0, 1.0);
+        rain = OV_CLAMP(rain, 0.0, 1.0);
+
+        /* convert to x/y coordinates in color table */
+        tablex = 255 - (255 * temp);
+        tabley = 255 - (255 * rain);
+        if (flip_xy) {
+            uint8_t tmp = 255 - tablex;
+            tablex = 255 - tabley;
+            tabley = tmp;
+        }
+
+        /* look up color! */
+        color = PySequence_GetItem(color_table, tabley * 256 + tablex);
+        *r += PyLong_AsLong(PyTuple_GET_ITEM(color, 0));
+        *g += PyLong_AsLong(PyTuple_GET_ITEM(color, 1));
+        *b += PyLong_AsLong(PyTuple_GET_ITEM(color, 2));
+        Py_DECREF(color);
+    }
+}
+
+static void
 base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObject* mask_light) {
     PrimitiveBase* self = (PrimitiveBase*)data;
 
@@ -95,8 +142,9 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
      */
     if (/* grass, but not snowgrass */
         (state->block == block_minecraft__grass_block && get_data(state, BLOCKS, state->x, state->y + 1, state->z) != block_minecraft__snow) ||
-        block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__vine, block_minecraft__lily_pad, block_minecraft__flowing_water, block_minecraft__water, block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves},
-                              10) ||
+        block_class_is_subset(state->block, block_class_leave, block_class_leave_len) || 
+        block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__vine, block_minecraft__lily_pad, block_minecraft__flowing_water, block_minecraft__water},
+                              4) ||
         /* tallgrass, but not dead shrubs */
         (state->block == block_minecraft__tall_grass) ||
         (state->block == block_minecraft__grass) ||
@@ -111,7 +159,7 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
         (state->block == block_minecraft__double_plant && below_block == block_minecraft__double_plant && (below_data == 2 || below_data == 3))) {
         /* do the biome stuff! */
         PyObject* facemask = mask;
-        uint8_t r = 255, g = 255, b = 255;
+        uint32_t r = 255, g = 255, b = 255;
         PyObject* color_table = NULL;
         bool flip_xy = false;
 
@@ -124,7 +172,11 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
             color_table = self->grasscolor;
         // } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
         //     color_table = self->watercolor;
-        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves}, 6)) {
+
+            
+
+
+        } else if (block_class_is_subset(state->block, block_class_leave, block_class_leave_len)) {
             color_table = self->foliagecolor;
             /* birch foliage color is flipped XY-ways */
             flip_xy = state->block_data == 2;
@@ -134,93 +186,144 @@ base_draw(void* data, RenderState* state, PyObject* src, PyObject* mask, PyObjec
             uint8_t radius_biome_blend = 7;
             uint8_t biome;
             int32_t dx, dz;
-            uint8_t tablex, tabley;
             float temp = 0.0, rain = 0.0;
-            uint32_t multr = 0, multg = 0, multb = 0;
+            uint32_t multr = 255, multg = 255, multb = 255;
             int32_t tmp;
             PyObject* color = NULL;
 
-            if (self->use_biomes) {
-                /* average over all neighbors */
-                for (dx = -1*((radius_biome_blend - 1)/2); dx <= ((radius_biome_blend - 1)/2); dx++) {
-                    for (dz = -1*((radius_biome_blend - 1)/2); dz <= ((radius_biome_blend - 1)/2); dz++) {
-                        biome = get_data(state, BIOMES, state->x + dx, state->y, state->z + dz);
-                        if (biome >= NUM_BIOMES) {
-                            /* note -- biome 255 shows up on map borders.
-                               who knows what it is? certainly not I.
-                            */
-                            biome = DEFAULT_BIOME; /* forest -- reasonable default */
-                        }
-
-                        temp += biome_table[biome].temperature;
-                        rain += biome_table[biome].rainfall;
-
-                        if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
-                                multr += biome_table[biome].wr;
-                                multg += biome_table[biome].wg;
-                                multb += biome_table[biome].wb;
-                        } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves}, 6)) {
-                            multr += biome_table[biome].fr;
-                            multg += biome_table[biome].fg;
-                            multb += biome_table[biome].fb;                                
-                        } else {
-                            multr += biome_table[biome].gr;
-                            multg += biome_table[biome].gg;
-                            multb += biome_table[biome].gb;
-                        }
-                    }
-                }
-
-                temp /= radius_biome_blend*radius_biome_blend;
-                rain /= radius_biome_blend*radius_biome_blend;
-                multr /= radius_biome_blend*radius_biome_blend;
-                multg /= radius_biome_blend*radius_biome_blend;
-                multb /= radius_biome_blend*radius_biome_blend;
-            } else {
-                /* don't use biomes, just use the default */
-                temp = biome_table[DEFAULT_BIOME].temperature;
-                rain = biome_table[DEFAULT_BIOME].rainfall;
-
-                if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
-                    multr = biome_table[DEFAULT_BIOME].wr;
-                    multg = biome_table[DEFAULT_BIOME].wg;
-                    multb = biome_table[DEFAULT_BIOME].wb;
-                }
-                else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves}, 6)) {
-                    multr = biome_table[DEFAULT_BIOME].fr;
-                    multg = biome_table[DEFAULT_BIOME].fg;
-                    multb = biome_table[DEFAULT_BIOME].fb;                                
-                }
-                else {
-                    multr = biome_table[DEFAULT_BIOME].gr;
-                    multg = biome_table[DEFAULT_BIOME].gg;
-                    multb = biome_table[DEFAULT_BIOME].gb;
+            for (dx = -1*((radius_biome_blend - 1)/2); dx <= ((radius_biome_blend - 1)/2); dx++) {
+                for (dz = -1*((radius_biome_blend - 1)/2); dz <= ((radius_biome_blend - 1)/2); dz++) {
+                    simple_rgb(state, dx, dz, &r, &g, &b, temp, rain, flip_xy, color, color_table);
                 }
             }
-            if (!(block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2))) {
-                /* second coordinate is actually scaled to fit inside the triangle
-                   so store it in rain */
-                rain *= temp;
+            r /= radius_biome_blend*radius_biome_blend;
+            g /= radius_biome_blend*radius_biome_blend;
+            b /= radius_biome_blend*radius_biome_blend;
+            // printf("//////////////\n");
+            // biome = get_data(state, BIOMES, state->x, state->y, state->z);
 
-                /* make sure they're sane */
-                temp = OV_CLAMP(temp, 0.0, 1.0);
-                rain = OV_CLAMP(rain, 0.0, 1.0);
+            // if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
+            //     r = biome_table[biome].wr;
+            //     g = biome_table[biome].wg;
+            //     b = biome_table[biome].wb;
+            // } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves}, 6)) {
+            //     r = biome_table[biome].fr;
+            //     g = biome_table[biome].fg;
+            //     b = biome_table[biome].fb;                                
+            // } else {
+            //     r = biome_table[biome].gr;
+            //     g = biome_table[biome].gg;
+            //     b = biome_table[biome].gb;
+            //     if(r == 255 && g == 255 && b == 255) {
+            //         rain *= temp;
 
-                /* convert to x/y coordinates in color table */
-                tablex = 255 - (255 * temp);
-                tabley = 255 - (255 * rain);
-                if (flip_xy) {
-                    uint8_t tmp = 255 - tablex;
-                    tablex = 255 - tabley;
-                    tabley = tmp;
+                    /* make sure they're sane */
+                    // temp = OV_CLAMP(temp, 0.0, 1.0);
+                    // rain = OV_CLAMP(rain, 0.0, 1.0);
+
+                    /* convert to x/y coordinates in color table */
+                    // tablex = 255 - (255 * temp);
+                    // tabley = 255 - (255 * rain);
+                    // if (flip_xy) {
+                    //     uint8_t tmp = 255 - tablex;
+                    //     tablex = 255 - tabley;
+                    //     tabley = tmp;
+                    // }
+
+                    /* look up color! */
+            //         color = PySequence_GetItem(color_table, tabley * 256 + tablex);
+            //         r = PyLong_AsLong(PyTuple_GET_ITEM(color, 0));
+            //         g = PyLong_AsLong(PyTuple_GET_ITEM(color, 1));
+            //         b = PyLong_AsLong(PyTuple_GET_ITEM(color, 2));
+            //         Py_DECREF(color);
+            //     }
+            // }
+
+            
+
+            if (1==0) {
+                if (self->use_biomes) {
+                    /* average over all neighbors */
+                    for (dx = -1*((radius_biome_blend - 1)/2); dx <= ((radius_biome_blend - 1)/2); dx++) {
+                        for (dz = -1*((radius_biome_blend - 1)/2); dz <= ((radius_biome_blend - 1)/2); dz++) {
+                            biome = get_data(state, BIOMES, state->x + dx, state->y, state->z + dz);
+                            if (biome >= NUM_BIOMES) {
+                                /* note -- biome 255 shows up on map borders.
+                                   who knows what it is? certainly not I.
+                                */
+                                biome = DEFAULT_BIOME; /* forest -- reasonable default */
+                            }
+
+                            temp += biome_table[biome].temperature;
+                            rain += biome_table[biome].rainfall;
+
+                            if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
+                                    multr += biome_table[biome].wr;
+                                    multg += biome_table[biome].wg;
+                                    multb += biome_table[biome].wb;
+                            } else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves}, 6)) {
+                                multr += biome_table[biome].fr;
+                                multg += biome_table[biome].fg;
+                                multb += biome_table[biome].fb;                                
+                            } else {
+                                multr += biome_table[biome].gr;
+                                multg += biome_table[biome].gg;
+                                multb += biome_table[biome].gb;
+                            }
+                        }
+                    }
+
+                    temp /= radius_biome_blend*radius_biome_blend;
+                    rain /= radius_biome_blend*radius_biome_blend;
+                    multr /= radius_biome_blend*radius_biome_blend;
+                    multg /= radius_biome_blend*radius_biome_blend;
+                    multb /= radius_biome_blend*radius_biome_blend;
+                } else {
+                    /* don't use biomes, just use the default */
+                    temp = biome_table[DEFAULT_BIOME].temperature;
+                    rain = biome_table[DEFAULT_BIOME].rainfall;
+
+                    if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2)) {
+                        multr = biome_table[DEFAULT_BIOME].wr;
+                        multg = biome_table[DEFAULT_BIOME].wg;
+                        multb = biome_table[DEFAULT_BIOME].wb;
+                    }
+                    else if (block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__oak_leaves, block_minecraft__spruce_leaves, block_minecraft__birch_leaves, block_minecraft__jungle_leaves, block_minecraft__acacia_leaves, block_minecraft__dark_oak_leaves}, 6)) {
+                        multr = biome_table[DEFAULT_BIOME].fr;
+                        multg = biome_table[DEFAULT_BIOME].fg;
+                        multb = biome_table[DEFAULT_BIOME].fb;                                
+                    }
+                    else {
+                        multr = biome_table[DEFAULT_BIOME].gr;
+                        multg = biome_table[DEFAULT_BIOME].gg;
+                        multb = biome_table[DEFAULT_BIOME].gb;
+                    }
                 }
+                if (!(block_class_is_subset(state->block, (mc_block_t[]){block_minecraft__flowing_water, block_minecraft__water}, 2))) {
+                    /* second coordinate is actually scaled to fit inside the triangle
+                       so store it in rain */
+                    rain *= temp;
 
-                /* look up color! */
-                color = PySequence_GetItem(color_table, tabley * 256 + tablex);
-                r = PyLong_AsLong(PyTuple_GET_ITEM(color, 0));
-                g = PyLong_AsLong(PyTuple_GET_ITEM(color, 1));
-                b = PyLong_AsLong(PyTuple_GET_ITEM(color, 2));
-                Py_DECREF(color);
+                    /* make sure they're sane */
+                    temp = OV_CLAMP(temp, 0.0, 1.0);
+                    rain = OV_CLAMP(rain, 0.0, 1.0);
+
+                    /* convert to x/y coordinates in color table */
+                    // tablex = 255 - (255 * temp);
+                    // tabley = 255 - (255 * rain);
+                    // if (flip_xy) {
+                    //     uint8_t tmp = 255 - tablex;
+                    //     tablex = 255 - tabley;
+                    //     tabley = tmp;
+                    // }
+
+                    /* look up color! */
+                    // color = PySequence_GetItem(color_table, tabley * 256 + tablex);
+                    // r = PyLong_AsLong(PyTuple_GET_ITEM(color, 0));
+                    // g = PyLong_AsLong(PyTuple_GET_ITEM(color, 1));
+                    // b = PyLong_AsLong(PyTuple_GET_ITEM(color, 2));
+                    // Py_DECREF(color);
+                }
             }
             /* do the after-coloration */
             r = OV_MULDIV255(r, multr, tmp);

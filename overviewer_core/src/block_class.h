@@ -60,4 +60,10 @@ extern const size_t block_class_pane_and_bars_len;
 extern const mc_block_t block_class_no_inner_surfaces[];
 extern const size_t block_class_no_inner_surfaces_len;
 
+extern const mc_block_t block_class_lily_pad[];
+extern const size_t block_class_lily_pad_len;
+
+extern const mc_block_t block_class_leave[];
+extern const size_t block_class_leave_len;
+
 #endif

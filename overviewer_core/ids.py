@@ -1,1009 +1,4 @@
 # FLAG IDS #
-block_byg__allium_flower_bush = 1581
-block_byg__alpine_bellflower = 1582
-block_byg__amaranth = 1583
-block_byg__ametrine_block = 1445
-block_byg__ametrine_ore = 1443
-block_byg__angelica = 1584
-block_byg__anthracite_block = 1225
-block_byg__anthracite_ore = 1226
-block_byg__araucaria_leaves = 1123
-block_byg__araucaria_sapling = 1077
-block_byg__aspen_bookshelf = 791
-block_byg__aspen_button = 875
-block_byg__aspen_crafting_table = 931
-block_byg__aspen_door = 819
-block_byg__aspen_fence = 1043
-block_byg__aspen_fence_gate = 959
-block_byg__aspen_leaves = 1124
-block_byg__aspen_log = 1365
-block_byg__aspen_planks = 763
-block_byg__aspen_pressure_plate = 847
-block_byg__aspen_sapling = 1078
-block_byg__aspen_slab = 987
-block_byg__aspen_stairs = 1015
-block_byg__aspen_trapdoor = 903
-block_byg__aspen_wood = 1396
-block_byg__azalea = 1585
-block_byg__baobab_bookshelf = 792
-block_byg__baobab_button = 876
-block_byg__baobab_crafting_table = 932
-block_byg__baobab_door = 820
-block_byg__baobab_fence = 1044
-block_byg__baobab_fence_gate = 960
-block_byg__baobab_fruit_block = 1223
-block_byg__baobab_leaves = 1125
-block_byg__baobab_log = 1366
-block_byg__baobab_planks = 764
-block_byg__baobab_pressure_plate = 848
-block_byg__baobab_sapling = 1079
-block_byg__baobab_slab = 988
-block_byg__baobab_stairs = 1016
-block_byg__baobab_trapdoor = 904
-block_byg__baobab_wood = 1397
-block_byg__beach_grass = 1219
-block_byg__begonia = 1586
-block_byg__bistort = 1587
-block_byg__black_chiseled_sandstone = 1342
-block_byg__black_cut_sandstone = 1343
-block_byg__black_ice = 1323
-block_byg__black_puff = 1426
-block_byg__black_puff_mushroom_block = 1180
-block_byg__black_rose = 1591
-block_byg__black_sand = 1340
-block_byg__black_sandstone = 1341
-block_byg__black_smooth_sandstone = 1344
-block_byg__blooming_witch_hazel_leaves = 1126
-block_byg__blue_chiseled_sandstone = 1352
-block_byg__blue_cut_sandstone = 1353
-block_byg__blue_enchanted_bookshelf = 793
-block_byg__blue_enchanted_button = 877
-block_byg__blue_enchanted_crafting_table = 933
-block_byg__blue_enchanted_door = 821
-block_byg__blue_enchanted_fence = 1045
-block_byg__blue_enchanted_fence_gate = 961
-block_byg__blue_enchanted_leaves = 1127
-block_byg__blue_enchanted_log = 1367
-block_byg__blue_enchanted_planks = 765
-block_byg__blue_enchanted_pressure_plate = 849
-block_byg__blue_enchanted_sapling = 1080
-block_byg__blue_enchanted_slab = 989
-block_byg__blue_enchanted_stairs = 1017
-block_byg__blue_enchanted_trapdoor = 905
-block_byg__blue_enchanted_wood = 1398
-block_byg__blue_glowcane = 1204
-block_byg__blue_glowcane_block = 1315
-block_byg__blue_glowshroom = 1430
-block_byg__blue_glowshroom_block = 1183
-block_byg__blue_nether_bricks = 1268
-block_byg__blue_netherrack = 1267
-block_byg__blue_petal_block = 1335
-block_byg__blue_sage = 1588
-block_byg__blue_sand = 1350
-block_byg__blue_sandstone = 1351
-block_byg__blue_smooth_sandstone = 1354
-block_byg__blue_spruce_leaves = 1128
-block_byg__blue_spruce_sapling = 1081
-block_byg__blueberry_bush = 1210
-block_byg__boric_campfire = 1233
-block_byg__boric_fire = 1234
-block_byg__brimstone = 1231
-block_byg__brown_birch_leaves = 1129
-block_byg__brown_birch_sapling = 1082
-block_byg__brown_mushroom_stem = 1182
-block_byg__brown_oak_leaves = 1130
-block_byg__brown_oak_sapling = 1083
-block_byg__brown_zelkova_leaves = 1131
-block_byg__brown_zelkova_sapling = 1084
-block_byg__bulbis_anomaly = 1438
-block_byg__bulbis_bookshelf = 816
-block_byg__bulbis_button = 900
-block_byg__bulbis_crafting_table = 956
-block_byg__bulbis_door = 844
-block_byg__bulbis_fence = 1068
-block_byg__bulbis_fence_gate = 984
-block_byg__bulbis_oddity = 1435
-block_byg__bulbis_phycelium = 1656
-block_byg__bulbis_planks = 788
-block_byg__bulbis_pressure_plate = 872
-block_byg__bulbis_shell = 1190
-block_byg__bulbis_slab = 1012
-block_byg__bulbis_sprouts = 1269
-block_byg__bulbis_stairs = 1040
-block_byg__bulbis_stem = 1392
-block_byg__bulbis_trapdoor = 928
-block_byg__bulbis_wood = 1423
-block_byg__california_poppy = 1589
-block_byg__cattail = 1192
-block_byg__cherry_bookshelf = 794
-block_byg__cherry_button = 878
-block_byg__cherry_crafting_table = 934
-block_byg__cherry_door = 822
-block_byg__cherry_fence = 1046
-block_byg__cherry_fence_gate = 962
-block_byg__cherry_log = 1368
-block_byg__cherry_planks = 766
-block_byg__cherry_pressure_plate = 850
-block_byg__cherry_slab = 990
-block_byg__cherry_stairs = 1018
-block_byg__cherry_trapdoor = 906
-block_byg__cherry_wood = 1399
-block_byg__chiseled_red_rock_brick_slab = 1476
-block_byg__chiseled_red_rock_brick_stairs = 1477
-block_byg__chiseled_red_rock_brick_wall = 1478
-block_byg__chiseled_red_rock_bricks = 1475
-block_byg__cika_bookshelf = 795
-block_byg__cika_button = 879
-block_byg__cika_crafting_table = 935
-block_byg__cika_door = 823
-block_byg__cika_fence = 1047
-block_byg__cika_fence_gate = 963
-block_byg__cika_leaves = 1132
-block_byg__cika_log = 1369
-block_byg__cika_planks = 767
-block_byg__cika_pressure_plate = 851
-block_byg__cika_sapling = 1085
-block_byg__cika_slab = 991
-block_byg__cika_stairs = 1019
-block_byg__cika_trapdoor = 907
-block_byg__cika_wood = 1400
-block_byg__clover_patch = 1221
-block_byg__cracked_red_rock_brick_slab = 1472
-block_byg__cracked_red_rock_brick_stairs = 1473
-block_byg__cracked_red_rock_brick_wall = 1474
-block_byg__cracked_red_rock_bricks = 1471
-block_byg__crimson_berry_bush = 1229
-block_byg__crocus = 1590
-block_byg__cryptic_bramble = 1309
-block_byg__cryptic_campfire = 1299
-block_byg__cryptic_fire = 1300
-block_byg__cryptic_magma_block = 1301
-block_byg__cryptic_redstone_ore = 1308
-block_byg__cryptic_stone = 1302
-block_byg__cryptic_stone_slab = 1303
-block_byg__cryptic_stone_stairs = 1304
-block_byg__cryptic_stone_wall = 1305
-block_byg__cryptic_vent = 1306
-block_byg__cyan_amaranth = 1592
-block_byg__cyan_rose = 1593
-block_byg__cyan_tulip = 1594
-block_byg__cypress_bookshelf = 796
-block_byg__cypress_button = 880
-block_byg__cypress_crafting_table = 936
-block_byg__cypress_door = 824
-block_byg__cypress_fence = 1048
-block_byg__cypress_fence_gate = 964
-block_byg__cypress_leaves = 1133
-block_byg__cypress_log = 1370
-block_byg__cypress_planks = 768
-block_byg__cypress_pressure_plate = 852
-block_byg__cypress_sapling = 1086
-block_byg__cypress_slab = 992
-block_byg__cypress_stairs = 1020
-block_byg__cypress_trapdoor = 908
-block_byg__cypress_wood = 1401
-block_byg__dacite = 1446
-block_byg__dacite_brick_slab = 1451
-block_byg__dacite_brick_stairs = 1452
-block_byg__dacite_brick_wall = 1453
-block_byg__dacite_bricks = 1450
-block_byg__dacite_cobblestone = 1454
-block_byg__dacite_cobblestone_slab = 1455
-block_byg__dacite_cobblestone_stairs = 1456
-block_byg__dacite_cobblestone_wall = 1457
-block_byg__dacite_pillar = 1458
-block_byg__dacite_slab = 1447
-block_byg__dacite_stairs = 1448
-block_byg__dacite_tile = 1459
-block_byg__dacite_tile_slab = 1460
-block_byg__dacite_tile_stairs = 1461
-block_byg__dacite_tile_wall = 1462
-block_byg__dacite_wall = 1449
-block_byg__daffodil = 1595
-block_byg__death_cap = 1434
-block_byg__death_cap_mushroom_block = 1189
-block_byg__delphinium = 1596
-block_byg__ebony_bookshelf = 797
-block_byg__ebony_button = 881
-block_byg__ebony_crafting_table = 937
-block_byg__ebony_door = 825
-block_byg__ebony_fence = 1049
-block_byg__ebony_fence_gate = 965
-block_byg__ebony_leaves = 1134
-block_byg__ebony_log = 1371
-block_byg__ebony_planks = 769
-block_byg__ebony_pressure_plate = 853
-block_byg__ebony_sapling = 1087
-block_byg__ebony_slab = 993
-block_byg__ebony_stairs = 1021
-block_byg__ebony_trapdoor = 909
-block_byg__ebony_wood = 1402
-block_byg__embur_bookshelf = 813
-block_byg__embur_button = 897
-block_byg__embur_crafting_table = 953
-block_byg__embur_door = 841
-block_byg__embur_fence = 1065
-block_byg__embur_fence_gate = 981
-block_byg__embur_gel_block = 1261
-block_byg__embur_gel_vines = 1262
-block_byg__embur_hyphae = 1419
-block_byg__embur_lily = 1260
-block_byg__embur_nylium = 1648
-block_byg__embur_pedu = 1388
-block_byg__embur_planks = 785
-block_byg__embur_pressure_plate = 869
-block_byg__embur_roots = 1264
-block_byg__embur_slab = 1009
-block_byg__embur_sprouts = 1263
-block_byg__embur_stairs = 1037
-block_byg__embur_trapdoor = 925
-block_byg__embur_wart = 1265
-block_byg__ender_lily = 1272
-block_byg__ether_bookshelf = 818
-block_byg__ether_bulbs_block = 1224
-block_byg__ether_bush = 1276
-block_byg__ether_button = 902
-block_byg__ether_crafting_table = 958
-block_byg__ether_door = 846
-block_byg__ether_fence = 1070
-block_byg__ether_fence_gate = 986
-block_byg__ether_foliage = 1273
-block_byg__ether_grass = 1275
-block_byg__ether_leaves = 1176
-block_byg__ether_log = 1395
-block_byg__ether_phylium = 1652
-block_byg__ether_planks = 790
-block_byg__ether_pressure_plate = 874
-block_byg__ether_sapling = 1121
-block_byg__ether_slab = 1014
-block_byg__ether_soil = 1074
-block_byg__ether_stairs = 1042
-block_byg__ether_stone = 1285
-block_byg__ether_stone_slab = 1286
-block_byg__ether_stone_stairs = 1287
-block_byg__ether_stone_wall = 1288
-block_byg__ether_trapdoor = 930
-block_byg__ether_wood = 1425
-block_byg__fairy_slipper = 1597
-block_byg__fir_bookshelf = 798
-block_byg__fir_button = 882
-block_byg__fir_crafting_table = 938
-block_byg__fir_door = 826
-block_byg__fir_fence = 1050
-block_byg__fir_fence_gate = 966
-block_byg__fir_leaves = 1135
-block_byg__fir_log = 1372
-block_byg__fir_planks = 770
-block_byg__fir_pressure_plate = 854
-block_byg__fir_sapling = 1088
-block_byg__fir_slab = 994
-block_byg__fir_stairs = 1022
-block_byg__fir_trapdoor = 910
-block_byg__fir_wood = 1403
-block_byg__firecracker_flower_bush = 1598
-block_byg__flower_patch = 1222
-block_byg__flowering_nightshade_leaves = 1174
-block_byg__flowering_orchard_leaves = 1136
-block_byg__flowering_palo_verde_leaves = 1137
-block_byg__foxglove = 1599
-block_byg__frost_magma = 1324
-block_byg__glowcelium_block = 1072
-block_byg__glowstone_lamp = 1319
-block_byg__glowstone_lantern = 1321
-block_byg__golden_spined_cactus = 1600
-block_byg__green_apple_skyris_leaves = 1163
-block_byg__green_enchanted_bookshelf = 799
-block_byg__green_enchanted_button = 883
-block_byg__green_enchanted_crafting_table = 939
-block_byg__green_enchanted_door = 827
-block_byg__green_enchanted_fence = 1051
-block_byg__green_enchanted_fence_gate = 967
-block_byg__green_enchanted_leaves = 1138
-block_byg__green_enchanted_log = 1373
-block_byg__green_enchanted_planks = 771
-block_byg__green_enchanted_pressure_plate = 855
-block_byg__green_enchanted_sapling = 1089
-block_byg__green_enchanted_slab = 995
-block_byg__green_enchanted_stairs = 1023
-block_byg__green_enchanted_trapdoor = 911
-block_byg__green_enchanted_wood = 1404
-block_byg__green_mushroom = 1429
-block_byg__green_mushroom_block = 1177
-block_byg__green_tulip = 1601
-block_byg__guzmania = 1602
-block_byg__hanging_bones = 1235
-block_byg__hanging_sythian_roots = 1258
-block_byg__hanging_sythian_roots_plant = 1259
-block_byg__holly_berry_leaves = 1139
-block_byg__holly_bookshelf = 800
-block_byg__holly_button = 884
-block_byg__holly_crafting_table = 940
-block_byg__holly_door = 828
-block_byg__holly_fence = 1052
-block_byg__holly_fence_gate = 968
-block_byg__holly_leaves = 1140
-block_byg__holly_log = 1374
-block_byg__holly_planks = 772
-block_byg__holly_pressure_plate = 856
-block_byg__holly_sapling = 1090
-block_byg__holly_slab = 996
-block_byg__holly_stairs = 1024
-block_byg__holly_trapdoor = 912
-block_byg__holly_wood = 1405
-block_byg__horseweed = 1198
-block_byg__imbued_nightshade_log = 1394
-block_byg__incan_lily = 1603
-block_byg__indigo_jacaranda_leaves = 1142
-block_byg__indigo_jacaranda_sapling = 1092
-block_byg__iris = 1604
-block_byg__ivis_phylium = 1647
-block_byg__ivis_roots = 1270
-block_byg__ivis_sprout = 1271
-block_byg__jacaranda_bookshelf = 801
-block_byg__jacaranda_button = 885
-block_byg__jacaranda_crafting_table = 941
-block_byg__jacaranda_door = 829
-block_byg__jacaranda_fence = 1053
-block_byg__jacaranda_fence_gate = 969
-block_byg__jacaranda_leaves = 1141
-block_byg__jacaranda_log = 1375
-block_byg__jacaranda_planks = 773
-block_byg__jacaranda_pressure_plate = 857
-block_byg__jacaranda_sapling = 1091
-block_byg__jacaranda_slab = 997
-block_byg__jacaranda_stairs = 1025
-block_byg__jacaranda_trapdoor = 913
-block_byg__jacaranda_wood = 1406
-block_byg__japanese_orchid = 1605
-block_byg__joshua_leaves = 1143
-block_byg__joshua_sapling = 1093
-block_byg__kovan_flower = 1606
-block_byg__lament_bookshelf = 815
-block_byg__lament_button = 899
-block_byg__lament_crafting_table = 955
-block_byg__lament_door = 843
-block_byg__lament_fence = 1067
-block_byg__lament_fence_gate = 983
-block_byg__lament_leaves = 1172
-block_byg__lament_log = 1390
-block_byg__lament_planks = 787
-block_byg__lament_pressure_plate = 871
-block_byg__lament_sapling = 1119
-block_byg__lament_slab = 1011
-block_byg__lament_sprouts = 1327
-block_byg__lament_stairs = 1039
-block_byg__lament_trapdoor = 927
-block_byg__lament_vine = 1328
-block_byg__lament_vine_plant = 1329
-block_byg__lament_wood = 1421
-block_byg__lazarus_bellflower = 1607
-block_byg__leaf_pile = 1220
-block_byg__light_blue_petal_block = 1336
-block_byg__lignite_block = 1289
-block_byg__lignite_ore = 1290
-block_byg__lolipop_flower = 1608
-block_byg__magenta_amaranth = 1609
-block_byg__magenta_tulip = 1610
-block_byg__magmatic_stone = 1241
-block_byg__mahogany_bookshelf = 802
-block_byg__mahogany_button = 886
-block_byg__mahogany_crafting_table = 942
-block_byg__mahogany_door = 830
-block_byg__mahogany_fence = 1054
-block_byg__mahogany_fence_gate = 970
-block_byg__mahogany_leaves = 1145
-block_byg__mahogany_log = 1376
-block_byg__mahogany_planks = 774
-block_byg__mahogany_pressure_plate = 858
-block_byg__mahogany_sapling = 1094
-block_byg__mahogany_slab = 998
-block_byg__mahogany_stairs = 1026
-block_byg__mahogany_trapdoor = 914
-block_byg__mahogany_wood = 1407
-block_byg__mangrove_bookshelf = 803
-block_byg__mangrove_button = 887
-block_byg__mangrove_crafting_table = 943
-block_byg__mangrove_door = 831
-block_byg__mangrove_fence = 1055
-block_byg__mangrove_fence_gate = 971
-block_byg__mangrove_leaves = 1146
-block_byg__mangrove_log = 1377
-block_byg__mangrove_planks = 775
-block_byg__mangrove_pressure_plate = 859
-block_byg__mangrove_sapling = 1095
-block_byg__mangrove_slab = 999
-block_byg__mangrove_stairs = 1027
-block_byg__mangrove_trapdoor = 915
-block_byg__mangrove_wood = 1408
-block_byg__maple_bookshelf = 804
-block_byg__maple_button = 888
-block_byg__maple_crafting_table = 944
-block_byg__maple_door = 832
-block_byg__maple_fence = 1056
-block_byg__maple_fence_gate = 972
-block_byg__maple_leaves = 1147
-block_byg__maple_log = 1378
-block_byg__maple_planks = 776
-block_byg__maple_pressure_plate = 860
-block_byg__maple_sapling = 1096
-block_byg__maple_slab = 1000
-block_byg__maple_stairs = 1028
-block_byg__maple_trapdoor = 916
-block_byg__maple_wood = 1409
-block_byg__meadow_dirt = 1073
-block_byg__meadow_grass_block = 1650
-block_byg__meadow_grass_path = 1655
-block_byg__mini_cactus = 1199
-block_byg__mossy_netherrack = 1228
-block_byg__mossy_red_rock_brick_slab = 1480
-block_byg__mossy_red_rock_brick_stairs = 1481
-block_byg__mossy_red_rock_brick_wall = 1482
-block_byg__mossy_red_rock_bricks = 1479
-block_byg__mossy_stone = 1483
-block_byg__mossy_stone_slab = 1484
-block_byg__mossy_stone_stairs = 1485
-block_byg__mossy_stone_wall = 1486
-block_byg__mud_block = 1075
-block_byg__mud_bricks = 1076
-block_byg__mycelium_netherrack = 1645
-block_byg__nether_bristle = 1227
-block_byg__nightshade_berry_bush = 1280
-block_byg__nightshade_bookshelf = 817
-block_byg__nightshade_button = 901
-block_byg__nightshade_crafting_table = 957
-block_byg__nightshade_door = 845
-block_byg__nightshade_fence = 1069
-block_byg__nightshade_fence_gate = 985
-block_byg__nightshade_leaves = 1175
-block_byg__nightshade_log = 1393
-block_byg__nightshade_phylium = 1651
-block_byg__nightshade_planks = 789
-block_byg__nightshade_pressure_plate = 873
-block_byg__nightshade_roots = 1279
-block_byg__nightshade_sapling = 1122
-block_byg__nightshade_slab = 1013
-block_byg__nightshade_sprouts = 1278
-block_byg__nightshade_stairs = 1041
-block_byg__nightshade_trapdoor = 929
-block_byg__nightshade_wood = 1424
-block_byg__nylium_soul_sand = 1250
-block_byg__nylium_soul_soil = 1251
-block_byg__oddity_bush = 1292
-block_byg__oddity_cactus = 1291
-block_byg__orange_amaranth = 1611
-block_byg__orange_birch_leaves = 1148
-block_byg__orange_birch_sapling = 1097
-block_byg__orange_daisy = 1612
-block_byg__orange_oak_leaves = 1149
-block_byg__orange_oak_sapling = 1098
-block_byg__orange_spruce_leaves = 1150
-block_byg__orange_spruce_sapling = 1099
-block_byg__orchard_leaves = 1151
-block_byg__orchard_sapling = 1100
-block_byg__osiria_rose = 1613
-block_byg__overgrown_crimson_blackstone = 1644
-block_byg__overgrown_dacite = 1642
-block_byg__overgrown_netherrack = 1646
-block_byg__overgrown_stone = 1643
-block_byg__packed_black_ice = 1322
-block_byg__palm_bookshelf = 814
-block_byg__palm_button = 898
-block_byg__palm_crafting_table = 954
-block_byg__palm_door = 842
-block_byg__palm_fence = 1066
-block_byg__palm_fence_gate = 982
-block_byg__palm_leaves = 1171
-block_byg__palm_log = 1389
-block_byg__palm_planks = 786
-block_byg__palm_pressure_plate = 870
-block_byg__palm_sapling = 1118
-block_byg__palm_slab = 1010
-block_byg__palm_stairs = 1038
-block_byg__palm_trapdoor = 926
-block_byg__palm_wood = 1420
-block_byg__palo_verde_leaves = 1152
-block_byg__palo_verde_log = 1379
-block_byg__palo_verde_sapling = 1101
-block_byg__palo_verde_wood = 1410
-block_byg__peach_leather_flower = 1614
-block_byg__peat = 1071
-block_byg__pendorite_block = 1444
-block_byg__pendorite_ore = 1442
-block_byg__pervaded_netherrack = 1320
-block_byg__pine_bookshelf = 805
-block_byg__pine_button = 889
-block_byg__pine_crafting_table = 945
-block_byg__pine_door = 833
-block_byg__pine_fence = 1057
-block_byg__pine_fence_gate = 973
-block_byg__pine_leaves = 1153
-block_byg__pine_log = 1380
-block_byg__pine_planks = 777
-block_byg__pine_pressure_plate = 861
-block_byg__pine_sapling = 1102
-block_byg__pine_slab = 1001
-block_byg__pine_stairs = 1029
-block_byg__pine_trapdoor = 917
-block_byg__pine_wood = 1411
-block_byg__pink_allium = 1615
-block_byg__pink_allium_flower_bush = 1616
-block_byg__pink_anemone = 1617
-block_byg__pink_cherry_foliage = 1330
-block_byg__pink_cherry_leaves = 1154
-block_byg__pink_cherry_sapling = 1103
-block_byg__pink_chiseled_sandstone = 1362
-block_byg__pink_cut_sandstone = 1363
-block_byg__pink_daffodil = 1618
-block_byg__pink_glowcane = 1207
-block_byg__pink_glowcane_block = 1317
-block_byg__pink_orchid = 1619
-block_byg__pink_sand = 1360
-block_byg__pink_sandstone = 1361
-block_byg__pink_smooth_sandstone = 1364
-block_byg__plant_stem = 1338
-block_byg__podzol_dacite = 1641
-block_byg__poison_ivy = 1208
-block_byg__polished_soapstone = 1508
-block_byg__polished_soapstone_slab = 1509
-block_byg__polished_soapstone_stairs = 1510
-block_byg__polished_soapstone_wall = 1511
-block_byg__pollen_block = 1339
-block_byg__potted_alpine_bellflower = 1720
-block_byg__potted_angelica = 1721
-block_byg__potted_araucaria_sapling = 1657
-block_byg__potted_aspen_sapling = 1658
-block_byg__potted_baobab_sapling = 1659
-block_byg__potted_begonia = 1722
-block_byg__potted_bistort = 1723
-block_byg__potted_black_puff = 1708
-block_byg__potted_black_rose = 1727
-block_byg__potted_blue_enchanted_sapling = 1660
-block_byg__potted_blue_glowshroom = 1712
-block_byg__potted_blue_sage = 1724
-block_byg__potted_blue_spruce_sapling = 1661
-block_byg__potted_brown_birch_sapling = 1662
-block_byg__potted_brown_oak_sapling = 1663
-block_byg__potted_brown_zelkova_sapling = 1664
-block_byg__potted_bulbis_oddity = 1717
-block_byg__potted_california_poppy = 1725
-block_byg__potted_cika_sapling = 1665
-block_byg__potted_crocus = 1726
-block_byg__potted_cyan_rose = 1728
-block_byg__potted_cyan_tulip = 1729
-block_byg__potted_cypress_sapling = 1666
-block_byg__potted_daffodil = 1730
-block_byg__potted_death_cap = 1716
-block_byg__potted_ebony_sapling = 1667
-block_byg__potted_embur_wart = 1707
-block_byg__potted_ether_sapling = 1701
-block_byg__potted_fairy_slipper = 1731
-block_byg__potted_fir_sapling = 1668
-block_byg__potted_firecracker_flower_bush = 1732
-block_byg__potted_golden_spined_cactus = 1733
-block_byg__potted_green_enchanted_sapling = 1669
-block_byg__potted_green_mushroom = 1711
-block_byg__potted_green_tulip = 1734
-block_byg__potted_guzmania = 1735
-block_byg__potted_holly_sapling = 1670
-block_byg__potted_horseweed = 1703
-block_byg__potted_incan_lily = 1736
-block_byg__potted_indigo_jacaranda_sapling = 1672
-block_byg__potted_iris = 1737
-block_byg__potted_jacaranda_sapling = 1671
-block_byg__potted_joshua_sapling = 1673
-block_byg__potted_kovan_flower = 1738
-block_byg__potted_lament_sapling = 1699
-block_byg__potted_lazarus_bellflower = 1739
-block_byg__potted_lolipop_flower = 1740
-block_byg__potted_magenta_tulip = 1741
-block_byg__potted_mahogany_sapling = 1674
-block_byg__potted_mangrove_sapling = 1675
-block_byg__potted_maple_sapling = 1676
-block_byg__potted_mini_cactus = 1704
-block_byg__potted_nightshade_sapling = 1702
-block_byg__potted_orange_birch_sapling = 1677
-block_byg__potted_orange_daisy = 1742
-block_byg__potted_orange_oak_sapling = 1678
-block_byg__potted_orange_spruce_sapling = 1679
-block_byg__potted_orchard_sapling = 1680
-block_byg__potted_osiria_rose = 1743
-block_byg__potted_palm_sapling = 1698
-block_byg__potted_palo_verde_sapling = 1681
-block_byg__potted_peach_leather_flower = 1744
-block_byg__potted_pine_sapling = 1682
-block_byg__potted_pink_allium = 1745
-block_byg__potted_pink_anemone = 1746
-block_byg__potted_pink_cherry_sapling = 1683
-block_byg__potted_pink_daffodil = 1747
-block_byg__potted_pink_orchid = 1748
-block_byg__potted_prickly_pear_cactus = 1705
-block_byg__potted_protea_flower = 1749
-block_byg__potted_purple_bulbis_oddity = 1718
-block_byg__potted_purple_glowshroom = 1713
-block_byg__potted_purple_orchid = 1750
-block_byg__potted_purple_sage = 1751
-block_byg__potted_purple_tulip = 1752
-block_byg__potted_rainbow_eucalyptus_sapling = 1684
-block_byg__potted_red_birch_sapling = 1685
-block_byg__potted_red_cornflower = 1753
-block_byg__potted_red_maple_sapling = 1686
-block_byg__potted_red_oak_sapling = 1687
-block_byg__potted_red_orchid = 1754
-block_byg__potted_red_spruce_sapling = 1688
-block_byg__potted_redwood_sapling = 1689
-block_byg__potted_richea = 1755
-block_byg__potted_rose = 1756
-block_byg__potted_shulkren_fungus = 1719
-block_byg__potted_silver_maple_sapling = 1690
-block_byg__potted_silver_vase_flower = 1758
-block_byg__potted_skyris_sapling = 1691
-block_byg__potted_snowdrops = 1757
-block_byg__potted_soul_shroom = 1715
-block_byg__potted_sythian_fungus = 1714
-block_byg__potted_torch_ginger = 1759
-block_byg__potted_violet_leather_flower = 1760
-block_byg__potted_weeping_milkcap = 1709
-block_byg__potted_white_anemone = 1761
-block_byg__potted_white_cherry_sapling = 1692
-block_byg__potted_white_sage = 1762
-block_byg__potted_willow_sapling = 1693
-block_byg__potted_winter_cyclamen = 1763
-block_byg__potted_winter_rose = 1764
-block_byg__potted_winter_scilla = 1765
-block_byg__potted_winter_succulent = 1706
-block_byg__potted_witch_hazel_sapling = 1694
-block_byg__potted_withering_oak_sapling = 1700
-block_byg__potted_wood_blewit = 1710
-block_byg__potted_yellow_birch_sapling = 1695
-block_byg__potted_yellow_daffodil = 1766
-block_byg__potted_yellow_spruce_sapling = 1696
-block_byg__potted_yellow_tulip = 1767
-block_byg__potted_zelkova_sapling = 1697
-block_byg__prairie_grass = 1620
-block_byg__prickly_pear_cactus = 1200
-block_byg__protea_flower = 1621
-block_byg__purple_amaranth = 1622
-block_byg__purple_bulbis_anomaly = 1439
-block_byg__purple_bulbis_oddity = 1436
-block_byg__purple_bulbis_shell = 1191
-block_byg__purple_chiseled_sandstone = 1357
-block_byg__purple_cut_sandstone = 1358
-block_byg__purple_glowcane = 1206
-block_byg__purple_glowcane_block = 1318
-block_byg__purple_glowshroom = 1431
-block_byg__purple_glowshroom_block = 1184
-block_byg__purple_orchid = 1623
-block_byg__purple_petal_block = 1334
-block_byg__purple_sage = 1624
-block_byg__purple_sand = 1355
-block_byg__purple_sandstone = 1356
-block_byg__purple_shroomlight = 1314
-block_byg__purple_smooth_sandstone = 1359
-block_byg__purple_tulip = 1625
-block_byg__purpur_stone = 1281
-block_byg__purpur_stone_slab = 1282
-block_byg__purpur_stone_stairs = 1283
-block_byg__purpur_stone_wall = 1284
-block_byg__quartz_crystal = 1236
-block_byg__quartzite_sand = 1237
-block_byg__rainbow_eucalyptus_bookshelf = 806
-block_byg__rainbow_eucalyptus_button = 890
-block_byg__rainbow_eucalyptus_crafting_table = 946
-block_byg__rainbow_eucalyptus_door = 834
-block_byg__rainbow_eucalyptus_fence = 1058
-block_byg__rainbow_eucalyptus_fence_gate = 974
-block_byg__rainbow_eucalyptus_leaves = 1155
-block_byg__rainbow_eucalyptus_log = 1381
-block_byg__rainbow_eucalyptus_planks = 778
-block_byg__rainbow_eucalyptus_pressure_plate = 862
-block_byg__rainbow_eucalyptus_sapling = 1104
-block_byg__rainbow_eucalyptus_slab = 1002
-block_byg__rainbow_eucalyptus_stairs = 1030
-block_byg__rainbow_eucalyptus_trapdoor = 918
-block_byg__rainbow_eucalyptus_wood = 1412
-block_byg__raw_quartz_block = 1238
-block_byg__red_birch_leaves = 1156
-block_byg__red_birch_sapling = 1105
-block_byg__red_cornflower = 1626
-block_byg__red_glowcane = 1205
-block_byg__red_glowcane_block = 1316
-block_byg__red_glowshroom_stem = 1185
-block_byg__red_maple_leaves = 1157
-block_byg__red_maple_sapling = 1106
-block_byg__red_oak_leaves = 1158
-block_byg__red_oak_sapling = 1107
-block_byg__red_orchid = 1627
-block_byg__red_petal_block = 1333
-block_byg__red_rock = 1463
-block_byg__red_rock_brick_slab = 1468
-block_byg__red_rock_brick_stairs = 1469
-block_byg__red_rock_brick_wall = 1470
-block_byg__red_rock_bricks = 1467
-block_byg__red_rock_slab = 1464
-block_byg__red_rock_stairs = 1465
-block_byg__red_rock_wall = 1466
-block_byg__red_spruce_leaves = 1159
-block_byg__red_spruce_sapling = 1108
-block_byg__redwood_bookshelf = 807
-block_byg__redwood_button = 891
-block_byg__redwood_crafting_table = 947
-block_byg__redwood_door = 835
-block_byg__redwood_fence = 1059
-block_byg__redwood_fence_gate = 975
-block_byg__redwood_leaves = 1160
-block_byg__redwood_log = 1382
-block_byg__redwood_planks = 779
-block_byg__redwood_pressure_plate = 863
-block_byg__redwood_sapling = 1109
-block_byg__redwood_slab = 1003
-block_byg__redwood_stairs = 1031
-block_byg__redwood_trapdoor = 919
-block_byg__redwood_wood = 1413
-block_byg__reed_thatch = 1194
-block_byg__reed_thatch_carpet = 1195
-block_byg__reed_thatch_slab = 1197
-block_byg__reed_thatch_stairs = 1196
-block_byg__reeds = 1193
-block_byg__richea = 1628
-block_byg__ripe_joshua_leaves = 1144
-block_byg__ripe_orchard_leaves = 1161
-block_byg__rocky_stone = 1487
-block_byg__rocky_stone_slab = 1488
-block_byg__rocky_stone_stairs = 1489
-block_byg__rocky_stone_wall = 1490
-block_byg__rose = 1629
-block_byg__scorched_bush = 1242
-block_byg__scorched_grass = 1243
-block_byg__scoria_cobblestone = 1495
-block_byg__scoria_cobblestone_slab = 1496
-block_byg__scoria_cobblestone_stairs = 1497
-block_byg__scoria_cobblestone_wall = 1498
-block_byg__scoria_pillar = 1499
-block_byg__scoria_stone = 1491
-block_byg__scoria_stone_slab = 1492
-block_byg__scoria_stone_stairs = 1493
-block_byg__scoria_stone_wall = 1494
-block_byg__scoria_stonebrick_slab = 1501
-block_byg__scoria_stonebrick_stairs = 1502
-block_byg__scoria_stonebrick_wall = 1503
-block_byg__scoria_stonebricks = 1500
-block_byg__short_beach_grass = 1218
-block_byg__short_grass = 1202
-block_byg__shulkren_fungus = 1437
-block_byg__shulkren_moss_blanket = 1310
-block_byg__shulkren_phylium = 1654
-block_byg__shulkren_vine = 1312
-block_byg__shulkren_vine_plant = 1313
-block_byg__shulkren_wart_block = 1311
-block_byg__silver_maple_leaves = 1162
-block_byg__silver_maple_sapling = 1110
-block_byg__silver_vase_flower = 1631
-block_byg__skyris_bookshelf = 808
-block_byg__skyris_button = 892
-block_byg__skyris_crafting_table = 948
-block_byg__skyris_door = 836
-block_byg__skyris_fence = 1060
-block_byg__skyris_fence_gate = 976
-block_byg__skyris_leaves = 1164
-block_byg__skyris_log = 1383
-block_byg__skyris_planks = 780
-block_byg__skyris_pressure_plate = 864
-block_byg__skyris_sapling = 1111
-block_byg__skyris_slab = 1004
-block_byg__skyris_stairs = 1032
-block_byg__skyris_trapdoor = 920
-block_byg__skyris_vine = 1209
-block_byg__skyris_wood = 1414
-block_byg__snowdrops = 1630
-block_byg__soapstone = 1504
-block_byg__soapstone_brick_slab = 1513
-block_byg__soapstone_brick_stairs = 1514
-block_byg__soapstone_brick_wall = 1515
-block_byg__soapstone_bricks = 1512
-block_byg__soapstone_pillar = 1516
-block_byg__soapstone_slab = 1505
-block_byg__soapstone_stairs = 1506
-block_byg__soapstone_tile = 1517
-block_byg__soapstone_tile_slab = 1518
-block_byg__soapstone_tile_stairs = 1519
-block_byg__soapstone_tile_wall = 1520
-block_byg__soapstone_wall = 1507
-block_byg__soul_shroom = 1433
-block_byg__soul_shroom_block = 1188
-block_byg__soul_shroom_spore = 1440
-block_byg__soul_shroom_spore_end = 1441
-block_byg__soul_shroom_stem = 1187
-block_byg__stripped_aspen_log = 1521
-block_byg__stripped_aspen_wood = 1550
-block_byg__stripped_baobab_log = 1522
-block_byg__stripped_baobab_wood = 1551
-block_byg__stripped_blue_enchanted_log = 1523
-block_byg__stripped_blue_enchanted_wood = 1552
-block_byg__stripped_bulbis_stem = 1547
-block_byg__stripped_bulbis_wood = 1576
-block_byg__stripped_cherry_log = 1524
-block_byg__stripped_cherry_wood = 1553
-block_byg__stripped_cika_log = 1525
-block_byg__stripped_cika_wood = 1554
-block_byg__stripped_cypress_log = 1526
-block_byg__stripped_cypress_wood = 1555
-block_byg__stripped_ebony_log = 1527
-block_byg__stripped_ebony_wood = 1556
-block_byg__stripped_embur_hyphae = 1573
-block_byg__stripped_embur_pedu = 1544
-block_byg__stripped_ether_log = 1549
-block_byg__stripped_ether_wood = 1578
-block_byg__stripped_fir_log = 1528
-block_byg__stripped_fir_wood = 1557
-block_byg__stripped_green_enchanted_log = 1529
-block_byg__stripped_green_enchanted_wood = 1558
-block_byg__stripped_holly_log = 1530
-block_byg__stripped_holly_wood = 1559
-block_byg__stripped_jacaranda_log = 1531
-block_byg__stripped_jacaranda_wood = 1560
-block_byg__stripped_lament_log = 1546
-block_byg__stripped_lament_wood = 1575
-block_byg__stripped_mahogany_log = 1532
-block_byg__stripped_mahogany_wood = 1561
-block_byg__stripped_mangrove_log = 1533
-block_byg__stripped_mangrove_wood = 1562
-block_byg__stripped_maple_log = 1534
-block_byg__stripped_maple_wood = 1563
-block_byg__stripped_nightshade_log = 1548
-block_byg__stripped_nightshade_wood = 1577
-block_byg__stripped_palm_log = 1545
-block_byg__stripped_palm_wood = 1574
-block_byg__stripped_palo_verde_log = 1535
-block_byg__stripped_palo_verde_wood = 1564
-block_byg__stripped_pine_log = 1536
-block_byg__stripped_pine_wood = 1565
-block_byg__stripped_rainbow_eucalyptus_log = 1537
-block_byg__stripped_rainbow_eucalyptus_wood = 1566
-block_byg__stripped_redwood_log = 1540
-block_byg__stripped_redwood_wood = 1569
-block_byg__stripped_skyris_log = 1538
-block_byg__stripped_skyris_wood = 1567
-block_byg__stripped_sythian_hyphae = 1572
-block_byg__stripped_sythian_stem = 1543
-block_byg__stripped_willow_log = 1539
-block_byg__stripped_willow_wood = 1568
-block_byg__stripped_witch_hazel_log = 1541
-block_byg__stripped_witch_hazel_wood = 1570
-block_byg__stripped_zelkova_log = 1542
-block_byg__stripped_zelkova_wood = 1571
-block_byg__subzero_ash = 1325
-block_byg__subzero_ash_block = 1326
-block_byg__sythian_bookshelf = 812
-block_byg__sythian_button = 896
-block_byg__sythian_crafting_table = 952
-block_byg__sythian_door = 840
-block_byg__sythian_fence = 1064
-block_byg__sythian_fence_gate = 980
-block_byg__sythian_fungus = 1432
-block_byg__sythian_hyphae = 1418
-block_byg__sythian_nylium = 1649
-block_byg__sythian_planks = 784
-block_byg__sythian_pressure_plate = 868
-block_byg__sythian_roots = 1253
-block_byg__sythian_sapling = 1257
-block_byg__sythian_scaffolding = 1256
-block_byg__sythian_slab = 1008
-block_byg__sythian_sprout = 1254
-block_byg__sythian_stairs = 1036
-block_byg__sythian_stalk_block = 1255
-block_byg__sythian_stem = 1387
-block_byg__sythian_trapdoor = 924
-block_byg__sythian_wart_block = 1252
-block_byg__tall_allium = 1579
-block_byg__tall_crimson_roots = 1230
-block_byg__tall_cryptic_vent = 1307
-block_byg__tall_embur_roots = 1266
-block_byg__tall_ether_grass = 1274
-block_byg__tall_pink_allium = 1580
-block_byg__tall_prairie_grass = 1203
-block_byg__thereal_bellflower = 1277
-block_byg__therium_block = 1296
-block_byg__therium_crystal = 1295
-block_byg__therium_lamp = 1298
-block_byg__therium_lantern = 1297
-block_byg__tiny_lilypads = 1211
-block_byg__torch_ginger = 1632
-block_byg__vermilion_sculk = 1653
-block_byg__vermilion_sculk_growth = 1294
-block_byg__vermilion_sculk_tendrils = 1293
-block_byg__violet_leather_flower = 1633
-block_byg__warped_bush = 1245
-block_byg__warped_cactus = 1244
-block_byg__warped_coral = 1247
-block_byg__warped_coral_block = 1246
-block_byg__warped_coral_fan = 1248
-block_byg__warped_coral_wall_fan = 1249
-block_byg__water_silk = 1212
-block_byg__weed_grass = 1216
-block_byg__weeping_milkcap = 1427
-block_byg__weeping_milkcap_mushroom_block = 1178
-block_byg__weeping_roots = 1213
-block_byg__weeping_roots_plant = 1214
-block_byg__whaling_grass = 1240
-block_byg__whaling_vine = 1239
-block_byg__white_anemone = 1634
-block_byg__white_cherry_foliage = 1331
-block_byg__white_cherry_leaves = 1165
-block_byg__white_cherry_sapling = 1112
-block_byg__white_chiseled_sandstone = 1347
-block_byg__white_cut_sandstone = 1348
-block_byg__white_mushroom_stem = 1181
-block_byg__white_petal_block = 1332
-block_byg__white_sage = 1635
-block_byg__white_sand = 1345
-block_byg__white_sandstone = 1346
-block_byg__white_smooth_sandstone = 1349
-block_byg__willow_bookshelf = 809
-block_byg__willow_button = 893
-block_byg__willow_crafting_table = 949
-block_byg__willow_door = 837
-block_byg__willow_fence = 1061
-block_byg__willow_fence_gate = 977
-block_byg__willow_leaves = 1166
-block_byg__willow_log = 1384
-block_byg__willow_planks = 781
-block_byg__willow_pressure_plate = 865
-block_byg__willow_sapling = 1113
-block_byg__willow_slab = 1005
-block_byg__willow_stairs = 1033
-block_byg__willow_trapdoor = 921
-block_byg__willow_wood = 1415
-block_byg__wilted_grass = 1217
-block_byg__winter_cyclamen = 1636
-block_byg__winter_grass = 1215
-block_byg__winter_rose = 1637
-block_byg__winter_scilla = 1638
-block_byg__winter_succulent = 1201
-block_byg__witch_hazel_bookshelf = 810
-block_byg__witch_hazel_button = 894
-block_byg__witch_hazel_crafting_table = 950
-block_byg__witch_hazel_door = 838
-block_byg__witch_hazel_fence = 1062
-block_byg__witch_hazel_fence_gate = 978
-block_byg__witch_hazel_leaves = 1167
-block_byg__witch_hazel_log = 1385
-block_byg__witch_hazel_planks = 782
-block_byg__witch_hazel_pressure_plate = 866
-block_byg__witch_hazel_sapling = 1114
-block_byg__witch_hazel_slab = 1006
-block_byg__witch_hazel_stairs = 1034
-block_byg__witch_hazel_trapdoor = 922
-block_byg__witch_hazel_wood = 1416
-block_byg__withering_oak_leaves = 1173
-block_byg__withering_oak_log = 1391
-block_byg__withering_oak_sapling = 1120
-block_byg__withering_oak_wood = 1422
-block_byg__wood_blewit = 1428
-block_byg__wood_blewit_mushroom_block = 1179
-block_byg__yellow_birch_leaves = 1168
-block_byg__yellow_birch_sapling = 1115
-block_byg__yellow_daffodil = 1639
-block_byg__yellow_glowshroom_stem = 1186
-block_byg__yellow_nether_bricks = 1232
-block_byg__yellow_petal_block = 1337
-block_byg__yellow_spruce_leaves = 1169
-block_byg__yellow_spruce_sapling = 1116
-block_byg__yellow_tulip = 1640
-block_byg__zelkova_bookshelf = 811
-block_byg__zelkova_button = 895
-block_byg__zelkova_crafting_table = 951
-block_byg__zelkova_door = 839
-block_byg__zelkova_fence = 1063
-block_byg__zelkova_fence_gate = 979
-block_byg__zelkova_leaves = 1170
-block_byg__zelkova_log = 1386
-block_byg__zelkova_planks = 783
-block_byg__zelkova_pressure_plate = 867
-block_byg__zelkova_sapling = 1117
-block_byg__zelkova_slab = 1007
-block_byg__zelkova_stairs = 1035
-block_byg__zelkova_trapdoor = 923
-block_byg__zelkova_wood = 1417
 block_minecraft__acacia_button = 312
 block_minecraft__acacia_door = 488
 block_minecraft__acacia_fence = 483
@@ -1770,6 +765,19 @@ block_minecraft__zombie_wall_head = 319
 # END FLAG IDS #
 # Group #
 
+group_lily_pad = [
+    block_minecraft__lily_pad,
+# FLAG LILY_PAD ID #
+
+# END FLAG LILY_PAD ID #
+]
+
+group_cube_full = [
+# FLAG CUBE_FULL ID #
+
+# END FLAG CUBE_FULL ID #
+]
+
 group_end_portal = [
     block_minecraft__end_gateway,
     block_minecraft__end_portal,
@@ -1792,6 +800,8 @@ group_carpet = [
     block_minecraft__green_carpet,
     block_minecraft__red_carpet,
     block_minecraft__black_carpet,
+    # FLAG CARPET ID #
+    # END FLAG CARPET ID #
 ]
 
 group_wall = [
@@ -1811,6 +821,8 @@ group_wall = [
     block_minecraft__stone_brick_wall,
     block_minecraft__polished_blackstone_brick_wall,
     block_minecraft__polished_blackstone_wall,
+    # FLAG WALLS ID #
+    # END FLAG WALLS ID #
 ]
 
 group_wall_chorus = [
@@ -1864,6 +876,8 @@ group_pressure_plate = [
     block_minecraft__crimson_pressure_plate,
     block_minecraft__warped_pressure_plate,
     block_minecraft__polished_blackstone_pressure_plate,
+    # FLAG PRESSURE PLATE ID #
+    # END FLAG PRESSURE PLATE ID #
 ]
 
 group_table = [
@@ -1938,6 +952,8 @@ group_slabs = [
     block_minecraft__polished_blackstone_brick_slab,
     block_minecraft__blackstone_slab,
     block_minecraft__polished_blackstone_slab,
+    # FLAG SLABS ID #
+    # END FLAG SLABS ID #
 ]
 
 double_slabs = {
@@ -1981,6 +997,8 @@ double_slabs = {
     block_minecraft__polished_blackstone_brick_slab: block_minecraft__polished_blackstone_bricks,
     block_minecraft__blackstone_slab: block_minecraft__blackstone,
     block_minecraft__polished_blackstone_slab: block_minecraft__polished_blackstone,
+    # FLAG DOUBLE SLABS ID #
+    # END FLAG DOUBLE SLABS ID #
 }
 
 group_gate = [
@@ -1992,6 +1010,8 @@ group_gate = [
     block_minecraft__dark_oak_fence_gate,
     block_minecraft__crimson_fence_gate,
     block_minecraft__warped_fence_gate,
+    # FLAG FENCE_GATE ID #
+    # END FLAG FENCE_GATE ID #
 ]
 
 group_power_rail = [
@@ -2016,6 +1036,8 @@ group_tall_sprite = [
     block_minecraft__large_fern,
     block_minecraft__rose_bush,
     block_minecraft__peony,
+    # FLAG GROUP_TALL_SPRITE ID #
+    # END FLAG GROUP_TALL_SPRITE ID #
 ]
 
 group_only_facing = [
@@ -2050,6 +1072,8 @@ group_button = [
     block_minecraft__crimson_button,
     block_minecraft__warped_button,
     block_minecraft__polished_blackstone_button,
+    # FLAG BUTTON ID #
+    # END FLAG BUTTON ID #
 ]
 
 group_age_8 = [
@@ -2064,10 +1088,15 @@ group_age_4 = [
     block_minecraft__nether_wart,
 ]
 
+group_age_cross = [
+    # FLAG AGE_CROSS ID #
+    # END FLAG AGE_CROSS ID #
+]
+
 group_age = [
     block_minecraft__melon_stem,
     block_minecraft__pumpkin_stem,
-] + group_age_8 + group_age_4
+] + group_age_8 + group_age_4 + group_age_cross
 
 group_shulker = [
     block_minecraft__shulker_box,
@@ -2244,6 +1273,8 @@ group_fence = [
     block_minecraft__dark_oak_fence,
     block_minecraft__crimson_fence,
     block_minecraft__warped_fence,
+    # FLAG FENCE ID #
+    # END FLAG FENCE ID #
 ]
 
 group_stairs = [
@@ -2283,6 +1314,8 @@ group_stairs = [
     block_minecraft__blackstone_stairs,
     block_minecraft__polished_blackstone_brick_stairs,
     block_minecraft__polished_blackstone_stairs,
+    # FLAG STAIRS ID #
+    # END FLAG STAIRS ID #
 ]
 
 group_door = [
@@ -2295,6 +1328,8 @@ group_door = [
     block_minecraft__dark_oak_door,
     block_minecraft__crimson_door,
     block_minecraft__warped_door,
+    # FLAG DOORS ID #
+    # END FLAG DOORS ID #
 ]
 
 group_trapdoor = [
@@ -2307,6 +1342,8 @@ group_trapdoor = [
     block_minecraft__dark_oak_trapdoor,
     block_minecraft__crimson_trapdoor,
     block_minecraft__warped_trapdoor,
+    # FLAG TRAP DOORS ID #
+    # END FLAG TRAP DOORS ID #
 ]
 
 group_bed = [

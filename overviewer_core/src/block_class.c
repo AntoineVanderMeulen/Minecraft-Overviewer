@@ -115,7 +115,10 @@ const mc_block_t block_class_door[] = {
     block_minecraft__acacia_door,
     block_minecraft__dark_oak_door,
     block_minecraft__crimson_door,
-    block_minecraft__warped_door};
+    block_minecraft__warped_door
+    /* FLAG GROUP DOORS IDS */
+    /* END FLAG GROUP DOORS IDS */
+};
 const size_t block_class_door_len = COUNT_OF(block_class_door);
 
 const mc_block_t block_class_fence[] = {
@@ -256,7 +259,10 @@ const mc_block_t block_class_ancil[] = {
     block_minecraft__birch_fence,
     block_minecraft__jungle_fence,
     block_minecraft__dark_oak_fence,
-    block_minecraft__acacia_fence};
+    block_minecraft__acacia_fence
+/* FLAG GROUP ANCIL IDS */
+/* END FLAG GROUP ANCIL IDS */
+};
 const size_t block_class_ancil_len = COUNT_OF(block_class_ancil);
 
 const mc_block_t block_class_alt_height[] = {
@@ -389,6 +395,18 @@ const mc_block_t block_class_nether_roof[] = {
     block_minecraft__nether_gold_ore};
 const size_t block_class_nether_roof_len = COUNT_OF(block_class_nether_roof);
 
+const mc_block_t block_class_leave[] = {
+    block_minecraft__oak_leaves,
+    block_minecraft__spruce_leaves,
+    block_minecraft__birch_leaves,
+    block_minecraft__jungle_leaves,
+    block_minecraft__acacia_leaves,
+    block_minecraft__dark_oak_leaves
+/* FLAG GROUP LEAVE IDS */
+/* END FLAG GROUP LEAVE IDS */
+    };
+const size_t block_class_leave_len = COUNT_OF(block_class_leave);
+
 const mc_block_t block_class_no_inner_surfaces[] = {
     block_minecraft__white_stained_glass,
     block_minecraft__orange_stained_glass,
@@ -430,3 +448,11 @@ const mc_block_t block_class_pane_and_bars[] = {
     block_minecraft__red_stained_glass_pane,
     block_minecraft__black_stained_glass_pane};
 const size_t block_class_pane_and_bars_len = COUNT_OF(block_class_pane_and_bars);
+
+const mc_block_t block_class_lily_pad[] = {
+    block_minecraft__lily_pad
+/* FLAG GROUP LILY_PAD IDS */
+/* END FLAG GROUP LILY_PAD IDS */
+};
+const size_t block_class_lily_pad_len = COUNT_OF(block_class_lily_pad);
+
